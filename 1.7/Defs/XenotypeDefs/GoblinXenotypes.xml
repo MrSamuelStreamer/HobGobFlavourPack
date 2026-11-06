@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Small Goblin, only capable of dumb labour, small sized, low metabolism -->
+  <XenotypeDef>
+    <defName>MSSG_Noblin</defName>
+    <label>Noblin</label>
+    <description>Noblins are the youngest, weakest, and most numerous caste of goblin society. They are simple creatures often acting as disposable cannon-fodder or forced laborers. Through strange means, a Noblin of sufficient ages and experience can occasionally grow into a much larger, far smarter Goblin.</description>
+    <descriptionShort>The smallest and weakest of the goblin races.</descriptionShort>
+    <iconPath>UI/Icons/Xenotypes/Custom/Archer_2</iconPath>
+    <inheritable>true</inheritable>
+    <genes>
+      <li MayRequire="sarg.alphagenes">AG_ReducedRaidPresence</li>
+      <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
+      <li>RobustDigestion</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_SlowBleeding</li>
+      <li MayRequire="sarg.alphagenes">AG_LimbRegeneration</li>
+      <li MayRequire="sarg.alphagenes">AG_HardBones</li>
+      <li MayRequire="sarg.alphagenes">AG_Filthy</li>
+      <li MayRequire="sarg.alphagenes">AG_Stinky</li>
+      <li>PsychicAbility_Deaf</li>
+      <li>MoveSpeed_VeryQuick</li>
+      <li>ToxResist_Partial</li>
+      <li>ToxicEnvironmentResistance_Partial</li>
+      <li>UVSensitivity_Intense</li>
+      <li>Aggression_Aggressive</li>
+      <li>MeleeDamage_Weak</li>
+      <li MayRequire="sarg.alphagenes">AG_Rowdy</li>
+      <li>Pain_Reduced</li>
+      <li>Sterile</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinEars</li>
+      <li>Beauty_VeryUgly</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
+      <li>Head_Gaunt</li>
+      <li>Body_Thin</li>
+      <li>Hair_MidBlack</li>
+      <li>Hair_DarkBlack</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_MossGreenHair</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Skin_GoblinDarkGreen</li>
+      <li>Skin_Green</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_ToxGlands</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_Xenolocked</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_Learning_None</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Size_ExtremeDwarfism</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Age_RapidDevelopment</li>
+      <li>DarkVision</li>
+      <li>CaveDweller</li>
+      <li>Instability_Major</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinNose</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_SimpleMind</li>
+      <li>AddictionImmune_Shard</li>
+      <li>AddictionResistant_DankPyon_HornetHoney</li>
+      <li MayRequire="redmattis.betterprerequisites">BS_FacialAnimDisabled</li>
+      <li MayRequire="lazyfridaystudio.genesexpandedblood">GEB_Blood_Guacamole</li>
+    </genes>
+  </XenotypeDef>
+  <!-- Medium Goblin, capable of all work types, human sized, neutral metabolism -->
+   <XenotypeDef>
+    <defName>MSSG_Goblin</defName>
+    <label>Goblin</label>
+    <description>Goblins are the larger, smarter, and older Noblins that have somehow survived until adulthood or developing some intelligence - both a rarity in Goblin culture. Goblins manage the Noblins, and day to day life in the Goblin tunnels. It is said that sufficiently venerable Goblins may grow even larger and stronger still.</description>
+    <descriptionShort>Human-sized Goblins of moderate intelligence and danger.</descriptionShort>
+    <iconPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon8</iconPath>
+    <inheritable>true</inheritable>
+    <genes>
+      <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
+      <li>RobustDigestion</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_SlowBleeding</li>
+      <li MayRequire="sarg.alphagenes">AG_HardBones</li>
+      <li MayRequire="sarg.alphagenes">AG_Filthy</li>
+      <li MayRequire="sarg.alphagenes">AG_Stinky</li>
+      <li>PsychicAbility_Deaf</li>
+      <li>MoveSpeed_Quick</li>
+      <li>ToxResist_Partial</li>
+      <li>ToxicEnvironmentResistance_Partial</li>
+      <li>UVSensitivity_Mild</li>
+      <li>Aggression_Aggressive</li>
+      <li MayRequire="sarg.alphagenes">AG_Rowdy</li>
+      <li>Pain_Reduced</li>
+      <li>Sterile</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinEars</li>
+      <li>Beauty_VeryUgly</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
+      <li>Head_Gaunt</li>
+      <li>Body_Thin</li>
+      <li>Hair_MidBlack</li>
+      <li>Hair_DarkBlack</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_MossGreenHair</li>
+      <li MayRequire="sarg.alphagenes">AG_Skin_DeepGreen</li>
+      <li MayRequire="sarg.alphagenes">AG_Skin_PlantGreen</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_ToxGlands</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_Xenolocked</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Age_RapidDevelopment</li>
+      <li>DarkVision</li>
+      <li>CaveDweller</li>
+      <li>Instability_Major</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinNose</li>
+      <li>AddictionImmune_Shard</li>
+      <li>AddictionResistant_DankPyon_HornetHoney</li>
+      <li MayRequire="lazyfridaystudio.genesexpandedblood">GEB_Blood_Guacamole</li>
+    </genes>
+  </XenotypeDef>
+  <!-- Large Goblin, dangerous in melee, large sized, high metabolism -->
+  <XenotypeDef>
+    <defName>MSSG_Hobgoblin</defName>
+    <label>Hobgoblin</label>
+    <description>Hobgoblins are the rarely seen large-bodied goblins that have somehow survived long enough to be considered middle-aged. Hobgoblins are dangerous, and rule over the entire Goblin tunnel. Rumours have been whispered by old hooded men in even older kingdoms that Hobgoblins may grow into an even larger form still.</description>
+    <descriptionShort>Hobgoblins are the huge, dangerous goblins in charge of Goblin society.</descriptionShort>
+    <iconPath>UI/Icons/Xenotypes/Custom/VBE_CustomXenotypeIcon9</iconPath>
+    <inheritable>true</inheritable>
+    <genes>
+      <li MayRequire="redmattis.bigsmall.core">HalfColossusFrame</li>
+      <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
+      <li>RobustDigestion</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_SlowBleeding</li>
+      <li MayRequire="sarg.alphagenes">AG_HardBones</li>
+      <li MayRequire="sarg.alphagenes">AG_Filthy</li>
+      <li MayRequire="sarg.alphagenes">AG_Stinky</li>
+      <li>PsychicAbility_Deaf</li>
+      <li>MoveSpeed_Quick</li>
+      <li>ToxResist_Partial</li>
+      <li>ToxicEnvironmentResistance_Partial</li>
+      <li>UVSensitivity_Mild</li>
+      <li>Aggression_Aggressive</li>
+      <li>MeleeDamage_Strong</li>
+      <li MayRequire="sarg.alphagenes">AG_Rowdy</li>
+      <li>Robust</li>
+      <li>Pain_Reduced</li>
+      <li>Sterile</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinEars</li>
+      <li>Beauty_VeryUgly</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
+      <li>Head_Gaunt</li>
+      <li>Body_Thin</li>
+      <li>Hair_MidBlack</li>
+      <li>Hair_DarkBlack</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_MossGreenHair</li>
+      <li>Skin_SlateGray</li>
+      <li MayRequire="redmattis.bigsmall.core">VU_ZombieSkin</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_ToxGlands</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_Xenolocked</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Age_RapidDevelopment</li>
+      <li>DarkVision</li>
+      <li>CaveDweller</li>
+      <li>Instability_Major</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinNose</li>
+      <li>AddictionResistant_Shard</li>
+      <li>AddictionResistant_DankPyon_HornetHoney</li>
+      <li MayRequire="lazyfridaystudio.genesexpandedblood">GEB_Blood_Guacamole</li>
+    </genes>
+  </XenotypeDef>
+</Defs>
