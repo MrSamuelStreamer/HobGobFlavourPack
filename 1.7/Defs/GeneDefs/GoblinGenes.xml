@@ -51,9 +51,35 @@
     <modExtensions>
       <li Class="HobGob.EvolutionExtension">
         <nextXenotype>MSSG_Hobgoblin</nextXenotype>
-        <totalKillsRequired>75</totalKillsRequired>
+        <totalKillsRequired>50</totalKillsRequired>
         <maxPerMap>1</maxPerMap>
       </li>
     </modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="MSSG_GoblinHiddenGeneBase">
+    <defName>MSSG_Evolution_HobGoblin</defName>
+    <label>hobgoblin growth</label>
+    <description>Carriers of this gene grow into a Hobnobgoblin after enough kills, but there can only be one Hobnobgoblin per nest.</description>
+    <iconPath>UI/Icons/Genes/Gene_Killthirst</iconPath>
+    <geneClass>HobGob.Gene_GoblinEvolution</geneClass>
+    <modExtensions>
+      <li Class="HobGob.EvolutionExtension">
+        <nextXenotype>MSSG_Hobnobgoblin</nextXenotype>
+        <totalKillsRequired>50</totalKillsRequired>
+        <maxPerMap>1</maxPerMap>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="MSSG_GoblinHiddenGeneBase">
+    <defName>MSSG_Evolution_Hobnobgoblin</defName>
+    <label>hobnobgoblin instinct</label>
+    <description>Carriers of this gene have the inate instinct to entomb themselves in a goblin spawning pit, forever creating more Noblins for the nest.</description>
+    <iconPath>UI/Icons/Genes/Gene_Killthirst</iconPath>
+    <abilities>
+			<li>MSSG_DigHole</li>
+		</abilities>
+    <geneClass>HobGob.Gene_GoblinEvolution</geneClass>
   </GeneDef>
 </Defs>

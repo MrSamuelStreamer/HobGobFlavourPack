@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<AbilityGroupDef>
+		<defName>MSSG_GoblinAbilities</defName>
+		<cooldownTicks>60000</cooldownTicks>
+	</AbilityGroupDef>
+	<AbilityDef>
+		<defName>MSSG_DigHole</defName>
+		<label>Create Spawning Pit</label>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<groupDef>MSSG_GoblinAbilities</groupDef>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<description>Digs a new goblin pit, at the cost of this Hobnobgoblin being permanently entombed as a living incubator, constantly spawning new Noblins.</description>
+		<targetRequired>True</targetRequired>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<gizmoClass>Command_Ability</gizmoClass>
+		<iconPath>UI/Abilities/DigPit</iconPath>
+		<uiOrder>1</uiOrder>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>5</warmupTime>
+			<range>15</range>
+			<targetParams>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+			<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class = "VanillaMemesExpanded.CompProperties_AbilityConstructANest"></li> <!-- Needs replacing -->
+		</comps>
+		<requiredMemes>
+			<li>VME_InsectoidSupremacy</li>
+		</requiredMemes>
+	</AbilityDef>
+</Defs>

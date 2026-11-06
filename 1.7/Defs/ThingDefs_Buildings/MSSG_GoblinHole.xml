@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="BuildingBase">
+    <defName>MSSG_GoblinHole</defName>
+    <label>Goblin Spawning Hole</label>
+    <description>A subterranean pit used by goblins for spawning. Rumours say that a single self-fertilising Goblin queen can produce a thousand noblin a day, but no one has ever seen a living queen to confirm it.</description>
+    <graphicData>
+		<texPath>Things/Building/CaveEntranceA</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<drawSize>(6,6)</drawSize>
+	</graphicData>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+    </building>
+    <comps>
+      <li Class="CompProperties_Spawner">
+        <requiresPower>true</requiresPower>
+        <thingToSpawn>InsectJelly</thingToSpawn>
+        <spawnCount>75</spawnCount>
+        <spawnIntervalRange><min>300000</min><max>900000</max></spawnIntervalRange>
+        <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
+        <showMessageIfOwned>true</showMessageIfOwned>
+      </li>
+    </comps>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <Beauty>-10</Beauty>
+      <Mass>35</Mass>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(6,6)</size>
+    <fillPercent>0</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <passability>Impassable</passability>
+    <rotatable>false</rotatable>
+    <canOverlapZones>false</canOverlapZones>
+  </ThingDef>
+</Defs>
