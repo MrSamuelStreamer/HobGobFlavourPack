@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MSSG_GoblinEvolved>{PAWN_nameDef} has grown from a {1} into a {2}!</MSSG_GoblinEvolved>
+  <MSSG_NoblinProof>Noblin-proof</MSSG_NoblinProof>
+  <MSSG_NoblinProofDesc>When on, Noblins cannot open this door. They will path around it and ignore work behind it.</MSSG_NoblinProofDesc>
+  <MSSG_NoblinProofInspect>Noblin-proof</MSSG_NoblinProofInspect>
 </LanguageData>

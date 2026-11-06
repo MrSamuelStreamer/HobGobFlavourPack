@@ -33,4 +33,18 @@ namespace HobGob
             __result = __result.Where(p => !NoblinRegistry.IsManaged(p));
         }
     }
+
+    /// <summary>Managed Noblins cannot open doors marked noblin-proof.</summary>
+    [HarmonyPatch(typeof(Building_Door), nameof(Building_Door.PawnCanOpen))]
+    public static class Patch_Building_Door_PawnCanOpen
+    {
+        public static void Postfix(Building_Door __instance, Pawn p, ref bool __result)
+        {
+            // Registry lookup first: this runs constantly during pathing.
+            if (__result && NoblinRegistry.IsManaged(p) && __instance.GetComp<CompNoblinProof>()?.NoblinProof == true)
+            {
+                __result = false;
+            }
+        }
+    }
 }

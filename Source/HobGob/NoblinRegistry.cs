@@ -15,13 +15,11 @@ namespace HobGob
 
         public static void Set(Pawn pawn, bool managed)
         {
-            if (managed)
+            bool changed = managed ? Managed.Add(pawn) : Managed.Remove(pawn);
+            if (changed)
             {
-                Managed.Add(pawn);
-            }
-            else
-            {
-                Managed.Remove(pawn);
+                // Door access depends on membership (noblin-proof doors), so cached reachability is stale.
+                pawn.MapHeld?.reachability.ClearCacheFor(pawn);
             }
         }
 
