@@ -9,7 +9,7 @@ namespace HobGob
     {
         private const int Interval = 250;
 
-        private static Dictionary<NoblinTask, WorkTypeDef> workTypes;
+        private static Dictionary<WorkTypeDef, NoblinTask> taskFor;
         private readonly List<Pawn> noblins = new List<Pawn>();
 
         public NoblinWorkComponent(Map map) : base(map)
@@ -88,14 +88,18 @@ namespace HobGob
 
         private static void Apply(Pawn pawn, MapSignals signals, NoblinTask? urgent, bool inUrgentShare)
         {
-            foreach (KeyValuePair<NoblinTask, WorkTypeDef> pair in WorkTypes)
+            List<WorkTypeDef> all = DefDatabase<WorkTypeDef>.AllDefsListForReading;
+            for (int i = 0; i < all.Count; i++)
             {
-                WorkTypeDef def = pair.Value;
-                if (pawn.WorkTypeIsDisabled(def))
+                WorkTypeDef def = all[i];
+                if (pawn.WorkTypeIsDisabled(def) || def.defName == "Patient" || def.defName == "PatientBedRest")
                 {
                     continue;
                 }
-                int priority = NoblinWorkScorer.Priority(pair.Key, signals, urgent, inUrgentShare);
+                // Anything that is not dumb labour stays off.
+                int priority = TaskFor.TryGetValue(def, out NoblinTask task)
+                    ? NoblinWorkScorer.Priority(task, signals, urgent, inUrgentShare)
+                    : 0;
                 // The pawn is registered, so GetPriority returns the stored value. SetPriority dirties the work giver cache: write only on change.
                 if (pawn.workSettings.GetPriority(def) != priority)
                 {
@@ -104,23 +108,23 @@ namespace HobGob
             }
         }
 
-        private static Dictionary<NoblinTask, WorkTypeDef> WorkTypes
+        private static Dictionary<WorkTypeDef, NoblinTask> TaskFor
         {
             get
             {
-                if (workTypes == null)
+                if (taskFor == null)
                 {
-                    workTypes = new Dictionary<NoblinTask, WorkTypeDef>();
+                    taskFor = new Dictionary<WorkTypeDef, NoblinTask>();
                     foreach (NoblinTask task in NoblinWorkScorer.AllTasks)
                     {
                         WorkTypeDef def = DefDatabase<WorkTypeDef>.GetNamedSilentFail(task.ToString());
                         if (def != null)
                         {
-                            workTypes[task] = def;
+                            taskFor[def] = task;
                         }
                     }
                 }
-                return workTypes;
+                return taskFor;
             }
         }
     }
