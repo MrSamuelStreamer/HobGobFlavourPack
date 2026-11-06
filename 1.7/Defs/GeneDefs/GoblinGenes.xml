@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <GeneDef Name="MSSG_GoblinHiddenGeneBase" Abstract="True">
+    <displayCategory>Miscellaneous</displayCategory>
+    <biostatCpx>0</biostatCpx>
+    <biostatMet>0</biostatMet>
+    <canGenerateInGeneSet>false</canGenerateInGeneSet>
+    <selectionWeight>0</selectionWeight>
+  </GeneDef>
+
+  <!-- Marker gene: the pawn's work priorities are managed automatically and it is hidden from the Work tab. -->
+  <GeneDef ParentName="MSSG_GoblinHiddenGeneBase">
+    <defName>MSSG_NoblinInstinct</defName>
+    <label>noblin instinct</label>
+    <description>Carriers of this gene do not take orders about what to work on. They wander from chore to chore, doing whatever dumb labour seems most urgent.</description>
+    <iconPath>UI/Icons/Genes/Gene_Aggressive</iconPath>
+    <!-- Dumb labour only. Same work lock as Big & Small's BS_VerySimpleMind, without disabling joy, beauty or comfort. -->
+    <disabledWorkTags>
+      <li>ManualSkilled</li>
+      <li>Intellectual</li>
+      <li>Animals</li>
+      <li>Artistic</li>
+      <li>Caring</li>
+      <li>Social</li>
+    </disabledWorkTags>
+  </GeneDef>
+
+  <GeneDef ParentName="MSSG_GoblinHiddenGeneBase">
+    <defName>MSSG_Evolution_Noblin</defName>
+    <label>goblin growth</label>
+    <description>Carriers of this gene grow into a Goblin after enough kills.</description>
+    <iconPath>UI/Icons/Genes/Gene_Killthirst</iconPath>
+    <geneClass>HobGob.Gene_GoblinEvolution</geneClass>
+    <modExtensions>
+      <li Class="HobGob.EvolutionExtension">
+        <nextXenotype>MSSG_Goblin</nextXenotype>
+        <totalKillsRequired>25</totalKillsRequired>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="MSSG_GoblinHiddenGeneBase">
+    <defName>MSSG_Evolution_Goblin</defName>
+    <label>hobgoblin growth</label>
+    <description>Carriers of this gene grow into a Hobgoblin after enough kills, if no other Hobgoblin rules the area.</description>
+    <iconPath>UI/Icons/Genes/Gene_Killthirst</iconPath>
+    <geneClass>HobGob.Gene_GoblinEvolution</geneClass>
+    <modExtensions>
+      <li Class="HobGob.EvolutionExtension">
+        <nextXenotype>MSSG_Hobgoblin</nextXenotype>
+        <totalKillsRequired>75</totalKillsRequired>
+        <maxPerMap>1</maxPerMap>
+      </li>
+    </modExtensions>
+  </GeneDef>
+</Defs>

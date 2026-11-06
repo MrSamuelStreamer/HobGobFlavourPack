@@ -1,0 +1,25 @@
+using System.Linq;
+using HarmonyLib;
+using Verse;
+
+namespace HobGob
+{
+    public class HobGobMod : Mod
+    {
+        public HobGobMod(ModContentPack content) : base(content)
+        {
+            // Pass the assembly explicitly: parameterless PatchAll() patches nothing on RimWorld 1.7.
+            Harmony harmony = new Harmony("MrSamuelStreamer.GoblinFlavourPack");
+            harmony.PatchAll(typeof(HobGobMod).Assembly);
+            Log.Message($"[Goblin Flavour Pack] {harmony.GetPatchedMethods().Count()} Harmony patches applied.");
+        }
+    }
+
+    [RimWorld.DefOf]
+    public static class HobGobDefOf
+    {
+        public static GeneDef MSSG_NoblinInstinct;
+
+        static HobGobDefOf() => RimWorld.DefOfHelper.EnsureInitializedInCtor(typeof(HobGobDefOf));
+    }
+}

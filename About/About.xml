@@ -18,9 +18,15 @@
       <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
       <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
     </li>
+    <li>
+      <packageId>RedMattis.BigSmall.Core</packageId>
+      <displayName>Big and Small - Genes &amp; More</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2920751126</steamWorkshopUrl>
+    </li>
   </modDependencies>
   <loadAfter>
     <li>Ludeon.RimWorld.Biotech</li>
     <li>brrainz.harmony</li>
+    <li>RedMattis.BigSmall.Core</li>
   </loadAfter>
 </ModMetaData>

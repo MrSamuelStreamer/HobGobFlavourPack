@@ -12,7 +12,7 @@
       <li MayRequire="sarg.alphagenes">AG_ReducedRaidPresence</li>
       <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
       <li>RobustDigestion</li>
-      <li MayRequire="redmattis.bigsmall.core">BS_SlowBleeding</li>
+      <li>BS_SlowBleeding</li>
       <li MayRequire="sarg.alphagenes">AG_LimbRegeneration</li>
       <li MayRequire="sarg.alphagenes">AG_HardBones</li>
       <li MayRequire="sarg.alphagenes">AG_Filthy</li>
@@ -29,24 +29,26 @@
       <li>Sterile</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinEars</li>
       <li>Beauty_VeryUgly</li>
-      <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
+      <li>BS_AlienApperanceStandards</li>
       <li>Head_Gaunt</li>
       <li>Body_Thin</li>
       <li>Hair_MidBlack</li>
       <li>Hair_DarkBlack</li>
-      <li MayRequire="redmattis.bigsmall.core">BS_MossGreenHair</li>
+      <li>BS_MossGreenHair</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Skin_GoblinDarkGreen</li>
       <li>Skin_Green</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_ToxGlands</li>
-      <li MayRequire="redmattis.bigsmall.core">BS_Xenolocked</li>
-      <li MayRequire="redmattis.bigsmall.core">BS_Learning_None</li>
+      <li>BS_Xenolocked</li>
+      <li>BS_Learning_None</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Size_ExtremeDwarfism</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Age_RapidDevelopment</li>
       <li>DarkVision</li>
       <li>CaveDweller</li>
       <li>Instability_Major</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinNose</li>
-      <li MayRequire="redmattis.bigsmall.core">BS_SimpleMind</li>
+      <li>BS_SimpleMind</li>
+      <li>MSSG_NoblinInstinct</li>
+      <li>MSSG_Evolution_Noblin</li>
       <li>AddictionImmune_Shard</li>
       <li>AddictionResistant_DankPyon_HornetHoney</li>
       <li MayRequire="redmattis.betterprerequisites">BS_FacialAnimDisabled</li>
@@ -64,7 +66,7 @@
     <genes>
       <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
       <li>RobustDigestion</li>
-      <li MayRequire="redmattis.bigsmall.core">BS_SlowBleeding</li>
+      <li>BS_SlowBleeding</li>
       <li MayRequire="sarg.alphagenes">AG_HardBones</li>
       <li MayRequire="sarg.alphagenes">AG_Filthy</li>
       <li MayRequire="sarg.alphagenes">AG_Stinky</li>
@@ -79,22 +81,23 @@
       <li>Sterile</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinEars</li>
       <li>Beauty_VeryUgly</li>
-      <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
+      <li>BS_AlienApperanceStandards</li>
       <li>Head_Gaunt</li>
       <li>Body_Thin</li>
       <li>Hair_MidBlack</li>
       <li>Hair_DarkBlack</li>
-      <li MayRequire="redmattis.bigsmall.core">BS_MossGreenHair</li>
+      <li>BS_MossGreenHair</li>
       <li MayRequire="sarg.alphagenes">AG_Skin_DeepGreen</li>
       <li MayRequire="sarg.alphagenes">AG_Skin_PlantGreen</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_ToxGlands</li>
-      <li MayRequire="redmattis.bigsmall.core">BS_Xenolocked</li>
+      <li>BS_Xenolocked</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Age_RapidDevelopment</li>
       <li>DarkVision</li>
       <li>CaveDweller</li>
       <li>Instability_Major</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinNose</li>
       <li>AddictionImmune_Shard</li>
+      <li>MSSG_Evolution_Goblin</li>
       <li>AddictionResistant_DankPyon_HornetHoney</li>
       <li MayRequire="lazyfridaystudio.genesexpandedblood">GEB_Blood_Guacamole</li>
     </genes>
@@ -108,10 +111,10 @@
     <iconPath>UI/Icons/Xenotypes/Custom/VBE_CustomXenotypeIcon9</iconPath>
     <inheritable>true</inheritable>
     <genes>
-      <li MayRequire="redmattis.bigsmall.core">HalfColossusFrame</li>
+      <li>HalfColossusFrame</li>
       <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
       <li>RobustDigestion</li>
-      <li MayRequire="redmattis.bigsmall.core">BS_SlowBleeding</li>
+      <li>BS_SlowBleeding</li>
       <li MayRequire="sarg.alphagenes">AG_HardBones</li>
       <li MayRequire="sarg.alphagenes">AG_Filthy</li>
       <li MayRequire="sarg.alphagenes">AG_Stinky</li>
@@ -128,16 +131,16 @@
       <li>Sterile</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinEars</li>
       <li>Beauty_VeryUgly</li>
-      <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
+      <li>BS_AlienApperanceStandards</li>
       <li>Head_Gaunt</li>
       <li>Body_Thin</li>
       <li>Hair_MidBlack</li>
       <li>Hair_DarkBlack</li>
-      <li MayRequire="redmattis.bigsmall.core">BS_MossGreenHair</li>
+      <li>BS_MossGreenHair</li>
       <li>Skin_SlateGray</li>
-      <li MayRequire="redmattis.bigsmall.core">VU_ZombieSkin</li>
+      <li>VU_ZombieSkin</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_ToxGlands</li>
-      <li MayRequire="redmattis.bigsmall.core">BS_Xenolocked</li>
+      <li>BS_Xenolocked</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Age_RapidDevelopment</li>
       <li>DarkVision</li>
       <li>CaveDweller</li>
