@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<ThingDef ParentName="BuildingBase">
     <defName>MSSG_GoblinHole</defName>
@@ -13,13 +13,11 @@
       <destroySound>BuildingDestroyed_Metal_Big</destroySound>
     </building>
     <comps>
-      <li Class="CompProperties_Spawner">
-        <requiresPower>true</requiresPower>
-        <thingToSpawn>InsectJelly</thingToSpawn>
-        <spawnCount>75</spawnCount>
-        <spawnIntervalRange><min>300000</min><max>900000</max></spawnIntervalRange>
-        <writeTimeLeftToSpawn>true</writeTimeLeftToSpawn>
-        <showMessageIfOwned>true</showMessageIfOwned>
+      <li Class="HobGob.Comps.CompProperties_SpawnerNoblin">
+        <spawnIntervalTicks>
+          <min>120000</min>
+          <max>240000</max>
+        </spawnIntervalTicks>
       </li>
     </comps>
     <altitudeLayer>Building</altitudeLayer>
@@ -29,7 +27,7 @@
       <Beauty>-10</Beauty>
       <Mass>35</Mass>
     </statBases>
-    <tickerType>Normal</tickerType>
+    <tickerType>Rare</tickerType>
     <size>(6,6)</size>
     <fillPercent>0</fillPercent>
     <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>

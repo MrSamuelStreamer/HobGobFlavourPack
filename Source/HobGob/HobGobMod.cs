@@ -1,5 +1,6 @@
 using System.Linq;
 using HarmonyLib;
+using RimWorld;
 using Verse;
 
 namespace HobGob
@@ -19,6 +20,7 @@ namespace HobGob
     public static class HobGobDefOf
     {
         public static GeneDef MSSG_NoblinInstinct;
+        public static XenotypeDef MSSG_Noblin;
 
         static HobGobDefOf() => RimWorld.DefOfHelper.EnsureInitializedInCtor(typeof(HobGobDefOf));
     }

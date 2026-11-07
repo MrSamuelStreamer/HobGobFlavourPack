@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<AbilityGroupDef>
 		<defName>MSSG_GoblinAbilities</defName>
@@ -27,10 +27,9 @@
 			</targetParams>
 		</verbProperties>
 		<comps>
-			<li Class = "VanillaMemesExpanded.CompProperties_AbilityConstructANest"></li> <!-- Needs replacing -->
+			<li Class="HobGob.Comps.CompProperties_AbilityDigHole">
+				<thingDef>MSSG_GoblinHole</thingDef>
+			</li>
 		</comps>
-		<requiredMemes>
-			<li>VME_InsectoidSupremacy</li>
-		</requiredMemes>
 	</AbilityDef>
 </Defs>

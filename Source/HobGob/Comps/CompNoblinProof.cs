@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
-namespace HobGob
+namespace HobGob.Comps
 {
     public class CompProperties_NoblinProof : CompProperties
     {
