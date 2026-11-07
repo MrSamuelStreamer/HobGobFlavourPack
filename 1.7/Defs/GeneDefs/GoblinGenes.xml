@@ -13,7 +13,7 @@
     <defName>MSSG_NoblinInstinct</defName>
     <label>noblin instinct</label>
     <description>Carriers of this gene do not take orders about what to work on. They wander from chore to chore, doing whatever dumb labour seems most urgent.</description>
-    <iconPath>UI/Icons/Genes/Gene_Aggressive</iconPath>
+    <iconPath>UI/Icons/Genes/Gene_NoblinBehaviour</iconPath>
     <!-- Dumb labour only, without disabling joy, beauty or comfort. ManualSkilled is not used: it also covers
          Mining and PlantCutting. Growing and Hunting have no tag of their own; the work component sets them to 0. -->
     <disabledWorkTags>
@@ -32,7 +32,7 @@
     <defName>MSSG_Evolution_Noblin</defName>
     <label>goblin growth</label>
     <description>Carriers of this gene grow into a Goblin after enough kills.</description>
-    <iconPath>UI/Icons/Genes/Gene_Killthirst</iconPath>
+    <iconPath>UI/Icons/Genes/Gene_Noblin</iconPath>
     <geneClass>HobGob.Gene_GoblinEvolution</geneClass>
     <modExtensions>
       <li Class="HobGob.EvolutionExtension">
@@ -46,7 +46,7 @@
     <defName>MSSG_Evolution_Goblin</defName>
     <label>hobgoblin growth</label>
     <description>Carriers of this gene grow into a Hobgoblin after enough kills, if no other Hobgoblin rules the area.</description>
-    <iconPath>UI/Icons/Genes/Gene_Killthirst</iconPath>
+    <iconPath>UI/Icons/Genes/Gene_Goblin</iconPath>
     <geneClass>HobGob.Gene_GoblinEvolution</geneClass>
     <modExtensions>
       <li Class="HobGob.EvolutionExtension">
@@ -61,7 +61,7 @@
     <defName>MSSG_Evolution_HobGoblin</defName>
     <label>hobgoblin growth</label>
     <description>Carriers of this gene grow into a Hobnobgoblin after enough kills, but there can only be one Hobnobgoblin per nest.</description>
-    <iconPath>UI/Icons/Genes/Gene_Killthirst</iconPath>
+    <iconPath>UI/Icons/Genes/Gene_Hobgoblin</iconPath>
     <geneClass>HobGob.Gene_GoblinEvolution</geneClass>
     <modExtensions>
       <li Class="HobGob.EvolutionExtension">
@@ -76,7 +76,7 @@
     <defName>MSSG_Evolution_Hobnobgoblin</defName>
     <label>hobnobgoblin instinct</label>
     <description>Carriers of this gene have the inate instinct to entomb themselves in a goblin spawning pit, forever creating more Noblins for the nest.</description>
-    <iconPath>UI/Icons/Genes/Gene_Killthirst</iconPath>
+    <iconPath>UI/Icons/Genes/Gene_Hobnobgoblin</iconPath>
     <abilities>
 			<li>MSSG_DigHole</li>
 		</abilities>
