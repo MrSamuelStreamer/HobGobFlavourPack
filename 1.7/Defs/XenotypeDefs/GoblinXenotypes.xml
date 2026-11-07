@@ -253,6 +253,7 @@
       <li>AptitudeTerrible_Melee</li>
       <li>AptitudeRemarkable_Intellectual</li>
       <li>AddictionImmune_Shard</li>
+      <li>MSSG_Evolution_Snoblin</li>
       <li MayRequire="lazyfridaystudio.genesexpandedblood">GEB_Blood_Guacamole</li>
     </genes>
   </XenotypeDef>

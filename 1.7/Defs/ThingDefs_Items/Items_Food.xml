@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="MealBase">
+		<defName>MSSG_Blinding_Stew</defName>
+		<label>Blinding Stew</label>
+		<description>A rare Goblin delicacy, known for it's irresistable taste and hallucinogenic properties.</description>
+		<graphicData>
+			<texPath>Things/Item/Meal/SlopPots/BlindingStew</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>150</MarketValue>
+			<Nutrition>0.2</Nutrition>
+		</statBases>
+		<ingestible>
+			<foodType>Meal</foodType>
+			<preferability>DesperateOnly</preferability>
+			<ingestEffect>EatVegetarian</ingestEffect>
+			<ingestSound>Meal_Eat</ingestSound>
+		</ingestible>
+		<tradeability>None</tradeability>
+		<comps>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>MSSG_BlindingStew</hediffDef>
+					<severity>0.18</severity>
+					<toleranceChemical>Ambrosia</toleranceChemical>
+				</li>
+			</outcomeDoers>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>0.75</daysToRotStart><!-- short rot time, you want to make them as needed not store them -->
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+	</ThingDef>
+	<!-- Stacking Blind Hediff -->
+	<HediffDef>
+    <defName>MSSG_BlindingStew</defName>
+    <label>Blinding Stew Blindness</label>
+    <labelNoun>Blindness</labelNoun>
+    <description>The result of drinking a Goblin blinding stew. Though delicious and addictive, the stew permanently affects vision, and repeated consumption permanently blinds the enjoyer.</description>
+    <hediffClass>Hediff_Alcohol</hediffClass> <!-- stole this from beer, so probably not necessary -->
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <isBad>true</isBad>
+    <comps>
+      <!-- <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li> -->
+    </comps>
+      <stages>
+        <li>
+        	<label>blurry</label>
+       		<capMods>
+				<li>
+					<capacity>Sight</capacity>
+					<offset>-0.1</offset>
+				</li>
+        	</capMods>
+        </li>
+        <li>
+			<minSeverity>0.36</minSeverity>
+			<label>clouded</label>
+			<capMods>
+				<li>
+					<capacity>Sight</capacity>
+					<offset>-0.35</offset>
+				</li>
+        	</capMods>
+        </li>
+        <li>
+			<minSeverity>0.54</minSeverity>
+			<label>shrouded</label>
+			<capMods>
+				<li>
+					<capacity>Sight</capacity>
+					<offset>-0.65</offset>
+				</li>
+        	</capMods>
+        </li>
+        <li>
+			<minSeverity>0.72</minSeverity>
+			<label>shadowed</label>
+			<capMods>
+				<li>
+					<capacity>Sight</capacity>
+					<offset>-0.85</offset>
+				</li>
+        	</capMods>
+        </li>
+        <li>
+			<minSeverity>0.90</minSeverity>
+			<label>blind</label>
+			<capMods>
+				<li>
+					<capacity>Sight</capacity>
+					<offset>-1.00</offset>
+				</li>
+        	</capMods>
+          <hediffGivers>
+            <li Class="HediffGiver_Random">
+              <hediff>ChemicalDamageModerate</hediff>
+              <mtbDays>25</mtbDays>
+              <partsToAffect>
+                <li>Brain</li>
+              </partsToAffect>
+            </li>
+          </hediffGivers>
+        </li>
+      </stages>
+  </HediffDef>
+</Defs>
