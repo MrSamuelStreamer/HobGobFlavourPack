@@ -102,5 +102,18 @@ namespace HobGob.Tests
         {
             Assert.Equal(expected, EvolutionRules.ShouldEvolve(kills, required, onMap, cap));
         }
+
+        [Theory]
+        [InlineData(0f, 0f, false)]
+        [InlineData(0.999f, 0f, false)]
+        [InlineData(0f, 1f, true)]
+        [InlineData(0.999f, 1f, true)]
+        [InlineData(0.049f, 0.05f, true)]
+        [InlineData(0.05f, 0.05f, false)]
+        [InlineData(0.5f, 0.05f, false)]
+        public void RollsRare(float roll, float chance, bool expected)
+        {
+            Assert.Equal(expected, EvolutionRules.RollsRare(roll, chance));
+        }
     }
 }

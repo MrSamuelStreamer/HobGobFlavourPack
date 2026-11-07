@@ -38,6 +38,8 @@
       <li Class="HobGob.EvolutionExtension">
         <nextXenotype>MSSG_Goblin</nextXenotype>
         <totalKillsRequired>25</totalKillsRequired>
+        <rareXenotype>MSSG_Snoblin</rareXenotype>
+        <rareChance>0.05</rareChance>
       </li>
     </modExtensions>
   </GeneDef>
