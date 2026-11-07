@@ -203,4 +203,57 @@
       <li>MSSG_Evolution_Hobnobgoblin</li>
     </genes>
   </XenotypeDef>
+  <!-- Snoblin, very rare magical goblin -->
+  <XenotypeDef>
+    <defName>MSSG_Snoblin</defName>
+    <label>Snoblin</label>
+    <description>Snoblins are goblins which have developed a highly unusual attunement with dark magical forces, allowing them to cast strange evil magic.</description>
+    <descriptionShort>Snoblins are small and feeble goblins, but have natural magical ability.</descriptionShort>
+    <iconPath>UI/Icons/Xenotypes/Custom/VBE_CustomXenotypeIcon29</iconPath>
+    <inheritable>true</inheritable>
+    <genes>
+      <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
+      <li>RobustDigestion</li>
+      <li MayRequire="sarg.alphagenes">AG_Filthy</li>
+      <li MayRequire="sarg.alphagenes">AG_Stinky</li>
+      <li MayRequire="sarg.alphagenes">AG_InnatePsylink</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_NaturalPsychic</li>
+      <li>MoveSpeed_Slow</li>
+      <li>ToxResist_Partial</li>
+      <li>ToxicEnvironmentResistance_Partial</li>
+      <li>UVSensitivity_Mild</li>
+      <li>Aggression_Aggressive</li>
+      <li MayRequire="sarg.alphagenes">AG_Rowdy</li>
+      <li>Delicate</li>
+      <li>Sterile</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinEars</li>
+      <li>Beauty_VeryUgly</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
+      <li MayRequire="icc.fov.elves">Eyes_PurpleEye</li>
+      <li MayRequire="lotr.shadowoftheeast">LOTR_HeadMordor</li>
+      <li>Head_Gaunt</li>
+      <li MayRequire="sarg.alphagenes">AG_FrogVoice</li>
+      <li>Body_Thin</li>
+      <li>Hair_MidBlack</li>
+      <li>Hair_DarkBlack</li>
+      <li>Skin_Orange</li>
+      <li>Skin_DeepYellow</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_MossGreenHair</li>
+      <li MayRequire="mrsamuelstreamer.goblinflavourpack">MSSG_Evolution_Goblin</li>
+      <li MayRequire="sarg.alphagenes">AG_ThirdEye</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_ToxGlands</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_Xenolocked</li>
+      <li>Learning_Fast</li>
+      <li>DarkVision</li>
+      <li>CaveDweller</li>
+      <li>Instability_Major</li>
+      <li MayRequire="lotr.shadowoftheeast">LOTR_MordorAppearance</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinNose</li>
+      <li>AptitudeTerrible_Shooting</li>
+      <li>AptitudeTerrible_Melee</li>
+      <li>AptitudeRemarkable_Intellectual</li>
+      <li>AddictionImmune_Shard</li>
+      <li MayRequire="lazyfridaystudio.genesexpandedblood">GEB_Blood_Guacamole</li>
+    </genes>
+  </XenotypeDef>
 </Defs>
