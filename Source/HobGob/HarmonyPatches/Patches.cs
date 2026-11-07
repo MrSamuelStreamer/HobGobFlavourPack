@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
+using HobGob.Comps;
 using RimWorld;
 using Verse;
 
-namespace HobGob
+namespace HobGob.HarmonyPatches
 {
     /// <summary>
     /// With manual priorities off, vanilla reports every enabled work type as 3.

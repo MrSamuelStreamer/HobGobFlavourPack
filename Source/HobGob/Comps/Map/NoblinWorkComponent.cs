@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
-namespace HobGob
+namespace HobGob.Comps.Map
 {
     /// <summary>Every few seconds, sets each player Noblin's work priorities from what the map needs.</summary>
     public class NoblinWorkComponent : MapComponent
@@ -12,7 +12,7 @@ namespace HobGob
         private static Dictionary<WorkTypeDef, NoblinTask> taskFor;
         private readonly List<Pawn> noblins = new List<Pawn>();
 
-        public NoblinWorkComponent(Map map) : base(map)
+        public NoblinWorkComponent(Verse.Map map) : base(map)
         {
         }
 
