@@ -84,4 +84,12 @@
 		</abilities>
     <geneClass>HobGob.Gene_GoblinEvolution</geneClass>
   </GeneDef>
+
+  <GeneDef ParentName="MSSG_GoblinHiddenGeneBase">
+    <defName>MSSG_Evolution_Snoblin</defName>
+    <label>Snoblin Aura</label>
+    <description>Carriers of this gene have the inate instinct to entomb themselves in a goblin spawning pit, forever creating more Noblins for the nest.</description>
+    <iconPath>UI/Icons/Genes/Gene_Snoblin</iconPath>
+    <geneClass>HobGob.Gene_GoblinEvolution</geneClass>
+  </GeneDef>
 </Defs>
