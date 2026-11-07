@@ -11,6 +11,13 @@ namespace HobGob
 
         /// <summary>Most pawns of <see cref="nextXenotype"/> allowed on one map. 0 = no cap.</summary>
         public int maxPerMap;
+
+        /// <summary>Optional rare outcome: evolve into this instead of <see cref="nextXenotype"/> with chance <see cref="rareChance"/> (0-1).</summary>
+        public XenotypeDef rareXenotype;
+        public float rareChance;
+
+        public XenotypeDef RollTarget() =>
+            rareXenotype != null && EvolutionRules.RollsRare(Rand.Value, rareChance) ? rareXenotype : nextXenotype;
     }
 
     /// <summary>
@@ -118,7 +125,7 @@ namespace HobGob
                 {
                     continue;
                 }
-                Evolve(pawn, ext.nextXenotype);
+                Evolve(pawn, ext.RollTarget());
             }
         }
 

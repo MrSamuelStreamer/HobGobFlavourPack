@@ -129,5 +129,8 @@ namespace HobGob
             }
             return maxPerMap <= 0 || alreadyOnMap < maxPerMap;
         }
+
+        /// <param name="roll">Uniform random value in [0, 1).</param>
+        public static bool RollsRare(float roll, float chance) => roll < chance;
     }
 }
