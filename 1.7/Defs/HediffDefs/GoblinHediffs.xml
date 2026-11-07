@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Visual only: no stages, no comps, no stat effects. Added and kept by HobGob.Gene_GoblinEvolution. -->
+  <HediffDef>
+    <defName>MSSG_EvolutionProgress</defName>
+    <label>goblin growth</label>
+    <description>This goblin grows stronger with every kill. The number shows its kills so far against the kills it needs to evolve.</description>
+    <hediffClass>HobGob.Hediff_EvolutionProgress</hediffClass>
+    <defaultLabelColor>(0.55, 0.85, 0.4)</defaultLabelColor>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <initialSeverity>1</initialSeverity>
+  </HediffDef>
+</Defs>

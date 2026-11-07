@@ -13,10 +13,45 @@ namespace HobGob
         public int maxPerMap;
     }
 
-    /// <summary>Checks the kill count now and then and asks for evolution. Never changes genes itself.</summary>
+    /// <summary>
+    /// Checks the kill count now and then and asks for evolution. Never changes genes itself.
+    /// Keeps a <see cref="Hediff_EvolutionProgress"/> on the pawn so players can see the progress.
+    /// </summary>
     public class Gene_GoblinEvolution : Gene
     {
         private const int CheckInterval = GenDate.TicksPerHour;
+
+        private static HediffDef progressHediff;
+        private static HediffDef ProgressHediff => progressHediff ??= DefDatabase<HediffDef>.GetNamed("MSSG_EvolutionProgress");
+
+        private EvolutionExtension Extension => def.GetModExtension<EvolutionExtension>();
+
+        /// <summary>False for a final-stage gene (no EvolutionExtension), which gets no progress tracker.</summary>
+        public bool HasNextStage => Extension?.nextXenotype != null;
+
+        public int KillsRequired => Extension?.totalKillsRequired ?? 0;
+
+        public int Kills => pawn.records?.GetAsInt(RecordDefOf.Kills) ?? 0;
+
+        public override void PostAdd()
+        {
+            base.PostAdd();
+            EnsureProgressHediff();
+        }
+
+        public override void PostRemove()
+        {
+            base.PostRemove();
+            if (Hediff_EvolutionProgress.FindTracker(pawn, exclude: this) != null)
+            {
+                return;
+            }
+            Hediff hediff = pawn.health?.hediffSet.GetFirstHediffOfDef(ProgressHediff);
+            if (hediff != null)
+            {
+                pawn.health.RemoveHediff(hediff);
+            }
+        }
 
         public override void TickInterval(int delta)
         {
@@ -25,16 +60,26 @@ namespace HobGob
             {
                 return;
             }
-            EvolutionExtension ext = def.GetModExtension<EvolutionExtension>();
+            // Re-adds the tracker if something removed it, and back-fills goblins from older saves.
+            EnsureProgressHediff();
+            EvolutionExtension ext = Extension;
             if (ext?.nextXenotype == null || pawn.records == null)
             {
                 return;
             }
-            int kills = pawn.records.GetAsInt(RecordDefOf.Kills);
-            if (EvolutionRules.ShouldEvolve(kills, ext.totalKillsRequired, GoblinEvolutionComponent.CountOnMap(pawn.MapHeld, ext.nextXenotype), ext.maxPerMap))
+            if (EvolutionRules.ShouldEvolve(Kills, ext.totalKillsRequired, GoblinEvolutionComponent.CountOnMap(pawn.MapHeld, ext.nextXenotype), ext.maxPerMap))
             {
                 Current.Game.GetComponent<GoblinEvolutionComponent>()?.Enqueue(pawn, ext);
             }
+        }
+
+        private void EnsureProgressHediff()
+        {
+            if (!HasNextStage || pawn.Dead || pawn.health?.hediffSet == null || pawn.health.hediffSet.HasHediff(ProgressHediff))
+            {
+                return;
+            }
+            pawn.health.AddHediff(ProgressHediff);
         }
     }
 
