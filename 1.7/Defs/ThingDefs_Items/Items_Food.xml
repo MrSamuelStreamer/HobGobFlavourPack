@@ -3,7 +3,7 @@
 	<ThingDef ParentName="MealBase">
 		<defName>MSSG_Blinding_Stew</defName>
 		<label>Blinding Stew</label>
-		<description>A rare Goblin delicacy, known for it's irresistable taste and hallucinogenic properties.</description>
+		<description>A rare Goblin delicacy, known for its irresistable taste and hallucinogenic properties.</description>
 		<graphicData>
 			<texPath>Things/Item/Meal/SlopPots/BlindingStew</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
@@ -17,16 +17,21 @@
 			<preferability>DesperateOnly</preferability>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
-		</ingestible>
-		<tradeability>None</tradeability>
-		<comps>
-			<outcomeDoers>
+      <outcomeDoers>
 				<li Class="IngestionOutcomeDoer_GiveHediff">
 					<hediffDef>MSSG_BlindingStew</hediffDef>
 					<severity>0.18</severity>
 					<toleranceChemical>Ambrosia</toleranceChemical>
 				</li>
+        <li Class="HobGob.IngestionOutcomeDoer_AbilityGain" MayRequire="Ludeon.RimWorld.Royalty">
+          <chance>1</chance> <!-- defaults to 1 (100%) anyway if undefined -->
+          <requiredGene>MSSG_Evolution_Snoblin</requiredGene>
+          <sendMessage>true</sendMessage> <!-- defaults to true if undefined. uses tkey MSSG_AbilityGained -->
+        </li>
 			</outcomeDoers>
+		</ingestible>
+		<tradeability>None</tradeability>
+		<comps>
 			<li Class="CompProperties_Rottable">
 				<daysToRotStart>0.75</daysToRotStart><!-- short rot time, you want to make them as needed not store them -->
 				<rotDestroys>true</rotDestroys>
