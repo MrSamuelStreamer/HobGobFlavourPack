@@ -4,7 +4,7 @@ using Verse;
 namespace HobGob.Comps
 {
     /// <summary>
-    /// Periodically spawns an age-zero Noblin of the pit's faction.
+    /// Periodically spawns a 13-year-old Noblin of the pit's faction.
     /// Vanilla pawn spawners force an adult and put them in an aggressive lord.
     /// </summary>
     public class CompSpawnerNoblin : ThingComp
@@ -69,9 +69,7 @@ namespace HobGob.Comps
             {
                 return false;
             }
-            // Newborn sets biological and chronological age to 0 and opens the naming window.
-            // PawnGenerationRequest rejects Newborn combined with Baby and keeps only Newborn.
-            // Age 0 is the baby life stage, so the noblin comes out a baby.
+            // Age 13 is the teenage life stage. That stage counts as an adult.
             PawnGenerationRequest request = new PawnGenerationRequest(
                 PawnKindDefOf.Villager,
                 parent.Faction,
@@ -82,19 +80,13 @@ namespace HobGob.Comps
                 allowFood: false,
                 allowAddictions: false,
                 forcedXenotype: HobGobDefOf.MSSG_Noblin,
-                developmentalStages: DevelopmentalStage.Newborn);
+                fixedBiologicalAge: 13f,
+                fixedChronologicalAge: 13f,
+                developmentalStages: DevelopmentalStage.Adult);
             Pawn pawn = PawnGenerator.GeneratePawn(request);
             if (pawn == null)
             {
                 return false;
-            }
-            if (pawn.ageTracker.AgeBiologicalTicks != 0)
-            {
-                pawn.ageTracker.AgeBiologicalTicks = 0;
-            }
-            if (pawn.ageTracker.AgeChronologicalTicks != 0)
-            {
-                pawn.ageTracker.AgeChronologicalTicks = 0;
             }
             if (parent.Faction != null && pawn.Faction != parent.Faction)
             {
