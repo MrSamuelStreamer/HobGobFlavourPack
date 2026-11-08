@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- ITab titles -->
+  <TabBills>Jobs</TabBills>
+  <TabGrowing>Plantin'</TabGrowing>
+  <TabCharacter>Gobbo</TabCharacter>
+  <TabTraining>Practicin'</TabTraining>
+  <TabPrisoner>Loot-Meat</TabPrisoner>
+  <TabGuest>Outlander</TabGuest>
+  <TabGear>Stuff</TabGear>
+  <TabNeeds>Wantin's</TabNeeds>
+  <TabStorage>Lootpile</TabStorage>
+  <TabShells>Boom-rocks</TabShells>
+  <TabHealth>Meat Feelin'</TabHealth>
+  <TabRace>Clan</TabRace>
+  <TabBasics>Plain-stuff</TabBasics>
+  <TabStats>Score</TabStats>
+  <TabRecords>Tallies</TabRecords>
+  <TabArt>Drawin'</TabArt>
+  <TabSocial>Jabberin'</TabSocial>
+  <TabLog>Rememberin's</TabLog>
+  <TabPenAnimals>Buggies</TabPenAnimals>
+  <TabPenFood>Snacks</TabPenFood>
+  <TabPenAutoCut>Always Slicin'</TabPenAutoCut>
+  <TabFormingCaravan>Wagon Mob</TabFormingCaravan>
+  <TabTransporterContents>Hold</TabTransporterContents>
+  <TabMapPortalContents>Go Far</TabMapPortalContents>
+  <TabCasketContents>Hold</TabCasketContents>
+  <TabBookContents>More Stuff</TabBookContents>
+  <TabStudyNotesContents>Readin'</TabStudyNotesContents>
+  <TabWindTurbineAutoCut>Always Slicin'</TabWindTurbineAutoCut>
+  
+  <!-- Bills tab  -->
+  <AddBill>Add job</AddBill>
+  <RecipeRequiresSkills>That job {0} needs better gobbos. We can't be doin' it, so we wont's be doin' it.</RecipeRequiresSkills>
+  <SuspendedCaps>STOPPED</SuspendedCaps>
+  <BoundWorkerIs>Gobbo: {1_labelShort}</BoundWorkerIs>
+  <PlantVerb>Seed-Drop</PlantVerb>
+  <ClipboardBillNotAvailableHere>Can't be doin' that job 'ere.</ClipboardBillNotAvailableHere>
+  <ReorderBillUpTip>Do job now</ReorderBillUpTip>
+  <ReorderBillDownTip>Do job later</ReorderBillDownTip>
+  <DeleteBillTip>Get rid of</DeleteBillTip>
+  <CopyBillTip>Think for later</CopyBillTip>
+  <SuspendBillTip>Stop</SuspendBillTip>
+  <PasteBillTip>Remember from earlier</PasteBillTip>
+  <PasteBillTip_LimitReached>can't do no more of 'em.</PasteBillTip_LimitReached>
+  <FinishesIn>Done in</FinishesIn>
+
+  <!-- Guest/prisoner tab -->
+  <RecruitmentResistance>Rowdiness</RecruitmentResistance>
+  <RecruitmentResistanceDesc>How much fightin' they got left in 'em. When they tired enough we can get 'em workin' for us!</RecruitmentResistanceDesc>
+  <RecruitmentResistanceFromPawnKind>{0} fightin' left</RecruitmentResistanceFromPawnKind>
+  <PrisonerReleasePotentialRelationGains>Friendlies if we let 'em go</PrisonerReleasePotentialRelationGains>
+  <PrisonerReleaseRelationGainsDesc>How many friendlies we'll get if we let 'em go. Probably get more friendlies if we don't bash 'em around so much.</PrisonerReleaseRelationGainsDesc>
+  <PrisonBreakMTBDays>Runnin' in</PrisonBreakMTBDays>
+  <PrisonBreakMTBDaysDescription>How long before they do a runner. Bet they'd stop runnin' if we bash in there legs.\n\nNote that this does not include time spent asleep.</PrisonBreakMTBDaysDescription>
+  <Never>Never gonna</Never>
+  <NotWhileAsleep>Not when they sleepin'</NotWhileAsleep>
+  <CurrentlyPrisonBreaking>Trying to do a runner</CurrentlyPrisonBreaking>
+  <SlavePrice>Sellin loot</SlavePrice>
+  <SlavePriceDescription>How much loot we's gettin' for sellin' 'em</SlavePriceDescription>
+  <GetsFood>Gettin' slop</GetsFood>
+  <DoctorsCare>Patchin' up</DoctorsCare>
+  <GetsMedicine>Get's a good patchin'</GetsMedicine>
+  <ShouldTryToRecruit>Make 'em work</ShouldTryToRecruit>
+  <ConsideredGuilty>No one'll care if we mash 'em up (expires in {0})</ConsideredGuilty>
+  <ConsideredGuiltyNoTimer>No one cares if we mash 'em up</ConsideredGuiltyNoTimer>
+  <LastRecruitment>Scared 'em this much</LastRecruitment>
+  <LastRecruitmentDescription>{0_nameDef} was scared this much by {1} when {0_pronoun} was last shouted at.</LastRecruitmentDescription>
+  <OpinionOfRecruiter>Thinks about Mancatcher</OpinionOfRecruiter>
+  <RecruiterNegotiationAbility>Mancatcher's Scariness</RecruiterNegotiationAbility>
+  <NonRecruitable>Won't work for us</NonRecruitable>
+  <NonRecruitableTip>This scum is too 'ard to make work.</NonRecruitableTip>
+  <MedicineQualityDescriptionPrisoner>Which patchin's for hurties they gettin'</MedicineQualityDescriptionPrisoner>
+
+  <!-- Medical - general -->
+  <MoveSpeed>Movin'</MoveSpeed>
+  <Efficiency>Fastness</Efficiency>
+  <PartEfficiency>Bit Fastness</PartEfficiency>
+  <BodyPartEfficiency>Fleshy Bit Fastness</BodyPartEfficiency>
+  <MissingBodyPart>Smashed</MissingBodyPart>
+  <DestroyedBodyPart>Bashed</DestroyedBodyPart>
+  <ShatteredBodyPart>Mashed</ShatteredBodyPart>
+  <RemovedBodyPart>Gone</RemovedBodyPart>
+  <Healthy>Strong</Healthy>
+  <InPain>Hurtin'</InPain>
+  <PainLevel>Hurtin' this much</PainLevel>
+  <Injured>Bashed</Injured>
+  <UntendedInjury>Smashes need fixin'</UntendedInjury>
+  <NoHealthConditions>nuffin' wrong with 'em</NoHealthConditions>
+  <WholeBody>All of 'em</WholeBody>
+  <DataProcessing>Thinkin' hard</DataProcessing>
+  <Communication>Speakin'</Communication>
+  <Affects>messes wiv'</Affects>
+  <BleedingRate>Squirtin'</BleedingRate>
+  <TimeToDeath>done for in{0}</TimeToDeath>
+  <WontBleedOutSoon>nuffin' urgent</WontBleedOutSoon>
+  <HealthOverview>Feelin'</HealthOverview>
+  <MedicalOperationsShort>Big Fixin'</MedicalOperationsShort>
+  <MedicalOperations>Big Fixin'</MedicalOperations>
+  <Amputate>cut off</Amputate>
+  <HarvestOrgan>takin'</HarvestOrgan>
+  <RemoveOrgan>get rid of</RemoveOrgan>
+  <MemoryLower>rememberin'</MemoryLower>
+  <SocialInteractionsLower>talkin' good</SocialInteractionsLower>
+  <HungerRate>Hungry Again</HungerRate>
+  <FoodConsumption>Eatin'</FoodConsumption>
+  <Tiredness>Sleepy</Tiredness>
+  <PainFactor>Hurtin'</PainFactor>
+  <PreventsInfection>Stop meat stink</PreventsInfection>
+  <AllowSelfTend>Can be fixin' self</AllowSelfTend>
+  <AllowSelfTendTip>{0} will try and fix themself {1} less good than fixin' goobo.</AllowSelfTendTip>
+  <DeathIn>done for in {0}</DeathIn>
+  <AllowMedicine>Give tendin's</AllowMedicine>
+  <MedicineQualityDescription>What tendin's they be needin'.</MedicineQualityDescription>
+  <FoodRestrictionDescription>Feedin's they get to be given.</FoodRestrictionDescription>
+
+  <!-- Medical - Body and activities condition -->
+  <None>Nuffin'</None>
+  <VeryPoor>Shit</VeryPoor>
+  <Poor>Well Bad</Poor>
+  <Weakened>Bad</Weakened>
+  <GoodCondition>Alright</GoodCondition>
+  <Enhanced>Well Good</Enhanced>
+  <SeriouslyImpaired>Lot o' Trouble</SeriouslyImpaired>
+  <Impaired>Trouble</Impaired>
+  <SlightlyImpaired>Bit o' Trouble</SlightlyImpaired>
+  <NoPain>Nuffin'</NoPain>
+  <LittlePain>A Bit</LittlePain>
+  <MediumPain>Hurtin'</MediumPain>
+  <SeverePain>Loads</SeverePain>
+  <ExtremePain>Fuckin' Loads</ExtremePain>
+
+  <!-- Training tab -->
+  <Trainability>Listenin'</Trainability>
+  <CannotTrainNotSmartEnough>Requires {0} listenin'.</CannotTrainNotSmartEnough>
+  <CannotTrainTooSmall>{0} is too little to be listen yet.</CannotTrainTooSmall>
+
+  <TrainingNeedsPrerequisite>Other stuff wanted: {0}</TrainingNeedsPrerequisite>
+  
+  <!-- Social tab -->
+  <Kidnapped>Nicked</Kidnapped>
+  <Lent>Gone off to {FACTION_name}, back in {1}</Lent>
+  <Missing>Gone</Missing>
+  <Slave>Made to Work</Slave>
+  <FactionLeader>Big Boss</FactionLeader>
+  <OpinionOf>Thinks of {0}</OpinionOf>
+  <SomeonesOpinionOfMe>{0}'s thinks of me</SomeonesOpinionOfMe>
+  <IAmDead>I'm done for</IAmDead>
+  <IAmPsychopath>I'm bloody mental</IAmPsychopath>
+  
+  <!-- Gear tab -->
+  <OverallArmor>Armoured this much</OverallArmor>
+  <MassCarried>Carryin': {0} / {1} kg</MassCarried>
+  <ComfyTemperatureRange>Comfy in this</ComfyTemperatureRange>
+  
+  <!-- Log tab -->
+  <ShowAll>All of it</ShowAll>
+  <ShowCombat>Show fightin'</ShowCombat>
+  <ShowSocial>Show talkin'</ShowSocial>
+  <NoRecentEntries>nuffin' here right now</NoRecentEntries>
+
+  <!-- Forming caravan tab -->
+  <FormingCaravanStatus_GatheringAnimals>Gettin' animals</FormingCaravanStatus_GatheringAnimals>
+  <FormingCaravanStatus_GatheringAnimals_Pause>Gettin' animals (waitin')</FormingCaravanStatus_GatheringAnimals_Pause>
+  <FormingCaravanStatus_GatheringItems>Gettin' stuff</FormingCaravanStatus_GatheringItems>
+  <FormingCaravanStatus_GatheringItems_Pause>Gettin' stuff (waitin')</FormingCaravanStatus_GatheringItems_Pause>
+  <FormingCaravanStatus_GatheringDownedPawns>Gettin' bashed gobbos</FormingCaravanStatus_GatheringDownedPawns>
+  <FormingCaravanStatus_GatheringDownedPawns_Pause>Gettin' bashed gobbos (waitin')</FormingCaravanStatus_GatheringDownedPawns_Pause>
+  <FormingCaravanStatus_Leaving>Leavin'</FormingCaravanStatus_Leaving>
+  <FormingCaravanStatus_Leaving_Pause>Leavin' (waitin')</FormingCaravanStatus_Leaving_Pause>
+  <FormingCaravanStatus_Waiting>Waitin'</FormingCaravanStatus_Waiting>
+  <CaravanMembers>Gobbos</CaravanMembers>
+  <ItemsToLoad>Waitin' on</ItemsToLoad>
+  <LoadedItems>In Sacks</LoadedItems>
+  <PackAnimalsCountLower>loot animal</PackAnimalsCountLower>
+  <InMentalStateCountLower>lost his marbles</InMentalStateCountLower>
+
+  <!-- Quests tab -->
+  <DismissQuest>Forget doing that and get rid of it.\n\nYou can get it back later. It'll carry on like nuffin' happened. No one will say nuffin' about stuff you've said you're not doin'.</DismissQuest>
+  <UnDismissQuest>Put it back.\n\nPeople'll start talkin' about it again.</UnDismissQuest>
+  <QuestDismissed>We got rid of this.\n\nYou can still put it back.</QuestDismissed>
+  <DeleteQuest>Get rid of it for good. Don't want to see it no more.</DeleteQuest>
+
+  <!-- Animal pen food tab -->
+  <PenFoodTab_NotEnclosed>close the animals in and we can think about what they eatin'</PenFoodTab_NotEnclosed>
+
+  <PenFoodTab_StockpileTotal>Food we have for 'em</PenFoodTab_StockpileTotal>
+  <PenFoodTab_StockpileTotalDescription>All the food they can have.</PenFoodTab_StockpileTotalDescription>
+  <PenFoodTab_StockpileEmptyDays>This long 'til they gettin' hungry</PenFoodTab_StockpileEmptyDays>
+  <PenFoodTab_StockpileEmptyDaysDescription>Too many fings eatin' too much stuff. Won't be goin' on like this for long before they all done for.</PenFoodTab_StockpileEmptyDaysDescription>
+</LanguageData>

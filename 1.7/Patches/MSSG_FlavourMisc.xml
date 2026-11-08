@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/MainButtonDef[defName="Inspect"]/label</xpath>
+        <value>
+            <label>Look at</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/MainButtonDef[defName="Architect"]/label</xpath>
+        <value>
+            <label>Buildin'</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/MainButtonDef[defName="Work"]/label</xpath>
+        <value>
+            <label>Jobs</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/MainButtonDef[defName="Schedule"]/label</xpath>
+        <value>
+            <label>Timin'</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/MainButtonDef[defName="Assign"]/label</xpath>
+        <value>
+            <label>Givin's</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/MainButtonDef[defName="Animals"]/label</xpath>
+        <value>
+            <label>Critters</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/MainButtonDef[defName="Wildlife"]/label</xpath>
+        <value>
+            <label>Leafies</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/MainButtonDef[defName="Research"]/label</xpath>
+        <value>
+            <label>Thinkings</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/MainButtonDef[defName="Quests"]/label</xpath>
+        <value>
+            <label>Doin's</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/MainButtonDef[defName="World"]/label</xpath>
+        <value>
+            <label>Places</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/MainButtonDef[defName="History"]/label</xpath>
+        <value>
+            <label>Happenin's</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/MainButtonDef[defName="Factions"]/label</xpath>
+        <value>
+            <label>Enemies</label>
+        </value>
+    </Operation>
+</Patch>

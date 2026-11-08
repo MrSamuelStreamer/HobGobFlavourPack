@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- Main menu -->
+  <Tutorial>Learn to Gobbo</Tutorial>
+  <NewColony>Fresh Hive</NewColony>
+  <BackToGame>Back to Gobbin'</BackToGame>
+  <ReviewScenario>Look at Rules</ReviewScenario>
+  <LoadGame>Load gobbos</LoadGame>
+  <Credits>Best Gobbos</Credits>
+  <QuitToMainMenu>Run Away</QuitToMainMenu>
+  <SaveAndQuitToMainMenu>Save and leave the tunnels</SaveAndQuitToMainMenu>
+  <QuitToOS>Run far far away</QuitToOS>
+  <SaveAndQuitToOS>Save and run far far away</SaveAndQuitToOS>
+  <FictionPrimer>Big man's fancy words</FictionPrimer>
+  <LudeonBlog>Human Speakies</LudeonBlog>
+  <Subreddit>Grimy Pits</Subreddit>
+  <OfficialWiki>Thinky Words</OfficialWiki>
+  <TynansX>Hobgoblin lords's X</TynansX>
+  <TynansDesignBook>Hobgoblin lords's fancy speakins</TynansDesignBook>
+  <BuySoundtrack>Buy sounds for listen'</BuySoundtrack>
+
+  <!-- Character chooser -->
+  <CreateCharacters>Create Gobbos</CreateCharacters>
+  <FirstNameDesc>Big thing to call the gobbo.\n\nLots of time too long to call gobbo by all their names.</FirstNameDesc>
+  <ShortIdentifierDesc>Gobbo's name.\n\nWe always say these.</ShortIdentifierDesc>
+  <LastNameDesc>Gobbo's other name.\n\nLots of time too long to call gobbo by all their names.</LastNameDesc>
+  <Randomize>Make Gobbo different</Randomize>
+  <Backstory>Gobbo Lore</Backstory>
+  <IncapableOf>Won't do</IncapableOf>
+  <Abilities>Fancy Stuff</Abilities>
+  <IncapableOfTooltipWorkTypes>Won't do this stuff:</IncapableOfTooltipWorkTypes>
+  <IncapableOfTooltipBackstory>Cuz of lore</IncapableOfTooltipBackstory>
+  <IncapableOfTooltipTitle>Cuz of fancy rank</IncapableOfTooltipTitle>
+  <IncapableOfTooltipTrait>Cuz of how they is</IncapableOfTooltipTrait>
+  <IncapableOfTooltipQuest>Cuz of quest</IncapableOfTooltipQuest>
+  <IncapableOfTooltipRole>Cuz of rank</IncapableOfTooltipRole>
+  <IncapableOfTooltipGene>Cuz of insides</IncapableOfTooltipGene>
+  <IncapableOfTooltipMutant>Cuz of</IncapableOfTooltipMutant>
+  <Traits>Way dey is</Traits>
+  <Skills>What they is good at</Skills>
+  <Adulthood>Gobby Life</Adulthood>
+  <Childhood>Nobby Life</Childhood>
+  <Male>Bloke</Male>
+  <Female>Wench</Female>
+  <MaleAndFemale>Blokes and Wenches</MaleAndFemale>
+  <MaleAnimal>Fella</MaleAnimal>
+  <FemaleAnimal>Woman</FemaleAnimal>
+  <Pain>Hurties</Pain>
+  <Health>Feelin's</Health>
+  <Relations>Mates</Relations>
+  <Possessions>Stuff they got</Possessions>
+  <TeamSkills>Hive good at this</TeamSkills>
+  <GuiltyDesc>This gobbo did a bad thing. No one will care if they get bashed in.\n\nGuilt expires in</GuiltyDesc>
+  
+  <!-- Misc -->
+  <EveryoneNeedsValidName>Dunno what to call some gobbos.</EveryoneNeedsValidName>
+  <RequiredWorkTypeDisabledForEveryone>None of the gobbos can do the following jobs</RequiredWorkTypeDisabledForEveryone>
+  
+  <!-- Progress bar -->
+  <GeneratingWorld>Makin' globe</GeneratingWorld>
+  <GeneratingPlanet>Makin' globe</GeneratingPlanet>
+  <GeneratingMap>Makin' place</GeneratingMap>
+  <GeneratingMapForNewEncounter>Lookin' around</GeneratingMapForNewEncounter>
+  <BestSkillLabel>Gobbo's best at</BestSkillLabel>
+  <BestSkillLetterLabel>{PAWN_nameDef}'s good at</BestSkillLetterLabel>
+  <BestSkillInfoLevel>this much {0}</BestSkillInfoLevel>
+
+  <!-- Factions -->
+  <Factions>Non-Gobbos</Factions>
+  <TotalFactionsAllowed>max {0} Non-Gobbos allowed</TotalFactionsAllowed>
+  <FactionSelectionDesc>Pick some non-gobbos. Sommut like {0} non-gobbos total.</FactionSelectionDesc>
+  <FactionDisabledContentWarning>Gettin' rid of {0} less stuff to do.</FactionDisabledContentWarning>
+  <InsectsDisabledContentWarning>Gettin' rid of {0} means less to do.</InsectsDisabledContentWarning>
+  <MechanoidsDisabledContentWarning>Gettin' rid of {0} means less to do.</MechanoidsDisabledContentWarning>
+  <FactionsDisabledWarning>There's no one to smash about, what's the bleedin' point of it!</FactionsDisabledWarning>
+  <FactionRemovalDisabled>Can't get rid of them.</FactionRemovalDisabled>
+
+</LanguageData>

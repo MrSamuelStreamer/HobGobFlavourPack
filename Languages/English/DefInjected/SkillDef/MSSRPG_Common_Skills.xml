@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- Shooting-->
+    <Shooting.label>Shootin'</Shooting.label>
+    <Shooting.skillLabel>Shootin'</Shooting.skillLabel>
+    <Shooting.description>Shootin' or chuckin' stuff like an elf.</Shooting.description>
+    <!-- Melee-->
+    <Melee.label>Melee</Melee.label>
+    <Melee.skillLabel>Melee</Melee.skillLabel>
+    <Melee.description>Hit stuff with pointy fings and smashers.</Melee.description>
+    <!-- Construction  -->
+    <Construction.label>Buildin'</Construction.label>
+    <Construction.skillLabel>Buildin'</Construction.skillLabel>
+    <Construction.description>Makin' stuff and fings.</Construction.description>
+    <!-- Mining -->
+    <Mining.label>Diggin'</Mining.label>
+    <Mining.skillLabel>Diggin'</Mining.skillLabel>
+    <Mining.description>Diggin' holes and takin' stuff outta the ground.</Mining.description>
+    <!-- Cooking -->
+    <Cooking.label>Cookin'</Cooking.label>
+    <Cooking.skillLabel>Cookin'</Cooking.skillLabel>
+    <Cooking.description>Cookin' up stuff to eat and makin' it tasty.</Cooking.description>
+    <!-- Plants -->
+    <Plants.label>fungus</Plants.label>
+    <Plants.skillLabel>fungus</Plants.skillLabel>
+    <Plants.description>Growin' mushies and leafies.</Plants.description>
+    <!-- Animals -->
+    <Animals.label>bug herdin'</Animals.label>
+    <Animals.skillLabel>bug herdin'</Animals.skillLabel>
+    <Animals.description>Herdin' buggies and takin' care of crawlies.</Animals.description>
+    <!-- Crafting -->
+    <Crafting.label>Makin'</Crafting.label>
+    <Crafting.skillLabel>Makin'</Crafting.skillLabel>
+    <Crafting.description>Makin' stabbers and rags.</Crafting.description>
+    <!-- Artistic -->
+    <Artistic.label>drawin'</Artistic.label>
+    <Artistic.skillLabel>drawin'</Artistic.skillLabel>
+    <Artistic.description>Makin' pictures and statues and fancy things.</Artistic.description>
+    <!-- Medicine -->
+    <Medicine.label>patchin' up</Medicine.label>
+    <Medicine.skillLabel>patchin' up</Medicine.skillLabel>
+    <Medicine.description>Fixin' up hurtin' fings and makin' 'em better.</Medicine.description>
+    <!-- Social -->
+    <Social.label>talkin'</Social.label>
+    <Social.skillLabel>talkin'</Social.skillLabel>
+    <Social.description>Sayin' stuff to make people do things instead of hittin' em.</Social.description>
+    <!-- Intellectual -->
+    <Intellectual.label>thinkin'</Intellectual.label>
+    <Intellectual.skillLabel>thinkin'</Intellectual.skillLabel>
+    <Intellectual.description>Figurin' stuff out.</Intellectual.description>
+</LanguageData>
