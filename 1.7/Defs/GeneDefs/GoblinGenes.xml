@@ -62,7 +62,7 @@
   <GeneDef ParentName="MSSG_GoblinHiddenGeneBase">
     <defName>MSSG_Evolution_HobGoblin</defName>
     <label>hobgoblin growth</label>
-    <description>Carriers of this gene grow into a Hobnobgoblin after enough kills, but there can only be one Hobnobgoblin per nest.</description>
+    <description>Carriers of this gene grow into a Queenie after enough kills, but there can only be one Queenie Gobber per nest.</description>
     <iconPath>UI/Icons/Genes/Gene_Hobgoblin</iconPath>
     <geneClass>HobGob.Gene_GoblinEvolution</geneClass>
     <modExtensions>
@@ -76,7 +76,7 @@
 
   <GeneDef ParentName="MSSG_GoblinHiddenGeneBase">
     <defName>MSSG_Evolution_Hobnobgoblin</defName>
-    <label>hobnobgoblin instinct</label>
+    <label>Queenie Gobber instinct</label>
     <description>Carriers of this gene have the inate instinct to entomb themselves in a goblin spawning pit, forever creating more Noblins for the nest.</description>
     <iconPath>UI/Icons/Genes/Gene_Hobnobgoblin</iconPath>
     <abilities>

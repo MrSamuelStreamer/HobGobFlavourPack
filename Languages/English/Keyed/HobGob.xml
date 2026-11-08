@@ -10,5 +10,5 @@
   <MSSG_NextNoblinWaiting>Next noblin: waiting for an open cell</MSSG_NextNoblinWaiting>
   <MSSG_EvolutionProgressLabel>{0}/{1} kills</MSSG_EvolutionProgressLabel>
 
-  <MSSG_AbilityGained>{1} has been rganted knowledge of the ability: {0}.</MSSG_AbilityGained>
+  <MSSG_AbilityGained>{1} has been gained knowledge of the ability: {0}.</MSSG_AbilityGained>
 </LanguageData>

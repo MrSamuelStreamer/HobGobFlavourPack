@@ -9,6 +9,9 @@
     <iconPath>UI/Icons/Xenotypes/Custom/Archer_2</iconPath>
     <inheritable>true</inheritable>
     <genes>
+      <li MayRequire="redmattis.bigsmall.core">Small</li>
+      <li MayRequire="lotr.shadowoftheeast">LOTR_EarsMordor</li>
+      <li MayRequire="lotr.shadowoftheeast">LOTR_MordorAppearance</li>
       <li MayRequire="sarg.alphagenes">AG_ReducedRaidPresence</li>
       <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
       <li>RobustDigestion</li>
@@ -27,10 +30,8 @@
       <li MayRequire="sarg.alphagenes">AG_Rowdy</li>
       <li>Pain_Reduced</li>
       <li>Sterile</li>
-      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinEars</li>
       <li>Beauty_VeryUgly</li>
       <li>BS_AlienApperanceStandards</li>
-      <li>Head_Gaunt</li>
       <li>Body_Thin</li>
       <li>Hair_MidBlack</li>
       <li>Hair_DarkBlack</li>
@@ -155,9 +156,9 @@
   <!-- Largest Goblin, slow and old, capable of making new hives -->
   <XenotypeDef>
     <defName>MSSG_Hobnobgoblin</defName>
-    <label>Hobnobgoblin</label>
-    <description>Hobnobgoblins are the oldest and most terrifying of the Goblin castes, almost never seen by anyone outside of Goblin society. It's believed that Hobnobgoblins might be the source of new Goblin hives, but no one is quite sure how the process works.</description>
-    <descriptionShort>Hobnobgoblins are the largest and oldest Goblins, capable of forming new Goblin hives.</descriptionShort>
+    <label>Queenie Gobber</label>
+    <description>Goblin "Queenies" are the oldest and most terrifying of the Goblin castes, almost never seen by anyone outside of Goblin society. It's believed that Hobnobgoblins might be the source of new Goblin hives, but no one is quite sure how the process works.</description>
+    <descriptionShort>"Queenies" are the largest and oldest Goblins, capable of forming new Goblin hives.</descriptionShort>
     <iconPath>UI/Icons/Xenotypes/Custom/VBE_CustomXenotypeIcon30</iconPath>
     <inheritable>true</inheritable>
     <genes>
@@ -190,6 +191,7 @@
       <li MayRequire="redmattis.bigsmall.core">BS_MossGreenHair</li>
       <li>Skin_SlateGray</li>
       <li MayRequire="redmattis.bigsmall.core">VU_ZombieSkin</li>
+      <li MayRequire="redmattis.bigsmall.core">Body_FemaleOnly</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_ToxGlands</li>
       <li MayRequire="redmattis.bigsmall.core">BS_Xenolocked</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Age_RapidDevelopment</li>
