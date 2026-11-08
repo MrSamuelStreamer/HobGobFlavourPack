@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
 	<ThingDef ParentName="MealBase">
 		<defName>MSSG_Blinding_Stew</defName>
 		<label>Blinding Stew</label>
@@ -38,13 +39,14 @@
 			</li>
 		</comps>
 	</ThingDef>
+
 	<!-- Stacking Blind Hediff -->
 	<HediffDef>
     <defName>MSSG_BlindingStew</defName>
     <label>Blinding Stew Blindness</label>
     <labelNoun>Blindness</labelNoun>
     <description>The result of drinking a Goblin blinding stew. Though delicious and addictive, the stew permanently affects vision, and repeated consumption permanently blinds the enjoyer.</description>
-    <hediffClass>Hediff_Alcohol</hediffClass> <!-- stole this from beer, so probably not necessary -->
+    <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
     <scenarioCanAdd>true</scenarioCanAdd>
     <isBad>true</isBad>
@@ -65,23 +67,23 @@
         	</capMods>
         </li>
         <li>
-			<minSeverity>0.36</minSeverity>
-			<label>clouded</label>
-			<capMods>
-				<li>
-					<capacity>Sight</capacity>
-					<offset>-0.35</offset>
-				</li>
+          <minSeverity>0.36</minSeverity>
+          <label>clouded</label>
+          <capMods>
+            <li>
+              <capacity>Sight</capacity>
+              <offset>-0.35</offset>
+            </li>
         	</capMods>
         </li>
         <li>
-			<minSeverity>0.54</minSeverity>
-			<label>shrouded</label>
-			<capMods>
-				<li>
-					<capacity>Sight</capacity>
-					<offset>-0.65</offset>
-				</li>
+          <minSeverity>0.54</minSeverity>
+          <label>shrouded</label>
+          <capMods>
+            <li>
+              <capacity>Sight</capacity>
+              <offset>-0.65</offset>
+            </li>
         	</capMods>
         </li>
         <li>
@@ -95,13 +97,13 @@
         	</capMods>
         </li>
         <li>
-			<minSeverity>0.90</minSeverity>
-			<label>blind</label>
-			<capMods>
-				<li>
-					<capacity>Sight</capacity>
-					<offset>-1.00</offset>
-				</li>
+          <minSeverity>0.90</minSeverity>
+          <label>blind</label>
+          <capMods>
+            <li>
+              <capacity>Sight</capacity>
+              <offset>-1.00</offset>
+            </li>
         	</capMods>
           <hediffGivers>
             <li Class="HediffGiver_Random">
@@ -115,4 +117,5 @@
         </li>
       </stages>
   </HediffDef>
+
 </Defs>
