@@ -238,7 +238,6 @@
       <li>Skin_Orange</li>
       <li>Skin_DeepYellow</li>
       <li MayRequire="redmattis.bigsmall.core">BS_MossGreenHair</li>
-      <li MayRequire="mrsamuelstreamer.goblinflavourpack">MSSG_Evolution_Goblin</li>
       <li MayRequire="sarg.alphagenes">AG_ThirdEye</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_ToxGlands</li>
       <li MayRequire="redmattis.bigsmall.core">BS_Xenolocked</li>

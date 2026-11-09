@@ -72,4 +72,16 @@
             <label>Enemies</label>
         </value>
     </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/HediffDef[defName="Rimesis_BodyVaporizer"]/label</xpath>
+        <value>
+            <label>Ainur's Protection</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/HediffDef[defName="Rimesis_BodyVaporizer"]/description</xpath>
+        <value>
+            <description>The Ainur themselves protect this Rimesis. They are granted protection against the harshest of environments. When slain there is a chance their body will be taken away to the Halls of Mandos to be reborn again, cheating death.</description>
+        </value>
+    </Operation>
 </Patch>
