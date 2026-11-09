@@ -82,7 +82,8 @@ namespace HobGob.Comps
                 forcedXenotype: HobGobDefOf.MSSG_Noblin,
                 fixedBiologicalAge: 13f,
                 fixedChronologicalAge: 13f,
-                developmentalStages: DevelopmentalStage.Adult);
+                developmentalStages: DevelopmentalStage.Adult,
+                forceNoGear: true);
             Pawn pawn = PawnGenerator.GeneratePawn(request);
             if (pawn == null)
             {
@@ -93,6 +94,7 @@ namespace HobGob.Comps
                 pawn.SetFaction(parent.Faction);
             }
             GenSpawn.Spawn(pawn, cell, parent.Map);
+            NoblinPortraitHiding.Hide(pawn);
             MessageTypeDef messageType = parent.Faction == Faction.OfPlayer
                 ? MessageTypeDefOf.PositiveEvent
                 : MessageTypeDefOf.NegativeEvent;
