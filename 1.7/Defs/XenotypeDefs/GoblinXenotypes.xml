@@ -22,6 +22,7 @@
       <li MayRequire="sarg.alphagenes">AG_Stinky</li>
       <li>PsychicAbility_Deaf</li>
       <li>MoveSpeed_VeryQuick</li>
+      <li>Head_Gaunt</li>
       <li>ToxResist_Partial</li>
       <li>ToxicEnvironmentResistance_Partial</li>
       <li>UVSensitivity_Intense</li>
@@ -36,8 +37,7 @@
       <li>Hair_MidBlack</li>
       <li>Hair_DarkBlack</li>
       <li>BS_MossGreenHair</li>
-      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Skin_GoblinDarkGreen</li>
-      <li>Skin_Green</li>
+      <li MayRequire="sarg.alphagenes">AG_Skin_DeepGreen</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_ToxGlands</li>
       <li>BS_Xenolocked</li>
       <li>BS_Learning_None</li>
@@ -80,16 +80,15 @@
       <li MayRequire="sarg.alphagenes">AG_Rowdy</li>
       <li>Pain_Reduced</li>
       <li>Sterile</li>
-      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinEars</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">BS_TrollEars</li>
       <li>Beauty_VeryUgly</li>
       <li>BS_AlienApperanceStandards</li>
-      <li>Head_Gaunt</li>
+      <li>BS_StonemaskHead</li>
       <li>Body_Thin</li>
       <li>Hair_MidBlack</li>
       <li>Hair_DarkBlack</li>
       <li>BS_MossGreenHair</li>
-      <li MayRequire="sarg.alphagenes">AG_Skin_DeepGreen</li>
-      <li MayRequire="sarg.alphagenes">AG_Skin_PlantGreen</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Skin_GoblinDarkGreen</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_ToxGlands</li>
       <li>BS_Xenolocked</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Age_RapidDevelopment</li>
@@ -130,15 +129,14 @@
       <li>Robust</li>
       <li>Pain_Reduced</li>
       <li>Sterile</li>
-      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinEars</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">BS_TrollEars_Great</li>
       <li>Beauty_VeryUgly</li>
       <li>BS_AlienApperanceStandards</li>
-      <li>Head_Gaunt</li>
+      <li>BS_OgreHead</li>
       <li>Body_Hulk</li>
       <li>Hair_MidBlack</li>
       <li>Hair_DarkBlack</li>
       <li>BS_MossGreenHair</li>
-      <li>Skin_SlateGray</li>
       <li>VU_ZombieSkin</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_ToxGlands</li>
       <li>BS_Xenolocked</li>
@@ -184,13 +182,12 @@
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinEars</li>
       <li>Beauty_VeryUgly</li>
       <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
-      <li>Head_Gaunt</li>
+      <li>BS_FomorialHead_Savage</li>
       <li>Body_Fat</li>
       <li>Hair_MidBlack</li>
       <li>Hair_DarkBlack</li>
       <li MayRequire="redmattis.bigsmall.core">BS_MossGreenHair</li>
       <li>Skin_SlateGray</li>
-      <li MayRequire="redmattis.bigsmall.core">VU_ZombieSkin</li>
       <li MayRequire="redmattis.bigsmall.core">Body_FemaleOnly</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_ToxGlands</li>
       <li MayRequire="redmattis.bigsmall.core">BS_Xenolocked</li>
@@ -228,7 +225,7 @@
       <li MayRequire="sarg.alphagenes">AG_Rowdy</li>
       <li>Delicate</li>
       <li>Sterile</li>
-      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinEars</li>
+      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">LOTR_EarsMordor</li>
       <li>Beauty_VeryUgly</li>
       <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
       <li MayRequire="icc.fov.elves">Eyes_PurpleEye</li>
