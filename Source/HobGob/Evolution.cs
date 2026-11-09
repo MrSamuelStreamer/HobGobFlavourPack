@@ -152,6 +152,10 @@ namespace HobGob
             // SetXenotype only clears xenogenes; goblin xenotypes are inheritable, so their genes are endogenes.
             RemoveEndogenes(pawn, old);
             pawn.genes.SetXenotype(next);
+            if (old == HobGobDefOf.MSSG_Noblin)
+            {
+                NoblinPortraitHiding.Show(pawn);
+            }
             if (pawn.Faction == Faction.OfPlayer)
             {
                 Messages.Message("MSSG_GoblinEvolved".Translate(pawn.Named("PAWN"), old.label, next.label),

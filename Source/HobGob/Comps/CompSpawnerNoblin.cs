@@ -93,6 +93,7 @@ namespace HobGob.Comps
                 pawn.SetFaction(parent.Faction);
             }
             GenSpawn.Spawn(pawn, cell, parent.Map);
+            NoblinPortraitHiding.Hide(pawn);
             MessageTypeDef messageType = parent.Faction == Faction.OfPlayer
                 ? MessageTypeDefOf.PositiveEvent
                 : MessageTypeDefOf.NegativeEvent;
