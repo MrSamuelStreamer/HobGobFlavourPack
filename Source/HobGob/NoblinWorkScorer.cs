@@ -93,6 +93,40 @@ namespace HobGob
             return Math.Max(1, Math.Min(noblinCount, share));
         }
 
+        /// <summary>
+        /// The task a work type belongs to, or null if Noblins leave it off.
+        /// Vanilla types match by defName. Mods such as [FSF] Complex Jobs move vanilla work givers into new
+        /// work types (e.g. FSFDeliver) that keep the vanilla work tags, so those match by tag.
+        /// Plant and basic work only match by name: modded types with those tags are skilled (e.g. crop harvesting).
+        /// </summary>
+        public static NoblinTask? TaskForWorkType(string defName, bool firefighting, bool cleaning, bool hauling, bool mining)
+        {
+            foreach (NoblinTask task in AllTasks)
+            {
+                if (task.ToString() == defName)
+                {
+                    return task;
+                }
+            }
+            if (firefighting)
+            {
+                return NoblinTask.Firefighter;
+            }
+            if (cleaning)
+            {
+                return NoblinTask.Cleaning;
+            }
+            if (hauling)
+            {
+                return NoblinTask.Hauling;
+            }
+            if (mining)
+            {
+                return NoblinTask.Mining;
+            }
+            return null;
+        }
+
         /// <summary>Priority (1-4) for one Noblin. <paramref name="inUrgentShare"/> marks it as one of the rushers.</summary>
         public static int Priority(NoblinTask task, MapSignals s, NoblinTask? urgent, bool inUrgentShare)
         {

@@ -115,12 +115,17 @@ namespace HobGob.Comps.Map
                 if (taskFor == null)
                 {
                     taskFor = new Dictionary<WorkTypeDef, NoblinTask>();
-                    foreach (NoblinTask task in NoblinWorkScorer.AllTasks)
+                    foreach (WorkTypeDef def in DefDatabase<WorkTypeDef>.AllDefsListForReading)
                     {
-                        WorkTypeDef def = DefDatabase<WorkTypeDef>.GetNamedSilentFail(task.ToString());
-                        if (def != null)
+                        NoblinTask? task = NoblinWorkScorer.TaskForWorkType(
+                            def.defName,
+                            firefighting: (def.workTags & WorkTags.Firefighting) != 0,
+                            cleaning: (def.workTags & WorkTags.Cleaning) != 0,
+                            hauling: (def.workTags & WorkTags.Hauling) != 0,
+                            mining: (def.workTags & WorkTags.Mining) != 0);
+                        if (task.HasValue)
                         {
-                            taskFor[def] = task;
+                            taskFor[def] = task.Value;
                         }
                     }
                 }

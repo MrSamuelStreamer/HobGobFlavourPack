@@ -115,5 +115,36 @@ namespace HobGob.Tests
         {
             Assert.Equal(expected, EvolutionRules.RollsRare(roll, chance));
         }
+
+        [Theory]
+        [InlineData("Hauling", NoblinTask.Hauling)]
+        [InlineData("PlantCutting", NoblinTask.PlantCutting)]
+        [InlineData("BasicWorker", NoblinTask.BasicWorker)]
+        [InlineData("Firefighter", NoblinTask.Firefighter)]
+        public void VanillaWorkType_MatchesByName(string defName, NoblinTask expected)
+        {
+            Assert.Equal(expected, NoblinWorkScorer.TaskForWorkType(defName, false, false, false, false));
+        }
+
+        [Fact]
+        public void ComplexJobsHaulingSplit_MatchesByTag()
+        {
+            // FSFDeliver, FSFRearming, FSFTransport, FSFCremating: ManualDumb + Hauling.
+            Assert.Equal(NoblinTask.Hauling, NoblinWorkScorer.TaskForWorkType("FSFDeliver", false, false, true, false));
+        }
+
+        [Fact]
+        public void ComplexJobsDrilling_MatchesMiningByTag()
+        {
+            Assert.Equal(NoblinTask.Mining, NoblinWorkScorer.TaskForWorkType("FSFDrilling", false, false, false, true));
+        }
+
+        [Fact]
+        public void SkilledModdedWorkType_StaysOff()
+        {
+            // FSFHarvesting carries PlantWork, but it is crop harvesting moved out of Growing.
+            Assert.Null(NoblinWorkScorer.TaskForWorkType("FSFHarvesting", false, false, false, false));
+            Assert.Null(NoblinWorkScorer.TaskForWorkType("Cooking", false, false, false, false));
+        }
     }
 }

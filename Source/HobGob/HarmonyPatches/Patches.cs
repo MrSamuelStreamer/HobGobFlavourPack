@@ -25,13 +25,17 @@ namespace HobGob.HarmonyPatches
         }
     }
 
-    /// <summary>Noblins pick their own work, so the Work tab does not list them.</summary>
+    /// <summary>
+    /// Noblins pick their own work, so the Work tab does not list them.
+    /// Checks the gene, not the registry: the registry is empty after a load until the first work pass,
+    /// and skips Noblins whose work settings are not set up yet.
+    /// </summary>
     [HarmonyPatch(typeof(MainTabWindow_Work), "Pawns", MethodType.Getter)]
     public static class Patch_MainTabWindow_Work_Pawns
     {
         public static void Postfix(ref IEnumerable<Pawn> __result)
         {
-            __result = __result.Where(p => !NoblinRegistry.IsManaged(p));
+            __result = __result.Where(p => !NoblinRegistry.IsManaged(p) && !NoblinRegistry.IsNoblin(p));
         }
     }
 
