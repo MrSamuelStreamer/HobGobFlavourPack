@@ -71,4 +71,24 @@ Noblin-proof doors keep them out. To get the loot back, select the pit and order
 Noblin-proof doors will stop them. Lock up anything you care about.</letterText>
     <letterDef>ThreatSmall</letterDef>
   </IncidentDef>
+
+  <!-- E2 Hobgoblin Challenge. Needs census tier shed or better and a goblin (not Noblin) colonist that can fight.
+       The letter is sent by the worker (choice letter). baseChance is a first guess. -->
+  <IncidentDef>
+    <defName>MSSG_HobgoblinChallenge</defName>
+    <label>hobgoblin challenge</label>
+    <category>ThreatSmall</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>HobGob.Events.IncidentWorker_HobgoblinChallenge</workerClass>
+    <baseChance>0.5</baseChance>
+    <minRefireDays>30</minRefireDays>
+    <letterLabel>Hobgoblin challenge</letterLabel>
+    <letterText>A rival hobgoblin, {CHALLENGER}, has stomped up to the colony. {FACTION}
+
+It bellows that it will fight your strongest goblin, bare-fisted, until one of them drops. Your goblins think {CHAMPION} should answer.
+
+A win earns glory and a lot of respect. Refusing will make your goblins ashamed of their chief. If you do not answer within 12 hours, the goblins will take it as a refusal.</letterText>
+  </IncidentDef>
 </Defs>

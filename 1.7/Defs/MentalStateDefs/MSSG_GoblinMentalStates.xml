@@ -13,4 +13,20 @@
     <recoveryMessage>{0} has stopped stampeding.</recoveryMessage>
     <baseInspectLine>Mental state: Stampeding</baseInspectLine>
   </MentalStateDef>
+
+  <!-- E2 duel: the vanilla social fight class (stops when the other pawn is downed, dead or gone), but no early
+       recovery, so a duel lasts until someone drops or about 3 hours pass (a draw). Category Aggro: vanilla then
+       skips the faction goodwill penalty for damage between the two fighters. -->
+  <MentalStateDef ParentName="BaseMentalState">
+    <defName>MSSG_GoblinDuel</defName>
+    <label>dueling</label>
+    <stateClass>MentalState_SocialFighting</stateClass>
+    <category>Aggro</category>
+    <minTicksBeforeRecovery>7500</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>7500</maxTicksBeforeRecovery>
+    <recoveryMtbDays>1</recoveryMtbDays>
+    <nameColor>(0.88, 0.48, 0.16)</nameColor>
+    <baseInspectLine>Mental state: Dueling</baseInspectLine>
+    <inCaravanCanDo>false</inCaravanCanDo>
+  </MentalStateDef>
 </Defs>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- E2: duelists fight like vanilla social fighters. Mirrors vanilla's SocialFighting node. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThinkTreeDef[defName="MentalStateCritical"]/thinkRoot/subNodes</xpath>
+    <order>Prepend</order>
+    <value>
+      <li Class="ThinkNode_ConditionalMentalState">
+        <state>MSSG_GoblinDuel</state>
+        <subNodes>
+          <li Class="ThinkNode_Priority">
+            <subNodes>
+              <li Class="JobGiver_SocialFighting" />
+              <li Class="JobGiver_WanderAnywhere">
+                <maxDanger>Deadly</maxDanger>
+              </li>
+            </subNodes>
+          </li>
+        </subNodes>
+      </li>
+    </value>
+  </Operation>
+</Patch>

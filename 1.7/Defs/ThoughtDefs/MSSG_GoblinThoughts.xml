@@ -58,4 +58,64 @@
       </li>
     </stages>
   </ThoughtDef>
+
+  <!-- E2: champion won the duel. -->
+  <ThoughtDef>
+    <defName>MSSG_ChallengeVictor</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>beat the challenger</label>
+        <description>I beat that hobgoblin in front of everyone. Who's the big goblin now?</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- E2: other goblins when the champion lost. -->
+  <ThoughtDef>
+    <defName>MSSG_ChampionShamed</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>our champion lost</label>
+        <description>Our champion got flattened by an outsider. Embarrassing.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- E2: the champion who lost. -->
+  <ThoughtDef>
+    <defName>MSSG_HumiliatedInDuel</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>humiliated in a duel</label>
+        <description>I lost the challenge with everyone watching. I'll never live this down.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- E2: goblins when the challenge was refused or ignored. -->
+  <ThoughtDef>
+    <defName>MSSG_CowardlyChief</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>cowardly chief</label>
+        <description>A hobgoblin challenged us and we hid. What kind of goblins are we?</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 </Defs>

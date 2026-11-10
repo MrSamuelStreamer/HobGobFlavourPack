@@ -27,5 +27,30 @@
   <MSSG_RummageCancel>Cancel rummaging</MSSG_RummageCancel>
   <MSSG_RummageDesc>Order a colonist (not a noblin) to spend two hours digging the noblins' hidden loot out of the pit and dropping it beside it. Uses the Hauling work type.</MSSG_RummageDesc>
 
+  <MSSG_ChallengeFromFaction>It comes from {0}.</MSSG_ChallengeFromFaction>
+  <MSSG_ChallengeNoFaction>It answers to nobody.</MSSG_ChallengeNoFaction>
+  <MSSG_ChallengeAccept>Accept: send {0}</MSSG_ChallengeAccept>
+  <MSSG_ChallengeAcceptNobody>Accept</MSSG_ChallengeAcceptNobody>
+  <MSSG_ChallengeNoChampion>No goblin who can fight is available.</MSSG_ChallengeNoChampion>
+  <MSSG_ChallengePickOther>Send someone else...</MSSG_ChallengePickOther>
+  <MSSG_ChallengeChampionOption>{0} (melee {1}, size {2})</MSSG_ChallengeChampionOption>
+  <MSSG_ChallengeRefuse>Refuse</MSSG_ChallengeRefuse>
+  <MSSG_ChallengeCannotStart>The duel cannot start: the champion or the challenger cannot fight right now.</MSSG_ChallengeCannotStart>
+  <MSSG_ChallengeDuelStarts>{0} and {1} square up for the duel!</MSSG_ChallengeDuelStarts>
+  <MSSG_ChallengeRefused>The hobgoblin challenge was refused. The challenger sneers and leaves. Your goblins are ashamed.</MSSG_ChallengeRefused>
+  <MSSG_ChallengeTimedOut>Nobody answered the hobgoblin's challenge. It sneers and leaves. Your goblins are ashamed.</MSSG_ChallengeTimedOut>
+  <MSSG_ChallengeDraw>The duel fizzled out with nobody down. The challenger grunts and leaves.</MSSG_ChallengeDraw>
+  <MSSG_ChallengeLost>{0} lost the duel. The challenger leaves laughing.</MSSG_ChallengeLost>
+  <MSSG_ChallengeWonNoJoin>{0} won the duel!</MSSG_ChallengeWonNoJoin>
+  <MSSG_ChallengeWonLabel>Challenge won</MSSG_ChallengeWonLabel>
+  <MSSG_ChallengeWonText>{0} has beaten {1} in the duel and earned the respect of {2} kills.
+
+The beaten hobgoblin offers to join the colony.
+
+Note: only one goblin per map can grow into a hobgoblin. While two hobgoblins live on a map, goblins there cannot become hobgoblins.</MSSG_ChallengeWonText>
+  <MSSG_ChallengerJoinAccept>Let it join</MSSG_ChallengerJoinAccept>
+  <MSSG_ChallengerJoinDecline>Send it away</MSSG_ChallengerJoinDecline>
+  <MSSG_ChallengerJoined>{0} has joined the colony.</MSSG_ChallengerJoined>
+
   <MSSG_AbilityGained>{1} has been gained knowledge of the ability: {0}.</MSSG_AbilityGained>
 </LanguageData>
