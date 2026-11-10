@@ -1,15 +1,15 @@
-using System.Collections.Generic;
 using Verse;
 
 namespace HobGob
 {
     /// <summary>
     /// Pawns whose work is currently managed. Read by the Harmony patches, so lookups must be O(1).
+    /// The door patch reads it from 1.7's background pathing threads, so it is a <see cref="SnapshotSet{T}"/>.
     /// Cleared when a game starts or loads (see <see cref="GoblinEvolutionComponent"/>).
     /// </summary>
     public static class NoblinRegistry
     {
-        private static readonly HashSet<Pawn> Managed = new HashSet<Pawn>();
+        private static readonly SnapshotSet<Pawn> Managed = new SnapshotSet<Pawn>();
 
         public static bool IsManaged(Pawn pawn) => pawn != null && Managed.Contains(pawn);
 

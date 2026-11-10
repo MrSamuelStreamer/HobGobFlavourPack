@@ -45,8 +45,8 @@ namespace HobGob.HarmonyPatches
     {
         public static void Postfix(Building_Door __instance, Pawn p, ref bool __result)
         {
-            // Registry lookup first: this runs constantly during pathing.
-            if (__result && NoblinRegistry.IsManaged(p) && __instance.GetComp<CompNoblinProof>()?.NoblinProof == true)
+            // Runs constantly during pathing, and on background threads in 1.7: thread-safe set lookups only.
+            if (__result && NoblinRegistry.IsManaged(p) && CompNoblinProof.IsNoblinProof(__instance))
             {
                 __result = false;
             }

@@ -10,6 +10,7 @@
     <Compile Include="..\HobGob\NoblinWorkScorer.cs" Link="NoblinWorkScorer.cs" />
     <Compile Include="..\HobGob\Census\CensusRules.cs" Link="CensusRules.cs" />
     <Compile Include="..\HobGob\Events\EventRules.cs" Link="EventRules.cs" />
+    <Compile Include="..\HobGob\SnapshotSet.cs" Link="SnapshotSet.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
