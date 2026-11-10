@@ -101,6 +101,7 @@ namespace HobGob
         public GoblinEvolutionComponent(Game game)
         {
             NoblinRegistry.Clear();
+            Comps.CompNoblinProof.ClearCache();
         }
 
         public void Enqueue(Pawn pawn, EvolutionExtension ext) => queue[pawn] = ext;

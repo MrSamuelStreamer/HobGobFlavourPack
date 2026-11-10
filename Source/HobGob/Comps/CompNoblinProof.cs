@@ -15,14 +15,40 @@ namespace HobGob.Comps
     /// <summary>Per-door switch: when on, managed Noblins cannot open the door.</summary>
     public class CompNoblinProof : ThingComp
     {
+        /// <summary>
+        /// Spawned doors with the switch on. Read by the PawnCanOpen patch, which 1.7 also runs on
+        /// background pathing threads, so it avoids GetComp and uses a thread-safe snapshot set.
+        /// Cleared when a game starts or loads (see GoblinEvolutionComponent).
+        /// </summary>
+        private static readonly SnapshotSet<Thing> ProofDoors = new SnapshotSet<Thing>();
+
         private bool noblinProof;
 
         public bool NoblinProof => noblinProof;
+
+        public static bool IsNoblinProof(Thing door) => ProofDoors.Contains(door);
+
+        public static void ClearCache() => ProofDoors.Clear();
 
         public override void PostExposeData()
         {
             base.PostExposeData();
             Scribe_Values.Look(ref noblinProof, "noblinProof", false);
+        }
+
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+            if (noblinProof)
+            {
+                ProofDoors.Add(parent);
+            }
+        }
+
+        public override void PostDeSpawn(Verse.Map map, DestroyMode mode = DestroyMode.Vanish)
+        {
+            ProofDoors.Remove(parent);
+            base.PostDeSpawn(map, mode);
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -51,6 +77,14 @@ namespace HobGob.Comps
         private void Toggle()
         {
             noblinProof = !noblinProof;
+            if (noblinProof && parent.Spawned)
+            {
+                ProofDoors.Add(parent);
+            }
+            else
+            {
+                ProofDoors.Remove(parent);
+            }
             // Reachability results for Noblins are cached; drop them so the change applies at once.
             parent.MapHeld?.reachability.ClearCache();
         }
