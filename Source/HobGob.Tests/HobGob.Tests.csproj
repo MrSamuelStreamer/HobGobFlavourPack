@@ -9,6 +9,7 @@
     <!-- Only the game-free rules are linked in; game-bound code is tested in game. -->
     <Compile Include="..\HobGob\NoblinWorkScorer.cs" Link="NoblinWorkScorer.cs" />
     <Compile Include="..\HobGob\Census\CensusRules.cs" Link="CensusRules.cs" />
+    <Compile Include="..\HobGob\Events\EventRules.cs" Link="EventRules.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
