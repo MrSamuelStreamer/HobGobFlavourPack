@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+    Goblin census tiers. The daily census (11:00 home map time) counts player-faction pawns
+    whose xenotype has HobGob.Census.CensusCountedExtension, then picks the highest tier
+    whose minPopulation is at or below that count. One tier must have minPopulation 0.
+    Thresholds after "Shed" are placeholders; tune freely.
+  -->
+
+  <HobGob.Census.GoblinCensusTierDef>
+    <defName>MSSG_Census_ShitHole</defName>
+    <label>shit hole</label>
+    <minPopulation>0</minPopulation>
+    <promotedText>The colony is officially a shit hole. It's a start.</promotedText>
+    <demotedText>The colony has sunk back to being a shit hole. The goblins don't seem to mind.</demotedText>
+  </HobGob.Census.GoblinCensusTierDef>
+
+  <HobGob.Census.GoblinCensusTierDef>
+    <defName>MSSG_Census_MuckyPit</defName>
+    <label>mucky pit</label>
+    <minPopulation>6</minPopulation>
+    <promotedText>Enough goblins now squelch about that the colony counts as a mucky pit.</promotedText>
+    <demotedText>Too few goblins remain to keep the muck properly stirred. The colony is a mucky pit again.</demotedText>
+  </HobGob.Census.GoblinCensusTierDef>
+
+  <HobGob.Census.GoblinCensusTierDef>
+    <defName>MSSG_Census_Shed</defName>
+    <label>shed</label>
+    <minPopulation>11</minPopulation>
+    <promotedText>The goblins have upgraded to a shed. Someone has put up a sign. It is spelt wrong.</promotedText>
+    <demotedText>The goblins have shrunk back to shed numbers. The sign has fallen off.</demotedText>
+  </HobGob.Census.GoblinCensusTierDef>
+
+  <HobGob.Census.GoblinCensusTierDef>
+    <defName>MSSG_Census_Hovel</defName>
+    <label>hovel</label>
+    <minPopulation>21</minPopulation>
+    <promotedText>The colony is now a proper hovel. Visitors are advised to hold their noses.</promotedText>
+    <demotedText>The colony has slipped back to a hovel. The smell remains.</demotedText>
+  </HobGob.Census.GoblinCensusTierDef>
+
+  <HobGob.Census.GoblinCensusTierDef>
+    <defName>MSSG_Census_Warren</defName>
+    <label>warren</label>
+    <minPopulation>36</minPopulation>
+    <promotedText>Tunnels, nooks and goblins everywhere. The colony is now a warren.</promotedText>
+    <demotedText>Half the tunnels stand empty. The colony is a warren once more.</demotedText>
+  </HobGob.Census.GoblinCensusTierDef>
+
+  <HobGob.Census.GoblinCensusTierDef>
+    <defName>MSSG_Census_Den</defName>
+    <label>den</label>
+    <minPopulation>61</minPopulation>
+    <promotedText>The goblin den grows loud and crowded. Neighbours are getting nervous.</promotedText>
+    <demotedText>The den is quieter than it was. The colony has fallen back to a den.</demotedText>
+  </HobGob.Census.GoblinCensusTierDef>
+
+  <HobGob.Census.GoblinCensusTierDef>
+    <defName>MSSG_Census_BurrowTown</defName>
+    <label>burrow-town</label>
+    <minPopulation>101</minPopulation>
+    <promotedText>A hundred goblins! The colony is now a burrow-town, with its own (terrible) traditions.</promotedText>
+    <demotedText>The burrow-town has thinned out. It's a burrow-town again, if only just.</demotedText>
+  </HobGob.Census.GoblinCensusTierDef>
+
+  <HobGob.Census.GoblinCensusTierDef>
+    <defName>MSSG_Census_Stronghold</defName>
+    <label>goblin stronghold</label>
+    <minPopulation>151</minPopulation>
+    <promotedText>The goblins have built a stronghold. The world is starting to take notice.</promotedText>
+    <demotedText>The stronghold has lost goblins. It holds, but only just.</demotedText>
+  </HobGob.Census.GoblinCensusTierDef>
+
+  <HobGob.Census.GoblinCensusTierDef>
+    <defName>MSSG_Census_GoblinCity</defName>
+    <label>goblin city</label>
+    <minPopulation>221</minPopulation>
+    <promotedText>A goblin city rises from the muck. The final goal is within reach.</promotedText>
+    <demotedText>The goblin city has emptied a little. It's still a city, but the kingdom slips away.</demotedText>
+  </HobGob.Census.GoblinCensusTierDef>
+
+  <HobGob.Census.GoblinCensusTierDef>
+    <defName>MSSG_Census_GoblinKingdom</defName>
+    <label>goblin kingdom</label>
+    <minPopulation>300</minPopulation>
+    <promotedText>Three hundred goblins! The colony is now a true goblin kingdom.</promotedText>
+    <demotedText>The goblin kingdom is still a kingdom.</demotedText>
+  </HobGob.Census.GoblinCensusTierDef>
+</Defs>
