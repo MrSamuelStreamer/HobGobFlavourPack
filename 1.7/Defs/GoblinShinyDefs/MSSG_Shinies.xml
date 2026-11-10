@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- What goblins count as shiny (tribute, shiny fever). Other mods can patch more things or categories in. -->
+  <HobGob.Events.GoblinShinyDef>
+    <defName>MSSG_Shinies</defName>
+    <label>shinies</label>
+    <things>
+      <li>Silver</li>
+      <li>Gold</li>
+      <li>Jade</li>
+    </things>
+    <categories>
+      <li>BuildingsArt</li>
+    </categories>
+    <minUnitValue>40</minUnitValue>
+  </HobGob.Events.GoblinShinyDef>
+</Defs>

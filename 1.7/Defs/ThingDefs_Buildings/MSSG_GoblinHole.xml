@@ -19,6 +19,7 @@
           <max>240000</max>
         </spawnIntervalTicks>
       </li>
+      <li Class="HobGob.Events.CompProperties_GoblinPit" />
     </comps>
     <altitudeLayer>Building</altitudeLayer>
     <statBases>

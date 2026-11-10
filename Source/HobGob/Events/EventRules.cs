@@ -26,5 +26,37 @@ namespace HobGob.Events
         {
             return hasPitFresh && foodLevelPct < PitStarvingFoodThreshold;
         }
+
+        /// <summary>Noblin Strike needs at least this many managed Noblins.</summary>
+        public const int StrikeMinNoblins = 3;
+
+        /// <summary>3 days.</summary>
+        public const int StrikeDurationTicks = 180000;
+
+        /// <summary>Shinies within this many cells of the pit count as tribute.</summary>
+        public const int TributeRadius = 2;
+
+        public const int StrikeTributePerNoblin = 15;
+        public const int StrikeTributeMin = 50;
+
+        /// <summary>Market value of shinies the strikers demand.</summary>
+        public static int StrikeTribute(int noblins)
+        {
+            return Math.Max(StrikeTributeMin, StrikeTributePerNoblin * noblins);
+        }
+
+        /// <summary>
+        /// How many units of a stack to take so the remaining tribute is covered.
+        /// The last unit may overpay a little.
+        /// </summary>
+        public static int UnitsToTake(float unitValue, int stackCount, float remaining)
+        {
+            if (remaining <= 0f || unitValue <= 0f || stackCount <= 0)
+            {
+                return 0;
+            }
+            double needed = Math.Ceiling(remaining / (double)unitValue);
+            return (int)Math.Min(stackCount, needed);
+        }
     }
 }
