@@ -23,6 +23,10 @@ namespace HobGob
         public static XenotypeDef MSSG_Noblin;
         public static ThingDef MSSG_GoblinHole;
         public static HediffDef MSSG_PitFresh;
+        public static HediffDef MSSG_OnStrike;
+        public static ThoughtDef MSSG_StrikeWon;
+        public static ThoughtDef MSSG_StrikeBroken;
+        public static Events.GoblinShinyDef MSSG_Shinies;
 
         static HobGobDefOf() => RimWorld.DefOfHelper.EnsureInitializedInCtor(typeof(HobGobDefOf));
     }

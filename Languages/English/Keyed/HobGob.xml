@@ -17,5 +17,10 @@
   <MSSG_CensusTopTier>The colony has reached the highest tier.</MSSG_CensusTopTier>
   <MSSG_CensusNoChange>Goblin census: {0} goblins. Still a {1}. {2}</MSSG_CensusNoChange>
 
+  <MSSG_TributeInspect>Tribute: {0} / {1}</MSSG_TributeInspect>
+  <MSSG_StrikeWonLabel>Strike over</MSSG_StrikeWonLabel>
+  <MSSG_StrikeWonText>The noblins have their shinies. They are back to work, very pleased with themselves.</MSSG_StrikeWonText>
+  <MSSG_StrikeBrokenMessage>Nobody paid the striking noblins. They have gone back to work in a sulk.</MSSG_StrikeBrokenMessage>
+
   <MSSG_AbilityGained>{1} has been gained knowledge of the ability: {0}.</MSSG_AbilityGained>
 </LanguageData>

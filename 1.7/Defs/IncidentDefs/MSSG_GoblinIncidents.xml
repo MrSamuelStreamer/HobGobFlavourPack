@@ -15,4 +15,24 @@
     <letterText>The pit has overflowed! {COUNT} noblins have crawled out, and they're hungry.\n\nFeed them soon. A starving noblin fresh from the pit is a miserable noblin.</letterText>
     <letterDef>PositiveEvent</letterDef>
   </IncidentDef>
+
+  <!-- E3 Noblin Strike. Needs a player pit and 3+ managed Noblins. baseChance is a first guess. -->
+  <IncidentDef>
+    <defName>MSSG_NoblinStrike</defName>
+    <label>noblin strike</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>HobGob.Events.IncidentWorker_NoblinStrike</workerClass>
+    <baseChance>0.5</baseChance>
+    <minRefireDays>20</minRefireDays>
+    <letterLabel>Noblin strike</letterLabel>
+    <letterText>The noblins have downed tools! They refuse to work until someone pays them.
+
+They want {TRIBUTE} silver worth of shinies left on the ground beside the spawning pit. Silver, gold, jade and art all count. Forbidden items do not.
+
+If nobody pays within {DAYS} days, they will give up and go back to work in a sulk.</letterText>
+    <letterDef>NegativeEvent</letterDef>
+  </IncidentDef>
 </Defs>

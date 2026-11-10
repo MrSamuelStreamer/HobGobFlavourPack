@@ -25,6 +25,10 @@ namespace HobGob
 
         public static void Clear() => Managed.Clear();
 
+        /// <summary>A pawn whose work the mod manages: a working Noblin. Callers check it is a free colonist.</summary>
+        public static bool ShouldManage(Pawn pawn) =>
+            pawn.workSettings != null && pawn.workSettings.EverWork && IsNoblin(pawn);
+
         public static bool IsNoblin(Pawn pawn) =>
             pawn.genes != null && pawn.genes.HasActiveGene(HobGobDefOf.MSSG_NoblinInstinct);
     }

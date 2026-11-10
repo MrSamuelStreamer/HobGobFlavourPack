@@ -45,5 +45,30 @@ namespace HobGob.Tests
         {
             Assert.Equal(expected, EventRules.IsPitStarving(fresh, food));
         }
+
+        [Theory]
+        [InlineData(2, 50)]
+        [InlineData(3, 50)]
+        [InlineData(4, 60)]
+        [InlineData(10, 150)]
+        public void StrikeTribute_FifteenPerNoblinMinFifty(int noblins, int expected)
+        {
+            Assert.Equal(expected, EventRules.StrikeTribute(noblins));
+        }
+
+        [Theory]
+        [InlineData(1f, 200, 30f, 30)]   // partial stack of silver
+        [InlineData(1f, 30, 30f, 30)]    // exact
+        [InlineData(1f, 10, 30f, 10)]    // stack smaller than needed
+        [InlineData(7f, 20, 30f, 5)]     // 5 x 7 = 35, overpays by one unit's rounding
+        [InlineData(400f, 1, 30f, 1)]    // one sculpture covers it
+        [InlineData(1f, 200, 0f, 0)]     // nothing owed
+        [InlineData(1f, 200, -5f, 0)]
+        [InlineData(0f, 200, 30f, 0)]    // worthless
+        [InlineData(1f, 0, 30f, 0)]
+        public void UnitsToTake_CoversRemainder(float unitValue, int stack, float remaining, int expected)
+        {
+            Assert.Equal(expected, EventRules.UnitsToTake(unitValue, stack, remaining));
+        }
     }
 }

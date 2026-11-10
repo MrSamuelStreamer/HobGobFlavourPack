@@ -13,4 +13,34 @@
       </li>
     </stages>
   </ThoughtDef>
+
+  <!-- E3: the tribute was paid in full. -->
+  <ThoughtDef>
+    <defName>MSSG_StrikeWon</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>won the strike</label>
+        <description>We stopped working and they paid us in shinies! Noblins are clever.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- E3: the strike timed out unpaid. -->
+  <ThoughtDef>
+    <defName>MSSG_StrikeBroken</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>strike broken</label>
+        <description>Nobody paid us. Back to work for nothing. Not fair.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 </Defs>

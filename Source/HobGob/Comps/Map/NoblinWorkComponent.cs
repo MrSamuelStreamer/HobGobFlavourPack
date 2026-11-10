@@ -36,9 +36,10 @@ namespace HobGob.Comps.Map
             int share = urgent.HasValue
                 ? NoblinWorkScorer.UrgentShare(noblins.Count, NoblinWorkScorer.Demand(urgent.Value, signals))
                 : 0;
+            bool striking = map.GetComponent<Events.NoblinStrikeComponent>()?.Active ?? false;
             for (int i = 0; i < noblins.Count; i++)
             {
-                Apply(noblins[i], signals, urgent, i < share);
+                Apply(noblins[i], signals, urgent, i < share, striking);
             }
         }
 
@@ -47,7 +48,7 @@ namespace HobGob.Comps.Map
             noblins.Clear();
             foreach (Pawn pawn in map.mapPawns.FreeColonistsSpawned)
             {
-                bool isNoblin = pawn.workSettings != null && pawn.workSettings.EverWork && NoblinRegistry.IsNoblin(pawn);
+                bool isNoblin = NoblinRegistry.ShouldManage(pawn);
                 NoblinRegistry.Set(pawn, isNoblin);
                 if (isNoblin)
                 {
@@ -86,7 +87,7 @@ namespace HobGob.Comps.Map
             return false;
         }
 
-        private static void Apply(Pawn pawn, MapSignals signals, NoblinTask? urgent, bool inUrgentShare)
+        private static void Apply(Pawn pawn, MapSignals signals, NoblinTask? urgent, bool inUrgentShare, bool striking)
         {
             List<WorkTypeDef> all = DefDatabase<WorkTypeDef>.AllDefsListForReading;
             for (int i = 0; i < all.Count; i++)
@@ -96,8 +97,8 @@ namespace HobGob.Comps.Map
                 {
                     continue;
                 }
-                // Anything that is not dumb labour stays off.
-                int priority = TaskFor.TryGetValue(def, out NoblinTask task)
+                // Anything that is not dumb labour stays off. On strike, everything is off.
+                int priority = !striking && TaskFor.TryGetValue(def, out NoblinTask task)
                     ? NoblinWorkScorer.Priority(task, signals, urgent, inUrgentShare)
                     : 0;
                 // The pawn is registered, so GetPriority returns the stored value. SetPriority dirties the work giver cache: write only on change.
