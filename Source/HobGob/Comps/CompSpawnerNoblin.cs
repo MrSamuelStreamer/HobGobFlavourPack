@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
@@ -58,6 +59,12 @@ namespace HobGob.Comps
             Scribe_Values.Look(ref nextSpawnTick, "nextSpawnTick", -1);
         }
 
+        /// <summary>Pushes the regular spawn back by a fresh random interval.</summary>
+        public void ResetSpawnTimer()
+        {
+            RollNextSpawn();
+        }
+
         private void RollNextSpawn()
         {
             nextSpawnTick = Find.TickManager.TicksGame + Props.spawnIntervalTicks.RandomInRange;
@@ -65,10 +72,16 @@ namespace HobGob.Comps
 
         private bool TrySpawnNoblin()
         {
-            if (!TryFindSpawnCell(out IntVec3 cell))
-            {
-                return false;
-            }
+            IntVec3 cell = FreeSpawnCells().RandomElementWithFallback(IntVec3.Invalid);
+            return cell.IsValid && SpawnNoblinAt(cell, announce: true) != null;
+        }
+
+        /// <summary>
+        /// Makes a naked 13-year-old Noblin of the pit's faction at <paramref name="cell"/>.
+        /// Returns null if generation fails.
+        /// </summary>
+        public Pawn SpawnNoblinAt(IntVec3 cell, bool announce)
+        {
             // Age 13 is the teenage life stage. That stage counts as an adult.
             PawnGenerationRequest request = new PawnGenerationRequest(
                 PawnKindDefOf.Villager,
@@ -87,7 +100,7 @@ namespace HobGob.Comps
             Pawn pawn = PawnGenerator.GeneratePawn(request);
             if (pawn == null)
             {
-                return false;
+                return null;
             }
             if (parent.Faction != null && pawn.Faction != parent.Faction)
             {
@@ -95,28 +108,27 @@ namespace HobGob.Comps
             }
             GenSpawn.Spawn(pawn, cell, parent.Map);
             NoblinPortraitHiding.Hide(pawn);
-            MessageTypeDef messageType = parent.Faction == Faction.OfPlayer
-                ? MessageTypeDefOf.PositiveEvent
-                : MessageTypeDefOf.NegativeEvent;
-            Messages.Message("MSSG_NoblinSpawned".Translate(), pawn, messageType);
-            return true;
+            if (announce)
+            {
+                MessageTypeDef messageType = parent.Faction == Faction.OfPlayer
+                    ? MessageTypeDefOf.PositiveEvent
+                    : MessageTypeDefOf.NegativeEvent;
+                Messages.Message("MSSG_NoblinSpawned".Translate(), pawn, messageType);
+            }
+            return pawn;
         }
 
-        /// <summary>A standable cell on the ring immediately outside the pit.</summary>
-        private bool TryFindSpawnCell(out IntVec3 cell)
+        /// <summary>Standable, unfogged cells on the ring immediately outside the pit.</summary>
+        public IEnumerable<IntVec3> FreeSpawnCells()
         {
             Verse.Map map = parent.Map;
-            CellRect occupied = parent.OccupiedRect();
-            foreach (IntVec3 candidate in occupied.ExpandedBy(1).EdgeCells.InRandomOrder())
+            foreach (IntVec3 candidate in parent.OccupiedRect().ExpandedBy(1).EdgeCells)
             {
                 if (candidate.InBounds(map) && candidate.Standable(map) && !candidate.Fogged(map))
                 {
-                    cell = candidate;
-                    return true;
+                    yield return candidate;
                 }
             }
-            cell = IntVec3.Invalid;
-            return false;
         }
     }
 }

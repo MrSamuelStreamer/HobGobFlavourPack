@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- E1: active while the pawn has MSSG_PitFresh and food is below 30%. -->
+  <ThoughtDef>
+    <defName>MSSG_PitStarving</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>HobGob.Events.ThoughtWorker_PitStarving</workerClass>
+    <stages>
+      <li>
+        <label>fresh from the pit and starving</label>
+        <description>I just crawled out of the pit and there's nothing to eat! Where's the food?</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

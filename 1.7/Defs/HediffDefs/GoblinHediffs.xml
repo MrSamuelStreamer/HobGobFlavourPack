@@ -12,4 +12,22 @@
     <scenarioCanAdd>false</scenarioCanAdd>
     <initialSeverity>1</initialSeverity>
   </HediffDef>
+
+  <!-- E1 Pit Overflow: marks a Noblin that just crawled out. Drives MSSG_PitStarving. Lasts 24 hours. -->
+  <HediffDef>
+    <defName>MSSG_PitFresh</defName>
+    <label>pit-fresh</label>
+    <description>This noblin crawled out of the spawning pit very recently. It is ravenous and unsettled.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.6, 0.5, 0.3)</defaultLabelColor>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+  </HediffDef>
 </Defs>

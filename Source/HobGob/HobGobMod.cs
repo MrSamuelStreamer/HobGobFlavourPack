@@ -21,6 +21,8 @@ namespace HobGob
     {
         public static GeneDef MSSG_NoblinInstinct;
         public static XenotypeDef MSSG_Noblin;
+        public static ThingDef MSSG_GoblinHole;
+        public static HediffDef MSSG_PitFresh;
 
         static HobGobDefOf() => RimWorld.DefOfHelper.EnsureInitializedInCtor(typeof(HobGobDefOf));
     }
