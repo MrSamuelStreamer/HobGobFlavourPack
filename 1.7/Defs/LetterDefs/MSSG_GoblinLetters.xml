@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- E2: the challenge itself. Threat colours and sound, choice letter class. -->
+  <LetterDef>
+    <defName>MSSG_HobgoblinChallengeLetter</defName>
+    <letterClass>HobGob.Events.ChoiceLetter_HobgoblinChallenge</letterClass>
+    <color>(204, 155, 125)</color>
+    <flashColor>(255, 155, 95)</flashColor>
+    <flashInterval>16</flashInterval>
+    <bounce>true</bounce>
+    <arriveSound>LetterArrive_BadUrgent</arriveSound>
+    <pauseMode>AnyThreat</pauseMode>
+  </LetterDef>
+
+  <!-- E2: the beaten challenger offers to join. -->
+  <LetterDef ParentName="CustomChoiceLetterBase">
+    <defName>MSSG_ChallengerJoinsLetter</defName>
+    <letterClass>HobGob.Events.ChoiceLetter_ChallengerJoins</letterClass>
+  </LetterDef>
+</Defs>

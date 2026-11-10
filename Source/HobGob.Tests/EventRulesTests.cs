@@ -109,5 +109,27 @@ namespace HobGob.Tests
         {
             Assert.Equal(expected, EventRules.NeedsNewLeg(now, start, distance, valid));
         }
+
+        [Theory]
+        [InlineData(10, 1.0f, 10f)]
+        [InlineData(8, 1.5f, 12f)]
+        [InlineData(0, 2.0f, 0f)]
+        [InlineData(-3, 1.0f, 0f)]
+        public void ChampionScore_MeleeTimesSize(int melee, float size, float expected)
+        {
+            Assert.Equal(expected, EventRules.ChampionScore(melee, size), 3);
+        }
+
+        [Theory]
+        [InlineData(true, false, false, true, DuelOutcome.Win)]
+        [InlineData(true, true, false, false, DuelOutcome.Win)]    // double knock-out: colony wins
+        [InlineData(false, true, false, true, DuelOutcome.Loss)]
+        [InlineData(false, false, true, true, DuelOutcome.Loss)]   // champion left the map
+        [InlineData(false, false, false, false, DuelOutcome.Draw)] // timed out, both standing
+        [InlineData(false, false, false, true, DuelOutcome.Ongoing)]
+        public void ResolveDuel_Table(bool challengerDown, bool championDown, bool championGone, bool dueling, DuelOutcome expected)
+        {
+            Assert.Equal(expected, EventRules.ResolveDuel(challengerDown, championDown, championGone, dueling));
+        }
     }
 }

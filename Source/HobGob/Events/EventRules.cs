@@ -87,6 +87,35 @@ namespace HobGob.Events
                 || now - legStartTick >= StampedeLegMaxTicks;
         }
 
+        /// <summary>12 hours to answer a Hobgoblin challenge.</summary>
+        public const int ChallengeAnswerTicks = 30000;
+
+        /// <summary>Kills credited to a champion who wins a challenge (counts towards evolution).</summary>
+        public const int ChallengeKillCredit = 10;
+
+        /// <summary>Champion pick: melee skill times body size.</summary>
+        public static float ChampionScore(int meleeLevel, float bodySize)
+        {
+            return Math.Max(0, meleeLevel) * Math.Max(0f, bodySize);
+        }
+
+        /// <summary>
+        /// Result of a running duel. The challenger going down is checked first, so a double knock-out
+        /// is a win for the colony.
+        /// </summary>
+        public static DuelOutcome ResolveDuel(bool challengerDown, bool championDown, bool championGone, bool eitherStillDueling)
+        {
+            if (challengerDown)
+            {
+                return DuelOutcome.Win;
+            }
+            if (championDown || championGone)
+            {
+                return DuelOutcome.Loss;
+            }
+            return eitherStillDueling ? DuelOutcome.Ongoing : DuelOutcome.Draw;
+        }
+
         /// <summary>How much of a stack one Noblin carries away: as much as fits, never more than the stack.</summary>
         public static int CarryCount(int stackCount, int carrySpace)
         {
@@ -106,5 +135,13 @@ namespace HobGob.Events
             double needed = Math.Ceiling(remaining / (double)unitValue);
             return (int)Math.Min(stackCount, needed);
         }
+    }
+
+    public enum DuelOutcome
+    {
+        Ongoing,
+        Win,
+        Loss,
+        Draw,
     }
 }

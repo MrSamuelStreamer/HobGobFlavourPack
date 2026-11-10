@@ -33,6 +33,15 @@ namespace HobGob
         public static DesignationDef MSSG_RummageStash;
         public static MentalStateDef MSSG_NoblinStampede;
         public static ThoughtDef MSSG_Winded;
+        public static XenotypeDef MSSG_Hobgoblin;
+        public static MentalStateDef MSSG_GoblinDuel;
+        public static ThoughtDef MSSG_ChallengeVictor;
+        public static ThoughtDef MSSG_ChampionShamed;
+        public static ThoughtDef MSSG_HumiliatedInDuel;
+        public static ThoughtDef MSSG_CowardlyChief;
+        public static LetterDef MSSG_HobgoblinChallengeLetter;
+        public static LetterDef MSSG_ChallengerJoinsLetter;
+        public static Census.GoblinCensusTierDef MSSG_Census_Shed;
 
         static HobGobDefOf() => RimWorld.DefOfHelper.EnsureInitializedInCtor(typeof(HobGobDefOf));
     }
