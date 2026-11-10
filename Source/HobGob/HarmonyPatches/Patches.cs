@@ -52,4 +52,18 @@ namespace HobGob.HarmonyPatches
             }
         }
     }
+
+    /// <summary>A stampeding Noblin about to pass a door leaves it held open (E5 Noblin Stampede).</summary>
+    [HarmonyPatch(typeof(Building_Door), nameof(Building_Door.Notify_PawnApproaching))]
+    public static class Patch_Building_Door_Notify_PawnApproaching
+    {
+        public static void Postfix(Building_Door __instance, Pawn p)
+        {
+            // Cheap check first: this runs for every pawn at every door.
+            if (p.MentalStateDef == HobGobDefOf.MSSG_NoblinStampede && __instance.Spawned)
+            {
+                __instance.Map.GetComponent<Events.NoblinStampedeComponent>()?.NoteDoorPassed(__instance);
+            }
+        }
+    }
 }

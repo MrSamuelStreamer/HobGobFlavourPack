@@ -81,5 +81,33 @@ namespace HobGob.Tests
         {
             Assert.Equal(expected, EventRules.CarryCount(stack, space));
         }
+
+        [Theory]
+        [InlineData(0, 1000, 11000)]      // first pass
+        [InlineData(11000, 5000, 15000)]  // passed again later: extends
+        [InlineData(30000, 5000, 30000)]  // never shortens
+        public void HoldExpiry_ExtendsNeverShortens(int existing, int now, int expected)
+        {
+            Assert.Equal(expected, EventRules.HoldExpiry(existing, now));
+        }
+
+        [Theory]
+        [InlineData(9999, 10000, false)]
+        [InlineData(10000, 10000, true)]
+        [InlineData(10001, 10000, true)]
+        public void HoldExpired_AtOrAfterExpiry(int now, int expiry, bool expected)
+        {
+            Assert.Equal(expected, EventRules.HoldExpired(now, expiry));
+        }
+
+        [Theory]
+        [InlineData(100, 0, 40f, false, true)]   // no target yet
+        [InlineData(100, 0, 5f, true, true)]     // arrived
+        [InlineData(2600, 0, 40f, true, true)]   // leg too old
+        [InlineData(100, 0, 40f, true, false)]   // still running
+        public void NeedsNewLeg_Cases(int now, int start, float distance, bool valid, bool expected)
+        {
+            Assert.Equal(expected, EventRules.NeedsNewLeg(now, start, distance, valid));
+        }
     }
 }
