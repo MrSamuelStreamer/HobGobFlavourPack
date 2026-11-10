@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WorkGiverDef>
+    <defName>MSSG_RummagePit</defName>
+    <label>rummage through goblin pit stashes</label>
+    <giverClass>HobGob.Events.WorkGiver_RummagePit</giverClass>
+    <workType>Hauling</workType>
+    <verb>rummage through</verb>
+    <gerund>rummaging through</gerund>
+    <priorityInType>20</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+</Defs>

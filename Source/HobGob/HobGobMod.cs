@@ -27,6 +27,10 @@ namespace HobGob
         public static ThoughtDef MSSG_StrikeWon;
         public static ThoughtDef MSSG_StrikeBroken;
         public static Events.GoblinShinyDef MSSG_Shinies;
+        public static HediffDef MSSG_ShinyFever;
+        public static Verse.JobDef MSSG_StealShiny;
+        public static Verse.JobDef MSSG_RummagePit;
+        public static DesignationDef MSSG_RummageStash;
 
         static HobGobDefOf() => RimWorld.DefOfHelper.EnsureInitializedInCtor(typeof(HobGobDefOf));
     }

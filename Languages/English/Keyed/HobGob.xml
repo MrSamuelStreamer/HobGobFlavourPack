@@ -22,5 +22,10 @@
   <MSSG_StrikeWonText>The noblins have their shinies. They are back to work, very pleased with themselves.</MSSG_StrikeWonText>
   <MSSG_StrikeBrokenMessage>Nobody paid the striking noblins. They have gone back to work in a sulk.</MSSG_StrikeBrokenMessage>
 
+  <MSSG_StashInspect>Stash: {0} things, worth {1}</MSSG_StashInspect>
+  <MSSG_Rummage>Rummage through stash</MSSG_Rummage>
+  <MSSG_RummageCancel>Cancel rummaging</MSSG_RummageCancel>
+  <MSSG_RummageDesc>Order a colonist (not a noblin) to spend two hours digging the noblins' hidden loot out of the pit and dropping it beside it. Uses the Hauling work type.</MSSG_RummageDesc>
+
   <MSSG_AbilityGained>{1} has been gained knowledge of the ability: {0}.</MSSG_AbilityGained>
 </LanguageData>
