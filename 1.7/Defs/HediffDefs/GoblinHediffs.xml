@@ -47,4 +47,23 @@
       </li>
     </comps>
   </HediffDef>
+
+  <!-- E4 Shiny Fever: the Noblin wants to steal one shiny for the pit. Removed when it hides one; lasts at most a day. -->
+  <HediffDef>
+    <defName>MSSG_ShinyFever</defName>
+    <label>shiny fever</label>
+    <description>This noblin has an overwhelming urge to grab something shiny and hide it in the spawning pit.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.95, 0.85, 0.3)</defaultLabelColor>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="HobGob.Events.HediffCompProperties_ShinyFever" />
+    </comps>
+  </HediffDef>
 </Defs>

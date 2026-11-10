@@ -70,5 +70,16 @@ namespace HobGob.Tests
         {
             Assert.Equal(expected, EventRules.UnitsToTake(unitValue, stack, remaining));
         }
+
+        [Theory]
+        [InlineData(10, 75, 10)]   // whole stack fits
+        [InlineData(500, 75, 75)]  // one carry load
+        [InlineData(10, 0, 0)]     // hands full
+        [InlineData(0, 75, 0)]
+        [InlineData(10, -3, 0)]
+        public void CarryCount_AtMostOneLoad(int stack, int space, int expected)
+        {
+            Assert.Equal(expected, EventRules.CarryCount(stack, space));
+        }
     }
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>MSSG_StealShiny</defName>
+    <driverClass>HobGob.Events.JobDriver_StealShiny</driverClass>
+    <reportString>stealing TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+
+  <JobDef>
+    <defName>MSSG_RummagePit</defName>
+    <driverClass>HobGob.Events.JobDriver_RummagePit</driverClass>
+    <reportString>rummaging through TargetA.</reportString>
+  </JobDef>
+</Defs>

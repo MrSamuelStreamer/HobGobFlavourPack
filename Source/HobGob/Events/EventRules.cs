@@ -45,6 +45,21 @@ namespace HobGob.Events
             return Math.Max(StrikeTributeMin, StrikeTributePerNoblin * noblins);
         }
 
+        /// <summary>Shiny Fever needs at least this many managed Noblins.</summary>
+        public const int ShinyFeverMinNoblins = 2;
+
+        /// <summary>How often a feverish Noblin looks for something to steal.</summary>
+        public const int ShinyFeverCheckTicks = 250;
+
+        /// <summary>2 in-game hours of rummaging to empty a pit stash.</summary>
+        public const int RummageTicks = 5000;
+
+        /// <summary>How much of a stack one Noblin carries away: as much as fits, never more than the stack.</summary>
+        public static int CarryCount(int stackCount, int carrySpace)
+        {
+            return Math.Max(0, Math.Min(stackCount, carrySpace));
+        }
+
         /// <summary>
         /// How many units of a stack to take so the remaining tribute is covered.
         /// The last unit may overpay a little.

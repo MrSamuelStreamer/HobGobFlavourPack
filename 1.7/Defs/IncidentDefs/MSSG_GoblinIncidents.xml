@@ -35,4 +35,22 @@ They want {TRIBUTE} silver worth of shinies left on the ground beside the spawni
 If nobody pays within {DAYS} days, they will give up and go back to work in a sulk.</letterText>
     <letterDef>NegativeEvent</letterDef>
   </IncidentDef>
+
+  <!-- E4 Shiny Fever. Needs a player pit, 2+ managed Noblins and a shiny in the home area. baseChance is a first guess. -->
+  <IncidentDef>
+    <defName>MSSG_ShinyFever</defName>
+    <label>shiny fever</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>HobGob.Events.IncidentWorker_ShinyFever</workerClass>
+    <baseChance>0.5</baseChance>
+    <minRefireDays>20</minRefireDays>
+    <letterLabel>Shiny fever</letterLabel>
+    <letterText>Shiny fever! The noblins are stuffing valuables into the spawning pit. Each one wants one shiny thing, and they don't care if it's forbidden.
+
+Noblin-proof doors keep them out. To get the loot back, select the pit and order someone to rummage through its stash.</letterText>
+    <letterDef>NegativeEvent</letterDef>
+  </IncidentDef>
 </Defs>
