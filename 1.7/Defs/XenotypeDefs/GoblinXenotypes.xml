@@ -15,6 +15,7 @@
       <li MayRequire="sarg.alphagenes">AG_ReducedRaidPresence</li>
       <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
       <li>RobustDigestion</li>
+      <li>StrongStomach</li>
       <li>BS_SlowBleeding</li>
       <li MayRequire="sarg.alphagenes">AG_LimbRegeneration</li>
       <li MayRequire="sarg.alphagenes">AG_HardBones</li>
@@ -70,6 +71,7 @@
     <genes>
       <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
       <li>RobustDigestion</li>
+      <li>StrongStomach</li>
       <li>BS_SlowBleeding</li>
       <li MayRequire="sarg.alphagenes">AG_HardBones</li>
       <li MayRequire="sarg.alphagenes">AG_Filthy</li>
@@ -120,6 +122,7 @@
       <li>HalfColossusFrame</li>
       <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
       <li>RobustDigestion</li>
+      <li>StrongStomach</li>
       <li>BS_SlowBleeding</li>
       <li MayRequire="sarg.alphagenes">AG_HardBones</li>
       <li MayRequire="sarg.alphagenes">AG_Filthy</li>
@@ -146,7 +149,6 @@
       <li>VU_ZombieSkin</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_ToxGlands</li>
       <li>BS_Xenolocked</li>
-      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Age_RapidDevelopment</li>
       <li>DarkVision</li>
       <li>CaveDweller</li>
       <li>Instability_Major</li>
@@ -173,6 +175,7 @@
       <li MayRequire="redmattis.bigsmall.core">Gigantism</li>
       <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
       <li>RobustDigestion</li>
+      <li>StrongStomach</li>
       <li MayRequire="redmattis.bigsmall.core">BS_SlowBleeding</li>
       <li MayRequire="sarg.alphagenes">AG_HardBones</li>
       <li MayRequire="sarg.alphagenes">AG_Filthy</li>
@@ -200,7 +203,6 @@
       <li MayRequire="redmattis.bigsmall.core">Body_FemaleOnly</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_ToxGlands</li>
       <li MayRequire="redmattis.bigsmall.core">BS_Xenolocked</li>
-      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Age_RapidDevelopment</li>
       <li>DarkVision</li>
       <li>CaveDweller</li>
       <li>Instability_Major</li>
@@ -225,6 +227,7 @@
     <genes>
       <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
       <li>RobustDigestion</li>
+      <li>StrongStomach</li>
       <li MayRequire="sarg.alphagenes">AG_Filthy</li>
       <li MayRequire="sarg.alphagenes">AG_Stinky</li>
       <li MayRequire="sarg.alphagenes">AG_InnatePsylink</li>
