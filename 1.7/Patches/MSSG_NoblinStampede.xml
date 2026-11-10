@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- E5: stampeding Noblins sprint with the pack. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThinkTreeDef[defName="MentalStateNonCritical"]/thinkRoot/subNodes</xpath>
+    <order>Prepend</order>
+    <value>
+      <li Class="ThinkNode_ConditionalMentalState">
+        <state>MSSG_NoblinStampede</state>
+        <subNodes>
+          <li Class="HobGob.Events.JobGiver_NoblinStampede" />
+        </subNodes>
+      </li>
+    </value>
+  </Operation>
+</Patch>

@@ -54,6 +54,39 @@ namespace HobGob.Events
         /// <summary>2 in-game hours of rummaging to empty a pit stash.</summary>
         public const int RummageTicks = 5000;
 
+        /// <summary>Noblin Stampede needs at least this many managed Noblins.</summary>
+        public const int StampedeMinNoblins = 5;
+
+        /// <summary>A door a stampeding Noblin passes stays held open for 4 hours.</summary>
+        public const int DoorHoldTicks = 10000;
+
+        /// <summary>Each stampede leg ends at least this far from where it started.</summary>
+        public const int StampedeLegMinDistance = 25;
+
+        /// <summary>A leg is abandoned for a new one after this long.</summary>
+        public const int StampedeLegMaxTicks = 2500;
+
+        /// <summary>Within this many cells of the target the pack picks a new leg.</summary>
+        public const float StampedeArriveDistance = 6f;
+
+        /// <summary>New hold expiry after a pass. Passing again only ever extends it.</summary>
+        public static int HoldExpiry(int existingExpiry, int now)
+        {
+            return Math.Max(existingExpiry, now + DoorHoldTicks);
+        }
+
+        public static bool HoldExpired(int now, int expiry)
+        {
+            return now >= expiry;
+        }
+
+        public static bool NeedsNewLeg(int now, int legStartTick, float distanceToTarget, bool targetValid)
+        {
+            return !targetValid
+                || distanceToTarget <= StampedeArriveDistance
+                || now - legStartTick >= StampedeLegMaxTicks;
+        }
+
         /// <summary>How much of a stack one Noblin carries away: as much as fits, never more than the stack.</summary>
         public static int CarryCount(int stackCount, int carrySpace)
         {

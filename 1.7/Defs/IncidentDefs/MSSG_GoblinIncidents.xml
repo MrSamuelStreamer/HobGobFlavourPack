@@ -53,4 +53,22 @@ If nobody pays within {DAYS} days, they will give up and go back to work in a su
 Noblin-proof doors keep them out. To get the loot back, select the pit and order someone to rummage through its stash.</letterText>
     <letterDef>NegativeEvent</letterDef>
   </IncidentDef>
+
+  <!-- E5 Noblin Stampede. Needs 5+ managed Noblins. Random only (no reactive trigger). baseChance is a first guess. -->
+  <IncidentDef>
+    <defName>MSSG_NoblinStampede</defName>
+    <label>noblin stampede</label>
+    <category>ThreatSmall</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>HobGob.Events.IncidentWorker_NoblinStampede</workerClass>
+    <baseChance>0.5</baseChance>
+    <minRefireDays>20</minRefireDays>
+    <letterLabel>Noblin stampede</letterLabel>
+    <letterText>Something has spooked the noblins! They are stampeding through the colony and leaving every door they pass wide open for hours. In their panic they ignore forbidden doors.
+
+Noblin-proof doors will stop them. Lock up anything you care about.</letterText>
+    <letterDef>ThreatSmall</letterDef>
+  </IncidentDef>
 </Defs>

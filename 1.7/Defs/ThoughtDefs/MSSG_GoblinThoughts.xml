@@ -43,4 +43,19 @@
       </li>
     </stages>
   </ThoughtDef>
+
+  <!-- E5: after a stampede ends. -->
+  <ThoughtDef>
+    <defName>MSSG_Winded</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>0.25</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>winded</label>
+        <description>All that running. Can't breathe. What were we running from?</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 </Defs>

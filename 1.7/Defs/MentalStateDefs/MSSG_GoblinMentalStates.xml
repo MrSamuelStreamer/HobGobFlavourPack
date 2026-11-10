@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- E5 Noblin Stampede. Only started by the incident; no MentalBreakDef, so it never happens as a mood break. -->
+  <MentalStateDef ParentName="BaseMentalState">
+    <defName>MSSG_NoblinStampede</defName>
+    <label>stampeding</label>
+    <stateClass>HobGob.Events.MentalState_NoblinStampede</stateClass>
+    <category>Misc</category>
+    <minTicksBeforeRecovery>5000</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>10000</maxTicksBeforeRecovery>
+    <recoveryMtbDays>0.1</recoveryMtbDays>
+    <nameColor>(0.95, 0.75, 0.4)</nameColor>
+    <recoveryMessage>{0} has stopped stampeding.</recoveryMessage>
+    <baseInspectLine>Mental state: Stampeding</baseInspectLine>
+  </MentalStateDef>
+</Defs>
