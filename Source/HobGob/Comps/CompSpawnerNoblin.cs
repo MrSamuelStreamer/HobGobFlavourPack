@@ -96,7 +96,10 @@ namespace HobGob.Comps
                 fixedBiologicalAge: 13f,
                 fixedChronologicalAge: 13f,
                 developmentalStages: DevelopmentalStage.Adult,
-                forceNoGear: true);
+                forceNoGear: true)
+            {
+                ForceNoIdeoGear = true
+            };
             Pawn pawn = PawnGenerator.GeneratePawn(request);
             if (pawn == null)
             {
