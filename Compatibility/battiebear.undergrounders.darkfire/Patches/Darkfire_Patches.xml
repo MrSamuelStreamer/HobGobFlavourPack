@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="undrgdrs_Darkfire"]</xpath>
+    <value>
+      <modExtensions>
+        <li Class="VEF.Buildings.RecipeInheritanceExtension">
+          <inheritRecipesFrom>
+            <li>Campfire</li>
+          </inheritRecipesFrom>
+        </li>
+      </modExtensions>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="undrgdrs_FungusDarkfire"]</xpath>
+    <value>
+      <modExtensions>
+        <li Class="VEF.Buildings.RecipeInheritanceExtension">
+          <inheritRecipesFrom>
+            <li>Campfire</li>
+          </inheritRecipesFrom>
+        </li>
+      </modExtensions>
+    </value>
+  </Operation>
+
+</Patch>
