@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnCapacityDef[defName="Consciousness"]/label</xpath>
+        <value>
+            <label>Thinkin'</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnCapacityDef[defName="Moving"]/label</xpath>
+        <value>
+            <label>Runnin'</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnCapacityDef[defName="Manipulation"]/label</xpath>
+        <value>
+            <label>Grabbin'</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnCapacityDef[defName="Talking"]/label</xpath>
+        <value>
+            <label>Chatterin'</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnCapacityDef[defName="Eating"]/label</xpath>
+        <value>
+            <label>Gobblin'</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnCapacityDef[defName="Sight"]/label</xpath>
+        <value>
+            <label>Peepin'</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnCapacityDef[defName="Hearing"]/label</xpath>
+        <value>
+            <label>Listenin'</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnCapacityDef[defName="Breathing"]/label</xpath>
+        <value>
+            <label>Breathin'</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnCapacityDef[defName="BloodFiltration"]/label</xpath>
+        <value>
+            <label>Filtratin'</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnCapacityDef[defName="BloodPumping"]/label</xpath>
+        <value>
+            <label>Heart Beatin'</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnCapacityDef[defName="Metabolism"]/label</xpath>
+        <value>
+            <label>Digestin'</label>
+        </value>
+    </Operation>
+</Patch>

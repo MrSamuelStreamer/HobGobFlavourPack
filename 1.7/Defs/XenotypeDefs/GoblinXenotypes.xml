@@ -9,6 +9,7 @@
     <iconPath>UI/Icons/Xenotypes/Custom/Archer_2</iconPath>
     <inheritable>true</inheritable>
     <genes>
+      <li>AG_LungRotImmunity</li>
       <li MayRequire="redmattis.bigsmall.core">Small</li>
       <li MayRequire="lotr.shadowoftheeast">LOTR_EarsMordor</li>
       <li MayRequire="lotr.shadowoftheeast">LOTR_MordorAppearance</li>
@@ -27,9 +28,7 @@
       <li>ToxResist_Partial</li>
       <li>ToxicEnvironmentResistance_Partial</li>
       <li>UVSensitivity_Intense</li>
-      <li>Aggression_Aggressive</li>
       <li>MeleeDamage_Weak</li>
-      <li MayRequire="sarg.alphagenes">AG_Rowdy</li>
       <li>Pain_Reduced</li>
       <li>Sterile</li>
       <li>Beauty_VeryUgly</li>
@@ -51,8 +50,6 @@
       <li>BS_SimpleMind</li>
       <li>MSSG_NoblinInstinct</li>
       <li>MSSG_Evolution_Noblin</li>
-      <li>AddictionImmune_Shard</li>
-      <li>AddictionResistant_DankPyon_HornetHoney</li>
       <li MayRequire="redmattis.betterprerequisites">BS_FacialAnimDisabled</li>
       <li MayRequire="lazyfridaystudio.genesexpandedblood">GEB_Blood_Guacamole</li>
     </genes>
@@ -69,6 +66,7 @@
     <iconPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon8</iconPath>
     <inheritable>true</inheritable>
     <genes>
+      <li>AG_LungRotImmunity</li>
       <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
       <li>RobustDigestion</li>
       <li>StrongStomach</li>
@@ -101,9 +99,7 @@
       <li>CaveDweller</li>
       <li>Instability_Major</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinNose</li>
-      <li>AddictionImmune_Shard</li>
       <li>MSSG_Evolution_Goblin</li>
-      <li>AddictionResistant_DankPyon_HornetHoney</li>
       <li MayRequire="lazyfridaystudio.genesexpandedblood">GEB_Blood_Guacamole</li>
     </genes>
     <modExtensions>
@@ -119,6 +115,7 @@
     <iconPath>UI/Icons/Xenotypes/Custom/VBE_CustomXenotypeIcon9</iconPath>
     <inheritable>true</inheritable>
     <genes>
+      <li>AG_LungRotImmunity</li>
       <li>HalfColossusFrame</li>
       <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
       <li>RobustDigestion</li>
@@ -153,8 +150,6 @@
       <li>CaveDweller</li>
       <li>Instability_Major</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinNose</li>
-      <li>AddictionResistant_Shard</li>
-      <li>AddictionResistant_DankPyon_HornetHoney</li>
       <li>MSSG_Evolution_HobGoblin</li>
       <li MayRequire="lazyfridaystudio.genesexpandedblood">GEB_Blood_Guacamole</li>
     </genes>
@@ -171,6 +166,7 @@
     <iconPath>UI/Icons/Xenotypes/Custom/VBE_CustomXenotypeIcon30</iconPath>
     <inheritable>true</inheritable>
     <genes>
+      <li>AG_LungRotImmunity</li>
       <li MayRequire="redmattis.bigsmall.core">BS_EndlessGrowth</li>
       <li MayRequire="redmattis.bigsmall.core">Gigantism</li>
       <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
@@ -207,8 +203,6 @@
       <li>CaveDweller</li>
       <li>Instability_Major</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinNose</li>
-      <li>AddictionResistant_Shard</li>
-      <li>AddictionResistant_DankPyon_HornetHoney</li>
       <li MayRequire="lazyfridaystudio.genesexpandedblood">GEB_Blood_Guacamole</li>
       <li>MSSG_Evolution_Hobnobgoblin</li>
     </genes>
@@ -225,9 +219,11 @@
     <iconPath>UI/Icons/Xenotypes/Custom/VBE_CustomXenotypeIcon29</iconPath>
     <inheritable>true</inheritable>
     <genes>
+      <li>AG_LungRotImmunity</li>
       <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
       <li>RobustDigestion</li>
       <li>StrongStomach</li>
+      <li MayRequire="sarg.alphagenes">AG_HardBones</li>
       <li MayRequire="sarg.alphagenes">AG_Filthy</li>
       <li MayRequire="sarg.alphagenes">AG_Stinky</li>
       <li MayRequire="sarg.alphagenes">AG_InnatePsylink</li>
@@ -265,7 +261,6 @@
       <li>AptitudeTerrible_Shooting</li>
       <li>AptitudeTerrible_Melee</li>
       <li>AptitudeRemarkable_Intellectual</li>
-      <li>AddictionImmune_Shard</li>
       <li>MSSG_Evolution_Snoblin</li>
       <li MayRequire="lazyfridaystudio.genesexpandedblood">GEB_Blood_Guacamole</li>
     </genes>

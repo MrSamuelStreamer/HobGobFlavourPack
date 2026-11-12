@@ -5,8 +5,8 @@
     <Shooting.skillLabel>Shootin'</Shooting.skillLabel>
     <Shooting.description>Shootin' or chuckin' stuff like an elf.</Shooting.description>
     <!-- Melee-->
-    <Melee.label>Melee</Melee.label>
-    <Melee.skillLabel>Melee</Melee.skillLabel>
+    <Melee.label>Shankin'</Melee.label>
+    <Melee.skillLabel>Shankin'</Melee.skillLabel>
     <Melee.description>Hit stuff with pointy fings and smashers.</Melee.description>
     <!-- Construction  -->
     <Construction.label>Buildin'</Construction.label>
@@ -21,8 +21,8 @@
     <Cooking.skillLabel>Cookin'</Cooking.skillLabel>
     <Cooking.description>Cookin' up stuff to eat and makin' it tasty.</Cooking.description>
     <!-- Plants -->
-    <Plants.label>fungus</Plants.label>
-    <Plants.skillLabel>fungus</Plants.skillLabel>
+    <Plants.label>Mushin'</Plants.label>
+    <Plants.skillLabel>Mushin'</Plants.skillLabel>
     <Plants.description>Growin' mushies and leafies.</Plants.description>
     <!-- Animals -->
     <Animals.label>bug herdin'</Animals.label>
