@@ -51,7 +51,7 @@
     <defName>MSSG_Census_Den</defName>
     <label>den</label>
     <minPopulation>50</minPopulation>
-    <promotedText>The new den grows loud and crowded. Foreign neighbours grow nervous, but are still invited to calmly visit and trade, on - perhaps - spurious terms...? Yes.</promotedText>
+    <promotedText>The new den grows loud and crowded. Neighbours grow nervous, but we still invite them to visit for... trade, and... entertainment!</promotedText>
     <demotedText>The place is quieter than it was, and has receded to a den. The Hobs are not without their excuses, and, perhaps - profound, blind rage.</demotedText>
   </HobGob.Census.GoblinCensusTierDef>
 
@@ -59,8 +59,8 @@
     <defName>MSSG_Census_Town</defName>
     <label>town</label>
     <minPopulation>80</minPopulation>
-    <promotedText>The goblins drown each other's stupidity out, such that some sound legible. They now form what - somehow - constitutes a town. It even appears on maps, with a red circle and arrows. Trading bones and meat is now encouraged!</promotedText>
-    <demotedText>The town has thinned out. It's a town again, but only just. Everyone is confused and angry; perhaps such is the cause and not the condition?</demotedText>
+    <promotedText>The goblins drown each other's stupidity out, such that some even sound legible. The place now - somehow - constitutes a town, and it even appears on elven maps.</promotedText>
+    <demotedText>The place has thinned out. It's a town again, but only just. Everyone is confused and angry; perhaps such is the cause and not the condition?</demotedText>
   </HobGob.Census.GoblinCensusTierDef>
 
   <HobGob.Census.GoblinCensusTierDef>
@@ -75,7 +75,7 @@
     <defName>MSSG_Census_Stronghold</defName>
     <label>goblin stronghold</label>
     <minPopulation>160</minPopulation>
-    <promotedText>The Gob-stronghold has formed. None can question the progress of this perfect Goblin society whom now drive a stronghold capable of conquering arsehole Elves and arsehole Men alike. History is being written and rewritten, and the age of Men is done. The time of Or--I mean, Goblin, has come!</promotedText>
+    <promotedText>The Gob-stronghold has formed. None can question the progress of this perfect Goblin society whom now drive a stronghold capable of conquering arsehole Elves and Men alike. History is being rewritten, and the age of Men is done. The time of Or--I mean, Goblin, has come!</promotedText>
     <demotedText>We are back to being a stronghold. We must not be defeated. We will know our might soon again, as Goblins! Death to Elves! Death to Men! And death to Elves, once again!</demotedText>
   </HobGob.Census.GoblinCensusTierDef>
 
@@ -83,7 +83,7 @@
     <defName>MSSG_Census_Citadel</defName>
     <label>goblin citadel</label>
     <minPopulation>200</minPopulation>
-    <promotedText>Hundreds of Goblins have arisen from the muck, and will conquer this blighted Elven world. The Citadel of Goblins thrives and thrusts ever-forward. Thrust forward in a slightly upward-curved and to-the-side manner, Goblin soldiers!</promotedText>
+    <promotedText>Hundreds of Goblins have arisen from the muck, and will conquer this blighted Elven world. The Citadel of Goblins thrives and thrusts ever-forward. Thrust forward gobbie bastards!</promotedText>
     <demotedText>The goblin Citadel has somewhat reduced. It remains a large gathering of experienced Goblin officers and soldiers, but it remains to be seen whether we will re-organise, or perish forever. To arms, Gobby-bastards!</demotedText>
   </HobGob.Census.GoblinCensusTierDef>
 
@@ -91,7 +91,7 @@
     <defName>MSSG_Census_City</defName>
     <label>goblin city</label>
     <minPopulation>250</minPopulation>
-    <promotedText>Behold! A true Goblin City. A simple Citadel could no longer possibly contain our majesty, might, or need for Man-meat. We rise faster than ever. We are primed to take over this Elven shit hole. Rise, Hobgobs, and prepare to dominate those fuckers!</promotedText>
+    <promotedText>Behold! A true Goblin City. A simple Citadel could no longer possibly contain our majesty, might, or need for Man-meat. We rise faster than ever. We are primed to take over this Elven shit hole. Rise, gobs, and prepare to dominate those fuckers!</promotedText>
     <demotedText>Our goblin city has been somewhat decimated in our lust for conquest. The Snoblins insist we retreat, but everyone knows they're full of shit. We must attack! Attack again, the disgusting Elves and Men must be wiped from the face of the planet, while they suspect our retreat!</demotedText>
   </HobGob.Census.GoblinCensusTierDef>
 
@@ -99,7 +99,7 @@
     <defName>MSSG_Census_Kingdom</defName>
     <label>goblin kingdom</label>
     <minPopulation>300</minPopulation>
-    <promotedText>The Goblin Kingdom is established. The war is won. The King is dominant. We will rend the Men, and the Elves' leaders' meat from their bones, and prepare a grand feast. Bastards!</promotedText>
+    <promotedText>The Goblin Kingdom is established. The war is won. The King is dominant. We will rend the Men, and the Elves' leaders' meat from their bones, and prepare a grand feast. Eat the bastards!</promotedText>
     <demotedText>"Still a kingdom" lol how do you downgrade from the highest lvl to the highest lvl? if u see this keyz-related error, chrtis b was here at some point bossman, how good is meat on a stick tho right? like and subscribe, no comments plz</demotedText>
   </HobGob.Census.GoblinCensusTierDef>
 </Defs>
