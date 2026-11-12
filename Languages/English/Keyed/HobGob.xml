@@ -81,4 +81,20 @@ Note: only one goblin per map can grow into a hobgoblin. While two hobgoblins li
   <MSSG_QueenInside>{PAWN_nameDef} is curled up down the bottom, snorin'.</MSSG_QueenInside>
   <MSSG_QueenUnknown>Sumfin' big is snorin' down the bottom.</MSSG_QueenUnknown>
   <MSSG_QueenReleased>{PAWN_nameDef} has crawled out of the pit, dead to the world. She'll need a good long kip.</MSSG_QueenReleased>
+
+  <!-- Nobby Nobby Rumble -->
+  <MSSG_RumbleNotEnough>Needs at least {0} noblins able to fight. Only got {1}. Not much of a rumble.</MSSG_RumbleNotEnough>
+  <MSSG_RumbleAlreadyOn>The nobbos are already rumblin'.</MSSG_RumbleAlreadyOn>
+  <MSSG_RumbleFizzled>The rumble fizzled out: only {0} noblins turned up to scrap, and it needs {1}.</MSSG_RumbleFizzled>
+  <MSSG_RumbleStartLabel>Nobby nobby rumble!</MSSG_RumbleStartLabel>
+  <MSSG_RumbleStartText>{0} noblins have stopped what they were doing and turned on each other. Every nobbo for itself!\n\nThey hit harder and faster than usual, and they will finish off anyone who goes down. A noblin with enough kills grows up and walks away a winner.\n\nThe last noblin left gets no prize. It must have been hiding.</MSSG_RumbleStartText>
+  <MSSG_RumbleWinner>{PAWN_nameDef} has bashed enough nobbos to grow up, and staggers out of the rumble a winner!</MSSG_RumbleWinner>
+  <MSSG_RumbleOverLabel>Rumble over</MSSG_RumbleOverLabel>
+  <MSSG_RumbleOverText>The nobby nobby rumble is over.\n\nNoblins in: {0}\nNoblins dead: {1}\nWinners: {2} ({3})\n\n{4}</MSSG_RumbleOverText>
+  <MSSG_RumbleNoWinners>nobody</MSSG_RumbleNoWinners>
+  <MSSG_RumblePunished>{PAWN_nameDef} was the last one left. Funny that, nobody remembers seeing {PAWN_objective} throw a punch. Hiding behind a barrel the whole time, the others reckon, except the others are dead. {PAWN_nameDef} has been made a Snoblin for {PAWN_possessive} cowardice.</MSSG_RumblePunished>
+  <MSSG_RumblePunishedMany>Only the cowards are left: {0}. Not one of them threw a punch the whole time. They have all been made Snoblins for it.</MSSG_RumblePunishedMany>
+  <MSSG_RumbleEnd_Wiped>Nobody left standing. Proper rumble, that.</MSSG_RumbleEnd_Wiped>
+  <MSSG_RumbleEnd_AllDown>Everyone left is lying in the dirt. Nobody can be bothered to finish anyone off.</MSSG_RumbleEnd_AllDown>
+  <MSSG_RumbleEnd_TimedOut>The nobbos got bored and wandered off. Whoever is left lives to scrap another day.</MSSG_RumbleEnd_TimedOut>
 </LanguageData>

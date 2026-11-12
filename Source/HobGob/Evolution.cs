@@ -55,6 +55,9 @@ namespace HobGob
 
         public bool GetsSeasonalKills => Extension?.seasonalKills ?? false;
 
+        /// <summary>Queues this pawn's normal evolution (rare roll included). Callers check <see cref="CanEvolveNow"/> first.</summary>
+        public void EnqueueEvolution() => Current.Game.GetComponent<GoblinEvolutionComponent>()?.Enqueue(pawn, Extension);
+
         /// <summary>True when this pawn waits for the player to press the evolve gizmo.</summary>
         public bool IsManual => Extension != null && !EvolutionRules.EvolvesAutomatically(Extension.manualEvolution, pawn.Faction == Faction.OfPlayerSilentFail);
 
@@ -171,6 +174,7 @@ namespace HobGob
         {
             NoblinRegistry.Clear();
             Comps.CompNoblinProof.ClearCache();
+            Rumble.NobbyRumbleComponent.ClearFighters();
         }
 
         public void Enqueue(Pawn pawn, EvolutionExtension ext) => queue[pawn] = ext;
@@ -214,6 +218,15 @@ namespace HobGob
                 }
             }
             return count;
+        }
+
+        /// <summary>Evolves now, skipping kill and cap checks. Used by the Nobby Nobby Rumble punishment.</summary>
+        public static void ForceEvolve(Pawn pawn, XenotypeDef next)
+        {
+            if (pawn?.genes != null && !pawn.Dead && next != null)
+            {
+                Evolve(pawn, next);
+            }
         }
 
         private static void Evolve(Pawn pawn, XenotypeDef next)

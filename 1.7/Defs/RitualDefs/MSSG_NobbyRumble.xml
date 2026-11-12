@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Nobby Nobby Rumble (Ideology only). The ritual is just the gathering; the fight itself runs in
+       HobGob.Rumble.NobbyRumbleComponent once the ritual completes. -->
+
+  <RitualBehaviorDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>MSSG_NobbyRumble</defName>
+    <workerClass>HobGob.Rumble.RitualBehaviorWorker_NobbyRumble</workerClass>
+    <durationTicks>2500</durationTicks>
+    <spectatorsLabel>Rowdy onlookers</spectatorsLabel>
+    <spectatorGerund>egg on the nobbos</spectatorGerund>
+    <stages>
+      <li>
+        <defaultDuty>Spectate</defaultDuty>
+        <endTriggers>
+          <li Class="StageEndTrigger_DurationPercentage">
+            <percentage>1</percentage>
+          </li>
+        </endTriggers>
+      </li>
+    </stages>
+  </RitualBehaviorDef>
+
+  <RitualOutcomeEffectDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>MSSG_NobbyRumble</defName>
+    <description>When the gathering ends, every free adult noblin on the map fights every other noblin to the death.</description>
+    <workerClass>HobGob.Rumble.RitualOutcomeEffectWorker_NobbyRumble</workerClass>
+    <givesDevelopmentPoints>false</givesDevelopmentPoints>
+    <warnOnLowQuality>false</warnOnLowQuality>
+    <allowAttachableOutcome>false</allowAttachableOutcome>
+    <allowOutcomeWithNoAttendance>true</allowOutcomeWithNoAttendance>
+    <extraPredictedOutcomeDescriptions>
+      <li>Fighters hit much harder and faster, but are no tougher and dodge no better.</li>
+      <li>Fighters keep beating downed noblins until they are dead. Kills count towards evolution.</li>
+      <li>A noblin with enough kills evolves and leaves the fight as a winner.</li>
+      <li>If only one noblin is left, or only noblins who will not fight, they hid from the fight. They are made into Snoblins.</li>
+    </extraPredictedOutcomeDescriptions>
+  </RitualOutcomeEffectDef>
+
+  <RitualPatternDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>MSSG_NobbyRumble</defName>
+    <canStartAnytime>true</canStartAnytime>
+    <alwaysStartAnytime>true</alwaysStartAnytime>
+    <ritualObligationTargetFilter>AnyRitualSpot</ritualObligationTargetFilter>
+    <ritualBehavior>MSSG_NobbyRumble</ritualBehavior>
+    <ritualOutcomeEffect>MSSG_NobbyRumble</ritualOutcomeEffect>
+    <ritualOnlyForIdeoMembers>false</ritualOnlyForIdeoMembers>
+    <playsIdeoMusic>false</playsIdeoMusic>
+    <tags Inherit="False" />
+  </RitualPatternDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>MSSG_NobbyNobbyRumble</defName>
+    <label>nobby nobby rumble</label>
+    <tipLabelOverride>Noblin battle royale</tipLabelOverride>
+    <description>Every free adult noblin on the map fights every other noblin to the death. Downed noblins get no mercy. A noblin that racks up enough kills evolves and leaves the fight a winner. If only one noblin is left at the end, it must have been hiding, and it is made into a Snoblin for its cowardice.\n\nNeeds at least 25 noblins. 100 or more is a proper rumble.</description>
+    <issue>Ritual</issue>
+    <impact>Medium</impact>
+    <preceptClass>Precept_Ritual</preceptClass>
+    <ritualPatternBase>MSSG_NobbyRumble</ritualPatternBase>
+    <iconPath>UI/Icons/Rituals/GladiatorDuel</iconPath>
+    <visible>true</visible>
+    <countsTowardsPreceptLimit>true</countsTowardsPreceptLimit>
+    <selectionWeight>0</selectionWeight>
+    <capitalizeAsTitle>false</capitalizeAsTitle>
+  </PreceptDef>
+</Defs>
