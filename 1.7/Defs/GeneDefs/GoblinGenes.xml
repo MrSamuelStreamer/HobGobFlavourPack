@@ -12,7 +12,7 @@
   <GeneDef ParentName="MSSG_GoblinHiddenGeneBase">
     <defName>MSSG_NoblinInstinct</defName>
     <label>noblin instinct</label>
-    <description>Carriers of this gene do not take orders about what to work on. They wander from chore to chore, doing whatever dumb labour seems most urgent.</description>
+    <description>Carriers of this gene do not take orders about what to work on. They wander from chore to chore, doing whatever dumb labour, mining or plant work seems most urgent.</description>
     <iconPath>UI/Icons/Genes/Gene_NoblinBehaviour</iconPath>
     <!-- Dumb labour only, without disabling joy, beauty or comfort. ManualSkilled is not used: it also covers
          Mining and PlantCutting. Growing and Hunting have no tag of their own; the work component sets them to 0. -->

@@ -6,6 +6,8 @@ namespace HobGob
     public enum NoblinTask
     {
         Firefighter,
+        // Before the others so a food crisis wins ties with other full-demand tasks.
+        Growing,
         Hauling,
         Cleaning,
         PlantCutting,
@@ -21,14 +23,16 @@ namespace HobGob
         public readonly int FilthInHomeArea;
         public readonly bool MiningDesignated;
         public readonly bool CuttingDesignated;
+        public readonly bool FoodLow;
 
-        public MapSignals(bool fireInHomeArea, int haulables, int filthInHomeArea, bool miningDesignated, bool cuttingDesignated)
+        public MapSignals(bool fireInHomeArea, int haulables, int filthInHomeArea, bool miningDesignated, bool cuttingDesignated, bool foodLow = false)
         {
             FireInHomeArea = fireInHomeArea;
             Haulables = haulables;
             FilthInHomeArea = filthInHomeArea;
             MiningDesignated = miningDesignated;
             CuttingDesignated = cuttingDesignated;
+            FoodLow = foodLow;
         }
     }
 
@@ -43,6 +47,9 @@ namespace HobGob
         public const float DesignatedDemand = 0.5f;
         public const float BasicWorkerDemand = 0.2f;
         public const float UrgentDemandThreshold = 0.5f;
+        public const float GrowingDemand = 0.4f;
+        /// <summary>At most this share of Noblins rushes a non-fire urgent task, so the rest keep other work going.</summary>
+        public const float MaxUrgentFraction = 0.5f;
 
         public static readonly NoblinTask[] AllTasks = (NoblinTask[])Enum.GetValues(typeof(NoblinTask));
 
@@ -52,6 +59,7 @@ namespace HobGob
             switch (task)
             {
                 case NoblinTask.Firefighter: return s.FireInHomeArea ? 1f : 0f;
+                case NoblinTask.Growing: return s.FoodLow ? 1f : GrowingDemand;
                 case NoblinTask.Hauling: return Ratio(s.Haulables, HaulablesForFullDemand);
                 case NoblinTask.Cleaning: return Ratio(s.FilthInHomeArea, FilthForFullDemand);
                 case NoblinTask.Mining: return s.MiningDesignated ? DesignatedDemand : 0f;
@@ -82,7 +90,10 @@ namespace HobGob
             return best;
         }
 
-        /// <summary>How many of <paramref name="noblinCount"/> Noblins rush the urgent task. At least one when any exist.</summary>
+        /// <summary>
+        /// How many of <paramref name="noblinCount"/> Noblins rush the urgent task. At least one when any exist,
+        /// at most <see cref="MaxUrgentFraction"/> of them (a cave colony's endless filth must not take every Noblin).
+        /// </summary>
         public static int UrgentShare(int noblinCount, float demand)
         {
             if (noblinCount <= 0)
@@ -90,16 +101,18 @@ namespace HobGob
                 return 0;
             }
             int share = (int)Math.Ceiling(noblinCount * Clamp01(demand));
-            return Math.Max(1, Math.Min(noblinCount, share));
+            int cap = (int)Math.Ceiling(noblinCount * MaxUrgentFraction);
+            return Math.Max(1, Math.Min(cap, share));
         }
 
         /// <summary>
         /// The task a work type belongs to, or null if Noblins leave it off.
         /// Vanilla types match by defName. Mods such as [FSF] Complex Jobs move vanilla work givers into new
         /// work types (e.g. FSFDeliver) that keep the vanilla work tags, so those match by tag.
-        /// Plant and basic work only match by name: modded types with those tags are skilled (e.g. crop harvesting).
+        /// Plant work matches by tag too (e.g. FSF crop harvesting goes to Growing). Basic work only matches by name:
+        /// its ManualDumb tag is shared by skilled modded types.
         /// </summary>
-        public static NoblinTask? TaskForWorkType(string defName, bool firefighting, bool cleaning, bool hauling, bool mining)
+        public static NoblinTask? TaskForWorkType(string defName, bool firefighting, bool cleaning, bool hauling, bool mining, bool plantWork = false)
         {
             foreach (NoblinTask task in AllTasks)
             {
@@ -123,6 +136,10 @@ namespace HobGob
             if (mining)
             {
                 return NoblinTask.Mining;
+            }
+            if (plantWork)
+            {
+                return NoblinTask.Growing;
             }
             return null;
         }

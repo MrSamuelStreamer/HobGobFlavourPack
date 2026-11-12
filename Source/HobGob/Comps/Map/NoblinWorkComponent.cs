@@ -8,6 +8,10 @@ namespace HobGob.Comps.Map
     public class NoblinWorkComponent : MapComponent
     {
         private const int Interval = 250;
+        /// <summary>Below this many days of stored food, Noblins rush the fields.</summary>
+        private const float FoodLowDays = 5f;
+        /// <summary>Rough daily nutrition one colonist eats.</summary>
+        private const float NutritionPerColonistPerDay = 1.6f;
 
         private static Dictionary<WorkTypeDef, NoblinTask> taskFor;
         private readonly List<Pawn> noblins = new List<Pawn>();
@@ -67,7 +71,15 @@ namespace HobGob.Comps.Map
                 filthInHomeArea: map.listerFilthInHomeArea.FilthInHomeArea.Count,
                 miningDesignated: map.designationManager.AnySpawnedDesignationOfDef(DesignationDefOf.Mine),
                 cuttingDesignated: map.designationManager.AnySpawnedDesignationOfDef(DesignationDefOf.CutPlant)
-                    || map.designationManager.AnySpawnedDesignationOfDef(DesignationDefOf.HarvestPlant));
+                    || map.designationManager.AnySpawnedDesignationOfDef(DesignationDefOf.HarvestPlant),
+                foodLow: FoodLow());
+        }
+
+        private bool FoodLow()
+        {
+            int colonists = map.mapPawns.FreeColonistsSpawnedCount;
+            return colonists > 0
+                && map.resourceCounter.TotalHumanEdibleNutrition < colonists * NutritionPerColonistPerDay * FoodLowDays;
         }
 
         private bool AnyFireInHomeArea()
@@ -97,7 +109,7 @@ namespace HobGob.Comps.Map
                 {
                     continue;
                 }
-                // Anything that is not dumb labour stays off. On strike, everything is off.
+                // Anything outside the Noblin task list (skilled work) stays off. On strike, everything is off.
                 int priority = !striking && TaskFor.TryGetValue(def, out NoblinTask task)
                     ? NoblinWorkScorer.Priority(task, signals, urgent, inUrgentShare)
                     : 0;
@@ -123,7 +135,8 @@ namespace HobGob.Comps.Map
                             firefighting: (def.workTags & WorkTags.Firefighting) != 0,
                             cleaning: (def.workTags & WorkTags.Cleaning) != 0,
                             hauling: (def.workTags & WorkTags.Hauling) != 0,
-                            mining: (def.workTags & WorkTags.Mining) != 0);
+                            mining: (def.workTags & WorkTags.Mining) != 0,
+                            plantWork: (def.workTags & WorkTags.PlantWork) != 0);
                         if (task.HasValue)
                         {
                             taskFor[def] = task.Value;

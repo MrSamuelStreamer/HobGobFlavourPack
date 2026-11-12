@@ -14,8 +14,25 @@ namespace HobGob.Tests
             Assert.Null(NoblinWorkScorer.UrgentTask(s));
             foreach (NoblinTask t in NoblinWorkScorer.AllTasks)
             {
-                Assert.Equal(4, NoblinWorkScorer.Priority(t, s, null, false));
+                int expected = t == NoblinTask.Growing ? 3 : 4;
+                Assert.Equal(expected, NoblinWorkScorer.Priority(t, s, null, false));
             }
+        }
+
+        [Fact]
+        public void FoodLow_GrowingIsUrgent_EvenOverFullFilth()
+        {
+            MapSignals s = new MapSignals(false, 0, 1000, false, false, foodLow: true);
+            Assert.Equal(NoblinTask.Growing, NoblinWorkScorer.UrgentTask(s));
+            Assert.Equal(1, NoblinWorkScorer.Priority(NoblinTask.Growing, s, NoblinTask.Growing, true));
+        }
+
+        [Fact]
+        public void EndlessFilth_RushesAtMostHalf()
+        {
+            MapSignals s = new MapSignals(false, 0, 1000, false, false);
+            Assert.Equal(NoblinTask.Cleaning, NoblinWorkScorer.UrgentTask(s));
+            Assert.Equal(4, NoblinWorkScorer.UrgentShare(8, NoblinWorkScorer.Demand(NoblinTask.Cleaning, s)));
         }
 
         [Fact]
@@ -58,8 +75,9 @@ namespace HobGob.Tests
         [InlineData(0, 1f, 0)]
         [InlineData(1, 0.1f, 1)]
         [InlineData(10, 0.5f, 5)]
-        [InlineData(10, 0.51f, 6)]
-        [InlineData(3, 2f, 3)]
+        [InlineData(10, 0.51f, 5)]
+        [InlineData(3, 2f, 2)]
+        [InlineData(8, 1f, 4)]
         [InlineData(5, -1f, 1)]
         public void UrgentShare_RoundsUpAndClamps(int count, float demand, int expected)
         {
@@ -121,6 +139,7 @@ namespace HobGob.Tests
         [InlineData("PlantCutting", NoblinTask.PlantCutting)]
         [InlineData("BasicWorker", NoblinTask.BasicWorker)]
         [InlineData("Firefighter", NoblinTask.Firefighter)]
+        [InlineData("Growing", NoblinTask.Growing)]
         public void VanillaWorkType_MatchesByName(string defName, NoblinTask expected)
         {
             Assert.Equal(expected, NoblinWorkScorer.TaskForWorkType(defName, false, false, false, false));
@@ -140,10 +159,15 @@ namespace HobGob.Tests
         }
 
         [Fact]
+        public void ComplexJobsHarvesting_MatchesGrowingByTag()
+        {
+            // FSFHarvesting carries PlantWork: crop harvesting moved out of Growing.
+            Assert.Equal(NoblinTask.Growing, NoblinWorkScorer.TaskForWorkType("FSFHarvesting", false, false, false, false, plantWork: true));
+        }
+
+        [Fact]
         public void SkilledModdedWorkType_StaysOff()
         {
-            // FSFHarvesting carries PlantWork, but it is crop harvesting moved out of Growing.
-            Assert.Null(NoblinWorkScorer.TaskForWorkType("FSFHarvesting", false, false, false, false));
             Assert.Null(NoblinWorkScorer.TaskForWorkType("Cooking", false, false, false, false));
         }
     }
