@@ -72,8 +72,8 @@ Note: only one goblin per map can grow into a hobgoblin. While two hobgoblins li
   <MSSG_SettingsSeasonalKillsTip>A number in this range is picked at random each time.</MSSG_SettingsSeasonalKillsTip>
 
   <!-- Goblin surgery -->
-  <MSSG_HarvestPartGizmo>Harvest part</MSSG_HarvestPartGizmo>
-  <MSSG_HarvestPartGizmoDesc>Pick a body part to chop off this Noblin. A doctor will do it with no medicine and no anaesthetic. Goblin surgery only succeeds about one time in four.</MSSG_HarvestPartGizmoDesc>
-  <MSSG_HarvestPartNone>Nothing left worth harvesting</MSSG_HarvestPartNone>
-  <MSSG_PartBadlyAttached>{PAWN_nameDef}'s new {1} went in, but badly attached. It only works at half strength.</MSSG_PartBadlyAttached>
+  <MSSG_HarvestPartGizmo>Chop a bit off</MSSG_HarvestPartGizmo>
+  <MSSG_HarvestPartGizmoDesc>Pick a bit to hack off this noblin. Someone'll come over and do it proper: no medsy stuff, no sleepy stuff, just a good chop. Only works about one go in four, mind.</MSSG_HarvestPartGizmoDesc>
+  <MSSG_HarvestPartNone>Nuffin' left worth choppin'</MSSG_HarvestPartNone>
+  <MSSG_PartBadlyAttached>{PAWN_nameDef}'s new {1} went on all wonky. It only half works.</MSSG_PartBadlyAttached>
 </LanguageData>
