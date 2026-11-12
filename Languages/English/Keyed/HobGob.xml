@@ -70,4 +70,10 @@ Note: only one goblin per map can grow into a hobgoblin. While two hobgoblins li
   <MSSG_SettingsSeasonalChanceTip>Set to 0% to turn seasonal kills off.</MSSG_SettingsSeasonalChanceTip>
   <MSSG_SettingsSeasonalKills>Kills gained on a success: {0} to {1}</MSSG_SettingsSeasonalKills>
   <MSSG_SettingsSeasonalKillsTip>A number in this range is picked at random each time.</MSSG_SettingsSeasonalKillsTip>
+
+  <!-- Goblin surgery -->
+  <MSSG_HarvestPartGizmo>Harvest part</MSSG_HarvestPartGizmo>
+  <MSSG_HarvestPartGizmoDesc>Pick a body part to chop off this Noblin. A doctor will do it with no medicine and no anaesthetic. Goblin surgery only succeeds about one time in four.</MSSG_HarvestPartGizmoDesc>
+  <MSSG_HarvestPartNone>Nothing left worth harvesting</MSSG_HarvestPartNone>
+  <MSSG_PartBadlyAttached>{PAWN_nameDef}'s new {1} went in, but badly attached. It only works at half strength.</MSSG_PartBadlyAttached>
 </LanguageData>

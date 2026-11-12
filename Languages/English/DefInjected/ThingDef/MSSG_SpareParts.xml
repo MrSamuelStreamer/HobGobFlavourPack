@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Goblin names for the Vanilla Ideology Expanded - Memes and Structures "fleshcrafted" body parts (goblin part harvesting). -->
+<LanguageData>
+  <!-- Arm -->
+  <VME_FleshcraftedArm.label>spare arm</VME_FleshcraftedArm.label>
+  <VME_FleshcraftedArm.description>A spare arm, hacked off sumfin' what didn't need it as much as we do. Still a bit wriggly. Stick it on someone what's lost theirs, or eat it. Might go all festery on anyone who ain't into fleshcraftin'.</VME_FleshcraftedArm.description>
+  <!-- Ear -->
+  <VME_FleshcraftedEar.label>spare ear</VME_FleshcraftedEar.label>
+  <VME_FleshcraftedEar.description>A spare ear, hacked off sumfin' what didn't need it as much as we do. Still a bit wriggly. Stick it on someone what's lost theirs, or eat it. Might go all festery on anyone who ain't into fleshcraftin'.</VME_FleshcraftedEar.description>
+  <!-- Eye -->
+  <VME_FleshcraftedEye.label>spare eye</VME_FleshcraftedEye.label>
+  <VME_FleshcraftedEye.description>A spare eye, hacked off sumfin' what didn't need it as much as we do. Still a bit wriggly. Pop it in someone what's lost theirs, or eat it. Might go all festery on anyone who ain't into fleshcraftin'.</VME_FleshcraftedEye.description>
+  <!-- Finger -->
+  <VME_FleshcraftedFinger.label>spare finger</VME_FleshcraftedFinger.label>
+  <VME_FleshcraftedFinger.description>A spare finger, hacked off sumfin' what didn't need it as much as we do. Still a bit wriggly. Stick it on someone what's lost theirs, or eat it. Might go all festery on anyone who ain't into fleshcraftin'.</VME_FleshcraftedFinger.description>
+  <!-- Foot -->
+  <VME_FleshcraftedFoot.label>spare foot</VME_FleshcraftedFoot.label>
+  <VME_FleshcraftedFoot.description>A spare foot, hacked off sumfin' what didn't need it as much as we do. Still a bit wriggly. Stick it on someone what's lost theirs, or eat it. Might go all festery on anyone who ain't into fleshcraftin'.</VME_FleshcraftedFoot.description>
+  <!-- Hand -->
+  <VME_FleshcraftedHand.label>spare hand</VME_FleshcraftedHand.label>
+  <VME_FleshcraftedHand.description>A spare hand, hacked off sumfin' what didn't need it as much as we do. Still a bit wriggly. Stick it on someone what's lost theirs, or eat it. Might go all festery on anyone who ain't into fleshcraftin'.</VME_FleshcraftedHand.description>
+  <!-- Heart -->
+  <VME_FleshcraftedHeart.label>spare heart</VME_FleshcraftedHeart.label>
+  <VME_FleshcraftedHeart.description>A spare heart, hacked off sumfin' what didn't need it as much as we do. Still a bit wriggly. Shove it in someone what's lost theirs, or eat it. Might go all festery on anyone who ain't into fleshcraftin'.</VME_FleshcraftedHeart.description>
+  <!-- Jaw -->
+  <VME_FleshcraftedJaw.label>spare jaw</VME_FleshcraftedJaw.label>
+  <VME_FleshcraftedJaw.description>A spare jaw, hacked off sumfin' what didn't need it as much as we do. Still a bit wriggly. Stick it on someone what's lost theirs, or eat it. Might go all festery on anyone who ain't into fleshcraftin'.</VME_FleshcraftedJaw.description>
+  <!-- Kidney -->
+  <VME_FleshcraftedKidney.label>spare kidney</VME_FleshcraftedKidney.label>
+  <VME_FleshcraftedKidney.description>A spare kidney, hacked off sumfin' what didn't need it as much as we do. Still a bit wriggly. Shove it in someone what's lost theirs, or eat it. Might go all festery on anyone who ain't into fleshcraftin'.</VME_FleshcraftedKidney.description>
+  <!-- Leg -->
+  <VME_FleshcraftedLeg.label>spare leg</VME_FleshcraftedLeg.label>
+  <VME_FleshcraftedLeg.description>A spare leg, hacked off sumfin' what didn't need it as much as we do. Still a bit wriggly. Stick it on someone what's lost theirs, or eat it. Might go all festery on anyone who ain't into fleshcraftin'.</VME_FleshcraftedLeg.description>
+  <!-- Liver -->
+  <VME_FleshcraftedLiver.label>spare liver</VME_FleshcraftedLiver.label>
+  <VME_FleshcraftedLiver.description>A spare liver, hacked off sumfin' what didn't need it as much as we do. Still a bit wriggly. Shove it in someone what's lost theirs, or eat it. Might go all festery on anyone who ain't into fleshcraftin'.</VME_FleshcraftedLiver.description>
+  <!-- Lung -->
+  <VME_FleshcraftedLung.label>spare lung</VME_FleshcraftedLung.label>
+  <VME_FleshcraftedLung.description>A spare lung, hacked off sumfin' what didn't need it as much as we do. Still a bit wriggly. Shove it in someone what's lost theirs, or eat it. Might go all festery on anyone who ain't into fleshcraftin'.</VME_FleshcraftedLung.description>
+  <!-- Nose -->
+  <VME_FleshcraftedNose.label>spare nose</VME_FleshcraftedNose.label>
+  <VME_FleshcraftedNose.description>A spare nose, hacked off sumfin' what didn't need it as much as we do. Still a bit wriggly. Stick it on someone what's lost theirs, or eat it. Might go all festery on anyone who ain't into fleshcraftin'.</VME_FleshcraftedNose.description>
+  <!-- Spine -->
+  <VME_FleshcraftedSpine.label>spare spine</VME_FleshcraftedSpine.label>
+  <VME_FleshcraftedSpine.description>A spare spine, hacked off sumfin' what didn't need it as much as we do. Still a bit wriggly. Shove it in someone what's lost theirs, or eat it. Might go all festery on anyone who ain't into fleshcraftin'.</VME_FleshcraftedSpine.description>
+  <!-- Stomach -->
+  <VME_FleshcraftedStomach.label>spare stomach</VME_FleshcraftedStomach.label>
+  <VME_FleshcraftedStomach.description>A spare stomach, hacked off sumfin' what didn't need it as much as we do. Still a bit wriggly. Shove it in someone what's lost theirs, or eat it. Might go all festery on anyone who ain't into fleshcraftin'.</VME_FleshcraftedStomach.description>
+  <!-- Toe -->
+  <VME_FleshcraftedToe.label>spare toe</VME_FleshcraftedToe.label>
+  <VME_FleshcraftedToe.description>A spare toe, hacked off sumfin' what didn't need it as much as we do. Still a bit wriggly. Stick it on someone what's lost theirs, or eat it. Might go all festery on anyone who ain't into fleshcraftin'.</VME_FleshcraftedToe.description>
+  <!-- Tongue -->
+  <VME_FleshcraftedTongue.label>spare tongue</VME_FleshcraftedTongue.label>
+  <VME_FleshcraftedTongue.description>A spare tongue, hacked off sumfin' what didn't need it as much as we do. Still a bit wriggly. Stick it on someone what's lost theirs, or eat it. Might go all festery on anyone who ain't into fleshcraftin'.</VME_FleshcraftedTongue.description>
+</LanguageData>

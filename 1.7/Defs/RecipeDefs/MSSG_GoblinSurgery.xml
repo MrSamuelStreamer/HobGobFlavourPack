@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issue #10: chop a part off or out of a goblin. No medicine, no anaesthetic (goblin surgery rules apply). -->
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>MSSG_HarvestGoblinPart</defName>
+    <label>harvest part</label>
+    <description>Unceremoniously chop a body part off, or out of, a goblin. A clean part can be kept, transplanted or eaten.</description>
+    <workerClass>HobGob.Surgery.Recipe_HarvestGoblinPart</workerClass>
+    <jobString>Harvesting a goblin part.</jobString>
+    <workAmount>1000</workAmount>
+    <anesthetize>false</anesthetize>
+    <targetsBodyPart>true</targetsBodyPart>
+    <surgeryOutcomeEffect>SurgeryOutcomeBase</surgeryOutcomeEffect>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <effectWorking>Surgery</effectWorking>
+    <soundWorking>Recipe_Surgery</soundWorking>
+    <workSkill>Medicine</workSkill>
+    <workSkillLearnFactor>16</workSkillLearnFactor>
+    <workSpeedStat>MedicalOperationSpeed</workSpeedStat>
+    <recipeUsers>
+      <li>Human</li>
+    </recipeUsers>
+    <modExtensions>
+      <li Class="HobGob.Surgery.HarvestablePartsExtension">
+        <parts>
+          <!-- Organs drop their vanilla item. -->
+          <li><part>Heart</part></li>
+          <li><part>Lung</part></li>
+          <li><part>Kidney</part></li>
+          <li><part>Liver</part></li>
+          <!-- Limbs and senses drop the Vanilla Ideology Expanded - Memes and Structures fleshcrafted item.
+               Without that mod these items do not exist, so these parts are not offered. -->
+          <li><part>Stomach</part><thing>VME_FleshcraftedStomach</thing></li>
+          <li><part>Arm</part><thing>VME_FleshcraftedArm</thing></li>
+          <li><part>Hand</part><thing>VME_FleshcraftedHand</thing></li>
+          <li><part>Finger</part><thing>VME_FleshcraftedFinger</thing></li>
+          <li><part>Leg</part><thing>VME_FleshcraftedLeg</thing></li>
+          <li><part>Foot</part><thing>VME_FleshcraftedFoot</thing></li>
+          <li><part>Toe</part><thing>VME_FleshcraftedToe</thing></li>
+          <li><part>Eye</part><thing>VME_FleshcraftedEye</thing></li>
+          <li><part>Ear</part><thing>VME_FleshcraftedEar</thing></li>
+          <li><part>Nose</part><thing>VME_FleshcraftedNose</thing></li>
+          <li><part>Jaw</part><thing>VME_FleshcraftedJaw</thing></li>
+          <li><part>Tongue</part><thing>VME_FleshcraftedTongue</thing></li>
+        </parts>
+      </li>
+    </modExtensions>
+  </RecipeDef>
+
+</Defs>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Goblin names for the Vanilla Ideology Expanded - Memes and Structures "fleshcrafted" body parts (goblin part harvesting). -->
+<LanguageData>
+  <!-- Arm -->
+  <VME_InstallFleshcraftedArm.label>stick on spare arm</VME_InstallFleshcraftedArm.label>
+  <VME_InstallFleshcraftedArm.description>Stick on a spare arm. Fine for fleshcrafters. Anyone else might go all festery when their body figures out it ain't theirs.</VME_InstallFleshcraftedArm.description>
+  <VME_InstallFleshcraftedArm.jobString>Stickin' on spare arm.</VME_InstallFleshcraftedArm.jobString>
+  <!-- Ear -->
+  <VME_InstallFleshcraftedEar.label>stick on spare ear</VME_InstallFleshcraftedEar.label>
+  <VME_InstallFleshcraftedEar.description>Stick on a spare ear. Fine for fleshcrafters. Anyone else might go all festery when their body figures out it ain't theirs.</VME_InstallFleshcraftedEar.description>
+  <VME_InstallFleshcraftedEar.jobString>Stickin' on spare ear.</VME_InstallFleshcraftedEar.jobString>
+  <!-- Eye -->
+  <VME_InstallFleshcraftedEye.label>pop in spare eye</VME_InstallFleshcraftedEye.label>
+  <VME_InstallFleshcraftedEye.description>Pop in a spare eye. Fine for fleshcrafters. Anyone else might go all festery when their body figures out it ain't theirs.</VME_InstallFleshcraftedEye.description>
+  <VME_InstallFleshcraftedEye.jobString>Poppin' in spare eye.</VME_InstallFleshcraftedEye.jobString>
+  <!-- Finger -->
+  <VME_InstallFleshcraftedFinger.label>stick on spare finger</VME_InstallFleshcraftedFinger.label>
+  <VME_InstallFleshcraftedFinger.description>Stick on a spare finger. Fine for fleshcrafters. Anyone else might go all festery when their body figures out it ain't theirs.</VME_InstallFleshcraftedFinger.description>
+  <VME_InstallFleshcraftedFinger.jobString>Stickin' on spare finger.</VME_InstallFleshcraftedFinger.jobString>
+  <!-- Foot -->
+  <VME_InstallFleshcraftedFoot.label>stick on spare foot</VME_InstallFleshcraftedFoot.label>
+  <VME_InstallFleshcraftedFoot.description>Stick on a spare foot. Fine for fleshcrafters. Anyone else might go all festery when their body figures out it ain't theirs.</VME_InstallFleshcraftedFoot.description>
+  <VME_InstallFleshcraftedFoot.jobString>Stickin' on spare foot.</VME_InstallFleshcraftedFoot.jobString>
+  <!-- Hand -->
+  <VME_InstallFleshcraftedHand.label>stick on spare hand</VME_InstallFleshcraftedHand.label>
+  <VME_InstallFleshcraftedHand.description>Stick on a spare hand. Fine for fleshcrafters. Anyone else might go all festery when their body figures out it ain't theirs.</VME_InstallFleshcraftedHand.description>
+  <VME_InstallFleshcraftedHand.jobString>Stickin' on spare hand.</VME_InstallFleshcraftedHand.jobString>
+  <!-- Heart -->
+  <VME_InstallFleshcraftedHeart.label>shove in spare heart</VME_InstallFleshcraftedHeart.label>
+  <VME_InstallFleshcraftedHeart.description>Shove in a spare heart. Fine for fleshcrafters. Anyone else might go all festery when their body figures out it ain't theirs.</VME_InstallFleshcraftedHeart.description>
+  <VME_InstallFleshcraftedHeart.jobString>Shovin' in spare heart.</VME_InstallFleshcraftedHeart.jobString>
+  <!-- Jaw -->
+  <VME_InstallFleshcraftedJaw.label>stick on spare jaw</VME_InstallFleshcraftedJaw.label>
+  <VME_InstallFleshcraftedJaw.description>Stick on a spare jaw. Fine for fleshcrafters. Anyone else might go all festery when their body figures out it ain't theirs.</VME_InstallFleshcraftedJaw.description>
+  <VME_InstallFleshcraftedJaw.jobString>Stickin' on spare jaw.</VME_InstallFleshcraftedJaw.jobString>
+  <!-- Kidney -->
+  <VME_InstallFleshcraftedKidney.label>shove in spare kidney</VME_InstallFleshcraftedKidney.label>
+  <VME_InstallFleshcraftedKidney.description>Shove in a spare kidney. Fine for fleshcrafters. Anyone else might go all festery when their body figures out it ain't theirs.</VME_InstallFleshcraftedKidney.description>
+  <VME_InstallFleshcraftedKidney.jobString>Shovin' in spare kidney.</VME_InstallFleshcraftedKidney.jobString>
+  <!-- Leg -->
+  <VME_InstallFleshcraftedLeg.label>stick on spare leg</VME_InstallFleshcraftedLeg.label>
+  <VME_InstallFleshcraftedLeg.description>Stick on a spare leg. Fine for fleshcrafters. Anyone else might go all festery when their body figures out it ain't theirs.</VME_InstallFleshcraftedLeg.description>
+  <VME_InstallFleshcraftedLeg.jobString>Stickin' on spare leg.</VME_InstallFleshcraftedLeg.jobString>
+  <!-- Liver -->
+  <VME_InstallFleshcraftedLiver.label>shove in spare liver</VME_InstallFleshcraftedLiver.label>
+  <VME_InstallFleshcraftedLiver.description>Shove in a spare liver. Fine for fleshcrafters. Anyone else might go all festery when their body figures out it ain't theirs.</VME_InstallFleshcraftedLiver.description>
+  <VME_InstallFleshcraftedLiver.jobString>Shovin' in spare liver.</VME_InstallFleshcraftedLiver.jobString>
+  <!-- Lung -->
+  <VME_InstallFleshcraftedLung.label>shove in spare lung</VME_InstallFleshcraftedLung.label>
+  <VME_InstallFleshcraftedLung.description>Shove in a spare lung. Fine for fleshcrafters. Anyone else might go all festery when their body figures out it ain't theirs.</VME_InstallFleshcraftedLung.description>
+  <VME_InstallFleshcraftedLung.jobString>Shovin' in spare lung.</VME_InstallFleshcraftedLung.jobString>
+  <!-- Nose -->
+  <VME_InstallFleshcraftedNose.label>stick on spare nose</VME_InstallFleshcraftedNose.label>
+  <VME_InstallFleshcraftedNose.description>Stick on a spare nose. Fine for fleshcrafters. Anyone else might go all festery when their body figures out it ain't theirs.</VME_InstallFleshcraftedNose.description>
+  <VME_InstallFleshcraftedNose.jobString>Stickin' on spare nose.</VME_InstallFleshcraftedNose.jobString>
+  <!-- Spine -->
+  <VME_InstallFleshcraftedSpine.label>shove in spare spine</VME_InstallFleshcraftedSpine.label>
+  <VME_InstallFleshcraftedSpine.description>Shove in a spare spine. Fine for fleshcrafters. Anyone else might go all festery when their body figures out it ain't theirs.</VME_InstallFleshcraftedSpine.description>
+  <VME_InstallFleshcraftedSpine.jobString>Shovin' in spare spine.</VME_InstallFleshcraftedSpine.jobString>
+  <!-- Stomach -->
+  <VME_InstallFleshcraftedStomach.label>shove in spare stomach</VME_InstallFleshcraftedStomach.label>
+  <VME_InstallFleshcraftedStomach.description>Shove in a spare stomach. Fine for fleshcrafters. Anyone else might go all festery when their body figures out it ain't theirs.</VME_InstallFleshcraftedStomach.description>
+  <VME_InstallFleshcraftedStomach.jobString>Shovin' in spare stomach.</VME_InstallFleshcraftedStomach.jobString>
+  <!-- Toe -->
+  <VME_InstallFleshcraftedToe.label>stick on spare toe</VME_InstallFleshcraftedToe.label>
+  <VME_InstallFleshcraftedToe.description>Stick on a spare toe. Fine for fleshcrafters. Anyone else might go all festery when their body figures out it ain't theirs.</VME_InstallFleshcraftedToe.description>
+  <VME_InstallFleshcraftedToe.jobString>Stickin' on spare toe.</VME_InstallFleshcraftedToe.jobString>
+  <!-- Tongue -->
+  <VME_InstallFleshcraftedTongue.label>stick on spare tongue</VME_InstallFleshcraftedTongue.label>
+  <VME_InstallFleshcraftedTongue.description>Stick on a spare tongue. Fine for fleshcrafters. Anyone else might go all festery when their body figures out it ain't theirs.</VME_InstallFleshcraftedTongue.description>
+  <VME_InstallFleshcraftedTongue.jobString>Stickin' on spare tongue.</VME_InstallFleshcraftedTongue.jobString>
+</LanguageData>

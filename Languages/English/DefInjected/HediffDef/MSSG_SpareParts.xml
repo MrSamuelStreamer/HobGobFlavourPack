@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Goblin names for the Vanilla Ideology Expanded - Memes and Structures "fleshcrafted" body parts (goblin part harvesting). -->
+<LanguageData>
+  <!-- Arm -->
+  <VME_FleshcraftedArmHediff.label>spare arm</VME_FleshcraftedArmHediff.label>
+  <VME_FleshcraftedArmHediff.labelNoun>a spare arm</VME_FleshcraftedArmHediff.labelNoun>
+  <VME_FleshcraftedArmHediff.description>A spare arm, stuck on where the old one used to be.</VME_FleshcraftedArmHediff.description>
+  <!-- Ear -->
+  <VME_FleshcraftedEarHediff.label>spare ear</VME_FleshcraftedEarHediff.label>
+  <VME_FleshcraftedEarHediff.labelNoun>a spare ear</VME_FleshcraftedEarHediff.labelNoun>
+  <VME_FleshcraftedEarHediff.description>A spare ear, stuck on where the old one used to be.</VME_FleshcraftedEarHediff.description>
+  <!-- Eye -->
+  <VME_FleshcraftedEyeHediff.label>spare eye</VME_FleshcraftedEyeHediff.label>
+  <VME_FleshcraftedEyeHediff.labelNoun>a spare eye</VME_FleshcraftedEyeHediff.labelNoun>
+  <VME_FleshcraftedEyeHediff.description>A spare eye, popped in where the old one used to be.</VME_FleshcraftedEyeHediff.description>
+  <!-- Finger -->
+  <VME_FleshcraftedFingerHediff.label>spare finger</VME_FleshcraftedFingerHediff.label>
+  <VME_FleshcraftedFingerHediff.labelNoun>a spare finger</VME_FleshcraftedFingerHediff.labelNoun>
+  <VME_FleshcraftedFingerHediff.description>A spare finger, stuck on where the old one used to be.</VME_FleshcraftedFingerHediff.description>
+  <!-- Foot -->
+  <VME_FleshcraftedFootHediff.label>spare foot</VME_FleshcraftedFootHediff.label>
+  <VME_FleshcraftedFootHediff.labelNoun>a spare foot</VME_FleshcraftedFootHediff.labelNoun>
+  <VME_FleshcraftedFootHediff.description>A spare foot, stuck on where the old one used to be.</VME_FleshcraftedFootHediff.description>
+  <!-- Hand -->
+  <VME_FleshcraftedHandHediff.label>spare hand</VME_FleshcraftedHandHediff.label>
+  <VME_FleshcraftedHandHediff.labelNoun>a spare hand</VME_FleshcraftedHandHediff.labelNoun>
+  <VME_FleshcraftedHandHediff.description>A spare hand, stuck on where the old one used to be.</VME_FleshcraftedHandHediff.description>
+  <!-- Heart -->
+  <VME_FleshcraftedHeartHediff.label>spare heart</VME_FleshcraftedHeartHediff.label>
+  <VME_FleshcraftedHeartHediff.labelNoun>a spare heart</VME_FleshcraftedHeartHediff.labelNoun>
+  <VME_FleshcraftedHeartHediff.description>A spare heart, shoved in where the old one used to be.</VME_FleshcraftedHeartHediff.description>
+  <!-- Jaw -->
+  <VME_FleshcraftedJawHediff.label>spare jaw</VME_FleshcraftedJawHediff.label>
+  <VME_FleshcraftedJawHediff.labelNoun>a spare jaw</VME_FleshcraftedJawHediff.labelNoun>
+  <VME_FleshcraftedJawHediff.description>A spare jaw, stuck on where the old one used to be.</VME_FleshcraftedJawHediff.description>
+  <!-- Kidney -->
+  <VME_FleshcraftedKidneyHediff.label>spare kidney</VME_FleshcraftedKidneyHediff.label>
+  <VME_FleshcraftedKidneyHediff.labelNoun>a spare kidney</VME_FleshcraftedKidneyHediff.labelNoun>
+  <VME_FleshcraftedKidneyHediff.description>A spare kidney, shoved in where the old one used to be.</VME_FleshcraftedKidneyHediff.description>
+  <!-- Leg -->
+  <VME_FleshcraftedLegHediff.label>spare leg</VME_FleshcraftedLegHediff.label>
+  <VME_FleshcraftedLegHediff.labelNoun>a spare leg</VME_FleshcraftedLegHediff.labelNoun>
+  <VME_FleshcraftedLegHediff.description>A spare leg, stuck on where the old one used to be.</VME_FleshcraftedLegHediff.description>
+  <!-- Liver -->
+  <VME_FleshcraftedLiverHediff.label>spare liver</VME_FleshcraftedLiverHediff.label>
+  <VME_FleshcraftedLiverHediff.labelNoun>a spare liver</VME_FleshcraftedLiverHediff.labelNoun>
+  <VME_FleshcraftedLiverHediff.description>A spare liver, shoved in where the old one used to be.</VME_FleshcraftedLiverHediff.description>
+  <!-- Lung -->
+  <VME_FleshcraftedLungHediff.label>spare lung</VME_FleshcraftedLungHediff.label>
+  <VME_FleshcraftedLungHediff.labelNoun>a spare lung</VME_FleshcraftedLungHediff.labelNoun>
+  <VME_FleshcraftedLungHediff.description>A spare lung, shoved in where the old one used to be.</VME_FleshcraftedLungHediff.description>
+  <!-- Nose -->
+  <VME_FleshcraftedNoseHediff.label>spare nose</VME_FleshcraftedNoseHediff.label>
+  <VME_FleshcraftedNoseHediff.labelNoun>a spare nose</VME_FleshcraftedNoseHediff.labelNoun>
+  <VME_FleshcraftedNoseHediff.description>A spare nose, stuck on where the old one used to be.</VME_FleshcraftedNoseHediff.description>
+  <!-- Spine -->
+  <VME_FleshcraftedSpineHediff.label>spare spine</VME_FleshcraftedSpineHediff.label>
+  <VME_FleshcraftedSpineHediff.labelNoun>a spare spine</VME_FleshcraftedSpineHediff.labelNoun>
+  <VME_FleshcraftedSpineHediff.description>A spare spine, shoved in where the old one used to be.</VME_FleshcraftedSpineHediff.description>
+  <!-- Stomach -->
+  <VME_FleshcraftedStomachHediff.label>spare stomach</VME_FleshcraftedStomachHediff.label>
+  <VME_FleshcraftedStomachHediff.labelNoun>a spare stomach</VME_FleshcraftedStomachHediff.labelNoun>
+  <VME_FleshcraftedStomachHediff.description>A spare stomach, shoved in where the old one used to be.</VME_FleshcraftedStomachHediff.description>
+  <!-- Toe -->
+  <VME_FleshcraftedToeHediff.label>spare toe</VME_FleshcraftedToeHediff.label>
+  <VME_FleshcraftedToeHediff.labelNoun>a spare toe</VME_FleshcraftedToeHediff.labelNoun>
+  <VME_FleshcraftedToeHediff.description>A spare toe, stuck on where the old one used to be.</VME_FleshcraftedToeHediff.description>
+  <!-- Tongue -->
+  <VME_FleshcraftedTongueHediff.label>spare tongue</VME_FleshcraftedTongueHediff.label>
+  <VME_FleshcraftedTongueHediff.labelNoun>a spare tongue</VME_FleshcraftedTongueHediff.labelNoun>
+  <VME_FleshcraftedTongueHediff.description>A spare tongue, stuck on where the old one used to be.</VME_FleshcraftedTongueHediff.description>
+</LanguageData>

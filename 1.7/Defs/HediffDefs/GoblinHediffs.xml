@@ -66,4 +66,20 @@
       <li Class="HobGob.Events.HediffCompProperties_ShinyFever" />
     </comps>
   </HediffDef>
+
+  <!-- Issue #10: a failed goblin install that went in anyway. -->
+  <HediffDef>
+    <defName>MSSG_BadlyAttached</defName>
+    <label>badly attached</label>
+    <description>This part was put in by a goblin surgeon. It is on crooked, sewn too tight in places and too loose in others, and only works at half strength.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.8, 0.6, 0.4)</defaultLabelColor>
+    <isBad>true</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <stages>
+      <li>
+        <partEfficiencyOffset>-0.5</partEfficiencyOffset>
+      </li>
+    </stages>
+  </HediffDef>
 </Defs>

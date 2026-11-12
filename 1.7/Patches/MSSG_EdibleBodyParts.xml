@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <!-- Issue #10: harvested body parts are edible raw meat. Eaten only when nothing better is to hand. -->
+    <Operation Class="PatchOperationSequence">
+        <operations>
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="Heart" or defName="Lung" or defName="Kidney" or defName="Liver"]/statBases</xpath>
+                <value>
+                    <Nutrition>0.3</Nutrition>
+                </value>
+            </li>
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="Heart" or defName="Lung" or defName="Kidney" or defName="Liver"]</xpath>
+                <value>
+                    <ingestible>
+                        <foodType>Meat</foodType>
+                        <preferability>RawBad</preferability>
+                        <ingestEffect>EatMeat</ingestEffect>
+                        <ingestSound>RawMeat_Eat</ingestSound>
+                    </ingestible>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Ideology Expanded - Memes and Structures</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+            <operations>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[@Name="VME_FleshcrafterBodyPartNaturalBase"]/statBases</xpath>
+                    <value>
+                        <Nutrition>0.3</Nutrition>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[@Name="VME_FleshcrafterBodyPartNaturalBase"]</xpath>
+                    <value>
+                        <ingestible>
+                            <foodType>Meat</foodType>
+                            <preferability>RawBad</preferability>
+                            <ingestEffect>EatMeat</ingestEffect>
+                            <ingestSound>RawMeat_Eat</ingestSound>
+                        </ingestible>
+                    </value>
+                </li>
+                <!-- Whole limbs are a bigger meal. -->
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="VME_FleshcraftedArm" or defName="VME_FleshcraftedLeg"]/statBases</xpath>
+                    <value>
+                        <Nutrition>0.6</Nutrition>
+                    </value>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>
