@@ -110,4 +110,33 @@
       </li>
     </comps>
   </HediffDef>
+
+  <!-- Nobby Nobby Rumble: offence only. No armour, dodge or move speed changes on purpose. -->
+  <HediffDef>
+    <defName>MSSG_RumbleFrenzy</defName>
+    <label>rumble frenzy</label>
+    <description>This noblin is in the Nobby Nobby Rumble. It hits harder, faster and truer, but it is no tougher and no quicker on its feet.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.9, 0.25, 0.2)</defaultLabelColor>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeHitChance>8</MeleeHitChance>
+        </statOffsets>
+        <statFactors>
+          <MeleeDamageFactor>2.5</MeleeDamageFactor>
+          <MeleeCooldownFactor>0.5</MeleeCooldownFactor>
+        </statFactors>
+      </li>
+    </stages>
+    <comps>
+      <!-- Backstop for fighters that leave the map mid-rumble; the component removes it normally. -->
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>120000</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
 </Defs>

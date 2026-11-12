@@ -86,6 +86,9 @@ namespace HobGob
         public static Census.GoblinCensusTierDef MSSG_Census_Shed;
         public static RecipeDef MSSG_HarvestGoblinPart;
         public static HediffDef MSSG_BadlyAttached;
+        public static XenotypeDef MSSG_Snoblin;
+        public static HediffDef MSSG_RumbleFrenzy;
+        public static MentalStateDef MSSG_NobbyRumble;
 
         static HobGobDefOf() => RimWorld.DefOfHelper.EnsureInitializedInCtor(typeof(HobGobDefOf));
     }
