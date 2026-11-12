@@ -82,4 +82,32 @@
       </li>
     </stages>
   </HediffDef>
+
+  <!-- Issue #9: a queen who has just climbed out of a removed spawning pit. -->
+  <HediffDef>
+    <defName>MSSG_PitTorpor</defName>
+    <label>pit torpor</label>
+    <description>This queen spent ages curled up at the bottom of a spawning pit. She's dead to the world and needs a good long kip before she's any use.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.6, 0.5, 0.3)</defaultLabelColor>
+    <isBad>true</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>900000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+  </HediffDef>
 </Defs>

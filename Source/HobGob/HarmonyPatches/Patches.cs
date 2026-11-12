@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Emit;
 using HarmonyLib;
 using HobGob.Comps;
 using RimWorld;
@@ -89,6 +90,69 @@ namespace HobGob.HarmonyPatches
         {
             maintenance ??= AccessTools.FieldRefAccess<int>(NestType, "maintenance");
             maintenance(__instance) = FullMaintenance;
+        }
+    }
+
+    /// <summary>Queens stored in a spawning pit are not in the Work and Schedule tabs (both use base.Pawns).</summary>
+    [HarmonyPatch(typeof(MainTabWindow_PawnTable), "Pawns", MethodType.Getter)]
+    public static class Patch_MainTabWindow_PawnTable_Pawns
+    {
+        public static void Postfix(ref IEnumerable<Pawn> __result)
+        {
+            __result = __result.Where(p => !CompQueenChamber.IsStoredQueen(p));
+        }
+    }
+
+    /// <summary>The Assign tab lists pawns through PawnsFinder, not base.Pawns.</summary>
+    [HarmonyPatch(typeof(MainTabWindow_Assign), "Pawns", MethodType.Getter)]
+    public static class Patch_MainTabWindow_Assign_Pawns
+    {
+        public static void Postfix(ref IEnumerable<Pawn> __result)
+        {
+            __result = __result.Where(p => !CompQueenChamber.IsStoredQueen(p));
+        }
+    }
+
+    /// <summary>Colonist bar: swaps its MapPawns.FreeColonists read for a list without stored queens.</summary>
+    [HarmonyPatch(typeof(ColonistBar), "CheckRecacheEntries")]
+    public static class Patch_ColonistBar_CheckRecacheEntries
+    {
+        private static readonly MethodInfo FreeColonists = AccessTools.PropertyGetter(typeof(MapPawns), nameof(MapPawns.FreeColonists));
+        private static readonly MethodInfo Visible = AccessTools.Method(typeof(Patch_ColonistBar_CheckRecacheEntries), nameof(VisibleFreeColonists));
+        private static readonly List<Pawn> Buffer = new List<Pawn>();
+
+        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            int replaced = 0;
+            foreach (CodeInstruction instruction in instructions)
+            {
+                if (instruction.Calls(FreeColonists))
+                {
+                    replaced++;
+                    yield return new CodeInstruction(OpCodes.Call, Visible).WithLabels(instruction.labels).WithBlocks(instruction.blocks);
+                    continue;
+                }
+                yield return instruction;
+            }
+            if (replaced != 1)
+            {
+                Log.Warning($"[Goblin Flavour Pack] Colonist bar patch replaced {replaced} FreeColonists calls (expected 1). Stored queens may show in the bar.");
+            }
+        }
+
+        /// <summary>Called only from the colonist bar, which copies the list straight away, so a shared buffer is safe.</summary>
+        public static List<Pawn> VisibleFreeColonists(MapPawns mapPawns)
+        {
+            List<Pawn> all = mapPawns.FreeColonists;
+            Buffer.Clear();
+            for (int i = 0; i < all.Count; i++)
+            {
+                if (!CompQueenChamber.IsStoredQueen(all[i]))
+                {
+                    Buffer.Add(all[i]);
+                }
+            }
+            return Buffer;
         }
     }
 }

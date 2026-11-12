@@ -63,6 +63,8 @@ namespace HobGob
         public static XenotypeDef MSSG_Noblin;
         public static ThingDef MSSG_GoblinHole;
         public static HediffDef MSSG_PitFresh;
+        public static HediffDef MSSG_PitTorpor;
+        public static XenotypeDef MSSG_Hobnobgoblin;
         public static HediffDef MSSG_OnStrike;
         public static ThoughtDef MSSG_StrikeWon;
         public static ThoughtDef MSSG_StrikeBroken;

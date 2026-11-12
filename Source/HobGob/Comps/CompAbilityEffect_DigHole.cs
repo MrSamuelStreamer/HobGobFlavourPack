@@ -25,6 +25,7 @@ namespace HobGob.Comps
             {
                 hole.SetFaction(caster.Faction);
             }
+            hole.TryGetComp<CompQueenChamber>()?.ExpectQueen();
             // The cast job is still using the pawn. Vanish them on the following tick, after it finishes.
             GoblinEntombComponent entomb = Current.Game.GetComponent<GoblinEntombComponent>();
             if (entomb == null)

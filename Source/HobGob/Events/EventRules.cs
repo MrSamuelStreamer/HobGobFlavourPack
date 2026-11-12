@@ -27,6 +27,19 @@ namespace HobGob.Events
             return hasPitFresh && foodLevelPct < PitStarvingFoodThreshold;
         }
 
+        /// <summary>
+        /// What climbs out of a removed spawning pit. A stored queen comes back. A pit with no queen and none on the way
+        /// is from an older save, where the queen was destroyed, so a fresh one appears.
+        /// </summary>
+        public static QueenReleaseAction QueenRelease(bool hasStoredQueen, bool expectingQueen)
+        {
+            if (hasStoredQueen)
+            {
+                return QueenReleaseAction.Release;
+            }
+            return expectingQueen ? QueenReleaseAction.Nothing : QueenReleaseAction.GenerateFresh;
+        }
+
         /// <summary>Noblin Strike needs at least this many managed Noblins.</summary>
         public const int StrikeMinNoblins = 3;
 
@@ -143,5 +156,12 @@ namespace HobGob.Events
         Win,
         Loss,
         Draw,
+    }
+
+    public enum QueenReleaseAction
+    {
+        Nothing,
+        Release,
+        GenerateFresh,
     }
 }

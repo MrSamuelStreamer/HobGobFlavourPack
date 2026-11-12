@@ -76,4 +76,9 @@ Note: only one goblin per map can grow into a hobgoblin. While two hobgoblins li
   <MSSG_HarvestPartGizmoDesc>Pick a bit to hack off this noblin. Someone'll come over and do it proper: no medsy stuff, no sleepy stuff, just a good chop. Only works about one go in four, mind.</MSSG_HarvestPartGizmoDesc>
   <MSSG_HarvestPartNone>Nuffin' left worth choppin'</MSSG_HarvestPartNone>
   <MSSG_PartBadlyAttached>{PAWN_nameDef}'s new {1} went on all wonky. It only half works.</MSSG_PartBadlyAttached>
+
+  <!-- Queen chamber -->
+  <MSSG_QueenInside>{PAWN_nameDef} is curled up down the bottom, snorin'.</MSSG_QueenInside>
+  <MSSG_QueenUnknown>Sumfin' big is snorin' down the bottom.</MSSG_QueenUnknown>
+  <MSSG_QueenReleased>{PAWN_nameDef} has crawled out of the pit, dead to the world. She'll need a good long kip.</MSSG_QueenReleased>
 </LanguageData>

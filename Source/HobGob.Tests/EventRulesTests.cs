@@ -132,4 +132,17 @@ namespace HobGob.Tests
             Assert.Equal(expected, EventRules.ResolveDuel(challengerDown, championDown, championGone, dueling));
         }
     }
+
+    public class QueenReleaseTests
+    {
+        [Theory]
+        [InlineData(true, false, QueenReleaseAction.Release)]
+        [InlineData(true, true, QueenReleaseAction.Release)]
+        [InlineData(false, false, QueenReleaseAction.GenerateFresh)]
+        [InlineData(false, true, QueenReleaseAction.Nothing)]
+        public void QueenRelease(bool stored, bool expecting, QueenReleaseAction expected)
+        {
+            Assert.Equal(expected, EventRules.QueenRelease(stored, expecting));
+        }
+    }
 }

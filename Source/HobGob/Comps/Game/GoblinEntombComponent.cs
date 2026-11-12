@@ -4,7 +4,7 @@ using Verse;
 
 namespace HobGob.Comps.Game
 {
-    /// <summary>Holds casters until the tick after the pit is placed, then removes them with no corpse.</summary>
+    /// <summary>Holds casters until the tick after the pit is placed, then stores them in the pit's queen chamber.</summary>
     public class GoblinEntombComponent : GameComponent
     {
         private List<Pawn> casters = new List<Pawn>();
@@ -44,9 +44,13 @@ namespace HobGob.Comps.Game
                 {
                     continue;
                 }
-                LookTargets look = hole != null && !hole.Destroyed ? hole : caster;
-                Messages.Message("MSSG_HobnobEntombed".Translate(caster.Named("PAWN")), look, MessageTypeDefOf.NeutralEvent);
-                caster.Destroy(DestroyMode.Vanish);
+                // The queen goes into the pit, not out of the game. If the pit is already gone, she stays put.
+                CompQueenChamber chamber = hole != null && !hole.Destroyed ? hole.TryGetComp<CompQueenChamber>() : null;
+                if (chamber == null || !chamber.Store(caster))
+                {
+                    continue;
+                }
+                Messages.Message("MSSG_HobnobEntombed".Translate(caster.Named("PAWN")), hole, MessageTypeDefOf.NeutralEvent);
             }
         }
 

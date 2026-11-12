@@ -20,6 +20,7 @@
         </spawnIntervalTicks>
       </li>
       <li Class="HobGob.Events.CompProperties_GoblinPit" />
+      <li Class="HobGob.Comps.CompProperties_QueenChamber" />
     </comps>
     <altitudeLayer>Building</altitudeLayer>
     <statBases>
