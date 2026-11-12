@@ -11,79 +11,95 @@
     <defName>MSSG_Census_ShitHole</defName>
     <label>shit hole</label>
     <minPopulation>0</minPopulation>
-    <promotedText>The colony is officially a shit hole. It's a start.</promotedText>
-    <demotedText>The colony has sunk back to being a shit hole. The goblins don't seem to mind.</demotedText>
+    <promotedText>The place is officially a shit hole. We Goblins have known far worse.</promotedText>
+    <demotedText>The place has sunk back to being a shit hole. We Goblins don't care much. What expectations do we have?</demotedText>
   </HobGob.Census.GoblinCensusTierDef>
 
   <HobGob.Census.GoblinCensusTierDef>
     <defName>MSSG_Census_MuckyPit</defName>
     <label>mucky pit</label>
-    <minPopulation>6</minPopulation>
-    <promotedText>Enough goblins now squelch about that the colony counts as a mucky pit.</promotedText>
-    <demotedText>Too few goblins remain to keep the muck properly stirred. The colony is a mucky pit again.</demotedText>
+    <minPopulation>7</minPopulation>
+    <promotedText>Enough goblins squelch about that the place now counts as a mucky pit.</promotedText>
+    <demotedText>Too few goblins remain, and it's a horrible mucky pit once again.</demotedText>
   </HobGob.Census.GoblinCensusTierDef>
 
   <HobGob.Census.GoblinCensusTierDef>
     <defName>MSSG_Census_Shed</defName>
     <label>shed</label>
-    <minPopulation>11</minPopulation>
-    <promotedText>The goblins have upgraded to a shed. Someone has put up a sign. It is spelt wrong.</promotedText>
-    <demotedText>The goblins have shrunk back to shed numbers. The sign has fallen off.</demotedText>
+    <minPopulation>13</minPopulation>
+    <promotedText>The living situation has upgraded into a shed. A shed! There are far better palaces to celebrate, but a shed has not been known before. A feast, of Elven meat! of Men meat!</promotedText>
+    <demotedText>The goblins have shrunk back to shed numbers. A previously joyous goblin community have begun making their aggrindised feelings on the matter very public.</demotedText>
   </HobGob.Census.GoblinCensusTierDef>
 
   <HobGob.Census.GoblinCensusTierDef>
     <defName>MSSG_Census_Hovel</defName>
     <label>hovel</label>
-    <minPopulation>21</minPopulation>
-    <promotedText>The colony is now a proper hovel. Visitors are advised to hold their noses.</promotedText>
-    <demotedText>The colony has slipped back to a hovel. The smell remains.</demotedText>
+    <minPopulation>20</minPopulation>
+    <promotedText>The Goblin hovel. Never before would one find a more wretched hive of scum and villainy. Men and Elven visitors who get too close are advised - by Goblin negotiators - to prepare for "peace" talks.</promotedText>
+    <demotedText>The old place has somehow slipped back down to a hovel. Fuck sake.</demotedText>
   </HobGob.Census.GoblinCensusTierDef>
 
   <HobGob.Census.GoblinCensusTierDef>
-    <defName>MSSG_Census_Warren</defName>
-    <label>warren</label>
-    <minPopulation>36</minPopulation>
-    <promotedText>Tunnels, nooks and goblins everywhere. The colony is now a warren.</promotedText>
-    <demotedText>Half the tunnels stand empty. The colony is a warren once more.</demotedText>
+    <defName>MSSG_Census_Burrow</defName>
+    <label>burrow</label>
+    <minPopulation>35</minPopulation>
+    <promotedText>Tunnels, nooks and goblins everywhere. The burrow is thriving, bones are broken, and meat is back on the menu, boys!</promotedText>
+    <demotedText>The tunnels stand empty. The hole is a burrow once more. What a load of OLD SHIT.</demotedText>
   </HobGob.Census.GoblinCensusTierDef>
 
   <HobGob.Census.GoblinCensusTierDef>
     <defName>MSSG_Census_Den</defName>
     <label>den</label>
-    <minPopulation>61</minPopulation>
-    <promotedText>The goblin den grows loud and crowded. Neighbours are getting nervous.</promotedText>
-    <demotedText>The den is quieter than it was. The colony has fallen back to a den.</demotedText>
+    <minPopulation>50</minPopulation>
+    <promotedText>The new den grows loud and crowded. Foreign neighbours grow nervous, but are still invited to calmly visit and trade, on - perhaps - spurious terms...? Yes.</promotedText>
+    <demotedText>The place is quieter than it was, and has receded to a den. The Hobs are not without their excuses, and, perhaps - profound, blind rage.</demotedText>
   </HobGob.Census.GoblinCensusTierDef>
 
   <HobGob.Census.GoblinCensusTierDef>
-    <defName>MSSG_Census_BurrowTown</defName>
-    <label>burrow-town</label>
-    <minPopulation>101</minPopulation>
-    <promotedText>A hundred goblins! The colony is now a burrow-town, with its own (terrible) traditions.</promotedText>
-    <demotedText>The burrow-town has thinned out. It's a burrow-town again, if only just.</demotedText>
+    <defName>MSSG_Census_Town</defName>
+    <label>town</label>
+    <minPopulation>80</minPopulation>
+    <promotedText>The goblins drown each other's stupidity out, such that some sound legible. They now form what - somehow - constitutes a town. It even appears on maps, with a red circle and arrows. Trading bones and meat is now encouraged!</promotedText>
+    <demotedText>The town has thinned out. It's a town again, but only just. Everyone is confused and angry; perhaps such is the cause and not the condition?</demotedText>
+  </HobGob.Census.GoblinCensusTierDef>
+
+  <HobGob.Census.GoblinCensusTierDef>
+    <defName>MSSG_Census_Fort</defName>
+    <label>fort</label>
+    <minPopulation>120</minPopulation>
+    <promotedText>What was once known as a hole is somehow now called a fort, with terrible goblin traditions. There are so many bodies now that an innocent murder here, a genuine accident there - all jotted down to "workplace efficiency".</promotedText>
+    <demotedText>The hole has marginally thinned out. It's down to a fort again - a slightly quieter, somehow more dangerous place where goblin-kin brood and yearn over past glory.</demotedText>
   </HobGob.Census.GoblinCensusTierDef>
 
   <HobGob.Census.GoblinCensusTierDef>
     <defName>MSSG_Census_Stronghold</defName>
     <label>goblin stronghold</label>
-    <minPopulation>151</minPopulation>
-    <promotedText>The goblins have built a stronghold. The world is starting to take notice.</promotedText>
-    <demotedText>The stronghold has lost goblins. It holds, but only just.</demotedText>
+    <minPopulation>160</minPopulation>
+    <promotedText>The Gob-stronghold has formed. None can question the progress of this perfect Goblin society whom now drive a stronghold capable of conquering arsehole Elves and arsehole Men alike. History is being written and rewritten, and the age of Men is done. The time of Or--I mean, Goblin, has come!</promotedText>
+    <demotedText>We are back to being a stronghold. We must not be defeated. We will know our might soon again, as Goblins! Death to Elves! Death to Men! And death to Elves, once again!</demotedText>
   </HobGob.Census.GoblinCensusTierDef>
 
   <HobGob.Census.GoblinCensusTierDef>
-    <defName>MSSG_Census_GoblinCity</defName>
+    <defName>MSSG_Census_Citadel</defName>
+    <label>goblin citadel</label>
+    <minPopulation>200</minPopulation>
+    <promotedText>Hundreds of Goblins have arisen from the muck, and will conquer this blighted Elven world. The Citadel of Goblins thrives and thrusts ever-forward. Thrust forward in a slightly upward-curved and to-the-side manner, Goblin soldiers!</promotedText>
+    <demotedText>The goblin Citadel has somewhat reduced. It remains a large gathering of experienced Goblin officers and soldiers, but it remains to be seen whether we will re-organise, or perish forever. To arms, Gobby-bastards!</demotedText>
+  </HobGob.Census.GoblinCensusTierDef>
+
+  <HobGob.Census.GoblinCensusTierDef>
+    <defName>MSSG_Census_City</defName>
     <label>goblin city</label>
-    <minPopulation>221</minPopulation>
-    <promotedText>A goblin city rises from the muck. The final goal is within reach.</promotedText>
-    <demotedText>The goblin city has emptied a little. It's still a city, but the kingdom slips away.</demotedText>
+    <minPopulation>250</minPopulation>
+    <promotedText>Behold! A true Goblin City. A simple Citadel could no longer possibly contain our majesty, might, or need for Man-meat. We rise faster than ever. We are primed to take over this Elven shit hole. Rise, Hobgobs, and prepare to dominate those fuckers!</promotedText>
+    <demotedText>Our goblin city has been somewhat decimated in our lust for conquest. The Snoblins insist we retreat, but everyone knows they're full of shit. We must attack! Attack again, the disgusting Elves and Men must be wiped from the face of the planet, while they suspect our retreat!</demotedText>
   </HobGob.Census.GoblinCensusTierDef>
 
   <HobGob.Census.GoblinCensusTierDef>
-    <defName>MSSG_Census_GoblinKingdom</defName>
+    <defName>MSSG_Census_Kingdom</defName>
     <label>goblin kingdom</label>
     <minPopulation>300</minPopulation>
-    <promotedText>Three hundred goblins! The colony is now a true goblin kingdom.</promotedText>
-    <demotedText>The goblin kingdom is still a kingdom.</demotedText>
+    <promotedText>The Goblin Kingdom is established. The war is won. The King is dominant. We will rend the Men, and the Elves' leaders' meat from their bones, and prepare a grand feast. Bastards!</promotedText>
+    <demotedText>"Still a kingdom" lol how do you downgrade from the highest lvl to the highest lvl? if u see this keyz-related error, chrtis b was here at some point bossman, how good is meat on a stick tho right? like and subscribe, no comments plz</demotedText>
   </HobGob.Census.GoblinCensusTierDef>
 </Defs>

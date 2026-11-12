@@ -10,12 +10,12 @@
   <MSSG_NextNoblinWaiting>Next noblin: waiting for an open cell</MSSG_NextNoblinWaiting>
   <MSSG_EvolutionProgressLabel>{0}/{1} kills</MSSG_EvolutionProgressLabel>
 
-  <MSSG_CensusPromotedLabel>Census: now a {0}</MSSG_CensusPromotedLabel>
-  <MSSG_CensusDemotedLabel>Census: down to a {0}</MSSG_CensusDemotedLabel>
+  <MSSG_CensusPromotedLabel>The Insane Nigel Goblin census: now a {0}</MSSG_CensusPromotedLabel>
+  <MSSG_CensusDemotedLabel>The Insane Nigel Goblin census: down to a {0}</MSSG_CensusDemotedLabel>
   <MSSG_CensusLetterBody>{0}\n\nGoblins counted: {1}.\n{2}</MSSG_CensusLetterBody>
   <MSSG_CensusUntilNext>{0} more goblins until {1}.</MSSG_CensusUntilNext>
   <MSSG_CensusTopTier>The colony has reached the highest tier.</MSSG_CensusTopTier>
-  <MSSG_CensusNoChange>Goblin census: {0} goblins. Still a {1}. {2}</MSSG_CensusNoChange>
+  <MSSG_CensusNoChange>The Insane Nigel Goblin census: {0} goblins. Still a {1}. {2}</MSSG_CensusNoChange>
 
   <MSSG_TributeInspect>Tribute: {0} / {1}</MSSG_TributeInspect>
   <MSSG_StrikeWonLabel>Strike over</MSSG_StrikeWonLabel>
