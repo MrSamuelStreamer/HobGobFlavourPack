@@ -40,6 +40,7 @@
         <totalKillsRequired>10</totalKillsRequired>
         <rareXenotype>MSSG_Snoblin</rareXenotype>
         <rareChance>0.05</rareChance>
+        <seasonalKills>true</seasonalKills>
       </li>
     </modExtensions>
   </GeneDef>
@@ -55,6 +56,7 @@
         <nextXenotype>MSSG_Hobgoblin</nextXenotype>
         <totalKillsRequired>50</totalKillsRequired>
         <maxPerMap>1</maxPerMap>
+        <seasonalKills>true</seasonalKills>
       </li>
     </modExtensions>
   </GeneDef>
@@ -62,7 +64,7 @@
   <GeneDef ParentName="MSSG_GoblinHiddenGeneBase">
     <defName>MSSG_Evolution_HobGoblin</defName>
     <label>hobgoblin growth</label>
-    <description>Carriers of this gene grow into a Queenie after enough kills, but there can only be one Queenie Gobber per nest.</description>
+    <description>Carriers of this gene can grow into a Queenie after enough kills, when you choose, but there can only be one Queenie Gobber per nest.</description>
     <iconPath>UI/Icons/Genes/Gene_Hobgoblin</iconPath>
     <geneClass>HobGob.Gene_GoblinEvolution</geneClass>
     <modExtensions>
@@ -70,6 +72,9 @@
         <nextXenotype>MSSG_Hobnobgoblin</nextXenotype>
         <totalKillsRequired>50</totalKillsRequired>
         <maxPerMap>1</maxPerMap>
+        <seasonalKills>true</seasonalKills>
+        <manualEvolution>true</manualEvolution>
+        <!-- <gizmoIconPath>UI/Abilities/EvolveQueen</gizmoIconPath> -->
       </li>
     </modExtensions>
   </GeneDef>

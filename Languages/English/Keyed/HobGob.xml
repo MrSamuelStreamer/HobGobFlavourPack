@@ -53,4 +53,21 @@ Note: only one goblin per map can grow into a hobgoblin. While two hobgoblins li
   <MSSG_ChallengerJoined>{0} has joined the colony.</MSSG_ChallengerJoined>
 
   <MSSG_AbilityGained>{1} has been gained knowledge of the ability: {0}.</MSSG_AbilityGained>
+
+  <!-- Manual evolution and seasonal kills -->
+  <MSSG_EvolutionReadyLabel>ready to evolve</MSSG_EvolutionReadyLabel>
+  <MSSG_EvolveGizmo>Evolve into {0}</MSSG_EvolveGizmo>
+  <MSSG_EvolveGizmoDesc>{PAWN_nameDef} has earned enough kills to grow into a {1}. This cannot be undone.</MSSG_EvolveGizmoDesc>
+  <MSSG_EvolveNotEnoughKills>Needs more kills ({0}/{1}).</MSSG_EvolveNotEnoughKills>
+  <MSSG_EvolveCapReached>There is already a {0} here.</MSSG_EvolveCapReached>
+  <MSSG_SeasonalKills>A new season. These goblins grew more vicious and gained kills: {0}</MSSG_SeasonalKills>
+  <MSSG_SeasonalKillsEntry>{0} (+{1})</MSSG_SeasonalKillsEntry>
+
+  <!-- Mod settings -->
+  <MSSG_SettingsCategory>Goblin Flavour Pack</MSSG_SettingsCategory>
+  <MSSG_SettingsSeasonalHeader>Seasonal kills: at the start of each season, every goblin that can still evolve may gain free kills towards its next form.</MSSG_SettingsSeasonalHeader>
+  <MSSG_SettingsSeasonalChance>Chance per goblin each season: {0}</MSSG_SettingsSeasonalChance>
+  <MSSG_SettingsSeasonalChanceTip>Set to 0% to turn seasonal kills off.</MSSG_SettingsSeasonalChanceTip>
+  <MSSG_SettingsSeasonalKills>Kills gained on a success: {0} to {1}</MSSG_SettingsSeasonalKills>
+  <MSSG_SettingsSeasonalKillsTip>A number in this range is picked at random each time.</MSSG_SettingsSeasonalKillsTip>
 </LanguageData>

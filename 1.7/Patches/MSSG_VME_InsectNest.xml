@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <!-- Insect nests never need maintenance (see Patch_VME_InsectNest_Tick). Drop the maintenance text. -->
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Ideology Expanded - Memes and Structures</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="VME_InsectNest"]/description</xpath>
+            <value>
+                <description>A large, swollen hive that seems to be seeping high amounts of bubbling insectoid jelly but not incubating any insectoids themselves.</description>
+            </value>
+        </match>
+    </Operation>
+</Patch>

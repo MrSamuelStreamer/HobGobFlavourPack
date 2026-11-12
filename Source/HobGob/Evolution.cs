@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace HobGob
@@ -16,6 +17,15 @@ namespace HobGob
         public XenotypeDef rareXenotype;
         public float rareChance;
 
+        /// <summary>Player pawns evolve only when the player clicks the evolve gizmo. Other factions still evolve on their own.</summary>
+        public bool manualEvolution;
+
+        /// <summary>Icon for the evolve gizmo. Falls back to a vanilla icon if missing.</summary>
+        public string gizmoIconPath;
+
+        /// <summary>This stage rolls for free kills at each season start. Chance and amount are mod settings.</summary>
+        public bool seasonalKills;
+
         public XenotypeDef RollTarget() =>
             rareXenotype != null && EvolutionRules.RollsRare(Rand.Value, rareChance) ? rareXenotype : nextXenotype;
     }
@@ -27,6 +37,9 @@ namespace HobGob
     public class Gene_GoblinEvolution : Gene
     {
         private const int CheckInterval = GenDate.TicksPerHour;
+        private const string FallbackIconPath = "UI/Icons/Genes/Gene_Hobnobgoblin";
+
+        private static readonly Dictionary<string, Texture2D> Icons = new Dictionary<string, Texture2D>();
 
         private static HediffDef progressHediff;
         private static HediffDef ProgressHediff => progressHediff ??= DefDatabase<HediffDef>.GetNamed("MSSG_EvolutionProgress");
@@ -39,6 +52,22 @@ namespace HobGob
         public int KillsRequired => Extension?.totalKillsRequired ?? 0;
 
         public int Kills => pawn.records?.GetAsInt(RecordDefOf.Kills) ?? 0;
+
+        public bool GetsSeasonalKills => Extension?.seasonalKills ?? false;
+
+        /// <summary>True when this pawn waits for the player to press the evolve gizmo.</summary>
+        public bool IsManual => Extension != null && !EvolutionRules.EvolvesAutomatically(Extension.manualEvolution, pawn.Faction == Faction.OfPlayerSilentFail);
+
+        /// <summary>Has the kills and room on the map to evolve now.</summary>
+        public bool CanEvolveNow
+        {
+            get
+            {
+                EvolutionExtension ext = Extension;
+                return ext?.nextXenotype != null && pawn.records != null
+                    && EvolutionRules.ShouldEvolve(Kills, ext.totalKillsRequired, GoblinEvolutionComponent.CountOnMap(pawn.MapHeld, ext.nextXenotype), ext.maxPerMap);
+            }
+        }
 
         public override void PostAdd()
         {
@@ -69,15 +98,55 @@ namespace HobGob
             }
             // Re-adds the tracker if something removed it, and back-fills goblins from older saves.
             EnsureProgressHediff();
+            if (!IsManual && CanEvolveNow)
+            {
+                Current.Game.GetComponent<GoblinEvolutionComponent>()?.Enqueue(pawn, Extension);
+            }
+        }
+
+        public override IEnumerable<Gizmo> GetGizmos()
+        {
+            // Vanilla Gene.GetGizmos returns null, not an empty sequence.
+            IEnumerable<Gizmo> baseGizmos = base.GetGizmos();
+            if (baseGizmos != null)
+            {
+                foreach (Gizmo gizmo in baseGizmos)
+                {
+                    yield return gizmo;
+                }
+            }
             EvolutionExtension ext = Extension;
-            if (ext?.nextXenotype == null || pawn.records == null)
+            if (ext?.nextXenotype == null || !IsManual || !pawn.IsColonistPlayerControlled)
             {
-                return;
+                yield break;
             }
-            if (EvolutionRules.ShouldEvolve(Kills, ext.totalKillsRequired, GoblinEvolutionComponent.CountOnMap(pawn.MapHeld, ext.nextXenotype), ext.maxPerMap))
+            Command_Action command = new Command_Action
             {
-                Current.Game.GetComponent<GoblinEvolutionComponent>()?.Enqueue(pawn, ext);
+                defaultLabel = "MSSG_EvolveGizmo".Translate(ext.nextXenotype.label),
+                defaultDesc = "MSSG_EvolveGizmoDesc".Translate(pawn.Named("PAWN"), ext.nextXenotype.label),
+                icon = Icon(ext.gizmoIconPath),
+                action = () => Current.Game.GetComponent<GoblinEvolutionComponent>()?.Enqueue(pawn, ext),
+            };
+            if (Kills < ext.totalKillsRequired)
+            {
+                command.Disable("MSSG_EvolveNotEnoughKills".Translate(Kills, ext.totalKillsRequired));
             }
+            else if (!CanEvolveNow)
+            {
+                command.Disable("MSSG_EvolveCapReached".Translate(ext.nextXenotype.label));
+            }
+            yield return command;
+        }
+
+        private static Texture2D Icon(string path)
+        {
+            path = string.IsNullOrEmpty(path) ? FallbackIconPath : path;
+            if (!Icons.TryGetValue(path, out Texture2D tex))
+            {
+                tex = ContentFinder<Texture2D>.Get(path, false) ?? ContentFinder<Texture2D>.Get(FallbackIconPath, false) ?? BaseContent.BadTex;
+                Icons[path] = tex;
+            }
+            return tex;
         }
 
         private void EnsureProgressHediff()

@@ -24,6 +24,10 @@ namespace HobGob
                 {
                     return base.LabelInBrackets;
                 }
+                if (tracker.IsManual && tracker.CanEvolveNow)
+                {
+                    return "MSSG_EvolutionReadyLabel".Translate();
+                }
                 return "MSSG_EvolutionProgressLabel".Translate(tracker.Kills, tracker.KillsRequired);
             }
         }

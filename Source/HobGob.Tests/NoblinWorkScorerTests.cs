@@ -135,6 +135,27 @@ namespace HobGob.Tests
         }
 
         [Theory]
+        [InlineData(false, true, true)]
+        [InlineData(false, false, true)]
+        [InlineData(true, false, true)]
+        [InlineData(true, true, false)]
+        public void EvolvesAutomatically_OnlyManualPlayerPawnsWait(bool manual, bool player, bool expected)
+        {
+            Assert.Equal(expected, EvolutionRules.EvolvesAutomatically(manual, player));
+        }
+
+        [Theory]
+        [InlineData(-1, 0, false)]
+        [InlineData(-1, 3, false)]
+        [InlineData(0, 0, false)]
+        [InlineData(0, 1, true)]
+        [InlineData(3, 0, true)]
+        public void SeasonChanged_IgnoresFirstReading(int last, int now, bool expected)
+        {
+            Assert.Equal(expected, EvolutionRules.SeasonChanged(last, now));
+        }
+
+        [Theory]
         [InlineData("Hauling", NoblinTask.Hauling)]
         [InlineData("PlantCutting", NoblinTask.PlantCutting)]
         [InlineData("BasicWorker", NoblinTask.BasicWorker)]

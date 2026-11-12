@@ -183,5 +183,11 @@ namespace HobGob
 
         /// <param name="roll">Uniform random value in [0, 1).</param>
         public static bool RollsRare(float roll, float chance) => roll < chance;
+
+        /// <summary>Manual evolution only waits on the player for the player's own pawns.</summary>
+        public static bool EvolvesAutomatically(bool manualEvolution, bool playerFaction) => !manualEvolution || !playerFaction;
+
+        /// <summary>A new season has started. <paramref name="lastQuadrum"/> is -1 before the first reading, which never counts.</summary>
+        public static bool SeasonChanged(int lastQuadrum, int quadrum) => lastQuadrum >= 0 && lastQuadrum != quadrum;
     }
 }

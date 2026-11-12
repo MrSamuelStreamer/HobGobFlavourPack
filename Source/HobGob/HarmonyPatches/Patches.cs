@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using HarmonyLib;
 using HobGob.Comps;
 using RimWorld;
@@ -64,6 +66,29 @@ namespace HobGob.HarmonyPatches
             {
                 __instance.Map.GetComponent<Events.NoblinStampedeComponent>()?.NoteDoorPassed(__instance);
             }
+        }
+    }
+
+    /// <summary>
+    /// Vanilla Ideology Expanded - Memes and Structures: insect nests never need maintenance.
+    /// The nest destroys itself when maintenance reaches 0, and its work giver reads the field,
+    /// so the field is held at full instead of swapping the nest's class.
+    /// </summary>
+    [HarmonyPatch]
+    public static class Patch_VME_InsectNest_Tick
+    {
+        private const int FullMaintenance = 100;
+        private static readonly Type NestType = AccessTools.TypeByName("VanillaMemesExpanded.Building_InsectNest");
+        private static AccessTools.FieldRef<object, int> maintenance;
+
+        public static bool Prepare() => NestType != null && AccessTools.Field(NestType, "maintenance") != null;
+
+        public static MethodBase TargetMethod() => AccessTools.Method(NestType, "Tick");
+
+        public static void Postfix(object __instance)
+        {
+            maintenance ??= AccessTools.FieldRefAccess<int>(NestType, "maintenance");
+            maintenance(__instance) = FullMaintenance;
         }
     }
 }

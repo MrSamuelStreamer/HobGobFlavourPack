@@ -1,18 +1,58 @@
 using System.Linq;
 using HarmonyLib;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace HobGob
 {
     public class HobGobMod : Mod
     {
+        public static HobGobSettings Settings { get; private set; }
+
         public HobGobMod(ModContentPack content) : base(content)
         {
+            Settings = GetSettings<HobGobSettings>();
             // Pass the assembly explicitly: parameterless PatchAll() patches nothing on RimWorld 1.7.
             Harmony harmony = new Harmony("MrSamuelStreamer.GoblinFlavourPack");
             harmony.PatchAll(typeof(HobGobMod).Assembly);
             Log.Message($"[Goblin Flavour Pack] {harmony.GetPatchedMethods().Count()} Harmony patches applied.");
+        }
+
+        public override string SettingsCategory() => "MSSG_SettingsCategory".Translate();
+
+        public override void DoSettingsWindowContents(Rect inRect)
+        {
+            Listing_Standard list = new Listing_Standard();
+            list.Begin(inRect);
+            list.Label("MSSG_SettingsSeasonalHeader".Translate());
+            list.Label("MSSG_SettingsSeasonalChance".Translate(Settings.seasonalKillChance.ToStringPercent()),
+                tooltip: "MSSG_SettingsSeasonalChanceTip".Translate());
+            Settings.seasonalKillChance = list.Slider(Settings.seasonalKillChance, 0f, 1f);
+            list.Label("MSSG_SettingsSeasonalKills".Translate(Settings.seasonalKills.min, Settings.seasonalKills.max),
+                tooltip: "MSSG_SettingsSeasonalKillsTip".Translate());
+            Widgets.IntRange(list.GetRect(32f), "MSSG_SeasonalKills".GetHashCode(), ref Settings.seasonalKills,
+                HobGobSettings.MinSeasonalKills, HobGobSettings.MaxSeasonalKills);
+            list.End();
+        }
+    }
+
+    public class HobGobSettings : ModSettings
+    {
+        public const int MinSeasonalKills = 1;
+        public const int MaxSeasonalKills = 10;
+
+        /// <summary>Chance (0-1) per goblin at each season start to gain free kills.</summary>
+        public float seasonalKillChance = 0.5f;
+
+        /// <summary>How many free kills a successful roll grants, picked at random from this range.</summary>
+        public IntRange seasonalKills = new IntRange(1, 3);
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref seasonalKillChance, "seasonalKillChance", 0.5f);
+            Scribe_Values.Look(ref seasonalKills, "seasonalKills", new IntRange(1, 3));
         }
     }
 
