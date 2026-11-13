@@ -84,7 +84,7 @@ namespace HobGob.Comps
         {
             // Age 13 is the teenage life stage. That stage counts as an adult.
             PawnGenerationRequest request = new PawnGenerationRequest(
-                PawnKindDefOf.Villager,
+                HobGobDefOf.MSSG_Pitborn,
                 parent.Faction,
                 PawnGenerationContext.NonPlayer,
                 parent.Tile,

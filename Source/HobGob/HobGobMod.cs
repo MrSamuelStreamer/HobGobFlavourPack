@@ -61,6 +61,7 @@ namespace HobGob
     {
         public static GeneDef MSSG_NoblinInstinct;
         public static XenotypeDef MSSG_Noblin;
+        public static PawnKindDef MSSG_Pitborn;
         public static ThingDef MSSG_GoblinHole;
         public static HediffDef MSSG_PitFresh;
         public static HediffDef MSSG_PitTorpor;

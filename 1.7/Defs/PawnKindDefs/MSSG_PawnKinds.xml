@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- A Villager with nothing to wear or install. Childhood and traits still generate, because those follow age, not this kind. -->
+  <PawnKindDef ParentName="VillagerBase">
+    <defName>MSSG_Pitborn</defName>
+    <label>noblin</label>
+    <combatPower>20</combatPower>
+    <isFighter>false</isFighter>
+    <chemicalAddictionChance>0</chemicalAddictionChance>
+    <invNutrition>0</invNutrition>
+    <weaponMoney>0</weaponMoney>
+    <apparelMoney>0</apparelMoney>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <techHediffsChance>0</techHediffsChance>
+    <techHediffsMoney>0</techHediffsMoney>
+    <weaponTags Inherit="False" />
+    <apparelTags Inherit="False" />
+    <techHediffsTags Inherit="False" />
+  </PawnKindDef>
+</Defs>
