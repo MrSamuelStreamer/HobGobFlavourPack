@@ -48,14 +48,13 @@
   <GeneDef ParentName="MSSG_GoblinHiddenGeneBase">
     <defName>MSSG_Evolution_Goblin</defName>
     <label>hobgoblin growth</label>
-    <description>Carriers of this gene grow into a Hobgoblin after enough kills, if no other Hobgoblin rules the area.</description>
+    <description>Carriers of this gene grow into a Hobgoblin after enough kills.</description>
     <iconPath>UI/Icons/Genes/Gene_Goblin</iconPath>
     <geneClass>HobGob.Gene_GoblinEvolution</geneClass>
     <modExtensions>
       <li Class="HobGob.EvolutionExtension">
         <nextXenotype>MSSG_Hobgoblin</nextXenotype>
         <totalKillsRequired>50</totalKillsRequired>
-        <maxPerMap>1</maxPerMap>
         <seasonalKills>true</seasonalKills>
       </li>
     </modExtensions>
@@ -63,15 +62,14 @@
 
   <GeneDef ParentName="MSSG_GoblinHiddenGeneBase">
     <defName>MSSG_Evolution_HobGoblin</defName>
-    <label>hobgoblin growth</label>
-    <description>Carriers of this gene can grow into a Queenie after enough kills, when you choose, but there can only be one Queenie Gobber per nest.</description>
+    <label>queenie growth</label>
+    <description>Carriers of this gene can grow into a Queenie after enough kills, when you choose.</description>
     <iconPath>UI/Icons/Genes/Gene_Hobgoblin</iconPath>
     <geneClass>HobGob.Gene_GoblinEvolution</geneClass>
     <modExtensions>
       <li Class="HobGob.EvolutionExtension">
         <nextXenotype>MSSG_Hobnobgoblin</nextXenotype>
         <totalKillsRequired>50</totalKillsRequired>
-        <maxPerMap>1</maxPerMap>
         <seasonalKills>true</seasonalKills>
         <manualEvolution>true</manualEvolution>
         <!-- <gizmoIconPath>UI/Abilities/EvolveQueen</gizmoIconPath> -->

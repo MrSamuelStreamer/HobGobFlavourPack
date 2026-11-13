@@ -68,9 +68,14 @@ namespace HobGob
             {
                 EvolutionExtension ext = Extension;
                 return ext?.nextXenotype != null && pawn.records != null
-                    && EvolutionRules.ShouldEvolve(Kills, ext.totalKillsRequired, GoblinEvolutionComponent.CountOnMap(pawn.MapHeld, ext.nextXenotype), ext.maxPerMap);
+                    && EvolutionRules.ShouldEvolve(Kills, ext.totalKillsRequired, GoblinEvolutionComponent.CountOnMap(pawn.MapHeld, ext.nextXenotype, pawn.Faction), ext.maxPerMap);
             }
         }
+
+        /// <summary>Has the kills but the per-map cap stops it.</summary>
+        public bool BlockedByCap => HasNextStage && pawn.records != null && Kills >= KillsRequired && !CanEvolveNow;
+
+        public XenotypeDef NextXenotype => Extension?.nextXenotype;
 
         public override void PostAdd()
         {
@@ -195,7 +200,7 @@ namespace HobGob
                 EvolutionExtension ext = entry.Value;
                 // Re-check the cap: several pawns may have queued in the same pass.
                 if (pawn.Dead || pawn.genes == null
-                    || !EvolutionRules.ShouldEvolve(pawn.records.GetAsInt(RecordDefOf.Kills), ext.totalKillsRequired, CountOnMap(pawn.MapHeld, ext.nextXenotype), ext.maxPerMap))
+                    || !EvolutionRules.ShouldEvolve(pawn.records.GetAsInt(RecordDefOf.Kills), ext.totalKillsRequired, CountOnMap(pawn.MapHeld, ext.nextXenotype, pawn.Faction), ext.maxPerMap))
                 {
                     continue;
                 }
@@ -203,7 +208,9 @@ namespace HobGob
             }
         }
 
-        public static int CountOnMap(Map map, XenotypeDef xenotype)
+        /// <summary>Counts spawned pawns of <paramref name="xenotype"/> on the map that belong to <paramref name="faction"/>.
+        /// Other factions do not count, so an enemy Hobgoblin raider does not block a player goblin.</summary>
+        public static int CountOnMap(Map map, XenotypeDef xenotype, Faction faction)
         {
             if (map == null)
             {
@@ -212,7 +219,7 @@ namespace HobGob
             int count = 0;
             foreach (Pawn p in map.mapPawns.AllPawnsSpawned)
             {
-                if (p.genes != null && p.genes.Xenotype == xenotype)
+                if (p.Faction == faction && p.genes != null && p.genes.Xenotype == xenotype)
                 {
                     count++;
                 }

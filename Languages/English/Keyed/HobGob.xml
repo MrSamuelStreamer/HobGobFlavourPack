@@ -45,9 +45,7 @@
   <MSSG_ChallengeWonLabel>Challenge won</MSSG_ChallengeWonLabel>
   <MSSG_ChallengeWonText>{0} has beaten {1} in the duel and earned the respect of {2} kills.
 
-The beaten hobgoblin offers to join the colony.
-
-Note: only one goblin per map can grow into a hobgoblin. While two hobgoblins live on a map, goblins there cannot become hobgoblins.</MSSG_ChallengeWonText>
+The beaten hobgoblin offers to join the colony.</MSSG_ChallengeWonText>
   <MSSG_ChallengerJoinAccept>Let it join</MSSG_ChallengerJoinAccept>
   <MSSG_ChallengerJoinDecline>Send it away</MSSG_ChallengerJoinDecline>
   <MSSG_ChallengerJoined>{0} has joined the colony.</MSSG_ChallengerJoined>
@@ -59,7 +57,9 @@ Note: only one goblin per map can grow into a hobgoblin. While two hobgoblins li
   <MSSG_EvolveGizmo>Evolve into {0}</MSSG_EvolveGizmo>
   <MSSG_EvolveGizmoDesc>{PAWN_nameDef} has earned enough kills to grow into a {1}. This cannot be undone.</MSSG_EvolveGizmoDesc>
   <MSSG_EvolveNotEnoughKills>Needs more kills ({0}/{1}).</MSSG_EvolveNotEnoughKills>
-  <MSSG_EvolveCapReached>There is already a {0} here.</MSSG_EvolveCapReached>
+  <MSSG_EvolveCapReached>There is already a {0} of this faction here.</MSSG_EvolveCapReached>
+  <MSSG_EvolutionBlockedLabel>{0}/{1} kills, blocked</MSSG_EvolutionBlockedLabel>
+  <MSSG_EvolutionBlockedTip>Cannot evolve: a {0} of this faction is already on this map. Only one is allowed.</MSSG_EvolutionBlockedTip>
   <MSSG_SeasonalKills>A new season. These goblins grew more vicious and gained kills: {0}</MSSG_SeasonalKills>
   <MSSG_SeasonalKillsEntry>{0} (+{1})</MSSG_SeasonalKillsEntry>
 

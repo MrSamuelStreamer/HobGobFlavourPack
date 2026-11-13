@@ -28,7 +28,26 @@ namespace HobGob
                 {
                     return "MSSG_EvolutionReadyLabel".Translate();
                 }
+                if (tracker.BlockedByCap)
+                {
+                    return "MSSG_EvolutionBlockedLabel".Translate(tracker.Kills, tracker.KillsRequired);
+                }
                 return "MSSG_EvolutionProgressLabel".Translate(tracker.Kills, tracker.KillsRequired);
+            }
+        }
+
+        public override string TipStringExtra
+        {
+            get
+            {
+                string baseTip = base.TipStringExtra;
+                Gene_GoblinEvolution tracker = FindTracker(pawn);
+                if (tracker == null || !tracker.BlockedByCap)
+                {
+                    return baseTip;
+                }
+                string blocked = "MSSG_EvolutionBlockedTip".Translate(tracker.NextXenotype.label);
+                return baseTip.NullOrEmpty() ? blocked : baseTip + "\n" + blocked;
             }
         }
 
