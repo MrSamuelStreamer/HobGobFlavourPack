@@ -121,15 +121,17 @@ namespace HobGob.Tests
         }
 
         [Theory]
-        [InlineData(true, false, false, true, DuelOutcome.Win)]
-        [InlineData(true, true, false, false, DuelOutcome.Win)]    // double knock-out: colony wins
-        [InlineData(false, true, false, true, DuelOutcome.Loss)]
-        [InlineData(false, false, true, true, DuelOutcome.Loss)]   // champion left the map
-        [InlineData(false, false, false, false, DuelOutcome.Draw)] // timed out, both standing
-        [InlineData(false, false, false, true, DuelOutcome.Ongoing)]
-        public void ResolveDuel_Table(bool challengerDown, bool championDown, bool championGone, bool dueling, DuelOutcome expected)
+        [InlineData(true, false, false, false, false, DuelOutcome.Win)]
+        [InlineData(true, true, false, false, false, DuelOutcome.Win)]    // double knock-out: colony wins
+        [InlineData(true, false, false, false, true, DuelOutcome.Win)]    // downed beats the time limit
+        [InlineData(false, true, false, false, false, DuelOutcome.Loss)]
+        [InlineData(false, false, true, false, false, DuelOutcome.Loss)]  // champion left the map
+        [InlineData(false, false, false, true, false, DuelOutcome.Draw)]  // challenger left the map
+        [InlineData(false, false, false, false, true, DuelOutcome.Draw)]  // timed out, both standing
+        [InlineData(false, false, false, false, false, DuelOutcome.Ongoing)] // both standing: never an early draw
+        public void ResolveDuel_Table(bool challengerDown, bool championDown, bool championGone, bool challengerGone, bool timedOut, DuelOutcome expected)
         {
-            Assert.Equal(expected, EventRules.ResolveDuel(challengerDown, championDown, championGone, dueling));
+            Assert.Equal(expected, EventRules.ResolveDuel(challengerDown, championDown, championGone, challengerGone, timedOut));
         }
     }
 

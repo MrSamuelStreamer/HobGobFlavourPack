@@ -14,17 +14,17 @@
     <baseInspectLine>Mental state: Stampeding</baseInspectLine>
   </MentalStateDef>
 
-  <!-- E2 duel: the vanilla social fight class (stops when the other pawn is downed, dead or gone), but no early
-       recovery, so a duel lasts until someone drops or about 3 hours pass (a draw). Category Aggro: vanilla then
-       skips the faction goodwill penalty for damage between the two fighters. -->
+  <!-- E2 duel: HobGob.Events.MentalState_GoblinDuel never recovers on its own and does not end the partner's state.
+       HobGob.Events.HobgoblinChallengeComponent ends it: someone drops, or the duel times out (a draw).
+       Category Aggro: vanilla then skips the faction goodwill penalty for damage between the two fighters. -->
   <MentalStateDef ParentName="BaseMentalState">
     <defName>MSSG_GoblinDuel</defName>
     <label>dueling</label>
-    <stateClass>MentalState_SocialFighting</stateClass>
+    <stateClass>HobGob.Events.MentalState_GoblinDuel</stateClass>
     <category>Aggro</category>
-    <minTicksBeforeRecovery>7500</minTicksBeforeRecovery>
-    <maxTicksBeforeRecovery>7500</maxTicksBeforeRecovery>
-    <recoveryMtbDays>1</recoveryMtbDays>
+    <minTicksBeforeRecovery>999999999</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>999999999</maxTicksBeforeRecovery>
+    <recoveryMtbDays>999999</recoveryMtbDays>
     <nameColor>(0.88, 0.48, 0.16)</nameColor>
     <baseInspectLine>Mental state: Dueling</baseInspectLine>
     <inCaravanCanDo>false</inCaravanCanDo>

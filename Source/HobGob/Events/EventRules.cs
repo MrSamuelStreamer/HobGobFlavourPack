@@ -112,11 +112,15 @@ namespace HobGob.Events
             return Math.Max(0, meleeLevel) * Math.Max(0f, bodySize);
         }
 
+        /// <summary>About 3 in-game hours: a duel with nobody down by then is a draw.</summary>
+        public const int DuelMaxTicks = 7500;
+
         /// <summary>
         /// Result of a running duel. The challenger going down is checked first, so a double knock-out
-        /// is a win for the colony.
+        /// is a win for the colony. Nobody down is a draw only when the challenger left or time ran out;
+        /// otherwise the duel goes on (the component restarts a duel state that dropped early).
         /// </summary>
-        public static DuelOutcome ResolveDuel(bool challengerDown, bool championDown, bool championGone, bool eitherStillDueling)
+        public static DuelOutcome ResolveDuel(bool challengerDown, bool championDown, bool championGone, bool challengerGone, bool timedOut)
         {
             if (challengerDown)
             {
@@ -126,7 +130,7 @@ namespace HobGob.Events
             {
                 return DuelOutcome.Loss;
             }
-            return eitherStillDueling ? DuelOutcome.Ongoing : DuelOutcome.Draw;
+            return challengerGone || timedOut ? DuelOutcome.Draw : DuelOutcome.Ongoing;
         }
 
         /// <summary>How much of a stack one Noblin carries away: as much as fits, never more than the stack.</summary>
