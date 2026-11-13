@@ -133,6 +133,45 @@ namespace HobGob.Events
             return challengerGone || timedOut ? DuelOutcome.Draw : DuelOutcome.Ongoing;
         }
 
+        /// <summary>One in-game day. A death duel with both fighters still up is called off.</summary>
+        public const int DeathDuelMaxTicks = 60000;
+
+        /// <summary>
+        /// Result of a death duel. A single death is a win for the other, even if the clock has run out.
+        /// Both dead, either fighter gone, both downed, or nobody left who can land a blow is a draw.
+        /// Time running out is a draw only while both are still up, so a downed fighter can still be finished.
+        /// </summary>
+        public static DeathDuelOutcome ResolveDeathDuel(bool aDead, bool bDead, bool aGone, bool bGone, bool aDowned, bool bDowned, bool timedOut, bool cannotFinish)
+        {
+            if (aDead && bDead)
+            {
+                return DeathDuelOutcome.Draw;
+            }
+            if (aDead)
+            {
+                return DeathDuelOutcome.BWins;
+            }
+            if (bDead)
+            {
+                return DeathDuelOutcome.AWins;
+            }
+            if (aGone || bGone || (aDowned && bDowned) || cannotFinish)
+            {
+                return DeathDuelOutcome.Draw;
+            }
+            if (timedOut && !aDowned && !bDowned)
+            {
+                return DeathDuelOutcome.Draw;
+            }
+            return DeathDuelOutcome.Ongoing;
+        }
+
+        /// <summary>Kills the winner inherits from the loser. Never below zero.</summary>
+        public static int InheritedKills(int loserKills)
+        {
+            return Math.Max(0, loserKills);
+        }
+
         /// <summary>How much of a stack one Noblin carries away: as much as fits, never more than the stack.</summary>
         public static int CarryCount(int stackCount, int carrySpace)
         {
@@ -159,6 +198,14 @@ namespace HobGob.Events
         Ongoing,
         Win,
         Loss,
+        Draw,
+    }
+
+    public enum DeathDuelOutcome
+    {
+        Ongoing,
+        AWins,
+        BWins,
         Draw,
     }
 

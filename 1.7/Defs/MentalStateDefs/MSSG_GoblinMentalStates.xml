@@ -30,6 +30,21 @@
     <inCaravanCanDo>false</inCaravanCanDo>
   </MentalStateDef>
 
+ 
+  <MentalStateDef ParentName="BaseMentalState">
+    <defName>MSSG_GoblinDeathDuel</defName>
+    <label>dueling to the death</label>
+    <stateClass>HobGob.Events.MentalState_GoblinDeathDuel</stateClass>
+    <category>Aggro</category>
+    <minTicksBeforeRecovery>999999999</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>999999999</maxTicksBeforeRecovery>
+    <recoveryMtbDays>999999</recoveryMtbDays>
+    <recoverFromDowned>false</recoverFromDowned>
+    <nameColor>(0.88, 0.2, 0.16)</nameColor>
+    <baseInspectLine>Mental state: Dueling to the death</baseInspectLine>
+    <inCaravanCanDo>false</inCaravanCanDo>
+  </MentalStateDef>
+
   <!-- Nobby Nobby Rumble: every noblin for itself. Started and ended only by HobGob.Rumble.NobbyRumbleComponent.
        Never self-recovers; recoverFromDowned off so a fighter who gets back up keeps fighting. -->
   <MentalStateDef ParentName="BaseMentalState">

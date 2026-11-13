@@ -75,6 +75,10 @@ namespace HobGob
         /// <summary>Has the kills but the per-map cap stops it.</summary>
         public bool BlockedByCap => HasNextStage && pawn.records != null && Kills >= KillsRequired && !CanEvolveNow;
 
+        /// <summary>The next real kill rolls for an instant Queenie or an explosion.</summary>
+        public bool KillSurgeArmed =>
+            EvolutionRules.EligibleForKillSurge(pawn.genes?.Xenotype == HobGobDefOf.MSSG_Hobgoblin, Kills, KillsRequired);
+
         public XenotypeDef NextXenotype => Extension?.nextXenotype;
 
         public override void PostAdd()
@@ -173,7 +177,11 @@ namespace HobGob
     /// </summary>
     public class GoblinEvolutionComponent : GameComponent
     {
+        private const float KillSurgeRadius = 14.9f;
+        private const int KillSurgeDamage = 1000;
+
         private readonly Dictionary<Pawn, EvolutionExtension> queue = new Dictionary<Pawn, EvolutionExtension>();
+        private readonly Dictionary<Pawn, KillSurge> surges = new Dictionary<Pawn, KillSurge>();
 
         public GoblinEvolutionComponent(Game game)
         {
@@ -184,10 +192,40 @@ namespace HobGob
 
         public void Enqueue(Pawn pawn, EvolutionExtension ext) => queue[pawn] = ext;
 
+        /// <summary>Rolls the Queenie-or-explode surge for a real kill. Applied on the next tick, outside the victim's death.</summary>
+        public void NoteKill(Pawn killer)
+        {
+            if (killer == null || killer.Dead || surges.ContainsKey(killer))
+            {
+                return;
+            }
+            Gene_GoblinEvolution gene = Hediff_EvolutionProgress.FindTracker(killer);
+            if (gene == null || !gene.KillSurgeArmed)
+            {
+                return;
+            }
+            KillSurge surge = EvolutionRules.RollKillSurge(Rand.Value, EvolutionRules.KillQueenChance, EvolutionRules.KillExplodeChance);
+            if (surge == KillSurge.None)
+            {
+                return;
+            }
+            surges[killer] = surge;
+        }
+
         public override void LoadedGame() => BackfillGenes();
 
         public override void GameComponentTick()
         {
+            if (surges.Count > 0)
+            {
+                List<KeyValuePair<Pawn, KillSurge>> pendingSurges = new List<KeyValuePair<Pawn, KillSurge>>(surges);
+                surges.Clear();
+                foreach (KeyValuePair<Pawn, KillSurge> entry in pendingSurges)
+                {
+                    queue.Remove(entry.Key);
+                    ApplySurge(entry.Key, entry.Value);
+                }
+            }
             if (queue.Count == 0)
             {
                 return;
@@ -225,6 +263,39 @@ namespace HobGob
                 }
             }
             return count;
+        }
+
+        private static void ApplySurge(Pawn pawn, KillSurge surge)
+        {
+            if (pawn == null || pawn.Dead || pawn.Destroyed)
+            {
+                return;
+            }
+            if (surge == KillSurge.Queen)
+            {
+                ForceEvolve(pawn, HobGobDefOf.MSSG_Hobnobgoblin);
+                return;
+            }
+            if (surge == KillSurge.Explode)
+            {
+                Explode(pawn);
+            }
+        }
+
+        private static void Explode(Pawn pawn)
+        {
+            if (pawn.Faction == Faction.OfPlayer)
+            {
+                Messages.Message("MSSG_GoblinExploded".Translate(pawn.Named("PAWN")), pawn, MessageTypeDefOf.NegativeEvent);
+            }
+            if (pawn.Spawned)
+            {
+                GenExplosion.DoExplosion(pawn.Position, pawn.Map, KillSurgeRadius, DamageDefOf.Bomb, pawn, KillSurgeDamage, damageFalloff: true);
+            }
+            if (!pawn.Dead && !pawn.Destroyed)
+            {
+                pawn.Kill(null);
+            }
         }
 
         /// <summary>Evolves now, skipping kill and cap checks. Used by the Nobby Nobby Rumble punishment.</summary>

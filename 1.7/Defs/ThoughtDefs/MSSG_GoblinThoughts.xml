@@ -104,6 +104,20 @@
     </stages>
   </ThoughtDef>
 
+  <ThoughtDef>
+    <defName>MSSG_DuelForbidden</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>forbidden the duel</label>
+        <description>We wanted to settle it properly and the chief said no.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
   <!-- E2: goblins when the challenge was refused or ignored. -->
   <ThoughtDef>
     <defName>MSSG_CowardlyChief</defName>

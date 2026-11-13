@@ -50,6 +50,16 @@ The beaten hobgoblin offers to join the colony.</MSSG_ChallengeWonText>
   <MSSG_ChallengerJoinDecline>Send it away</MSSG_ChallengerJoinDecline>
   <MSSG_ChallengerJoined>{0} has joined the colony.</MSSG_ChallengerJoined>
 
+  <MSSG_DeathDuelAccept>Let them fight</MSSG_DeathDuelAccept>
+  <MSSG_DeathDuelForbid>Forbid it</MSSG_DeathDuelForbid>
+  <MSSG_DeathDuelCannotStart>The duel cannot start: one of them cannot fight right now.</MSSG_DeathDuelCannotStart>
+  <MSSG_DeathDuelStarts>{0} and {1} square up for a duel to the death!</MSSG_DeathDuelStarts>
+  <MSSG_DeathDuelRefused>{0} and {1} were forbidden their duel. They are sulking.</MSSG_DeathDuelRefused>
+  <MSSG_DeathDuelTimedOut>Nobody answered {0} and {1}. They take it as a refusal, and they are sulking.</MSSG_DeathDuelTimedOut>
+  <MSSG_DeathDuelDraw>The duel to the death is over, and nobody walked away with the other's kills.</MSSG_DeathDuelDraw>
+  <MSSG_DeathDuelWonLabel>Duel won</MSSG_DeathDuelWonLabel>
+  <MSSG_DeathDuelWonText>{0} has killed {1} and taken their kills: {2}.</MSSG_DeathDuelWonText>
+
   <MSSG_AbilityGained>{1} has been gained knowledge of the ability: {0}.</MSSG_AbilityGained>
 
   <!-- Manual evolution and seasonal kills -->
@@ -60,6 +70,8 @@ The beaten hobgoblin offers to join the colony.</MSSG_ChallengeWonText>
   <MSSG_EvolveCapReached>There is already a {0} of this faction here.</MSSG_EvolveCapReached>
   <MSSG_EvolutionBlockedLabel>{0}/{1} kills, blocked</MSSG_EvolutionBlockedLabel>
   <MSSG_EvolutionBlockedTip>Cannot evolve: a {0} of this faction is already on this map. Only one is allowed.</MSSG_EvolutionBlockedTip>
+  <MSSG_EvolutionSurgeTip>Further kills can turn them into a Queenie at once, or blow them up. The evolve button is the safe choice.</MSSG_EvolutionSurgeTip>
+  <MSSG_GoblinExploded>{PAWN_nameDef} blew apart.</MSSG_GoblinExploded>
   <MSSG_SeasonalKills>A new season. These goblins grew more vicious and gained kills: {0}</MSSG_SeasonalKills>
   <MSSG_SeasonalKillsEntry>{0} (+{1})</MSSG_SeasonalKillsEntry>
 
