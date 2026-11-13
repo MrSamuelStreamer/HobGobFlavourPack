@@ -40,14 +40,23 @@ namespace HobGob
         {
             get
             {
-                string baseTip = base.TipStringExtra;
+                string tip = base.TipStringExtra;
                 Gene_GoblinEvolution tracker = FindTracker(pawn);
-                if (tracker == null || !tracker.BlockedByCap)
+                if (tracker == null)
                 {
-                    return baseTip;
+                    return tip;
                 }
-                string blocked = "MSSG_EvolutionBlockedTip".Translate(tracker.NextXenotype.label);
-                return baseTip.NullOrEmpty() ? blocked : baseTip + "\n" + blocked;
+                if (tracker.BlockedByCap)
+                {
+                    string blocked = "MSSG_EvolutionBlockedTip".Translate(tracker.NextXenotype.label);
+                    tip = tip.NullOrEmpty() ? blocked : tip + "\n" + blocked;
+                }
+                if (tracker.KillSurgeArmed)
+                {
+                    string surge = "MSSG_EvolutionSurgeTip".Translate();
+                    tip = tip.NullOrEmpty() ? surge : tip + "\n" + surge;
+                }
+                return tip;
             }
         }
 

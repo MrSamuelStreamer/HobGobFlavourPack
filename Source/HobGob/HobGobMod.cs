@@ -61,6 +61,7 @@ namespace HobGob
     {
         public static GeneDef MSSG_NoblinInstinct;
         public static XenotypeDef MSSG_Noblin;
+        public static XenotypeDef MSSG_Goblin;
         public static PawnKindDef MSSG_Pitborn;
         public static ThingDef MSSG_GoblinHole;
         public static HediffDef MSSG_PitFresh;
@@ -78,6 +79,9 @@ namespace HobGob
         public static ThoughtDef MSSG_Winded;
         public static XenotypeDef MSSG_Hobgoblin;
         public static MentalStateDef MSSG_GoblinDuel;
+        public static MentalStateDef MSSG_GoblinDeathDuel;
+        public static ThoughtDef MSSG_DuelForbidden;
+        public static LetterDef MSSG_GoblinDeathDuelLetter;
         public static ThoughtDef MSSG_ChallengeVictor;
         public static ThoughtDef MSSG_ChampionShamed;
         public static ThoughtDef MSSG_HumiliatedInDuel;

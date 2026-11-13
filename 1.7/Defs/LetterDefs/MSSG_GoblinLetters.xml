@@ -12,6 +12,17 @@
     <pauseMode>AnyThreat</pauseMode>
   </LetterDef>
 
+  <LetterDef>
+    <defName>MSSG_GoblinDeathDuelLetter</defName>
+    <letterClass>HobGob.Events.ChoiceLetter_GoblinDeathDuel</letterClass>
+    <color>(204, 155, 125)</color>
+    <flashColor>(255, 155, 95)</flashColor>
+    <flashInterval>16</flashInterval>
+    <bounce>true</bounce>
+    <arriveSound>LetterArrive_BadUrgent</arriveSound>
+    <pauseMode>AnyThreat</pauseMode>
+  </LetterDef>
+
   <!-- E2: the beaten challenger offers to join. -->
   <LetterDef ParentName="CustomChoiceLetterBase">
     <defName>MSSG_ChallengerJoinsLetter</defName>

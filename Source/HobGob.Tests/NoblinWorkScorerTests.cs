@@ -145,6 +145,29 @@ namespace HobGob.Tests
         }
 
         [Theory]
+        [InlineData(false, 51, 50, false)]
+        [InlineData(true, 49, 50, false)]
+        [InlineData(true, 50, 50, false)]
+        [InlineData(true, 51, 50, true)]
+        [InlineData(true, 100, 50, true)]
+        public void EligibleForKillSurge_OnlyHobgoblinsPastTheLine(bool hobgoblin, int kills, int required, bool expected)
+        {
+            Assert.Equal(expected, EvolutionRules.EligibleForKillSurge(hobgoblin, kills, required));
+        }
+
+        [Theory]
+        [InlineData(0f, KillSurge.Queen)]
+        [InlineData(0.009f, KillSurge.Queen)]
+        [InlineData(0.01f, KillSurge.Explode)]
+        [InlineData(0.019f, KillSurge.Explode)]
+        [InlineData(0.02f, KillSurge.None)]
+        [InlineData(0.5f, KillSurge.None)]
+        public void RollKillSurge_QueenThenExplode(float roll, KillSurge expected)
+        {
+            Assert.Equal(expected, EvolutionRules.RollKillSurge(roll, EvolutionRules.KillQueenChance, EvolutionRules.KillExplodeChance));
+        }
+
+        [Theory]
         [InlineData(-1, 0, false)]
         [InlineData(-1, 3, false)]
         [InlineData(0, 0, false)]

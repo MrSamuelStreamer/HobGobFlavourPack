@@ -133,6 +133,34 @@ namespace HobGob.Tests
         {
             Assert.Equal(expected, EventRules.ResolveDuel(challengerDown, championDown, championGone, challengerGone, timedOut));
         }
+
+        [Theory]
+        [InlineData(false, false, false, false, false, false, false, false, DeathDuelOutcome.Ongoing)]
+        [InlineData(false, true, false, false, false, false, false, false, DeathDuelOutcome.AWins)]
+        [InlineData(true, false, false, false, false, false, false, false, DeathDuelOutcome.BWins)]
+        [InlineData(true, true, false, false, false, false, false, false, DeathDuelOutcome.Draw)]
+        [InlineData(false, false, true, false, false, false, false, false, DeathDuelOutcome.Draw)]
+        [InlineData(false, false, false, true, false, false, false, false, DeathDuelOutcome.Draw)]
+        [InlineData(false, false, false, false, true, true, false, false, DeathDuelOutcome.Draw)]
+        [InlineData(false, false, false, false, true, false, false, false, DeathDuelOutcome.Ongoing)]
+        [InlineData(false, false, false, false, false, false, true, false, DeathDuelOutcome.Draw)]
+        [InlineData(false, false, false, false, true, false, true, false, DeathDuelOutcome.Ongoing)]
+        [InlineData(true, false, false, true, false, false, true, false, DeathDuelOutcome.BWins)]
+        [InlineData(false, true, true, false, false, false, false, false, DeathDuelOutcome.AWins)]
+        [InlineData(false, false, false, false, true, false, false, true, DeathDuelOutcome.Draw)]
+        public void ResolveDeathDuel_Table(bool aDead, bool bDead, bool aGone, bool bGone, bool aDowned, bool bDowned, bool timedOut, bool cannotFinish, DeathDuelOutcome expected)
+        {
+            Assert.Equal(expected, EventRules.ResolveDeathDuel(aDead, bDead, aGone, bGone, aDowned, bDowned, timedOut, cannotFinish));
+        }
+
+        [Theory]
+        [InlineData(0, 0)]
+        [InlineData(4, 4)]
+        [InlineData(-3, 0)]
+        public void InheritedKills_NeverNegative(int loserKills, int expected)
+        {
+            Assert.Equal(expected, EventRules.InheritedKills(loserKills));
+        }
     }
 
     public class QueenReleaseTests
