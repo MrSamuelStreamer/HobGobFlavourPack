@@ -63,7 +63,7 @@
   <GeneDef ParentName="MSSG_GoblinHiddenGeneBase">
     <defName>MSSG_Evolution_HobGoblin</defName>
     <label>queenie growth</label>
-    <description>Carriers of this gene can grow into a Queenie after enough kills, when you choose. Each kill after that has a small chance of turning them into a Queenie at once, or of blowing them up.</description>
+    <description>Carriers of this gene can grow into a Queenie after enough kills, when you choose. Each kill after that has a small chance of turning them into a Queenie at once, or of killing them and spilling out a handful of noblins.</description>
     <iconPath>UI/Icons/Genes/Gene_Hobgoblin</iconPath>
     <geneClass>HobGob.Gene_GoblinEvolution</geneClass>
     <modExtensions>

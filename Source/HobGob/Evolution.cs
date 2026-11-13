@@ -75,7 +75,7 @@ namespace HobGob
         /// <summary>Has the kills but the per-map cap stops it.</summary>
         public bool BlockedByCap => HasNextStage && pawn.records != null && Kills >= KillsRequired && !CanEvolveNow;
 
-        /// <summary>The next real kill rolls for an instant Queenie or an explosion.</summary>
+        /// <summary>The next real kill rolls for an instant Queenie, or a fatal split into noblins.</summary>
         public bool KillSurgeArmed =>
             EvolutionRules.EligibleForKillSurge(pawn.genes?.Xenotype == HobGobDefOf.MSSG_Hobgoblin, Kills, KillsRequired);
 
@@ -177,8 +177,9 @@ namespace HobGob
     /// </summary>
     public class GoblinEvolutionComponent : GameComponent
     {
-        private const float KillSurgeRadius = 14.9f;
         private const int KillSurgeDamage = 1000;
+        private const int MinBurstNoblins = 3;
+        private const int MaxBurstNoblins = 8;
 
         private readonly Dictionary<Pawn, EvolutionExtension> queue = new Dictionary<Pawn, EvolutionExtension>();
         private readonly Dictionary<Pawn, KillSurge> surges = new Dictionary<Pawn, KillSurge>();
@@ -192,7 +193,7 @@ namespace HobGob
 
         public void Enqueue(Pawn pawn, EvolutionExtension ext) => queue[pawn] = ext;
 
-        /// <summary>Rolls the Queenie-or-explode surge for a real kill. Applied on the next tick, outside the victim's death.</summary>
+        /// <summary>Rolls the Queenie-or-burst surge for a real kill. Applied on the next tick, outside the victim's death.</summary>
         public void NoteKill(Pawn killer)
         {
             if (killer == null || killer.Dead || surges.ContainsKey(killer))
@@ -278,24 +279,68 @@ namespace HobGob
             }
             if (surge == KillSurge.Explode)
             {
-                Explode(pawn);
+                Burst(pawn);
             }
         }
 
-        private static void Explode(Pawn pawn)
+        /// <summary>1000 damage to the core kills them. Noblins of their faction then crawl out where they stood.</summary>
+        private static void Burst(Pawn pawn)
         {
-            if (pawn.Faction == Faction.OfPlayer)
+            Map map = pawn.Map;
+            IntVec3 cell = pawn.Position;
+            Faction faction = pawn.Faction;
+            int count = Rand.RangeInclusive(MinBurstNoblins, MaxBurstNoblins);
+            if (map != null && faction == Faction.OfPlayer)
             {
-                Messages.Message("MSSG_GoblinExploded".Translate(pawn.Named("PAWN")), pawn, MessageTypeDefOf.NegativeEvent);
+                Messages.Message("MSSG_GoblinExploded".Translate(pawn.Named("PAWN"), count), pawn, MessageTypeDefOf.NegativeEvent);
             }
-            if (pawn.Spawned)
+            BodyPartRecord core = pawn.RaceProps?.body?.corePart;
+            pawn.TakeDamage(new DamageInfo(DamageDefOf.Blunt, KillSurgeDamage, 999f, -1f, null, core));
+            if (map == null)
             {
-                GenExplosion.DoExplosion(pawn.Position, pawn.Map, KillSurgeRadius, DamageDefOf.Bomb, pawn, KillSurgeDamage, damageFalloff: true);
+                return;
             }
-            if (!pawn.Dead && !pawn.Destroyed)
+            for (int i = 0; i < count; i++)
             {
-                pawn.Kill(null);
+                SpawnBurstNoblin(map, cell, faction);
             }
+        }
+
+        private static void SpawnBurstNoblin(Map map, IntVec3 cell, Faction faction)
+        {
+            PawnGenerationRequest request = new PawnGenerationRequest(
+                HobGobDefOf.MSSG_Pitborn,
+                faction,
+                PawnGenerationContext.NonPlayer,
+                map.Tile,
+                forceGenerateNewPawn: true,
+                canGeneratePawnRelations: false,
+                allowFood: false,
+                allowAddictions: false,
+                forcedXenotype: HobGobDefOf.MSSG_Noblin,
+                fixedBiologicalAge: 13f,
+                fixedChronologicalAge: 13f,
+                developmentalStages: DevelopmentalStage.Adult,
+                forceNoGear: true)
+            {
+                ForceNoIdeoGear = true
+            };
+            Pawn noblin = PawnGenerator.GeneratePawn(request);
+            if (noblin == null)
+            {
+                return;
+            }
+            if (faction != null && noblin.Faction != faction)
+            {
+                noblin.SetFaction(faction);
+            }
+            IntVec3 spot = CellFinder.StandableCellNear(cell, map, 5f);
+            if (!spot.IsValid)
+            {
+                spot = cell;
+            }
+            GenSpawn.Spawn(noblin, spot, map);
+            NoblinPortraitHiding.Hide(noblin);
         }
 
         /// <summary>Evolves now, skipping kill and cap checks. Used by the Nobby Nobby Rumble punishment.</summary>
