@@ -2,7 +2,6 @@
 <loadFolders>
   <v1.7>
     <li>/</li>
-    <li>Common</li>
     <li>1.7</li>
     <li IfModActive="battiebear.undergrounders.darkfire">Compatibility/battiebear.undergrounders.darkfire</li>
 	</v1.7>
