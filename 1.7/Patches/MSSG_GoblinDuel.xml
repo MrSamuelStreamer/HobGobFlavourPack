@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-  <!-- E2: duelists fight like vanilla social fighters. Mirrors vanilla's SocialFighting node. -->
+  <!-- E2: duelists fight like vanilla social fighters. Mirrors vanilla's SocialFighting node with the HobGob job giver. -->
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/ThinkTreeDef[defName="MentalStateCritical"]/thinkRoot/subNodes</xpath>
     <order>Prepend</order>
@@ -10,7 +10,7 @@
         <subNodes>
           <li Class="ThinkNode_Priority">
             <subNodes>
-              <li Class="JobGiver_SocialFighting" />
+              <li Class="HobGob.Events.JobGiver_GoblinDuel" />
               <li Class="JobGiver_WanderAnywhere">
                 <maxDanger>Deadly</maxDanger>
               </li>

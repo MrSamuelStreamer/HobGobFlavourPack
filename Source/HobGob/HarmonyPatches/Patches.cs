@@ -155,4 +155,14 @@ namespace HobGob.HarmonyPatches
             return Buffer;
         }
     }
+
+    /// <summary>A Hobgoblin past the Queenie kill line rolls on each real kill. Bonus kill credit does not come through here.</summary>
+    [HarmonyPatch(typeof(RecordsUtility), nameof(RecordsUtility.Notify_PawnKilled))]
+    public static class Patch_RecordsUtility_Notify_PawnKilled
+    {
+        public static void Postfix(Pawn killer)
+        {
+            Current.Game?.GetComponent<GoblinEvolutionComponent>()?.NoteKill(killer);
+        }
+    }
 }

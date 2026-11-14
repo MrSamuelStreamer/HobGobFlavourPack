@@ -189,5 +189,37 @@ namespace HobGob
 
         /// <summary>A new season has started. <paramref name="lastQuadrum"/> is -1 before the first reading, which never counts.</summary>
         public static bool SeasonChanged(int lastQuadrum, int quadrum) => lastQuadrum >= 0 && lastQuadrum != quadrum;
+
+        /// <summary>Chance a kill past the Queenie line turns the Hobgoblin into a Queenie at once.</summary>
+        public const float KillQueenChance = 0.01f;
+
+        /// <summary>Chance that same kill kills the Hobgoblin instead, and noblins crawl out. Checked only if the queen roll missed.</summary>
+        public const float KillExplodeChance = 0.01f;
+
+        /// <summary>A Hobgoblin who already has the kills to become a Queenie gambles on each later real kill.
+        /// The kill that reaches the line does not roll, so the evolve button stays safe.</summary>
+        public static bool EligibleForKillSurge(bool hobgoblin, int kills, int killsRequired) =>
+            hobgoblin && kills > killsRequired;
+
+        /// <summary>One roll in [0, 1): queen, then a fatal split, then nothing. The two outcomes cannot both happen.</summary>
+        public static KillSurge RollKillSurge(float roll, float queenChance, float explodeChance)
+        {
+            if (roll < queenChance)
+            {
+                return KillSurge.Queen;
+            }
+            if (roll < queenChance + explodeChance)
+            {
+                return KillSurge.Explode;
+            }
+            return KillSurge.None;
+        }
+    }
+
+    public enum KillSurge
+    {
+        None,
+        Queen,
+        Explode,
     }
 }

@@ -25,6 +25,7 @@ namespace HobGob.Events
         private Pawn challenger;
         private Pawn champion;
         private int deadlineTick = -1;
+        private int duelDeadlineTick = -1;
 
         /// <summary>Challengers that must leave but are downed: they get an exit lord once they can walk.</summary>
         private List<Pawn> leavers = new List<Pawn>();
@@ -56,6 +57,7 @@ namespace HobGob.Events
             }
             champion = fighter;
             stage = ChallengeStage.Fighting;
+            duelDeadlineTick = Find.TickManager.TicksGame + EventRules.DuelMaxTicks;
             RemoveLetters();
             StartDuel(champion, challenger);
             StartDuel(challenger, champion);
@@ -158,8 +160,9 @@ namespace HobGob.Events
             bool challengerDown = challenger == null || challenger.Dead || challenger.Downed;
             bool championDown = champion == null || champion.Dead || champion.Downed;
             bool championGone = !championDown && (!champion.Spawned || champion.Map != map);
-            bool dueling = IsDueling(challenger) || IsDueling(champion);
-            switch (EventRules.ResolveDuel(challengerDown, championDown, championGone, dueling))
+            bool challengerGone = !challengerDown && (!challenger.Spawned || challenger.Map != map);
+            bool timedOut = Find.TickManager.TicksGame >= duelDeadlineTick;
+            switch (EventRules.ResolveDuel(challengerDown, championDown, championGone, challengerGone, timedOut))
             {
                 case DuelOutcome.Win:
                     Win();
@@ -169,9 +172,23 @@ namespace HobGob.Events
                     break;
                 case DuelOutcome.Draw:
                     Messages.Message("MSSG_ChallengeDraw".Translate(), challenger, MessageTypeDefOf.NeutralEvent);
+                    EndDuelState(champion);
                     SendAway(challenger);
                     Reset();
                     break;
+                default:
+                    // Both still standing: if something knocked either out of the duel state, put it back.
+                    KeepDueling(champion, challenger);
+                    KeepDueling(challenger, champion);
+                    break;
+            }
+        }
+
+        private static void KeepDueling(Pawn pawn, Pawn opponent)
+        {
+            if (!IsDueling(pawn))
+            {
+                StartDuel(pawn, opponent);
             }
         }
 
@@ -285,6 +302,7 @@ namespace HobGob.Events
             challenger = null;
             champion = null;
             deadlineTick = -1;
+            duelDeadlineTick = -1;
         }
 
         public override void ExposeData()
@@ -294,9 +312,15 @@ namespace HobGob.Events
             Scribe_References.Look(ref challenger, "challenger");
             Scribe_References.Look(ref champion, "champion");
             Scribe_Values.Look(ref deadlineTick, "deadlineTick", -1);
+            Scribe_Values.Look(ref duelDeadlineTick, "duelDeadlineTick", -1);
             Scribe_Collections.Look(ref leavers, "leavers", LookMode.Reference);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
+                if (stage == ChallengeStage.Fighting && duelDeadlineTick < 0)
+                {
+                    // Save from before the duel deadline existed.
+                    duelDeadlineTick = Find.TickManager.TicksGame + EventRules.DuelMaxTicks;
+                }
                 leavers ??= new List<Pawn>();
                 leavers.RemoveAll(p => p == null);
             }

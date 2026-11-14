@@ -91,4 +91,20 @@ It bellows that it will fight your strongest goblin, bare-fisted, until one of t
 
 A win earns glory and a lot of respect. Refusing will make your goblins ashamed of their chief. If you do not answer within 12 hours, the goblins will take it as a refusal.</letterText>
   </IncidentDef>
+
+  <IncidentDef>
+    <defName>MSSG_GoblinDeathDuel</defName>
+    <label>duel to the death</label>
+    <category>ThreatSmall</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>HobGob.Events.IncidentWorker_GoblinDeathDuel</workerClass>
+    <baseChance>0.5</baseChance>
+    <minRefireDays>30</minRefireDays>
+    <letterLabel>Duel to the death</letterLabel>
+    <letterText>{FIGHTER_A} and {FIGHTER_B} want to stomp each other. They reckon the best way to settle it is if one of 'em dies, and the one still standin' takes the dead one's kills.
+
+Let 'em at it, or tell 'em no. Tell 'em no and the pair of 'em will sulk. Leave it hangin' for 12 hours and they'll reckon that's a no.</letterText>
+  </IncidentDef>
 </Defs>
