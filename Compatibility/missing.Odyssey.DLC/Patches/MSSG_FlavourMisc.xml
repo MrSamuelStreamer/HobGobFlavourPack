@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="MSSG_GoblinHole"]/graphicData/texPath</xpath>
+    <value>
+      <texPath>Things/Building/MSSG_NoOdyssey_QueenieHole</texPath>
+    </value>
+  </Operation>
+
+</Patch>

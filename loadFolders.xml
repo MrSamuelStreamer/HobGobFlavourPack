@@ -4,5 +4,6 @@
     <li>/</li>
     <li>1.7</li>
     <li IfModActive="battiebear.undergrounders.darkfire">Compatibility/battiebear.undergrounders.darkfire</li>
+    <li IfModNotActive="ludeon.rimworld.odyssey">Compatibility/missing.Odyssey.DLC</li>
 	</v1.7>
 </loadFolders>
