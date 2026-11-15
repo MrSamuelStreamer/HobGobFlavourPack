@@ -9,47 +9,51 @@
     <iconPath>UI/Icons/Xenotypes/Custom/Archer_2</iconPath>
     <inheritable>true</inheritable>
     <genes>
-      <li>AG_LungRotImmunity</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_Fast_TotalHealing</li>
       <li MayRequire="redmattis.bigsmall.core">Small</li>
-      <li MayRequire="lotr.shadowoftheeast">LOTR_EarsMordor</li>
-      <li MayRequire="lotr.shadowoftheeast">LOTR_MordorAppearance</li>
       <li MayRequire="sarg.alphagenes">AG_ReducedRaidPresence</li>
       <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
-      <li>RobustDigestion</li>
       <li>StrongStomach</li>
-      <li>BS_SlowBleeding</li>
-      <li MayRequire="sarg.alphagenes">AG_LimbRegeneration</li>
+      <li>RobustDigestion</li>
+      <li>WoundHealing_Fast</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_SlowBleeding</li>
+      <li MayRequire="sarg.alphagenes">AG_LungRotImmunity</li>
       <li MayRequire="sarg.alphagenes">AG_HardBones</li>
       <li MayRequire="sarg.alphagenes">AG_Filthy</li>
       <li MayRequire="sarg.alphagenes">AG_Stinky</li>
       <li>PsychicAbility_Deaf</li>
       <li>MoveSpeed_VeryQuick</li>
-      <li>Head_Gaunt</li>
       <li>ToxResist_Partial</li>
       <li>ToxicEnvironmentResistance_Partial</li>
       <li>UVSensitivity_Intense</li>
+      <li MayRequire="det.stoneborn">DV_Aggression_Irascible</li>
       <li>MeleeDamage_Weak</li>
       <li>Pain_Reduced</li>
       <li>Sterile</li>
-      <li>Beauty_VeryUgly</li>
-      <li>BS_AlienApperanceStandards</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
+      <li MayRequire="sarg.alphagenes">AG_UnsettlingAppearance</li>
+      <li MayRequire="lotr.shadowoftheeast">LOTR_EarsMordor</li>
+      <li>Head_Gaunt</li>
       <li>Body_Thin</li>
       <li>Hair_MidBlack</li>
       <li>Hair_DarkBlack</li>
-      <li>BS_MossGreenHair</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_MossGreenHair</li>
       <li MayRequire="sarg.alphagenes">AG_Skin_DeepGreen</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_Abrasive</li>
+      <li MayRequire="mrsamuelstreamer.goblinflavourpack">MSSG_Evolution_Noblin</li>
+      <li MayRequire="mss.flavourpack">MSSFP_Illiterate</li>
+      <li MayRequire="mrsamuelstreamer.goblinflavourpack">MSSG_NoblinInstinct</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_ToxGlands</li>
-      <li>BS_Xenolocked</li>
-      <li>BS_Learning_None</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_Xenolocked</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_Learning_None</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Size_ExtremeDwarfism</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Age_RapidDevelopment</li>
       <li>DarkVision</li>
       <li>CaveDweller</li>
       <li>Instability_Major</li>
+      <li MayRequire="lotr.shadowoftheeast">LOTR_MordorAppearance</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinNose</li>
-      <li>BS_SimpleMind</li>
-      <li>MSSG_NoblinInstinct</li>
-      <li>MSSG_Evolution_Noblin</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_SimpleMind</li>
       <li MayRequire="redmattis.betterprerequisites">BS_FacialAnimDisabled</li>
       <li MayRequire="lazyfridaystudio.genesexpandedblood">GEB_Blood_Guacamole</li>
     </genes>
@@ -66,11 +70,12 @@
     <iconPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon8</iconPath>
     <inheritable>true</inheritable>
     <genes>
-      <li>AG_LungRotImmunity</li>
       <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
-      <li>RobustDigestion</li>
       <li>StrongStomach</li>
-      <li>BS_SlowBleeding</li>
+      <li>RobustDigestion</li>
+      <li>WoundHealing_Fast</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_SlowBleeding</li>
+      <li MayRequire="sarg.alphagenes">AG_LungRotImmunity</li>
       <li MayRequire="sarg.alphagenes">AG_HardBones</li>
       <li MayRequire="sarg.alphagenes">AG_Filthy</li>
       <li MayRequire="sarg.alphagenes">AG_Stinky</li>
@@ -79,27 +84,28 @@
       <li>ToxResist_Partial</li>
       <li>ToxicEnvironmentResistance_Partial</li>
       <li>UVSensitivity_Mild</li>
-      <li>Aggression_Aggressive</li>
+      <li MayRequire="det.stoneborn">DV_Aggression_Irascible</li>
       <li MayRequire="sarg.alphagenes">AG_Rowdy</li>
       <li>Pain_Reduced</li>
       <li>Sterile</li>
-      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">BS_TrollEars</li>
-      <li>Beauty_VeryUgly</li>
-      <li>BS_AlienApperanceStandards</li>
-      <li>BS_StonemaskHead</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_TrollEars</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
+      <li MayRequire="sarg.alphagenes">AG_UnsettlingAppearance</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_StonemaskHead</li>
       <li>Body_Thin</li>
       <li>Hair_MidBlack</li>
       <li>Hair_DarkBlack</li>
-      <li>BS_MossGreenHair</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_MossGreenHair</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Skin_GoblinDarkGreen</li>
+      <li MayRequire="mrsamuelstreamer.goblinflavourpack">MSSG_Evolution_Goblin</li>
+      <li MayRequire="mss.flavourpack">MSSFP_Illiterate</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_ToxGlands</li>
-      <li>BS_Xenolocked</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_Xenolocked</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">Age_RapidDevelopment</li>
       <li>DarkVision</li>
       <li>CaveDweller</li>
       <li>Instability_Major</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinNose</li>
-      <li>MSSG_Evolution_Goblin</li>
       <li MayRequire="lazyfridaystudio.genesexpandedblood">GEB_Blood_Guacamole</li>
     </genes>
     <modExtensions>
@@ -125,10 +131,8 @@
       <li MayRequire="sarg.alphagenes">AG_Filthy</li>
       <li MayRequire="sarg.alphagenes">AG_Stinky</li>
       <li>PsychicAbility_Deaf</li>
-      <li>MoveSpeed_Quick</li>
       <li>ToxResist_Partial</li>
       <li>ToxicEnvironmentResistance_Partial</li>
-      <li>UVSensitivity_Mild</li>
       <li>Aggression_Aggressive</li>
       <li>MeleeDamage_Strong</li>
       <li MayRequire="sarg.alphagenes">AG_Rowdy</li>
@@ -136,8 +140,9 @@
       <li>Pain_Reduced</li>
       <li>Sterile</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">BS_TrollEars_Great</li>
-      <li>Beauty_VeryUgly</li>
-      <li>BS_AlienApperanceStandards</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
+      <li MayRequire="sarg.alphagenes">AG_UnsettlingAppearance</li>
+      <li MayRequire="mss.flavourpack">MSSFP_Illiterate</li>
       <li>BS_OgreHead</li>
       <li>Body_Hulk</li>
       <li>Hair_MidBlack</li>
@@ -152,6 +157,7 @@
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinNose</li>
       <li>MSSG_Evolution_HobGoblin</li>
       <li MayRequire="lazyfridaystudio.genesexpandedblood">GEB_Blood_Guacamole</li>
+      <li MayRequire="sarg.alphagenes">AG_ToughSinews</li>
     </genes>
     <modExtensions>
       <li Class="HobGob.Census.CensusCountedExtension" />
@@ -166,37 +172,37 @@
     <iconPath>UI/Icons/Xenotypes/Custom/VBE_CustomXenotypeIcon30</iconPath>
     <inheritable>true</inheritable>
     <genes>
-      <li>AG_LungRotImmunity</li>
-      <li MayRequire="redmattis.bigsmall.core">BS_EndlessGrowth</li>
-      <li MayRequire="redmattis.bigsmall.core">Gigantism</li>
+      <li MayRequire="redmattis.bigsmall.core">HalfColossusFrame</li>
       <li MayRequire="sarg.alphagenes">AG_PukeBile</li>
-      <li>RobustDigestion</li>
       <li>StrongStomach</li>
+      <li>RobustDigestion</li>
+      <li MayRequire="sarg.alphagenes">AG_EfficientMandibles</li>
       <li MayRequire="redmattis.bigsmall.core">BS_SlowBleeding</li>
+      <li MayRequire="sarg.alphagenes">AG_LungRotImmunity</li>
       <li MayRequire="sarg.alphagenes">AG_HardBones</li>
       <li MayRequire="sarg.alphagenes">AG_Filthy</li>
       <li MayRequire="sarg.alphagenes">AG_Stinky</li>
       <li>PsychicAbility_Deaf</li>
-      <li>MoveSpeed_Slow</li>
       <li>ToxResist_Partial</li>
       <li>ToxicEnvironmentResistance_Partial</li>
-      <li>UVSensitivity_Mild</li>
       <li>Aggression_Aggressive</li>
       <li>MeleeDamage_Strong</li>
       <li MayRequire="sarg.alphagenes">AG_Rowdy</li>
+      <li MayRequire="sarg.alphagenes">AG_ToughSinews</li>
       <li>Robust</li>
       <li>Pain_Reduced</li>
       <li>Sterile</li>
-      <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinEars</li>
-      <li>Beauty_VeryUgly</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_TrollEars_Great</li>
       <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
-      <li>BS_FomorialHead_Savage</li>
-      <li>Body_Fat</li>
+      <li MayRequire="sarg.alphagenes">AG_UnsettlingAppearance</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_OgreHead</li>
+      <li>Body_Hulk</li>
       <li>Hair_MidBlack</li>
       <li>Hair_DarkBlack</li>
       <li MayRequire="redmattis.bigsmall.core">BS_MossGreenHair</li>
-      <li>Skin_SlateGray</li>
-      <li MayRequire="redmattis.bigsmall.core">Body_FemaleOnly</li>
+      <li MayRequire="redmattis.bigsmall.core">VU_ZombieSkin</li>
+      <li MayRequire="mss.flavourpack">MSSFP_Illiterate</li>
+      <li MayRequire="mrsamuelstreamer.goblinflavourpack">MSSG_Evolution_HobGoblin</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_ToxGlands</li>
       <li MayRequire="redmattis.bigsmall.core">BS_Xenolocked</li>
       <li>DarkVision</li>
@@ -204,7 +210,6 @@
       <li>Instability_Major</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinNose</li>
       <li MayRequire="lazyfridaystudio.genesexpandedblood">GEB_Blood_Guacamole</li>
-      <li>MSSG_Evolution_Hobnobgoblin</li>
     </genes>
     <modExtensions>
       <li Class="HobGob.Census.CensusCountedExtension" />
@@ -228,17 +233,15 @@
       <li MayRequire="sarg.alphagenes">AG_Stinky</li>
       <li MayRequire="sarg.alphagenes">AG_InnatePsylink</li>
       <li MayRequire="redmattis.bigsmall.core">BS_NaturalPsychic</li>
-      <li>MoveSpeed_Slow</li>
       <li>ToxResist_Partial</li>
       <li>ToxicEnvironmentResistance_Partial</li>
       <li>UVSensitivity_Mild</li>
       <li>Aggression_Aggressive</li>
       <li MayRequire="sarg.alphagenes">AG_Rowdy</li>
-      <li>Delicate</li>
       <li>Sterile</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">LOTR_EarsMordor</li>
-      <li>Beauty_VeryUgly</li>
       <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
+      <li MayRequire="sarg.alphagenes">AG_UnsettlingAppearance</li>
       <li MayRequire="icc.fov.elves">Eyes_PurpleEye</li>
       <li MayRequire="lotr.shadowoftheeast">LOTR_HeadMordor</li>
       <li>Head_Gaunt</li>
@@ -263,6 +266,7 @@
       <li>AptitudeRemarkable_Intellectual</li>
       <li>MSSG_Evolution_Snoblin</li>
       <li MayRequire="lazyfridaystudio.genesexpandedblood">GEB_Blood_Guacamole</li>
+      <li MayRequire="redmattis.bigsmall.core">BS_GhoulHead</li>
     </genes>
     <modExtensions>
       <li Class="HobGob.Census.CensusCountedExtension" />
