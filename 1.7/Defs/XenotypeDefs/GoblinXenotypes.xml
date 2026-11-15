@@ -18,7 +18,6 @@
       <li>WoundHealing_Fast</li>
       <li MayRequire="redmattis.bigsmall.core">BS_SlowBleeding</li>
       <li MayRequire="sarg.alphagenes">AG_LungRotImmunity</li>
-      <li MayRequire="sarg.alphagenes">AG_HardBones</li>
       <li MayRequire="sarg.alphagenes">AG_Filthy</li>
       <li MayRequire="sarg.alphagenes">AG_Stinky</li>
       <li>PsychicAbility_Deaf</li>
