@@ -5,10 +5,10 @@
     <label>Goblin Spawning Hole</label>
     <description>A subterranean pit used by goblins for spawning. Rumours say that a single self-fertilising Goblin queen can produce a thousand noblin a day, but no one has ever seen a living queen to confirm it.</description>
     <graphicData>
-		<texPath>Things/Building/CaveEntranceA</texPath>
-		<graphicClass>Graphic_Single</graphicClass>
-		<drawSize>(6,6)</drawSize>
-	</graphicData>
+      <texPath>Things/Building/CaveEntranceA</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(6,6)</drawSize>
+    </graphicData>
     <building>
       <destroySound>BuildingDestroyed_Metal_Big</destroySound>
     </building>

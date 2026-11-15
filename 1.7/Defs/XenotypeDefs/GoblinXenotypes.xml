@@ -201,7 +201,7 @@
       <li MayRequire="redmattis.bigsmall.core">BS_MossGreenHair</li>
       <li MayRequire="redmattis.bigsmall.core">VU_ZombieSkin</li>
       <li MayRequire="mss.flavourpack">MSSFP_Illiterate</li>
-      <li MayRequire="mrsamuelstreamer.goblinflavourpack">MSSG_Evolution_HobGoblin</li>
+      <li>MSSG_Evolution_Hobnobgoblin</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_ToxGlands</li>
       <li MayRequire="redmattis.bigsmall.core">BS_Xenolocked</li>
       <li>DarkVision</li>
