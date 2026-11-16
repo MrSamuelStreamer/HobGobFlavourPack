@@ -184,6 +184,10 @@ namespace HobGob
         /// <summary>A kill counts towards evolution only if the victim is at least the stage's minimum body size.</summary>
         public static bool KillCounts(float victimBodySize, float minBodySize) => victimBodySize >= minBodySize;
 
+        /// <summary>A Noblin with a psylink is already magic, so it becomes a Snoblin. Queue it only once.</summary>
+        public static bool PsylinkMakesSnoblin(bool isNoblin, bool hasPsylink, bool alreadyQueued) =>
+            isNoblin && hasPsylink && !alreadyQueued;
+
         /// <param name="roll">Uniform random value in [0, 1).</param>
         public static bool RollsRare(float roll, float chance) => roll < chance;
 

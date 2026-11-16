@@ -135,6 +135,17 @@ namespace HobGob.Tests
         }
 
         [Theory]
+        [InlineData(true, true, false, true)]
+        [InlineData(true, false, false, false)]
+        [InlineData(false, true, false, false)]
+        [InlineData(true, true, true, false)]
+        [InlineData(false, false, false, false)]
+        public void PsylinkMakesSnoblin_OnlyUnqueuedPsylinkedNoblins(bool noblin, bool psylink, bool queued, bool expected)
+        {
+            Assert.Equal(expected, EvolutionRules.PsylinkMakesSnoblin(noblin, psylink, queued));
+        }
+
+        [Theory]
         [InlineData(false, true, true)]
         [InlineData(false, false, true)]
         [InlineData(true, false, true)]

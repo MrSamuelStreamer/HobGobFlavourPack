@@ -145,6 +145,13 @@ namespace HobGob
             }
             // Re-adds the tracker if something removed it, and back-fills goblins from older saves.
             EnsureProgressHediff();
+            GoblinEvolutionComponent component = Current.Game.GetComponent<GoblinEvolutionComponent>();
+            if (component != null && EvolutionRules.PsylinkMakesSnoblin(
+                    pawn.genes?.Xenotype == HobGobDefOf.MSSG_Noblin, pawn.GetMainPsylinkSource() != null, component.IsForced(pawn)))
+            {
+                component.EnqueueForced(pawn, HobGobDefOf.MSSG_Snoblin);
+                return;
+            }
             if (!IsManual && CanEvolveNow)
             {
                 Current.Game.GetComponent<GoblinEvolutionComponent>()?.Enqueue(pawn, Extension);
@@ -218,6 +225,7 @@ namespace HobGob
 
         private readonly Dictionary<Pawn, EvolutionExtension> queue = new Dictionary<Pawn, EvolutionExtension>();
         private readonly Dictionary<Pawn, KillSurge> surges = new Dictionary<Pawn, KillSurge>();
+        private readonly Dictionary<Pawn, XenotypeDef> forced = new Dictionary<Pawn, XenotypeDef>();
 
         public GoblinEvolutionComponent(Game game)
         {
@@ -227,6 +235,11 @@ namespace HobGob
         }
 
         public void Enqueue(Pawn pawn, EvolutionExtension ext) => queue[pawn] = ext;
+
+        /// <summary>Queues an evolution into <paramref name="next"/> that skips the kill and cap checks.</summary>
+        public void EnqueueForced(Pawn pawn, XenotypeDef next) => forced[pawn] = next;
+
+        public bool IsForced(Pawn pawn) => forced.ContainsKey(pawn);
 
         /// <summary>Counts a real kill towards evolution if the victim is big enough, then rolls the Queenie-or-burst surge.
         /// The surge is applied on the next tick, outside the victim's death.</summary>
@@ -275,6 +288,19 @@ namespace HobGob
                 {
                     queue.Remove(entry.Key);
                     ApplySurge(entry.Key, entry.Value);
+                }
+            }
+            if (forced.Count > 0)
+            {
+                List<KeyValuePair<Pawn, XenotypeDef>> pendingForced = new List<KeyValuePair<Pawn, XenotypeDef>>(forced);
+                forced.Clear();
+                foreach (KeyValuePair<Pawn, XenotypeDef> entry in pendingForced)
+                {
+                    queue.Remove(entry.Key);
+                    if (!entry.Key.Destroyed)
+                    {
+                        ForceEvolve(entry.Key, entry.Value);
+                    }
                 }
             }
             if (queue.Count == 0)
