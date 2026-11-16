@@ -10,13 +10,14 @@ namespace HobGob
         [DebugAction("Goblins", "Set kill count", actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void SetKillCount(Pawn pawn)
         {
-            if (pawn?.records == null)
+            Gene_GoblinEvolution tracker = Hediff_EvolutionProgress.FindTracker(pawn);
+            if (tracker == null)
             {
                 return;
             }
-            int current = pawn.records.GetAsInt(RecordDefOf.Kills);
+            int current = tracker.Kills;
             Find.WindowStack.Add(new Dialog_Slider(
-                kills => pawn.LabelShort + " kills: " + kills,
+                kills => pawn.LabelShort + " evolution kills: " + kills,
                 0,
                 UnityEngine.Mathf.Max(200, current),
                 kills => ApplyKillCount(pawn, kills),
@@ -25,17 +26,14 @@ namespace HobGob
 
         private static void ApplyKillCount(Pawn pawn, int kills)
         {
-            if (pawn.Destroyed || pawn.records == null)
+            Gene_GoblinEvolution tracker = Hediff_EvolutionProgress.FindTracker(pawn);
+            if (pawn.Destroyed || tracker == null)
             {
                 return;
             }
-            float delta = kills - pawn.records.GetAsInt(RecordDefOf.Kills);
-            if (delta != 0f)
-            {
-                pawn.records.AddTo(RecordDefOf.Kills, delta);
-            }
+            tracker.SetKills(kills);
             DebugActionsUtility.DustPuffFrom(pawn);
-            Messages.Message(pawn.LabelShort + " now has " + pawn.records.GetAsInt(RecordDefOf.Kills) + " kills.", pawn, MessageTypeDefOf.NeutralEvent);
+            Messages.Message(pawn.LabelShort + " now has " + tracker.Kills + " evolution kills.", pawn, MessageTypeDefOf.NeutralEvent);
         }
     }
 }

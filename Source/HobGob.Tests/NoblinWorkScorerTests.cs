@@ -156,6 +156,18 @@ namespace HobGob.Tests
         }
 
         [Theory]
+        [InlineData(0.2f, 0f, true)]
+        [InlineData(0.2f, 0.6f, false)]
+        [InlineData(0.6f, 0.6f, true)]
+        [InlineData(0.9f, 1f, false)]
+        [InlineData(1f, 1f, true)]
+        [InlineData(2.5f, 1f, true)]
+        public void KillCounts_OnlyVictimsAtOrAboveTheMinimumSize(float victim, float min, bool expected)
+        {
+            Assert.Equal(expected, EvolutionRules.KillCounts(victim, min));
+        }
+
+        [Theory]
         [InlineData(0f, KillSurge.Queen)]
         [InlineData(0.009f, KillSurge.Queen)]
         [InlineData(0.01f, KillSurge.Explode)]

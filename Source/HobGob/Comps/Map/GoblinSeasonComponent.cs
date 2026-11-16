@@ -56,7 +56,7 @@ namespace HobGob.Comps.Map
                     continue;
                 }
                 int kills = settings.seasonalKills.RandomInRange;
-                pawn.records.AddTo(RecordDefOf.Kills, kills);
+                tracker.AddKills(kills);
                 if (pawn.Faction == Faction.OfPlayerSilentFail)
                 {
                     winners.Add(pawn);

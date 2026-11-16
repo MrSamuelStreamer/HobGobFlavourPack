@@ -198,7 +198,7 @@ namespace HobGob.Events
             Pawn loser = challenger;
             EndDuelState(winner);
             winner.needs?.mood?.thoughts?.memories?.TryGainMemory(HobGobDefOf.MSSG_ChallengeVictor);
-            winner.records?.AddTo(RecordDefOf.Kills, EventRules.ChallengeKillCredit);
+            Hediff_EvolutionProgress.FindTracker(winner)?.AddKills(EventRules.ChallengeKillCredit);
             Reset();
             if (loser != null && !loser.Dead)
             {

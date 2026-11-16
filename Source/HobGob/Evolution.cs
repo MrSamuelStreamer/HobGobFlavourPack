@@ -26,6 +26,9 @@ namespace HobGob
         /// <summary>This stage rolls for free kills at each season start. Chance and amount are mod settings.</summary>
         public bool seasonalKills;
 
+        /// <summary>A kill only counts towards evolution if the victim's body size is at least this. 0 = any size.</summary>
+        public float minVictimBodySize;
+
         public XenotypeDef RollTarget() =>
             rareXenotype != null && EvolutionRules.RollsRare(Rand.Value, rareChance) ? rareXenotype : nextXenotype;
     }
@@ -51,7 +54,19 @@ namespace HobGob
 
         public int KillsRequired => Extension?.totalKillsRequired ?? 0;
 
-        public int Kills => pawn.records?.GetAsInt(RecordDefOf.Kills) ?? 0;
+        /// <summary>Kills that count towards evolution. -1 until seeded from the vanilla Kills record.</summary>
+        private int evolutionKills = -1;
+
+        /// <summary>Evolution kills. Separate from the vanilla Kills record: kills of too-small victims do not count.</summary>
+        public int Kills => evolutionKills < 0 ? VanillaKills : evolutionKills;
+
+        private int VanillaKills => pawn?.records?.GetAsInt(RecordDefOf.Kills) ?? 0;
+
+        public float MinVictimBodySize => Extension?.minVictimBodySize ?? 0f;
+
+        public void AddKills(int amount) => evolutionKills = UnityEngine.Mathf.Max(0, Kills + amount);
+
+        public void SetKills(int amount) => evolutionKills = UnityEngine.Mathf.Max(0, amount);
 
         public bool GetsSeasonalKills => Extension?.seasonalKills ?? false;
 
@@ -84,7 +99,27 @@ namespace HobGob
         public override void PostAdd()
         {
             base.PostAdd();
+            SeedKills();
             EnsureProgressHediff();
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref evolutionKills, "evolutionKills", -1);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                // Saves from before the separate counter keep their progress.
+                SeedKills();
+            }
+        }
+
+        private void SeedKills()
+        {
+            if (evolutionKills < 0 && pawn != null)
+            {
+                evolutionKills = VanillaKills;
+            }
         }
 
         public override void PostRemove()
@@ -193,15 +228,30 @@ namespace HobGob
 
         public void Enqueue(Pawn pawn, EvolutionExtension ext) => queue[pawn] = ext;
 
-        /// <summary>Rolls the Queenie-or-burst surge for a real kill. Applied on the next tick, outside the victim's death.</summary>
-        public void NoteKill(Pawn killer)
+        /// <summary>Counts a real kill towards evolution if the victim is big enough, then rolls the Queenie-or-burst surge.
+        /// The surge is applied on the next tick, outside the victim's death.</summary>
+        public void NoteKill(Pawn killed, Pawn killer)
         {
-            if (killer == null || killer.Dead || surges.ContainsKey(killer))
+            if (killer == null || killer.Dead)
             {
                 return;
             }
             Gene_GoblinEvolution gene = Hediff_EvolutionProgress.FindTracker(killer);
-            if (gene == null || !gene.KillSurgeArmed)
+            if (gene == null)
+            {
+                return;
+            }
+            if (killed != null && !EvolutionRules.KillCounts(killed.BodySize, gene.MinVictimBodySize))
+            {
+                if (killer.Faction == Faction.OfPlayerSilentFail)
+                {
+                    Messages.Message("MSSG_KillTooSmall".Translate(killed.Named("THING"), killer.Named("PAWN")),
+                        killer, MessageTypeDefOf.NeutralEvent, historical: false);
+                }
+                return;
+            }
+            gene.AddKills(1);
+            if (surges.ContainsKey(killer) || !gene.KillSurgeArmed)
             {
                 return;
             }
@@ -238,8 +288,9 @@ namespace HobGob
                 Pawn pawn = entry.Key;
                 EvolutionExtension ext = entry.Value;
                 // Re-check the cap: several pawns may have queued in the same pass.
-                if (pawn.Dead || pawn.genes == null
-                    || !EvolutionRules.ShouldEvolve(pawn.records.GetAsInt(RecordDefOf.Kills), ext.totalKillsRequired, CountOnMap(pawn.MapHeld, ext.nextXenotype, pawn.Faction), ext.maxPerMap))
+                Gene_GoblinEvolution tracker = pawn.genes == null ? null : Hediff_EvolutionProgress.FindTracker(pawn);
+                if (pawn.Dead || tracker == null
+                    || !EvolutionRules.ShouldEvolve(tracker.Kills, ext.totalKillsRequired, CountOnMap(pawn.MapHeld, ext.nextXenotype, pawn.Faction), ext.maxPerMap))
                 {
                     continue;
                 }
@@ -355,9 +406,15 @@ namespace HobGob
         private static void Evolve(Pawn pawn, XenotypeDef next)
         {
             XenotypeDef old = pawn.genes.Xenotype;
+            int? carriedKills = Hediff_EvolutionProgress.FindTracker(pawn)?.Kills;
             // SetXenotype only clears xenogenes; goblin xenotypes are inheritable, so their genes are endogenes.
             RemoveEndogenes(pawn, old);
             pawn.genes.SetXenotype(next);
+            Gene_GoblinEvolution newTracker = Hediff_EvolutionProgress.FindTracker(pawn);
+            if (carriedKills.HasValue && newTracker != null)
+            {
+                newTracker.SetKills(carriedKills.Value);
+            }
             if (old == HobGobDefOf.MSSG_Noblin)
             {
                 NoblinPortraitHiding.Show(pawn);

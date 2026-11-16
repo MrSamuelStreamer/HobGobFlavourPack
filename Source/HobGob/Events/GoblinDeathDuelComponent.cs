@@ -154,13 +154,13 @@ namespace HobGob.Events
                 Draw();
                 return;
             }
-            int kills = EventRules.InheritedKills(loser?.records?.GetAsInt(RecordDefOf.Kills) ?? 0);
+            int kills = EventRules.InheritedKills(Hediff_EvolutionProgress.FindTracker(loser)?.Kills ?? 0);
             if (!winner.Dead)
             {
                 EndDuel(winner);
                 if (kills > 0)
                 {
-                    winner.records?.AddTo(RecordDefOf.Kills, kills);
+                    Hediff_EvolutionProgress.FindTracker(winner)?.AddKills(kills);
                 }
             }
             LookTargets targets = winner != null && winner.Spawned ? new LookTargets(winner) : LookTargets.Invalid;

@@ -181,6 +181,9 @@ namespace HobGob
             return maxPerMap <= 0 || alreadyOnMap < maxPerMap;
         }
 
+        /// <summary>A kill counts towards evolution only if the victim is at least the stage's minimum body size.</summary>
+        public static bool KillCounts(float victimBodySize, float minBodySize) => victimBodySize >= minBodySize;
+
         /// <param name="roll">Uniform random value in [0, 1).</param>
         public static bool RollsRare(float roll, float chance) => roll < chance;
 
