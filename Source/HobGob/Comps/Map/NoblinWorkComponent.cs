@@ -56,6 +56,8 @@ namespace HobGob.Comps.Map
                 NoblinRegistry.Set(pawn, isNoblin);
                 if (isNoblin)
                 {
+                    // A backstory that bans Noblin work (old saves, other spawn paths) would leave tasks undone.
+                    NoblinBackstoryFixer.TryFix(pawn);
                     noblins.Add(pawn);
                 }
             }

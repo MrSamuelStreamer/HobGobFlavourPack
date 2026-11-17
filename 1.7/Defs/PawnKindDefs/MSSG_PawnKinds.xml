@@ -6,6 +6,9 @@
     <label>noblin</label>
     <combatPower>20</combatPower>
     <isFighter>false</isFighter>
+    <!-- The generator re-rolls any pawn whose backstory or traits disable Noblin work. ManualSkilled is listed
+         because Mining, Growing and PlantCutting carry it. Keep in sync with NoblinBackstoryFixer.NoblinWorkTags. -->
+    <requiredWorkTags>Firefighting, ManualDumb, ManualSkilled, Hauling, Cleaning, Mining, PlantWork</requiredWorkTags>
     <chemicalAddictionChance>0</chemicalAddictionChance>
     <invNutrition>0</invNutrition>
     <weaponMoney>0</weaponMoney>

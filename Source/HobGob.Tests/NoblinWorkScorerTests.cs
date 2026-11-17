@@ -63,6 +63,49 @@ namespace HobGob.Tests
             Assert.Equal(NoblinTask.PlantCutting, NoblinWorkScorer.UrgentTask(s));
         }
 
+        [Theory]
+        [InlineData(NoblinTask.Mining)]
+        [InlineData(NoblinTask.PlantCutting)]
+        public void DesignatedWork_IsPriorityTwo_EvenWhenCleaningIsUrgent(NoblinTask task)
+        {
+            MapSignals s = Designated(task, filth: 100);
+            NoblinTask? urgent = NoblinWorkScorer.UrgentTask(s);
+            Assert.Equal(NoblinTask.Cleaning, urgent);
+            Assert.Equal(2, NoblinWorkScorer.Priority(task, s, urgent, false));
+            Assert.Equal(2, NoblinWorkScorer.Priority(NoblinTask.Cleaning, s, urgent, false));
+        }
+
+        [Theory]
+        [InlineData(NoblinTask.Mining)]
+        [InlineData(NoblinTask.PlantCutting)]
+        public void DesignatedWork_BeatsGrowing(NoblinTask task)
+        {
+            MapSignals s = Designated(task);
+            NoblinTask? urgent = NoblinWorkScorer.UrgentTask(s);
+            Assert.True(NoblinWorkScorer.Priority(task, s, urgent, false)
+                < NoblinWorkScorer.Priority(NoblinTask.Growing, s, urgent, false));
+        }
+
+        [Theory]
+        [InlineData(NoblinTask.Mining)]
+        [InlineData(NoblinTask.PlantCutting)]
+        public void DesignatedWork_IsUrgent_WhenNothingElseIs(NoblinTask task)
+        {
+            Assert.Equal(task, NoblinWorkScorer.UrgentTask(Designated(task)));
+        }
+
+        [Theory]
+        [InlineData(NoblinTask.Mining)]
+        [InlineData(NoblinTask.PlantCutting)]
+        public void NothingDesignated_IsPriorityFour(NoblinTask task)
+        {
+            MapSignals s = new MapSignals(false, 0, 0, false, false);
+            Assert.Equal(4, NoblinWorkScorer.Priority(task, s, null, false));
+        }
+
+        private static MapSignals Designated(NoblinTask task, int filth = 0) =>
+            new MapSignals(false, 0, filth, task == NoblinTask.Mining, task == NoblinTask.PlantCutting);
+
         [Fact]
         public void UrgentShare_GetsPriorityOne_OthersDoNot()
         {

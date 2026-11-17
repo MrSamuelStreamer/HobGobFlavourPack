@@ -44,7 +44,12 @@ namespace HobGob
     {
         public const int HaulablesForFullDemand = 60;
         public const int FilthForFullDemand = 100;
-        public const float DesignatedDemand = 0.5f;
+        /// <summary>
+        /// Designated mining and plant cutting are priority 2, so Noblins outside the urgent share do them before
+        /// cleaning or hauling. At 0.5 they sat at 3, under the endless filth and hauling of a Noblin cave colony,
+        /// and never got done.
+        /// </summary>
+        public const float DesignatedDemand = 0.7f;
         public const float BasicWorkerDemand = 0.2f;
         public const float UrgentDemandThreshold = 0.5f;
         public const float GrowingDemand = 0.4f;
