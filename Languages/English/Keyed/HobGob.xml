@@ -110,4 +110,12 @@ The beaten hobgoblin offers to join the colony.</MSSG_ChallengeWonText>
   <MSSG_RumbleEnd_Wiped>Nobody left standing. Proper rumble, that.</MSSG_RumbleEnd_Wiped>
   <MSSG_RumbleEnd_AllDown>Everyone left is lying in the dirt. Nobody can be bothered to finish anyone off.</MSSG_RumbleEnd_AllDown>
   <MSSG_RumbleEnd_TimedOut>The nobbos got bored and wandered off. Whoever is left lives to scrap another day.</MSSG_RumbleEnd_TimedOut>
+
+  <!-- Knob Gob Gobbo Gone Wild -->
+  <MSSG_BrawlNoblinsWinLabel>Nobbos on top</MSSG_BrawlNoblinsWinLabel>
+  <MSSG_BrawlNoblinsWinText>The goblins are all on the floor. The noblins mob about, very pleased with themselves.</MSSG_BrawlNoblinsWinText>
+  <MSSG_BrawlGoblinsWinLabel>Gobbos on top</MSSG_BrawlGoblinsWinLabel>
+  <MSSG_BrawlGoblinsWinText>The noblins are all on the floor. The goblins stand over the heap, sucking their knuckles.</MSSG_BrawlGoblinsWinText>
+  <MSSG_BrawlDrawLabel>Brawl over</MSSG_BrawlDrawLabel>
+  <MSSG_BrawlDrawText>Nobody won. Everyone is either on the floor or too knackered to swing. Lots of sulking.</MSSG_BrawlDrawText>
 </LanguageData>

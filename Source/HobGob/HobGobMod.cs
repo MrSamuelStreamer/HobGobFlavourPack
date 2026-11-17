@@ -94,6 +94,7 @@ namespace HobGob
         public static XenotypeDef MSSG_Snoblin;
         public static HediffDef MSSG_RumbleFrenzy;
         public static MentalStateDef MSSG_NobbyRumble;
+        public static MentalStateDef MSSG_GobBrawl;
 
         static HobGobDefOf() => RimWorld.DefOfHelper.EnsureInitializedInCtor(typeof(HobGobDefOf));
     }

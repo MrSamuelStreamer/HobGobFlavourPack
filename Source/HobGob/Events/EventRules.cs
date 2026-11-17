@@ -172,6 +172,37 @@ namespace HobGob.Events
             return Math.Max(0, loserKills);
         }
 
+        /// <summary>Knob Gob Gobbo Gone Wild needs this many noblins and goblins able to fight. First guesses.</summary>
+        public const int BrawlMinNoblins = 4;
+        public const int BrawlMinGoblins = 1;
+
+        /// <summary>About four in-game hours. After this the brawl is called off.</summary>
+        public const int BrawlDurationTicks = 10000;
+
+        public static bool BrawlCanStart(int noblins, int goblins)
+        {
+            return noblins >= BrawlMinNoblins && goblins >= BrawlMinGoblins;
+        }
+
+        /// <summary>
+        /// Result of the noblin-goblin brawl. A side with nobody standing loses, even when time has run out.
+        /// Both sides down, or time out with both still standing, is a draw.
+        /// </summary>
+        public static BrawlOutcome ResolveBrawl(int noblinsStanding, int goblinsStanding, bool timedOut)
+        {
+            bool noblinsUp = noblinsStanding > 0;
+            bool goblinsUp = goblinsStanding > 0;
+            if (noblinsUp && !goblinsUp)
+            {
+                return BrawlOutcome.NoblinsWin;
+            }
+            if (goblinsUp && !noblinsUp)
+            {
+                return BrawlOutcome.GoblinsWin;
+            }
+            return !noblinsUp || timedOut ? BrawlOutcome.Draw : BrawlOutcome.Ongoing;
+        }
+
         /// <summary>How much of a stack one Noblin carries away: as much as fits, never more than the stack.</summary>
         public static int CarryCount(int stackCount, int carrySpace)
         {
@@ -206,6 +237,14 @@ namespace HobGob.Events
         Ongoing,
         AWins,
         BWins,
+        Draw,
+    }
+
+    public enum BrawlOutcome
+    {
+        Ongoing,
+        NoblinsWin,
+        GoblinsWin,
         Draw,
     }
 

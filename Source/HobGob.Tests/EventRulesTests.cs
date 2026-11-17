@@ -163,6 +163,31 @@ namespace HobGob.Tests
         }
     }
 
+    public class GobBrawlRulesTests
+    {
+        [Theory]
+        [InlineData(3, 1, false, BrawlOutcome.Ongoing)]
+        [InlineData(3, 0, false, BrawlOutcome.NoblinsWin)]
+        [InlineData(0, 2, false, BrawlOutcome.GoblinsWin)]
+        [InlineData(0, 0, false, BrawlOutcome.Draw)]
+        [InlineData(3, 1, true, BrawlOutcome.Draw)]
+        [InlineData(3, 0, true, BrawlOutcome.NoblinsWin)]
+        [InlineData(0, 1, true, BrawlOutcome.GoblinsWin)]
+        public void ResolveBrawl_Table(int noblinsStanding, int goblinsStanding, bool timedOut, BrawlOutcome expected)
+        {
+            Assert.Equal(expected, EventRules.ResolveBrawl(noblinsStanding, goblinsStanding, timedOut));
+        }
+
+        [Theory]
+        [InlineData(4, 1, true)]
+        [InlineData(3, 1, false)]
+        [InlineData(10, 0, false)]
+        public void BrawlCanStart(int noblins, int goblins, bool expected)
+        {
+            Assert.Equal(expected, EventRules.BrawlCanStart(noblins, goblins));
+        }
+    }
+
     public class QueenReleaseTests
     {
         [Theory]

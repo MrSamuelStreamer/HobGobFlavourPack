@@ -60,4 +60,18 @@
     <baseInspectLine>Mental state: Nobby nobby rumbling</baseInspectLine>
     <inCaravanCanDo>false</inCaravanCanDo>
   </MentalStateDef>
+
+  <!-- Knob Gob Gobbo Gone Wild: HobGob.Events.GobBrawlComponent starts and ends it. Ends when the pawn goes down. -->
+  <MentalStateDef ParentName="BaseMentalState">
+    <defName>MSSG_GobBrawl</defName>
+    <label>gob brawling</label>
+    <stateClass>HobGob.Events.MentalState_GobBrawl</stateClass>
+    <category>Aggro</category>
+    <minTicksBeforeRecovery>999999999</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>999999999</maxTicksBeforeRecovery>
+    <recoveryMtbDays>999999</recoveryMtbDays>
+    <nameColor>(0.88, 0.48, 0.16)</nameColor>
+    <baseInspectLine>Mental state: Gob brawling</baseInspectLine>
+    <inCaravanCanDo>false</inCaravanCanDo>
+  </MentalStateDef>
 </Defs>

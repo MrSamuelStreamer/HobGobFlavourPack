@@ -107,4 +107,26 @@ A win earns glory and a lot of respect. Refusing will make your goblins ashamed 
 
 Let 'em at it, or tell 'em no. Tell 'em no and the pair of 'em will sulk. Leave it hangin' for 12 hours and they'll reckon that's a no.</letterText>
   </IncidentDef>
+
+  <!-- Knob Gob Gobbo Gone Wild. Needs 4+ noblins and 1+ goblin able to fight (EventRules). Social-fight blows only.
+       baseChance and minRefireDays are first guesses, same as the strike. -->
+  <IncidentDef>
+    <defName>MSSG_GobboGoneWild</defName>
+    <label>Knob Gob Gobbo Gone Wild</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>HobGob.Events.IncidentWorker_GobboGoneWild</workerClass>
+    <baseChance>0.5</baseChance>
+    <minRefireDays>20</minRefireDays>
+    <letterLabel>Knob Gob Gobbo Gone Wild</letterLabel>
+    <letterText>Nobby lobs knob off hob.
+Knob bops Gobbo's gob.
+Gob throbs. Gobbo sobs.
+Mob mobs.
+
+{NOBLINS} noblins and {GOBLINS} goblins are having a proper brawl. Fists only: nobody gets finished off. It ends when one side has nobody left standing.</letterText>
+    <letterDef>NegativeEvent</letterDef>
+  </IncidentDef>
 </Defs>
