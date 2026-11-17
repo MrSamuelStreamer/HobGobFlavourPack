@@ -1,0 +1,18 @@
+<Patch>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="LOTR_OrcFurnace"]/recipes</xpath>
+        <value>
+            <li>DankPyon_MakeIngots_Iron</li>
+            <li>DankPyon_MakeIngots_IronBulk</li>
+            <li>DankPyon_MakeIngots_IronExtraBulk</li>
+            <li>DankPyon_MakeIngots_Silver</li>
+            <li>DankPyon_MakeIngots_Gold</li>
+            <li>DankPyon_MakeIngots_Steel</li>
+            <li>DankPyon_MakeIngots_SteelBulk</li>
+            <li>DankPyon_MakeIngots_SteelExtraBulk</li>
+            <li>DankPyon_MakeIngots_Plasteel</li>
+            <li>DankPyon_MakeIngots_PlasteelBulk</li>
+            <li>DankPyon_MakeIngots_PlasteelExtraBulk</li>
+        </value>
+    </Operation>
+</Patch>

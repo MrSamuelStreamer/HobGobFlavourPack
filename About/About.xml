@@ -23,6 +23,7 @@
       <displayName>Big and Small - Genes &amp; More</displayName>
       <steamWorkshopUrl>steam://url/CommunityFilePage/2920751126</steamWorkshopUrl>
     </li>
+
   </modDependencies>
   <loadAfter>
     <li>Ludeon.RimWorld.Biotech</li>
@@ -33,5 +34,7 @@
     <li>sarg.alphagenes</li>
     <li>font.rimesis</li>
     <li>MSS.FlavourPack</li>
+    <li>lotr.shadowoftheeast</li>
+    <li>dankpyon.medieval.overhaul</li>
   </loadAfter>
 </ModMetaData>
