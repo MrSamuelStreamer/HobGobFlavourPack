@@ -46,11 +46,12 @@ namespace HobGob.Comps
                 return null;
             }
             int left = nextSpawnTick - Find.TickManager.TicksGame;
-            if (left > 0)
-            {
-                return "MSSG_NextNoblin".Translate(left.ToStringTicksToPeriod()).ToString();
-            }
-            return "MSSG_NextNoblinWaiting".Translate().ToString();
+            string line = left > 0
+                ? "MSSG_NextNoblin".Translate(left.ToStringTicksToPeriod()).ToString()
+                : "MSSG_NextNoblinWaiting".Translate().ToString();
+            bool infested = parent.Faction == Faction.OfPlayer
+                && (Events.GrubInfestationComponent.For(parent.MapHeld)?.Active ?? false);
+            return infested ? line + "\n" + "MSSG_GrubsInspect".Translate() : line;
         }
 
         public override void PostExposeData()
@@ -67,7 +68,10 @@ namespace HobGob.Comps
 
         private void RollNextSpawn()
         {
-            nextSpawnTick = Find.TickManager.TicksGame + Props.spawnIntervalTicks.RandomInRange;
+            bool infested = parent.Faction == Faction.OfPlayer
+                && (Events.GrubInfestationComponent.For(parent.MapHeld)?.Active ?? false);
+            nextSpawnTick = Find.TickManager.TicksGame
+                + Events.EventRules.PitSpawnInterval(infested, Props.spawnIntervalTicks.RandomInRange);
         }
 
         private bool TrySpawnNoblin()

@@ -129,4 +129,25 @@ Mob mobs.
 {NOBLINS} noblins and {GOBLINS} goblins are having a proper brawl. Fists only: nobody gets finished off. It ends when one side has nobody left standing.</letterText>
     <letterDef>NegativeEvent</letterDef>
   </IncidentDef>
+
+  <!-- Grubs in me 'ole! Needs a player pit. For 0.5-3 days every player pit spawns a noblin every 2 hours (EventRules).
+       baseChance and minRefireDays are first guesses. -->
+  <IncidentDef>
+    <defName>MSSG_GrubInfestation</defName>
+    <label>grubs in me 'ole</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>HobGob.Events.IncidentWorker_GrubInfestation</workerClass>
+    <baseChance>0.5</baseChance>
+    <minRefireDays>20</minRefireDays>
+    <letterLabel>Grubs in me 'ole!</letterLabel>
+    <letterText>Big fat bovine grubs 'ave got into the queenie 'oles! The nobbos 'ave been scoffin' 'em, and all that grub goodness 'as gone straight to the pit.
+
+For the next {DURATION}, a fresh noblin'll crawl out of every 'ole every 2 hours.
+
+Best get more grub on. And more beds.</letterText>
+    <letterDef>PositiveEvent</letterDef>
+  </IncidentDef>
 </Defs>

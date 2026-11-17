@@ -203,6 +203,24 @@ namespace HobGob.Events
             return !noblinsUp || timedOut ? BrawlOutcome.Draw : BrawlOutcome.Ongoing;
         }
 
+        /// <summary>Grubs in me 'ole: the infestation lasts this many days, rolled at random.</summary>
+        public const float GrubDaysMin = 0.5f;
+        public const float GrubDaysMax = 3f;
+
+        /// <summary>Two in-game hours: how often an infested pit spawns a noblin.</summary>
+        public const int GrubSpawnIntervalTicks = 5000;
+
+        public static int GrubDurationTicks(float days)
+        {
+            return (int)Math.Round(days * 60000f);
+        }
+
+        /// <summary>Ticks to a pit's next spawn: the grub interval while infested, else the normal roll.</summary>
+        public static int PitSpawnInterval(bool infested, int normalRoll)
+        {
+            return infested ? GrubSpawnIntervalTicks : normalRoll;
+        }
+
         /// <summary>How much of a stack one Noblin carries away: as much as fits, never more than the stack.</summary>
         public static int CarryCount(int stackCount, int carrySpace)
         {

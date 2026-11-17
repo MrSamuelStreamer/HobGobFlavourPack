@@ -188,6 +188,26 @@ namespace HobGob.Tests
         }
     }
 
+    public class GrubInfestationRulesTests
+    {
+        [Theory]
+        [InlineData(0.5f, 30000)]
+        [InlineData(3f, 180000)]
+        [InlineData(1.25f, 75000)]
+        public void GrubDurationTicks(float days, int expected)
+        {
+            Assert.Equal(expected, EventRules.GrubDurationTicks(days));
+        }
+
+        [Theory]
+        [InlineData(true, 150000, 5000)]
+        [InlineData(false, 150000, 150000)]
+        public void PitSpawnInterval(bool infested, int normalRoll, int expected)
+        {
+            Assert.Equal(expected, EventRules.PitSpawnInterval(infested, normalRoll));
+        }
+    }
+
     public class QueenReleaseTests
     {
         [Theory]

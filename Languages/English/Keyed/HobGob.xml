@@ -118,4 +118,8 @@ The beaten hobgoblin offers to join the colony.</MSSG_ChallengeWonText>
   <MSSG_BrawlGoblinsWinText>The noblins are all on the floor. The goblins stand over the heap, sucking their knuckles.</MSSG_BrawlGoblinsWinText>
   <MSSG_BrawlDrawLabel>Brawl over</MSSG_BrawlDrawLabel>
   <MSSG_BrawlDrawText>Nobody won. Everyone is either on the floor or too knackered to swing. Lots of sulking.</MSSG_BrawlDrawText>
+
+  <!-- Grubs in me 'ole -->
+  <MSSG_GrubsInspect>Grubs in the 'ole! A noblin every 2 hours.</MSSG_GrubsInspect>
+  <MSSG_GrubsOver>The grubs are all scoffed. The 'oles are back to normal.</MSSG_GrubsOver>
 </LanguageData>
