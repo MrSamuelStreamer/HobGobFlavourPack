@@ -153,6 +153,18 @@ namespace HobGob.Tests
     public class EvolutionRulesTests
     {
         [Theory]
+        [InlineData(true, false, false, true)]   // gene the xenotype lists
+        [InlineData(false, false, false, false)] // stale gene from an older xenotype version
+        [InlineData(false, false, true, false)]
+        [InlineData(false, true, false, true)]   // natural skin colour, xenotype brings none
+        [InlineData(false, true, true, false)]   // natural skin colour, xenotype brings its own
+        [InlineData(true, true, true, true)]
+        public void KeepsEndogene(bool inXenotype, bool isColour, bool xenoHasColour, bool expected)
+        {
+            Assert.Equal(expected, EvolutionRules.KeepsEndogene(inXenotype, isColour, xenoHasColour));
+        }
+
+        [Theory]
         [InlineData(24, 25, 0, 0, false)]
         [InlineData(25, 25, 0, 0, true)]
         [InlineData(100, 75, 5, 0, true)]

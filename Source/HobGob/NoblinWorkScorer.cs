@@ -199,6 +199,14 @@ namespace HobGob
         /// <summary>Manual evolution only waits on the player for the player's own pawns.</summary>
         public static bool EvolvesAutomatically(bool manualEvolution, bool playerFaction) => !manualEvolution || !playerFaction;
 
+        /// <summary>
+        /// A goblin keeps an endogene only if its xenotype lists it. A natural skin or hair colour gene is the one
+        /// exception: it stays while the xenotype brings no colour of that kind, so the pawn still has a colour.
+        /// Genes from older xenotype versions fail both tests and are dropped.
+        /// </summary>
+        public static bool KeepsEndogene(bool inXenotype, bool isColourGene, bool xenotypeHasSameColourKind) =>
+            inXenotype || (isColourGene && !xenotypeHasSameColourKind);
+
         /// <summary>A new season has started. <paramref name="lastQuadrum"/> is -1 before the first reading, which never counts.</summary>
         public static bool SeasonChanged(int lastQuadrum, int quadrum) => lastQuadrum >= 0 && lastQuadrum != quadrum;
 

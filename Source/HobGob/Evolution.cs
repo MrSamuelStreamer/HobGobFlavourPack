@@ -215,7 +215,7 @@ namespace HobGob
 
     /// <summary>
     /// Runs queued evolutions outside the gene tick (genes cannot be swapped while the tracker iterates them),
-    /// and back-fills new genes onto goblins from older saves.
+    /// and syncs goblin genes with their xenotype on load.
     /// </summary>
     public class GoblinEvolutionComponent : GameComponent
     {
@@ -276,7 +276,7 @@ namespace HobGob
             surges[killer] = surge;
         }
 
-        public override void LoadedGame() => BackfillGenes();
+        public override void LoadedGame() => SyncGoblinGenes();
 
         public override void GameComponentTick()
         {
@@ -434,7 +434,8 @@ namespace HobGob
             XenotypeDef old = pawn.genes.Xenotype;
             int? carriedKills = Hediff_EvolutionProgress.FindTracker(pawn)?.Kills;
             // SetXenotype only clears xenogenes; goblin xenotypes are inheritable, so their genes are endogenes.
-            RemoveEndogenes(pawn, old);
+            // Drop every endogene the new stage does not list, including genes left over from older xenotype versions.
+            RemoveStaleEndogenes(pawn, next);
             pawn.genes.SetXenotype(next);
             Gene_GoblinEvolution newTracker = Hediff_EvolutionProgress.FindTracker(pawn);
             if (carriedKills.HasValue && newTracker != null)
@@ -456,30 +457,59 @@ namespace HobGob
             }
         }
 
-        private static void RemoveEndogenes(Pawn pawn, XenotypeDef xenotype)
+        /// <summary>Removes the endogenes <paramref name="xenotype"/> does not list. Xenogenes (implants) are left alone.</summary>
+        /// <returns>How many genes were removed.</returns>
+        private static int RemoveStaleEndogenes(Pawn pawn, XenotypeDef xenotype)
         {
+            bool hasSkin = HasColourKind(xenotype, EndogeneCategory.Melanin);
+            bool hasHair = HasColourKind(xenotype, EndogeneCategory.HairColor);
             List<Gene> endo = pawn.genes.Endogenes;
+            int removed = 0;
             for (int i = endo.Count - 1; i >= 0; i--)
             {
-                if (xenotype.genes.Contains(endo[i].def))
+                GeneDef def = endo[i].def;
+                bool isSkin = def.endogeneCategory == EndogeneCategory.Melanin;
+                bool isHair = def.endogeneCategory == EndogeneCategory.HairColor;
+                bool keep = EvolutionRules.KeepsEndogene(
+                    xenotype.genes.Contains(def),
+                    isSkin || isHair,
+                    (isSkin && hasSkin) || (isHair && hasHair));
+                if (!keep)
                 {
                     pawn.genes.RemoveGene(endo[i]);
+                    removed++;
                 }
             }
+            return removed;
         }
 
-        private static readonly HashSet<string> GoblinXenotypes = new HashSet<string> { "MSSG_Noblin", "MSSG_Goblin", "MSSG_Hobgoblin" };
+        private static bool HasColourKind(XenotypeDef xenotype, EndogeneCategory category)
+        {
+            for (int i = 0; i < xenotype.genes.Count; i++)
+            {
+                if (xenotype.genes[i].endogeneCategory == category)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
 
-        /// <summary>Pawns made before this version lack the new genes; add the missing ones and drop the ones they replace.</summary>
-        private static void BackfillGenes()
+        /// <summary>
+        /// Brings every goblin's endogenes in line with its current xenotype on load. Adds genes new to the def and
+        /// removes genes the def no longer lists, so pawns from older saves stop carrying retired genes.
+        /// </summary>
+        private static void SyncGoblinGenes()
         {
             foreach (Pawn pawn in PawnsFinder.AllMapsWorldAndTemporary_Alive)
             {
-                XenotypeDef xeno = pawn.genes?.Xenotype;
-                if (xeno == null || !GoblinXenotypes.Contains(xeno.defName))
+                if (pawn.genes == null || !Events.ChallengeUtility.IsGoblin(pawn))
                 {
                     continue;
                 }
+                XenotypeDef xeno = pawn.genes.Xenotype;
+                int removed = RemoveStaleEndogenes(pawn, xeno);
+                int added = 0;
                 foreach (GeneDef geneDef in xeno.genes)
                 {
                     if (pawn.genes.GetGene(geneDef) != null)
@@ -488,6 +518,11 @@ namespace HobGob
                     }
                     RemoveConflicting(pawn, geneDef);
                     pawn.genes.AddGene(geneDef, !xeno.inheritable);
+                    added++;
+                }
+                if (removed > 0 || added > 0)
+                {
+                    Log.Message($"[HobGob] Synced {pawn.LabelShortCap} ({xeno.defName}) genes: removed {removed}, added {added}.");
                 }
             }
         }
