@@ -147,7 +147,8 @@ namespace HobGob
             EnsureProgressHediff();
             GoblinEvolutionComponent component = Current.Game.GetComponent<GoblinEvolutionComponent>();
             if (component != null && EvolutionRules.PsylinkMakesSnoblin(
-                    pawn.genes?.Xenotype == HobGobDefOf.MSSG_Noblin, pawn.GetMainPsylinkSource() != null, component.IsForced(pawn)))
+                    pawn.genes?.Xenotype == HobGobDefOf.MSSG_Noblin, pawn.GetMainPsylinkSource() != null,
+                    pawn.records != null && Kills >= KillsRequired, component.IsForced(pawn)))
             {
                 component.EnqueueForced(pawn, HobGobDefOf.MSSG_Snoblin);
                 return;

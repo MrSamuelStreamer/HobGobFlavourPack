@@ -166,4 +166,38 @@ namespace HobGob.HarmonyPatches
             Current.Game?.GetComponent<GoblinEvolutionComponent>()?.NoteKill(killed, killer);
         }
     }
+
+    /// <summary>
+    /// Party Hard - Psycast Rituals gives every participant a psylink level on its best outcome. With a big goblin
+    /// colony that is dozens of psylinks at once, so the best outcome is capped to a few random participants.
+    /// Other outcomes (one random pawn) run unchanged.
+    /// </summary>
+    [HarmonyPatch]
+    public static class Patch_PartyHard_PsylinkGain_Apply
+    {
+        private static readonly Type WorkerType =
+            AccessTools.TypeByName("OO_Ritual_PartyHard.RitualAttachableOutcomeEffectWorker_PH_PsylinkGain");
+
+        public static bool Prepare() => WorkerType != null && AccessTools.Method(WorkerType, "Apply") != null;
+
+        public static MethodBase TargetMethod() => AccessTools.Method(WorkerType, "Apply");
+
+        public static bool Prefix(RitualAttachableOutcomeEffectWorker __instance, Dictionary<Pawn, int> totalPresence,
+            LordJob_Ritual jobRitual, RitualOutcomePossibility outcome, ref string extraOutcomeDesc)
+        {
+            if (!outcome.BestPositiveOutcome(jobRitual))
+            {
+                return true;
+            }
+            extraOutcomeDesc = __instance.def.letterInfoText;
+            List<Pawn> eligible = totalPresence.Keys
+                .Where(p => !p.Dead && !p.IsSlave && !p.IsPrisoner && p.GetPsylinkLevel() < p.GetMaxPsylinkLevel())
+                .ToList();
+            foreach (Pawn pawn in eligible.InRandomOrder().Take(EvolutionRules.RitualPsylinkCount(eligible.Count)).ToList())
+            {
+                pawn.ChangePsylinkLevel(1, true);
+            }
+            return false;
+        }
+    }
 }

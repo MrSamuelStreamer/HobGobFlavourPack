@@ -190,14 +190,26 @@ namespace HobGob.Tests
         }
 
         [Theory]
-        [InlineData(true, true, false, true)]
-        [InlineData(true, false, false, false)]
-        [InlineData(false, true, false, false)]
-        [InlineData(true, true, true, false)]
-        [InlineData(false, false, false, false)]
-        public void PsylinkMakesSnoblin_OnlyUnqueuedPsylinkedNoblins(bool noblin, bool psylink, bool queued, bool expected)
+        [InlineData(true, true, true, false, true)]    // psylinked noblin with the kills
+        [InlineData(true, true, false, false, false)]  // psylinked noblin without the kills (ritual mass grant)
+        [InlineData(true, false, true, false, false)]  // kills but no psylink: normal evolution
+        [InlineData(false, true, true, false, false)]  // not a noblin
+        [InlineData(true, true, true, true, false)]    // already queued
+        [InlineData(false, false, false, false, false)]
+        public void PsylinkMakesSnoblin_OnlyUnqueuedPsylinkedNoblinsWithKills(bool noblin, bool psylink, bool kills, bool queued, bool expected)
         {
-            Assert.Equal(expected, EvolutionRules.PsylinkMakesSnoblin(noblin, psylink, queued));
+            Assert.Equal(expected, EvolutionRules.PsylinkMakesSnoblin(noblin, psylink, kills, queued));
+        }
+
+        [Theory]
+        [InlineData(0, 0)]
+        [InlineData(2, 2)]
+        [InlineData(3, 3)]
+        [InlineData(40, 3)]
+        [InlineData(-1, 0)]
+        public void RitualPsylinkCount_CapsAtMax(int eligible, int expected)
+        {
+            Assert.Equal(expected, EvolutionRules.RitualPsylinkCount(eligible));
         }
 
         [Theory]

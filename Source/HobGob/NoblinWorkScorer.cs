@@ -189,9 +189,17 @@ namespace HobGob
         /// <summary>A kill counts towards evolution only if the victim is at least the stage's minimum body size.</summary>
         public static bool KillCounts(float victimBodySize, float minBodySize) => victimBodySize >= minBodySize;
 
-        /// <summary>A Noblin with a psylink is already magic, so it becomes a Snoblin. Queue it only once.</summary>
-        public static bool PsylinkMakesSnoblin(bool isNoblin, bool hasPsylink, bool alreadyQueued) =>
-            isNoblin && hasPsylink && !alreadyQueued;
+        /// <summary>
+        /// A Noblin with a psylink is already magic, so when it has the kills to evolve it becomes a Snoblin
+        /// instead of a Goblin. Without the kills it stays a Noblin. Queue it only once.
+        /// </summary>
+        public static bool PsylinkMakesSnoblin(bool isNoblin, bool hasPsylink, bool hasKills, bool alreadyQueued) =>
+            isNoblin && hasPsylink && hasKills && !alreadyQueued;
+
+        /// <summary>Most psylinks a single psycast ritual can hand out, however many pawns attend.</summary>
+        public const int MaxRitualPsylinks = 3;
+
+        public static int RitualPsylinkCount(int eligible) => Math.Max(0, Math.Min(eligible, MaxRitualPsylinks));
 
         /// <param name="roll">Uniform random value in [0, 1).</param>
         public static bool RollsRare(float roll, float chance) => roll < chance;
