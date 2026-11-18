@@ -70,8 +70,8 @@
     <modExtensions>
       <li Class="HobGob.EvolutionExtension">
         <nextXenotype>MSSG_Hobnobgoblin</nextXenotype>
-        <totalKillsRequired>50</totalKillsRequired>
-        <minVictimBodySize>1.0</minVictimBodySize>
+        <totalKillsRequired>75</totalKillsRequired>
+        <minVictimBodySize>0.6</minVictimBodySize>
         <seasonalKills>true</seasonalKills>
         <manualEvolution>true</manualEvolution>
         <!-- <gizmoIconPath>UI/Abilities/EvolveQueen</gizmoIconPath> -->
