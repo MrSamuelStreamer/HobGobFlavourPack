@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Slap some sense into 'em: watch the target, and step up for a thump when it is your turn. -->
+  <DutyDef>
+    <defName>MSSG_SlapCircle</defName>
+    <hook>HighPriority</hook>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="HobGob.Slap.JobGiver_SlapTurn" />
+        <li Class="JobGiver_SpectateDutySpectateRect" />
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+</Defs>

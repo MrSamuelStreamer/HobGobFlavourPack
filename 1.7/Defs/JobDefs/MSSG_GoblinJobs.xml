@@ -13,4 +13,11 @@
     <driverClass>HobGob.Events.JobDriver_RummagePit</driverClass>
     <reportString>rummaging through TargetA.</reportString>
   </JobDef>
+
+  <JobDef>
+    <defName>MSSG_ThumpTarget</defName>
+    <driverClass>HobGob.Slap.JobDriver_ThumpTarget</driverClass>
+    <reportString>thumping some sense into TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
 </Defs>

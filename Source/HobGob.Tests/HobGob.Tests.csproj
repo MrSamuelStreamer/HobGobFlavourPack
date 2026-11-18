@@ -13,6 +13,7 @@
     <Compile Include="..\HobGob\SnapshotSet.cs" Link="SnapshotSet.cs" />
     <Compile Include="..\HobGob\Surgery\SurgeryRules.cs" Link="SurgeryRules.cs" />
     <Compile Include="..\HobGob\Rumble\RumbleRules.cs" Link="RumbleRules.cs" />
+    <Compile Include="..\HobGob\Slap\SlapRules.cs" Link="SlapRules.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />

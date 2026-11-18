@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Slap some sense into 'em (Ideology only). Each participant takes a turn to thump the target
+       (HobGob.Slap.RitualBehaviorWorker_SlapSense). At the end the target's passions are re-rolled by quality. -->
+
+  <RitualBehaviorDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>MSSG_SlapSense</defName>
+    <workerClass>HobGob.Slap.RitualBehaviorWorker_SlapSense</workerClass>
+    <!-- Safety cap only: the thumping stage ends as soon as everyone has had a go. -->
+    <durationTicks>15000</durationTicks>
+    <spectatorsLabel>Thumpers</spectatorsLabel>
+    <spectatorGerund>queue up for a thump</spectatorGerund>
+    <roles>
+      <li Class="HobGob.Slap.RitualRole_SlapTarget">
+        <label>numpty</label>
+        <id>target</id>
+        <maxCount>1</maxCount>
+        <required>True</required>
+        <countsAsParticipant>False</countsAsParticipant>
+        <ignoreBleeding>true</ignoreBleeding>
+      </li>
+    </roles>
+    <stages>
+      <li>
+        <defaultDuty>Spectate</defaultDuty>
+        <spectatorsRequired>true</spectatorsRequired>
+        <endTriggers>
+          <li Class="StageEndTrigger_RolesArrived">
+            <roleIds>
+              <li>target</li>
+            </roleIds>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>target</roleId>
+            <dutyDef>ArriveToCell</dutyDef>
+          </li>
+        </roleBehaviors>
+        <highlightRolePawns>
+          <li>target</li>
+        </highlightRolePawns>
+      </li>
+      <li>
+        <!-- Everyone spectates; the worker swaps the current thumper onto MSSG_SlapCircle for their turn. -->
+        <defaultDuty>Spectate</defaultDuty>
+        <spectatorsRequired>true</spectatorsRequired>
+        <!-- Lets the ritual finish (and apply its outcome) when the stage ends early. -->
+        <ignoreDurationToFinishAfterStage>true</ignoreDurationToFinishAfterStage>
+        <endTriggers>
+          <li Class="HobGob.Slap.StageEndTrigger_AllThumped" />
+          <li Class="StageEndTrigger_DurationPercentage">
+            <percentage>1</percentage>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>target</roleId>
+            <dutyDef>StandOnCell</dutyDef>
+          </li>
+        </roleBehaviors>
+        <highlightRolePawns>
+          <li>target</li>
+        </highlightRolePawns>
+      </li>
+    </stages>
+  </RitualBehaviorDef>
+
+  <RitualOutcomeEffectDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>MSSG_SlapSense</defName>
+    <description>Everyone takes a turn thumping the numpty. Afterwards the numpty's passions get shaken loose and land somewhere new. The filthier and uglier the spot, and the more thumpers, the better it goes.</description>
+    <workerClass>HobGob.Slap.RitualOutcomeEffectWorker_SlapSense</workerClass>
+    <givesDevelopmentPoints>false</givesDevelopmentPoints>
+    <allowAttachableOutcome>false</allowAttachableOutcome>
+    <extraPredictedOutcomeDescriptions>
+      <li>Every thumper gets one go. Pacifists watch but do not thump.</li>
+      <li>Each thump does a little blunt damage to an arm, leg, hand or foot. Thumps stop before the target could go down.</li>
+      <li>The target cannot be slapped again for 15 days.</li>
+      <li>Passions are shuffled onto other skills. Terrible: one passion level lost. Good: one gained. Best: two gained.</li>
+    </extraPredictedOutcomeDescriptions>
+    <comps>
+      <!-- Not vanilla ParticipantCount: it needs presence for half of durationTicks, and the stage ends early. -->
+      <li Class="HobGob.Slap.RitualOutcomeComp_Thumpers">
+        <label>thumpers</label>
+        <curve>
+          <points>
+            <li>(1, 0.0)</li>
+            <li>(5, 0.2)</li>
+            <li>(10, 0.3)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="HobGob.Slap.RitualOutcomeComp_FilthNearSpot">
+        <label>lovely muck</label>
+        <curve>
+          <points>
+            <li>(0, 0.0)</li>
+            <li>(10, 0.15)</li>
+            <li>(30, 0.3)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="HobGob.Slap.RitualOutcomeComp_Ugliness">
+        <label>proper grotty</label>
+        <curve>
+          <points>
+            <li>(0, 0.0)</li>
+            <li>(2, 0.15)</li>
+            <li>(5, 0.3)</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>Terrible</label>
+        <chance>0.1</chance>
+        <description>The {0} was terrible. Half the thumps missed and the rest just made things worse.</description>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
+        <label>Meh</label>
+        <chance>0.3</chance>
+        <description>The {0} was a bit limp. Things got shaken about, but no sense went in.</description>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <label>Good</label>
+        <chance>0.45</chance>
+        <description>The {0} went well. A proper clout landed right where the sense goes.</description>
+        <positivityIndex>1</positivityIndex>
+      </li>
+      <li>
+        <label>Glorious</label>
+        <chance>0.15</chance>
+        <description>The {0} was glorious, a filthy, ugly, roaring pile-on. That sense is going nowhere.</description>
+        <positivityIndex>2</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+
+  <RitualPatternDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>MSSG_SlapSense</defName>
+    <canStartAnytime>true</canStartAnytime>
+    <alwaysStartAnytime>true</alwaysStartAnytime>
+    <ritualObligationTargetFilter>AnyRitualSpot</ritualObligationTargetFilter>
+    <ritualBehavior>MSSG_SlapSense</ritualBehavior>
+    <ritualOutcomeEffect>MSSG_SlapSense</ritualOutcomeEffect>
+    <ritualOnlyForIdeoMembers>false</ritualOnlyForIdeoMembers>
+    <playsIdeoMusic>false</playsIdeoMusic>
+    <tags Inherit="False" />
+  </RitualPatternDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>MSSG_SlapSomeSense</defName>
+    <label>slap some sense into 'em</label>
+    <tipLabelOverride>Thump the numpty</tipLabelOverride>
+    <description>Pick a colonist, slave or prisoner who needs sorting out. Everyone else lines up and takes a turn to thump them. When it is done their passions are re-rolled: a good session knocks some extra passion in, a terrible one knocks some out.\n\nGoblins like it filthy and ugly. A mucky, grotty spot and a big crowd make for a better slapping.</description>
+    <issue>Ritual</issue>
+    <impact>Medium</impact>
+    <preceptClass>Precept_Ritual</preceptClass>
+    <ritualPatternBase>MSSG_SlapSense</ritualPatternBase>
+    <iconPath>UI/Icons/Rituals/GladiatorDuel</iconPath>
+    <visible>true</visible>
+    <countsTowardsPreceptLimit>true</countsTowardsPreceptLimit>
+    <selectionWeight>0</selectionWeight>
+    <capitalizeAsTitle>false</capitalizeAsTitle>
+  </PreceptDef>
+</Defs>

@@ -122,4 +122,12 @@ The beaten hobgoblin offers to join the colony.</MSSG_ChallengeWonText>
   <!-- Grubs in me 'ole -->
   <MSSG_GrubsInspect>Grubs in the 'ole! A noblin every 2 hours.</MSSG_GrubsInspect>
   <MSSG_GrubsOver>The grubs are all scoffed. The 'oles are back to normal.</MSSG_GrubsOver>
+
+  <!-- Slap some sense into 'em -->
+  <MSSG_SlapTargetInvalid>{0} must be a colonist, slave or prisoner who is not downed.</MSSG_SlapTargetInvalid>
+  <MSSG_SlapPassionsChanged>{PAWN_nameDef} has had some sense slapped into {PAWN_objective}. {PAWN_possessive} passions have shifted:</MSSG_SlapPassionsChanged>
+  <MSSG_SlapNoChange>{PAWN_nameDef} took every thump and came out exactly the same. Some heads are just too thick.</MSSG_SlapNoChange>
+  <MSSG_SlapPassionChange>{0}: {1} → {2}</MSSG_SlapPassionChange>
+  <MSSG_SlapTooSoon>{PAWN_nameDef} was slapped not long ago. {PAWN_possessive} head needs time to settle first.</MSSG_SlapTooSoon>
+  <MSSG_SlapAlreadyOn>Someone is already getting slapped. One numpty at a time.</MSSG_SlapAlreadyOn>
 </LanguageData>

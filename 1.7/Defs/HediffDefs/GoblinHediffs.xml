@@ -139,4 +139,21 @@
       </li>
     </comps>
   </HediffDef>
+  <!-- Slap some sense into 'em: cooldown so the same pawn cannot be slapped again for 15 days. -->
+  <HediffDef>
+    <defName>MSSG_RecentlySlapped</defName>
+    <label>recently slapped</label>
+    <description>This one had some sense slapped into them not long ago. Their head needs time to settle before it can be slapped again.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.75, 0.55, 0.45)</defaultLabelColor>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>900000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+  </HediffDef>
 </Defs>
