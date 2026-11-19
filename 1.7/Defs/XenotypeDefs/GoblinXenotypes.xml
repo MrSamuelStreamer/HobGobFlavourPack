@@ -29,6 +29,7 @@
       <li>MeleeDamage_Weak</li>
       <li>Pain_Reduced</li>
       <li>Sterile</li>
+      <li>MSSG_GrotLover</li>
       <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
       <li MayRequire="sarg.alphagenes">AG_UnsettlingAppearance</li>
       <li MayRequire="lotr.shadowoftheeast">LOTR_EarsMordor</li>
@@ -87,6 +88,7 @@
       <li MayRequire="sarg.alphagenes">AG_Rowdy</li>
       <li>Pain_Reduced</li>
       <li>Sterile</li>
+      <li>MSSG_GrotLover</li>
       <li MayRequire="redmattis.bigsmall.core">BS_TrollEars</li>
       <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
       <li MayRequire="sarg.alphagenes">AG_UnsettlingAppearance</li>
@@ -138,6 +140,7 @@
       <li>Robust</li>
       <li>Pain_Reduced</li>
       <li>Sterile</li>
+      <li>MSSG_GrotLover</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">BS_TrollEars_Great</li>
       <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
       <li MayRequire="sarg.alphagenes">AG_UnsettlingAppearance</li>
@@ -192,6 +195,7 @@
       <li>Robust</li>
       <li>Pain_Reduced</li>
       <li>Sterile</li>
+      <li>MSSG_GrotLover</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">RG_GoblinEars</li>
       <li>Beauty_VeryUgly</li>
       <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
@@ -239,6 +243,7 @@
       <li>Aggression_Aggressive</li>
       <li MayRequire="sarg.alphagenes">AG_Rowdy</li>
       <li>Sterile</li>
+      <li>MSSG_GrotLover</li>
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">LOTR_EarsMordor</li>
       <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
       <li MayRequire="sarg.alphagenes">AG_UnsettlingAppearance</li>

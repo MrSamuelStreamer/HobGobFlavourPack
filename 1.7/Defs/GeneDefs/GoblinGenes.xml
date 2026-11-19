@@ -97,4 +97,16 @@
     <iconPath>UI/Icons/Genes/Gene_Snoblin</iconPath>
     <geneClass>HobGob.Gene_GoblinEvolution</geneClass>
   </GeneDef>
+
+  <!-- Grot lover: beauty flips, filth helps a goblin surgeon and a goblin patient, sterile rooms upset them.
+       Effects live in HobGob.HarmonyPatches.GrotLoverPatches and HobGob.Grot.ThoughtWorker_GrotRoom. -->
+  <GeneDef>
+    <defName>MSSG_GrotLover</defName>
+    <label>grot lover</label>
+    <description>Carriers of this gene love muck. Filth and ugly things look lovely to them, and pretty things look awful.\n\nA grot-loving surgeon works better in a filthy room and worse in a sterile one. A grot-loving patient tended in a filthy room is less likely to get an infection, and more likely in a sterile one.\n\nThey are unhappy when their bed is in a sterile room and happy when it is properly grotty.</description>
+    <iconPath>UI/Icons/Genes/Gene_Goblin</iconPath>
+    <displayCategory>Miscellaneous</displayCategory>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>0</biostatMet>
+  </GeneDef>
 </Defs>

@@ -60,6 +60,7 @@ namespace HobGob
     public static class HobGobDefOf
     {
         public static GeneDef MSSG_NoblinInstinct;
+        public static GeneDef MSSG_GrotLover;
         public static XenotypeDef MSSG_Noblin;
         public static XenotypeDef MSSG_Goblin;
         public static PawnKindDef MSSG_Pitborn;

@@ -132,4 +132,26 @@
       </li>
     </stages>
   </ThoughtDef>
+
+  <!-- Grot lover: how they feel about the room their bed is in. Stage chosen by HobGob.Grot.ThoughtWorker_GrotRoom. -->
+  <ThoughtDef>
+    <defName>MSSG_GrotRoom</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>HobGob.Grot.ThoughtWorker_GrotRoom</workerClass>
+    <requiredGenes>
+      <li>MSSG_GrotLover</li>
+    </requiredGenes>
+    <stages>
+      <li>
+        <label>too clean in 'ere</label>
+        <description>My sleeping room is all scrubbed and sterile. It smells of nothing. Horrible.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+      <li>
+        <label>proper grotty</label>
+        <description>My sleeping room is lovely and mucky. Just how I like it.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 </Defs>
