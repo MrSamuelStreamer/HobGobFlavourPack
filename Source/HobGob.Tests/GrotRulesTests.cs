@@ -73,6 +73,15 @@ namespace HobGob.Tests
         }
 
         [Fact]
+        public void GrotImpressiveness_SterileRoomNeverImpressive()
+        {
+            float uglySterile = GrotRules.GrotImpressiveness(wealth: 1500f, beauty: -6f, space: 125f, cleanliness: GrotRules.SterileCleanliness);
+            float uglyClean = GrotRules.GrotImpressiveness(wealth: 1500f, beauty: -6f, space: 125f, cleanliness: 0f);
+            Assert.True(uglySterile <= 0f, $"uglySterile={uglySterile}");
+            Assert.True(uglyClean > 0f, $"uglyClean={uglyClean}");
+        }
+
+        [Fact]
         public void GrotImpressiveness_TinyRoomCappedBySpace()
         {
             float cramped = GrotRules.GrotImpressiveness(wealth: 100000f, beauty: -50f, space: 5f, cleanliness: -5f);

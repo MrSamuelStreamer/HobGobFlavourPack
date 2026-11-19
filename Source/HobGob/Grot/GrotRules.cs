@@ -67,7 +67,8 @@ namespace HobGob.Grot
             {
                 score = Lerp(score, spaceCap, 0.75f);
             }
-            return score * 100f;
+            // A sterile room is never impressive to a goblin, however ugly or roomy it is.
+            return cleanliness >= SterileCleanliness ? Math.Min(score * 100f, 0f) : score * 100f;
         }
 
         /// <summary>Vanilla's impressiveness factor: linear inside (-1, 1), logarithmic outside.</summary>
