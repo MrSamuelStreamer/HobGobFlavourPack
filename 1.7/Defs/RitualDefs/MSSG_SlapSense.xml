@@ -72,6 +72,7 @@
     <workerClass>HobGob.Slap.RitualOutcomeEffectWorker_SlapSense</workerClass>
     <givesDevelopmentPoints>false</givesDevelopmentPoints>
     <allowAttachableOutcome>false</allowAttachableOutcome>
+    <allowOutcomeWithNoAttendance>true</allowOutcomeWithNoAttendance>
     <extraPredictedOutcomeDescriptions>
       <li>Every thumper gets one go. Pacifists watch but do not thump.</li>
       <li>Each thump does a little blunt damage to an arm, leg, hand or foot. Thumps stop before the target could go down.</li>
