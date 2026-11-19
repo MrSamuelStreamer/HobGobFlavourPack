@@ -1,0 +1,113 @@
+<Patch>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThoughtDef[defName="Insulted"]/stages</xpath>
+        <value>
+            <stages>
+                <li>
+                    <label>'ad a go at</label>
+                    <baseOpinionOffset>-5</baseOpinionOffset>
+                </li>
+            </stages>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThoughtDef[defName="InsultedMood"]/stages</xpath>
+        <value>
+            <stages>
+                <li>
+                    <label>insulted</label>
+                    <description>'e at a go at us! Wot a bastard!</description>
+                    <baseMoodEffect>-1</baseMoodEffect>
+                </li>
+            </stages>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThoughtDef[defName="Slighted"]/stages</xpath>
+        <value>
+            <stages>
+                <li>
+                    <label>slighted</label>
+                    <baseOpinionOffset>-2</baseOpinionOffset>
+                </li>
+            </stages>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThoughtDef[defName="KindWords"]/stages</xpath>
+        <value>
+           <stages>
+                <li>
+                    <label>nice fings said</label>
+                    <baseOpinionOffset>5</baseOpinionOffset>
+                </li>
+            </stages>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThoughtDef[defName="KindWordsMood"]/stages</xpath>
+        <value>
+           <stages>
+                <li>
+                    <label>nice fings said</label>
+                    <description>Dey said sommut nice to us. Bet they is wantin' me to do somefing!</description>
+                    <baseMoodEffect>2</baseMoodEffect>
+                </li>
+            </stages>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThoughtDef[defName="HadAngeringFight"]/stages</xpath>
+        <value>
+           <stages>
+                <li>
+                    <label>bloody scrap</label>
+                    <baseOpinionOffset>-10</baseOpinionOffset>
+                </li>
+            </stages>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThoughtDef[defName="HarmedMe"]/stages</xpath>
+        <value>
+            <stages>
+                <li>
+                    <label>harmed us</label>
+                    <baseOpinionOffset>-5</baseOpinionOffset>
+                </li>
+            </stages>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThoughtDef[defName="NeedJoy"]/stages</xpath>
+        <value>
+            <stages>
+                <li>
+                    <label>bloody bored</label>
+                    <description>We is bloody bored - too much workin', not enough hangin' about!</description>
+                    <baseMoodEffect>-10</baseMoodEffect>
+                </li>
+                <li>
+                    <label>really bored</label>
+                    <description>We is really bored, der's nuffin' do around here!</description>
+                    <baseMoodEffect>-5</baseMoodEffect>
+                </li>
+                <li>
+                    <label>bored</label>
+                    <description>Dem nobbies need to be buildin' some games and fun stuff!</description>
+                    <baseMoodEffect>0</baseMoodEffect>
+                </li>
+                <li>
+                    <label>good stuff</label>
+                    <description>Ders some fun stuff around here when I is not working all the time.</description>
+                    <baseMoodEffect>5</baseMoodEffect>
+                </li>
+                <li>
+                    <label>really good stuff</label>
+                    <description>It's a bloody good time 'ere, loads of stuff to do!</description>
+                    <baseMoodEffect>10</baseMoodEffect>
+                </li>
+            </stages>
+        </value>
+    </Operation>
+</Patch>
