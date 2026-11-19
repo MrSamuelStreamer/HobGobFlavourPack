@@ -154,4 +154,24 @@
       </li>
     </stages>
   </ThoughtDef>
+
+  <!-- Grot lover: cleaned up a mess. Given by HobGob.HarmonyPatches.Patch_RecordsTracker_Increment. Mild on purpose:
+       noblins pick their own chores, cleaning included. -->
+  <ThoughtDef>
+    <defName>MSSG_WastedMuck</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>1</durationDays>
+    <stackLimit>3</stackLimit>
+    <stackedEffectMultiplier>1</stackedEffectMultiplier>
+    <requiredGenes>
+      <li>MSSG_GrotLover</li>
+    </requiredGenes>
+    <stages>
+      <li>
+        <label>wasted good muck</label>
+        <description>I had to scrub away a lovely bit of mess. What a waste.</description>
+        <baseMoodEffect>-1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 </Defs>

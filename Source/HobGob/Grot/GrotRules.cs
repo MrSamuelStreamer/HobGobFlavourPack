@@ -1,3 +1,5 @@
+using System;
+
 namespace HobGob.Grot
 {
     /// <summary>
@@ -46,6 +48,47 @@ namespace HobGob.Grot
             }
             return cleanliness <= GrottyCleanliness ? ProperGrottyStage : NoRoomThought;
         }
+
+        /// <summary>
+        /// Room impressiveness as a grot lover sees it. Same shape as vanilla RoomStatWorker_Impressiveness, but
+        /// ugliness counts as beauty, and filth raises the cleanliness factor while a sterile room lowers it.
+        /// </summary>
+        public static float GrotImpressiveness(float wealth, float beauty, float space, float cleanliness)
+        {
+            float wealthF = ImpressivenessFactor(wealth / 1500f);
+            float beautyF = ImpressivenessFactor(-beauty / 3f);
+            float spaceF = ImpressivenessFactor(space / 125f);
+            float cleanF = ImpressivenessFactor(1f - cleanliness / 2.5f);
+            float mean = (wealthF + beautyF + spaceF + cleanF) / 4f;
+            float min = Math.Min(wealthF, Math.Min(beautyF, Math.Min(spaceF, cleanF)));
+            float score = Lerp(mean, min, 0.35f);
+            float spaceCap = spaceF * 5f;
+            if (score > spaceCap)
+            {
+                score = Lerp(score, spaceCap, 0.75f);
+            }
+            return score * 100f;
+        }
+
+        /// <summary>Vanilla's impressiveness factor: linear inside (-1, 1), logarithmic outside.</summary>
+        public static float ImpressivenessFactor(float baseFactor)
+        {
+            if (Math.Abs(baseFactor) < 1f)
+            {
+                return baseFactor;
+            }
+            return baseFactor > 0f
+                ? 1f + (float)Math.Log(baseFactor)
+                : -1f - (float)Math.Log(-baseFactor);
+        }
+
+        /// <summary>Opinion stage a grot lover gives for another pawn's beauty under the "pretty" thought, or -1.</summary>
+        public static int GrotPrettyStage(float otherBeauty) => otherBeauty <= -2f ? 1 : otherBeauty <= -1f ? 0 : -1;
+
+        /// <summary>Opinion stage a grot lover gives for another pawn's beauty under the "ugly" thought, or -1.</summary>
+        public static int GrotUglyStage(float otherBeauty) => otherBeauty >= 2f ? 1 : otherBeauty >= 1f ? 0 : -1;
+
+        private static float Lerp(float a, float b, float t) => a + (b - a) * t;
 
         /// <summary>Piecewise-linear lookup, clamped at both ends (same as vanilla SimpleCurve).</summary>
         private static float Evaluate((float x, float y)[] points, float x)
