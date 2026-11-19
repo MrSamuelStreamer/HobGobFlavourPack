@@ -94,7 +94,7 @@
   <Communication>Speakin'</Communication>
   <Affects>messes wiv'</Affects>
   <BleedingRate>Squirtin'</BleedingRate>
-  <TimeToDeath>done for in{0}</TimeToDeath>
+  <TimeToDeath>done for in {0}</TimeToDeath>
   <WontBleedOutSoon>nuffin' urgent</WontBleedOutSoon>
   <HealthOverview>Feelin'</HealthOverview>
   <MedicalOperationsShort>Big Fixin'</MedicalOperationsShort>

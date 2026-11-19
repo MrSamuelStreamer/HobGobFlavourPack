@@ -110,4 +110,28 @@
             </stages>
         </value>
     </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThoughtDef[defName="DankPyon_AteSlopMeal"]/stages</xpath>
+        <value>
+            <stages>
+                <li>
+                    <label>ate some good grub</label>
+                    <description>Had a bloody lovely bowl of grub from the sloppy potty, none of that foreign muck!</description>
+                    <baseMoodEffect>5</baseMoodEffect>
+                </li>
+            </stages>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThoughtDef[defName="IdeoBuildingDisrespected"]/stages</xpath>
+        <value>
+            <stages>
+                <li>
+                    <label>{BUILDING_labelCap} filthy</label>
+                    <description>Da {BUILDING_labelIndef} is filthy but dats the we way we like it!</description>
+                    <baseMoodEffect>2</baseMoodEffect>
+                </li>
+            </stages>
+        </value>
+    </Operation>
 </Patch>
