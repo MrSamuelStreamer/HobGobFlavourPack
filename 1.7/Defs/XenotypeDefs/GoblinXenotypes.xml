@@ -243,7 +243,7 @@
       <li>Aggression_Aggressive</li>
       <li MayRequire="sarg.alphagenes">AG_Rowdy</li>
       <li>Sterile</li>
-      <li>MSSG_GrotLover</li>
+      <!-- <li>MSSG_GrotLover</li> -->
       <li MayRequire="vexedtrees980.rimgnoblinsbiotech">LOTR_EarsMordor</li>
       <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
       <li MayRequire="sarg.alphagenes">AG_UnsettlingAppearance</li>
