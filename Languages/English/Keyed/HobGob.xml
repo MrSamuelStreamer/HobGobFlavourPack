@@ -125,7 +125,8 @@ The beaten hobgoblin offers to join the colony.</MSSG_ChallengeWonText>
 
   <!-- Slap some sense into 'em -->
   <MSSG_SlapTargetInvalid>{0} must be a colonist, slave or prisoner who is not downed.</MSSG_SlapTargetInvalid>
-  <MSSG_SlapPassionsChanged>{PAWN_nameDef} has had some sense slapped into {PAWN_objective}. {PAWN_possessive} passions have shifted:</MSSG_SlapPassionsChanged>
+  <MSSG_SlapPassionsChanged>{PAWN_nameDef} has had some sense slapped into {PAWN_objective}. {PAWN_possessive} skills and passions have shifted:</MSSG_SlapPassionsChanged>
+  <MSSG_SlapSkillChange>{0}: level {1} → {2}</MSSG_SlapSkillChange>
   <MSSG_SlapNoChange>{PAWN_nameDef} took every thump and came out exactly the same. Some heads are just too thick.</MSSG_SlapNoChange>
   <MSSG_SlapPassionChange>{0}: {1} → {2}</MSSG_SlapPassionChange>
   <MSSG_SlapTooSoon>{PAWN_nameDef} was slapped not long ago. {PAWN_possessive} head needs time to settle first.</MSSG_SlapTooSoon>

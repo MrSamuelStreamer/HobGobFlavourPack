@@ -61,6 +61,46 @@ namespace HobGob.Tests
             }
         }
 
+        [Theory]
+        [InlineData(-1, 3)]
+        [InlineData(1, 4)]
+        [InlineData(2, 5)]
+        public void Reroll_GoodOutcomesAddBrandNewPassions(int positivity, int expectedPassionateSkills)
+        {
+            for (int seed = 0; seed < 50; seed++)
+            {
+                int[] result = SlapRules.Reroll(Mixed(), positivity, new Random(seed));
+                Assert.Equal(expectedPassionateSkills, result.Count(p => p > SlapRules.None));
+            }
+        }
+
+        [Fact]
+        public void Reroll_BonusUpgradesWhenNoSkillIsLeftWithoutPassion()
+        {
+            var slots = new[] { new PassionSlot(SlapRules.Minor), new PassionSlot(SlapRules.Minor) };
+            for (int seed = 0; seed < 50; seed++)
+            {
+                Assert.Equal(4, Levels(SlapRules.Reroll(slots, 2, new Random(seed))));
+            }
+        }
+
+        [Fact]
+        public void ShuffleLevels_KeepsTheSameLevelsAndLeavesDisabledSkillsAlone()
+        {
+            int[] levels = { 0, 3, 8, 12, 20, 5 };
+            bool[] disabled = { false, true, false, false, false, true };
+            bool moved = false;
+            for (int seed = 0; seed < 50; seed++)
+            {
+                int[] result = SlapRules.ShuffleLevels(levels, disabled, new Random(seed));
+                Assert.Equal(3, result[1]);
+                Assert.Equal(5, result[5]);
+                Assert.Equal(levels.OrderBy(x => x), result.OrderBy(x => x));
+                moved |= !result.SequenceEqual(levels);
+            }
+            Assert.True(moved);
+        }
+
         [Fact]
         public void Reroll_LockedSkillsAreUntouched()
         {

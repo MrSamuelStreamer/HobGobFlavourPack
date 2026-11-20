@@ -140,17 +140,25 @@ namespace HobGob.Slap
             return result;
         }
 
-        /// <summary>Raises or lowers one random open skill by one level. False if no skill can move.</summary>
+        /// <summary>
+        /// Raises or lowers one random open skill by one level. Raising prefers a skill with no passion, so a good
+        /// outcome gives a brand new passion; it only upgrades minor to major when every open skill already has one.
+        /// False if no skill can move.
+        /// </summary>
         private static bool Step(int[] result, IReadOnlyList<PassionSlot> slots, List<int> open, int direction, Random rng)
         {
             var candidates = new List<int>();
             foreach (int i in open)
             {
                 int floor = slots[i].Forced ? Minor : None;
-                if (direction > 0 ? result[i] < Major : result[i] > floor)
+                if (direction > 0 ? result[i] == None : result[i] > floor)
                 {
                     candidates.Add(i);
                 }
+            }
+            if (candidates.Count == 0 && direction > 0)
+            {
+                candidates.AddRange(open.Where(i => result[i] < Major));
             }
             if (candidates.Count == 0)
             {
@@ -158,6 +166,23 @@ namespace HobGob.Slap
             }
             result[candidates[rng.Next(candidates.Count)]] += direction;
             return true;
+        }
+
+        /// <summary>
+        /// Shuffles skill levels between the skills that are not disabled. The same levels come out, just on
+        /// different skills. Disabled skills keep their level.
+        /// </summary>
+        public static int[] ShuffleLevels(IReadOnlyList<int> levels, IReadOnlyList<bool> disabled, Random rng)
+        {
+            int[] result = levels.ToArray();
+            List<int> open = Enumerable.Range(0, levels.Count).Where(i => !disabled[i]).ToList();
+            List<int> pool = open.Select(i => levels[i]).ToList();
+            Shuffle(pool, rng);
+            for (int k = 0; k < open.Count; k++)
+            {
+                result[open[k]] = pool[k];
+            }
+            return result;
         }
 
         private static void Shuffle(List<int> list, Random rng)

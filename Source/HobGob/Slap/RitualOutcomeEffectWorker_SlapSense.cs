@@ -5,7 +5,7 @@ using Verse;
 
 namespace HobGob.Slap
 {
-    /// <summary>Re-rolls the target's passions. A better ritual means more passion; a terrible one knocks one out.</summary>
+    /// <summary>Shuffles the target's skill levels and re-rolls passions. Good gives a bonus passion, glorious two; terrible knocks one out.</summary>
     public class RitualOutcomeEffectWorker_SlapSense : RitualOutcomeEffectWorker_FromQuality
     {
         public RitualOutcomeEffectWorker_SlapSense()
@@ -30,10 +30,23 @@ namespace HobGob.Slap
                 target.health.AddHediff(HobGobDefOf.MSSG_RecentlySlapped);
             }
             List<SkillRecord> skills = target.skills.skills;
+            var rng = new System.Random(Rand.Int);
             List<PassionSlot> slots = skills.Select(s => SlotFor(target, s)).ToList();
-            int[] rolled = SlapRules.Reroll(slots, outcome.positivityIndex, new System.Random(Rand.Int));
+            int[] rolled = SlapRules.Reroll(slots, outcome.positivityIndex, rng);
+            int[] levels = SlapRules.ShuffleLevels(skills.Select(s => s.levelInt).ToList(), skills.Select(s => s.TotallyDisabled).ToList(), rng);
 
             var changes = new List<string>();
+            for (int i = 0; i < skills.Count; i++)
+            {
+                int before = skills[i].levelInt;
+                if (before == levels[i])
+                {
+                    continue;
+                }
+                skills[i].levelInt = levels[i];
+                skills[i].xpSinceLastLevel = 0f;
+                changes.Add("MSSG_SlapSkillChange".Translate(skills[i].def.LabelCap, before, levels[i]));
+            }
             for (int i = 0; i < skills.Count; i++)
             {
                 Passion before = skills[i].passion;

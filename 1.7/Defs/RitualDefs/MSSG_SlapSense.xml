@@ -68,7 +68,7 @@
 
   <RitualOutcomeEffectDef MayRequire="Ludeon.RimWorld.Ideology">
     <defName>MSSG_SlapSense</defName>
-    <description>Everyone takes a turn thumping the numpty. Afterwards the numpty's passions get shaken loose and land somewhere new. The filthier and uglier the spot, and the more thumpers, the better it goes.</description>
+    <description>Everyone takes a turn thumping the numpty. Afterwards the numpty's skills and passions get shaken loose and land somewhere new. The filthier and uglier the spot, and the more thumpers, the better it goes.</description>
     <workerClass>HobGob.Slap.RitualOutcomeEffectWorker_SlapSense</workerClass>
     <givesDevelopmentPoints>false</givesDevelopmentPoints>
     <allowAttachableOutcome>false</allowAttachableOutcome>
@@ -77,7 +77,7 @@
       <li>Every thumper gets one go. Pacifists watch but do not thump.</li>
       <li>Each thump does a little blunt damage to an arm, leg, hand or foot. Thumps stop before the target could go down.</li>
       <li>The target cannot be slapped again for 15 days.</li>
-      <li>Passions are shuffled onto other skills. Terrible: one passion level lost. Good: one gained. Best: two gained.</li>
+      <li>Skill levels and passions are shuffled onto other skills. Terrible: one passion level lost. Good: one bonus passion. Glorious: two bonus passions.</li>
     </extraPredictedOutcomeDescriptions>
     <comps>
       <!-- Not vanilla ParticipantCount: it needs presence for half of durationTicks, and the stage ends early. -->
@@ -156,7 +156,7 @@
     <defName>MSSG_SlapSomeSense</defName>
     <label>slap some sense into 'em</label>
     <tipLabelOverride>Thump the numpty</tipLabelOverride>
-    <description>Pick a colonist, slave or prisoner who needs sorting out. Everyone else lines up and takes a turn to thump them. When it is done their passions are re-rolled: a good session knocks some extra passion in, a terrible one knocks some out.\n\nGoblins like it filthy and ugly. A mucky, grotty spot and a big crowd make for a better slapping.</description>
+    <description>Pick a colonist, slave or prisoner who needs sorting out. Everyone else lines up and takes a turn to thump them. When it is done their skills and passions are re-rolled: a good session knocks in a bonus passion (two if it is glorious), a terrible one knocks some out.\n\nGoblins like it filthy and ugly. A mucky, grotty spot and a big crowd make for a better slapping.</description>
     <issue>Ritual</issue>
     <impact>Medium</impact>
     <preceptClass>Precept_Ritual</preceptClass>
