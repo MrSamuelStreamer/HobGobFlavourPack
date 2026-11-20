@@ -131,4 +131,5 @@ The beaten hobgoblin offers to join the colony.</MSSG_ChallengeWonText>
   <MSSG_SlapPassionChange>{0}: {1} → {2}</MSSG_SlapPassionChange>
   <MSSG_SlapTooSoon>{PAWN_nameDef} was slapped not long ago. {PAWN_possessive} head needs time to settle first.</MSSG_SlapTooSoon>
   <MSSG_SlapAlreadyOn>Someone is already getting slapped. One numpty at a time.</MSSG_SlapAlreadyOn>
+  <MSSG_NoblinCombatLocked>Noblins will not stand down while enemies are about.</MSSG_NoblinCombatLocked>
 </LanguageData>
