@@ -89,6 +89,7 @@
       <li>Pain_Reduced</li>
       <li>Sterile</li>
       <li>MSSG_GrotLover</li>
+      <li>MSSG_FingsIsFings</li>
       <li MayRequire="redmattis.bigsmall.core">BS_TrollEars</li>
       <li MayRequire="redmattis.bigsmall.core">BS_AlienApperanceStandards</li>
       <li MayRequire="sarg.alphagenes">AG_UnsettlingAppearance</li>

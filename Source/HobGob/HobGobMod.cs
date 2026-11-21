@@ -61,6 +61,7 @@ namespace HobGob
     {
         public static GeneDef MSSG_NoblinInstinct;
         public static GeneDef MSSG_GrotLover;
+        public static GeneDef MSSG_FingsIsFings;
         public static ThoughtDef MSSG_WastedMuck;
         public static XenotypeDef MSSG_Noblin;
         public static XenotypeDef MSSG_Goblin;

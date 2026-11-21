@@ -109,4 +109,19 @@
     <biostatCpx>1</biostatCpx>
     <biostatMet>0</biostatMet>
   </GeneDef>
+
+  <!-- Fings is fings: +6 Crafting aptitude, but everything the carrier makes comes out Normal quality.
+       The quality cap lives in HobGob.HarmonyPatches.FingsIsFingsPatches. -->
+  <GeneDef>
+    <defName>MSSG_FingsIsFings</defName>
+    <label>fings is fings</label>
+    <description>Carriers of this gene do not see why a stabber needs to be pretty. It stabs. Everything they make is normal quality.\n\nTheir makin' aptitude is increased by 6. The quality limit covers everything they make: gear, furniture, buildings and art.</description>
+    <iconPath>UI/Icons/Genes/Skills/Crafting/Remarkable</iconPath>
+    <displayCategory>Miscellaneous</displayCategory>
+    <aptitudes>
+      <Crafting>6</Crafting>
+    </aptitudes>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>0</biostatMet>
+  </GeneDef>
 </Defs>
