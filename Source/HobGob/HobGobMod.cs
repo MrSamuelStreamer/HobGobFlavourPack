@@ -33,6 +33,9 @@ namespace HobGob
                 tooltip: "MSSG_SettingsSeasonalKillsTip".Translate());
             Widgets.IntRange(list.GetRect(32f), "MSSG_SeasonalKills".GetHashCode(), ref Settings.seasonalKills,
                 HobGobSettings.MinSeasonalKills, HobGobSettings.MaxSeasonalKills);
+            list.GapLine();
+            list.CheckboxLabeled("MSSG_SettingsNoblinAutoCombat".Translate(), ref Settings.noblinAutoCombat,
+                "MSSG_SettingsNoblinAutoCombatTip".Translate());
             list.End();
         }
     }
@@ -48,11 +51,15 @@ namespace HobGob
         /// <summary>How many free kills a successful roll grants, picked at random from this range.</summary>
         public IntRange seasonalKills = new IntRange(1, 3);
 
+        /// <summary>When true, Noblins draft themselves with Auto-Combat on while a threat is on the map.</summary>
+        public bool noblinAutoCombat = true;
+
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look(ref seasonalKillChance, "seasonalKillChance", 0.5f);
             Scribe_Values.Look(ref seasonalKills, "seasonalKills", new IntRange(1, 3));
+            Scribe_Values.Look(ref noblinAutoCombat, "noblinAutoCombat", true);
         }
     }
 

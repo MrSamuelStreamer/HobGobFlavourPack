@@ -83,6 +83,8 @@ The beaten hobgoblin offers to join the colony.</MSSG_ChallengeWonText>
   <MSSG_SettingsSeasonalChanceTip>Set to 0% to turn seasonal kills off.</MSSG_SettingsSeasonalChanceTip>
   <MSSG_SettingsSeasonalKills>Kills gained on a success: {0} to {1}</MSSG_SettingsSeasonalKills>
   <MSSG_SettingsSeasonalKillsTip>A number in this range is picked at random each time.</MSSG_SettingsSeasonalKillsTip>
+  <MSSG_SettingsNoblinAutoCombat>Noblins draft themselves and fight when enemies are about</MSSG_SettingsNoblinAutoCombat>
+  <MSSG_SettingsNoblinAutoCombatTip>When off, Noblins act like normal colonists during raids. Turning it off mid-fight frees them. They stay drafted until you undraft them.</MSSG_SettingsNoblinAutoCombatTip>
 
   <!-- Goblin surgery -->
   <MSSG_HarvestPartGizmo>Chop a bit off</MSSG_HarvestPartGizmo>

@@ -27,7 +27,7 @@ namespace HobGob.Combat
         public static bool IsLocked(Pawn pawn)
         {
             NoblinCombatComponent c = instance;
-            return c != null && pawn != null && c.forced.Contains(pawn) && pawn.MapHeld != null && c.threatMaps.Contains(pawn.MapHeld);
+            return c != null && pawn != null && Enabled && c.forced.Contains(pawn) && pawn.MapHeld != null && c.threatMaps.Contains(pawn.MapHeld);
         }
 
         public override void GameComponentTick()
@@ -42,6 +42,12 @@ namespace HobGob.Combat
         public void Update()
         {
             threatMaps.Clear();
+            if (!Enabled)
+            {
+                // Drop the lock but leave pawns drafted, so turning this off mid-fight does not pull them out.
+                forced.Clear();
+                return;
+            }
             foreach (Map map in Find.Maps)
             {
                 if (map.mapPawns.AnyFreeColonistSpawned)
@@ -97,6 +103,9 @@ namespace HobGob.Combat
                 }
             }
         }
+
+        /// <summary>The mod setting that turns Noblin auto-draft and Auto-Combat on or off.</summary>
+        private static bool Enabled => HobGobMod.Settings?.noblinAutoCombat ?? true;
 
         /// <summary>A pawn that can be drafted to fight now. Non-violent Noblins are left alone.</summary>
         public static bool CanFight(Pawn pawn) =>
