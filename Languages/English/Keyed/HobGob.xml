@@ -88,7 +88,7 @@ The beaten hobgoblin offers to join the colony.</MSSG_ChallengeWonText>
 
   <!-- Goblin surgery -->
   <MSSG_HarvestPartGizmo>Chop a bit off</MSSG_HarvestPartGizmo>
-  <MSSG_HarvestPartGizmoDesc>Pick a bit to hack off this noblin. Someone'll come over and do it proper: no medsy stuff, no sleepy stuff, just a good chop. Only works about one go in four, mind.</MSSG_HarvestPartGizmoDesc>
+  <MSSG_HarvestPartGizmoDesc>Pick a bit to hack off this noblin. Someone'll come over and do it proper: no medsy stuff, no sleepy stuff, just a good chop. Works about three goes in four, mind.</MSSG_HarvestPartGizmoDesc>
   <MSSG_HarvestPartNone>Nuffin' left worth choppin'</MSSG_HarvestPartNone>
   <MSSG_PartBadlyAttached>{PAWN_nameDef}'s new {1} went on all wonky. It only half works.</MSSG_PartBadlyAttached>
 

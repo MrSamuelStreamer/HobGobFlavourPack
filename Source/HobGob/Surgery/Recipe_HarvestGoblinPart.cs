@@ -32,6 +32,23 @@ namespace HobGob.Surgery
             }
             return null;
         }
+
+        /// <summary>True when a clean harvest of some listed part drops <paramref name="item"/>.</summary>
+        public bool Drops(ThingDef item)
+        {
+            if (item == null)
+            {
+                return false;
+            }
+            for (int i = 0; i < parts.Count; i++)
+            {
+                if (ItemFor(parts[i].part) == item)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 
     /// <summary>

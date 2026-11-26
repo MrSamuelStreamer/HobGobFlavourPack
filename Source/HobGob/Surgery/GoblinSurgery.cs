@@ -49,6 +49,34 @@ namespace HobGob.Surgery
         public static bool InstallsPart(RecipeDef recipe) =>
             recipe.Worker is Recipe_InstallNaturalBodyPart || recipe.Worker is Recipe_InstallArtificialBodyPart;
 
+        /// <summary>
+        /// Which odds a surgery uses. A part counts as chopped off when its item is one the harvest recipe drops;
+        /// the game cannot tell a goblin's heart from any other, so every item of those kinds counts.
+        /// </summary>
+        public static GoblinSurgeryKind KindOf(RecipeDef recipe, List<Thing> ingredients)
+        {
+            if (recipe.Worker is Recipe_HarvestGoblinPart)
+            {
+                return GoblinSurgeryKind.Harvest;
+            }
+            if (!InstallsPart(recipe))
+            {
+                return GoblinSurgeryKind.Other;
+            }
+            HarvestablePartsExtension harvest = HobGobDefOf.MSSG_HarvestGoblinPart.GetModExtension<HarvestablePartsExtension>();
+            if (harvest != null && ingredients != null)
+            {
+                for (int i = 0; i < ingredients.Count; i++)
+                {
+                    if (harvest.Drops(ingredients[i].def))
+                    {
+                        return GoblinSurgeryKind.InstallHarvestedPart;
+                    }
+                }
+            }
+            return GoblinSurgeryKind.Install;
+        }
+
         /// <summary>The recipe's ingredients minus medicine. Same medicine test as vanilla's medical care check.</summary>
         public static List<IngredientCount> WithoutMedicine(RecipeDef recipe)
         {

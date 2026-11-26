@@ -50,20 +50,21 @@ namespace HobGob.Surgery
     }
 
     /// <summary>
-    /// Every surgery on a goblin: flat success chance. On failure, an install may go in badly attached;
-    /// otherwise vanilla picks the failure outcome, with the quality forced to 0 so it cannot succeed.
+    /// Every surgery on a goblin: flat success chance, higher for chopping a part off. On failure, an install
+    /// may go in anyway (badly attached, or properly for a chopped-off bit); otherwise vanilla picks the
+    /// failure outcome, with the quality forced to 0 so it cannot succeed.
     /// </summary>
     [HarmonyPatch(typeof(Recipe_Surgery), "CheckSurgeryFail")]
     public static class Patch_Recipe_Surgery_CheckSurgeryFail
     {
-        public static bool Prefix(Recipe_Surgery __instance, Pawn patient, BodyPartRecord part, ref bool __result)
+        public static bool Prefix(Recipe_Surgery __instance, Pawn patient, List<Thing> ingredients, BodyPartRecord part, ref bool __result)
         {
             RecipeDef recipe = __instance.recipe;
             if (recipe?.surgeryOutcomeEffect == null || !GoblinSurgery.IsGoblin(patient))
             {
                 return true;
             }
-            switch (SurgeryRules.Roll(Rand.Value, Rand.Value, GoblinSurgery.InstallsPart(recipe)))
+            switch (SurgeryRules.Roll(Rand.Value, Rand.Value, GoblinSurgery.KindOf(recipe, ingredients)))
             {
                 case GoblinSurgeryResult.Success:
                     __result = false;
