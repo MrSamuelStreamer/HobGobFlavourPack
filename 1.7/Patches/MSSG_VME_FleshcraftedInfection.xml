@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <!-- Fleshcrafted parts give a wound infection once a day to anyone whose ideoligion lacks the fleshcrafting
+         organ precept. Goblins chop bits off and sew them back on all the time, so drop that for everyone. -->
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Ideology Expanded - Memes and Structures</li>
+        </mods>
+        <match Class="PatchOperationRemove">
+            <xpath>Defs/HediffDef/comps/li[@Class="VanillaMemesExpanded.HediffCompProperties_Infections"]</xpath>
+        </match>
+    </Operation>
+</Patch>
