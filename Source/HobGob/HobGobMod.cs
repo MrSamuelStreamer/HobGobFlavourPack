@@ -17,6 +17,7 @@ namespace HobGob
             Harmony harmony = new Harmony("MrSamuelStreamer.GoblinFlavourPack");
             harmony.PatchAll(typeof(HobGobMod).Assembly);
             HarmonyPatches.LotrHatedXenotypeCache.TryPatch(harmony);
+            HarmonyPatches.ProcessorIngredientFilter.TryPatch(harmony);
             Log.Message($"[Goblin Flavour Pack] {harmony.GetPatchedMethods().Count()} Harmony patches applied.");
         }
 
