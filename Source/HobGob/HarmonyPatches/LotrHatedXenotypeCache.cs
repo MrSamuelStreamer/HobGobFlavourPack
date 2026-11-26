@@ -22,6 +22,7 @@ namespace HobGob.HarmonyPatches
             new Dictionary<(int Map, int Faction, int Ideo), CacheEntry>();
 
         private static Func<Pawn, IEnumerable<Precept>, bool> isHatedXenotype;
+        private static Game cachedGame;
 
         private sealed class CacheEntry
         {
@@ -84,6 +85,14 @@ namespace HobGob.HarmonyPatches
 
         private static CacheEntry Lookup(Map map, Faction faction, Ideo ideo)
         {
+            // A loaded save can reuse the same ids and tick, so entries from the previous game must not survive it.
+            Game game = Current.Game;
+            if (!ReferenceEquals(cachedGame, game))
+            {
+                Cache.Clear();
+                cachedGame = game;
+            }
+
             int now = Find.TickManager.TicksGame;
             var key = (map.uniqueID, faction.loadID, ideo.id);
             if (Cache.TryGetValue(key, out CacheEntry cached) && now >= cached.Tick && now - cached.Tick < RefreshTicks)
