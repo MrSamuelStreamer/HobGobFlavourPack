@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Medieval Overhaul: Barbarians (Continued)</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/RaidStrategyDef[defName="MSSFP_TunnelAttack"]/selectionWeightCurvesPerFaction</xpath>
+            <value>
+                <li>
+                    <faction>pphhyy_Barbarians_factionNonPlayer</faction>
+                    <selectionWeightPerPointsCurve>
+                        <points>
+                            <li>(0, 0.5)</li>
+                        </points>
+                    </selectionWeightPerPointsCurve>
+                </li>
+            </value>
+        </match>
+    </Operation>
+</Patch>
